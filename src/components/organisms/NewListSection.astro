@@ -1,0 +1,123 @@
+---
+interface Props {
+  menuColor?: string;
+}
+
+const { menuColor = "white" } = Astro.props as Props;
+
+import ChevronDown from "../atoms/Icons/ChevronDown.astro";
+
+const newsItems = [
+  {
+    year: "2024",
+    date: "11.01",
+    title: "公式ホームページをリニューアルいたしました",
+    description:
+      "記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。",
+  },
+  {
+    year: "2024",
+    date: "11.01",
+    title: "公式ホームページをリニューアルいたしました",
+    imageSrc: "images/homepage/about-first.webp",
+    description:
+      "記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。",
+  },
+  {
+    year: "2024",
+    date: "11.01",
+    title: "公式ホームページをリニューアルいたしました",
+    description:
+      "記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。",
+  },
+  {
+    year: "2024",
+    date: "11.01",
+    title: "公式ホームページをリニューアルいたしました",
+    description:
+      "記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。",
+  },
+  {
+    year: "2024",
+    date: "11.01",
+    title: "公式ホームページをリニューアルいたしました",
+    description:
+      "記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。",
+  },
+  {
+    year: "2024",
+    date: "11.01",
+    title: "公式ホームページをリニューアルいたしました",
+    description:
+      "記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。",
+  },
+];
+---
+
+<section
+  class="px-[39px] lg:px-[128px] pt-[50px] lg:pt-[99px] pb-[120px] lg:pb-[240px] text-black"
+  data-menu-color={menuColor}
+>
+  {
+    newsItems.map((item, index) => (
+      <div class="bg-white mb-[30px] lg:mb-[16px] pb-[60px] lg:pb-[20px]">
+        <button
+          class="faq-toggle w-full flex lg:items-center justify-between pe-[20px] lg:pe-[50px] transition hover:bg-gray-50"
+          data-index={index}
+        >
+          <div class="flex flex-col lg:flex-row items-start lg:items-center lg:gap-[47px]">
+            <div class="flex flex-row lg:flex-col gap-[11px] lg:gap-[6px] py-[15px] lg:py-[25px] px-[14px] lg:px-[23px] bg-[#f4f1ef]">
+              <span class="text-[18px] lg:text-[14px] leading-[18px] lg:leading-[15px]">
+                {item.year}
+              </span>
+              <span class="text-[23px] lg:text-[20px] leading-[18px] lg:leading-[15px]">
+                {item.date}
+              </span>
+            </div>
+            <span class="text-start text-[15px] lg:text-[18px] leading-[25px] lg:leading-[33px] ps-[29px] lg:ps-0 pt-[17px] lg:pt-0">
+              {item.title}
+            </span>
+          </div>
+          <ChevronDown class="mt-[22px] lg:mt-[15px] lg:mt-0 min-w-[12px] transition-transform duration-300 ease-in-out" />
+        </button>
+
+        <div
+          class={`faq-content max-h-0 overflow-hidden transition-all duration-500 pe-[29px] lg:pe-[135px] ps-[29px] lg:ps-[135px] ${item.imageSrc && "grid grid-cols-1 lg:grid-cols-2 gap-[40px] lg:gap-[75px]"}`}
+        >
+          <p
+            class={`text-[13px] lg:text-[14px] leading-[33px] lg:pt-[25px] pb-0 lg:pb-[15px] ${item.imageSrc ? "order-2 lg:order-1" : "pt-[40px] "}`}
+          >
+            {item.description}
+          </p>
+          {item.imageSrc && (
+            <img
+              src={item.imageSrc}
+              alt="News Image"
+              class={`w-full h-full object-cover object-center ${item.imageSrc && "order-1 lg:order-2 pb-0 lg:pb-[24px] pt-[30px] lg:pt-[25px]"}`}
+            />
+          )}
+        </div>
+      </div>
+    ))
+  }
+</section>
+
+<script type="module" is:inline>
+  document.querySelectorAll(".faq-toggle").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const content = btn.nextElementSibling;
+      const icon = btn.querySelector("svg");
+
+      const isOpen =
+        content.style.maxHeight && content.style.maxHeight !== "0px";
+
+      if (isOpen) {
+        content.style.maxHeight = null;
+        icon.classList.remove("rotate-180");
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        icon.classList.add("rotate-180");
+      }
+    });
+  });
+</script>

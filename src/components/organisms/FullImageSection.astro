@@ -1,0 +1,104 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  content: string;
+  imageSrc: string | string[];
+  imageClass?: string;
+  heightImg?: string;
+  gapColLg?: string;
+  sectionClass?: string;
+  uniformStyle?: boolean;
+  reverse?: boolean;
+  isEnglishTitle?: boolean;
+  showPagination?: boolean;
+  menuColor?: string;
+}
+
+const {
+  title,
+  subtitle,
+  content,
+  imageSrc,
+  sectionClass,
+  imageClass,
+  heightImg = "lg:h-[533px]",
+  gapColLg = "lg:gap-[100px]",
+  uniformStyle = false,
+  reverse = false,
+  isEnglishTitle = false,
+  showPagination = false,
+  menuColor = "white",
+} = Astro.props as Props;
+
+let images: Array<{
+  src: string;
+  alt?: string;
+}> = [];
+
+if (Array.isArray(imageSrc)) {
+  images = imageSrc.map((src) => ({ src, alt: title }));
+} else if (typeof imageSrc === "string" && imageSrc) {
+  images = [{ src: imageSrc, alt: title }];
+}
+
+import HeroSwiper from "../molecules/HeroSwiper.astro";
+---
+
+<section
+  class={`full-image-section grid grid-cols-1 text-black gap-[50px] ${gapColLg} ${sectionClass}`}
+  data-menu-color={menuColor}
+>
+  <div class="order-2 lg:order-2 px-[39px] lg:px-[129px]">
+    {
+      !isEnglishTitle && (
+        <h2 class="text-[19px] lg:text-[27px] leading-[39px] whitespace-pre-line">
+          {title}
+        </h2>
+      )
+    }
+    {
+      isEnglishTitle && (
+        <h2 class="text-[35px] lg:text-[43px] font-URWClassico leading-none">
+          {title}
+        </h2>
+      )
+    }
+
+    {
+      subtitle && (
+        <div class="text-[15px] lg:text-[17px] mt-[20px] lg:mt-[15.5px]">
+          {subtitle}
+        </div>
+      )
+    }
+
+    <p
+      class="text-[13px] lg:text-[14px] leading-[28px] lg:leading-[33px] whitespace-pre-line pt-[40px] lg:pt-[55px] max-w-[845px]"
+      set:html={content}
+    />
+  </div>
+
+  <div
+    class=`${heightImg} order-1 lg:order-1 ${reverse ? (uniformStyle ? "ps-[39px]" : "ps-[39px] lg:ps-[128px]") : (uniformStyle ? "pe-[39px]" : "pe-[39px] lg:pe-[128px]")}`
+  >
+    {
+      images.length > 1 ? (
+        <HeroSwiper
+          className="w-full h-full object-cover object-center"
+          imageClass={imageClass}
+          images={images}
+          showPagination={showPagination}
+        />
+      ) : (
+        images[0] && (
+          <img
+            src={images[0].src}
+            alt={images[0].alt}
+            class={`w-full h-full object-cover object-center ${imageClass}`}
+          />
+        )
+      )
+    }
+  </div>
+</section>

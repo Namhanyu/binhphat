@@ -1,0 +1,132 @@
+---
+interface Props {
+  index: number;
+  label: string;
+  title: string;
+  subtitle?: string;
+  content: string;
+  imageSrc: string | string[];
+  link: string;
+  reverse?: boolean;
+  changeColor?: boolean;
+  sectionClass?: string;
+  menuColor?: string;
+}
+
+const {
+  index,
+  label,
+  title,
+  subtitle = "",
+  content,
+  imageSrc,
+  link,
+  reverse = false,
+  changeColor = false,
+  sectionClass,
+  menuColor = "white",
+} = Astro.props as Props;
+
+const idx = String(index).padStart(2, "0");
+
+let images: Array<{
+  src: string;
+  alt?: string;
+}> = [];
+
+if (Array.isArray(imageSrc)) {
+  images = imageSrc.map((src) => ({ src, alt: title }));
+} else if (typeof imageSrc === "string" && imageSrc) {
+  images = [{ src: imageSrc, alt: title }];
+}
+
+import ReadMore from "../atoms/ReadMoreButton.astro";
+import HeroSwiper from "../molecules/HeroSwiper.astro";
+---
+
+<section
+  class={`feature-section grid lg:grid-cols-2 gap-0 text-black ${sectionClass} ${reverse ? "lg:gap-[111px]" : "lg:gap-[132px] "}`}
+  data-menu-color={menuColor}
+>
+  <div
+    class={`feature-content flex flex-col justify-between pt-[50px] pb-0 lg:pb-[86px] px-[25px] lg:px-0 ${reverse ? "order-2 lg:order-2" : "lg:ps-[108px] order-2 lg:order-1"}`}
+  >
+    <div>
+      <div class="flex items-center gap-[8px] leading-[18px]">
+        <span class="text-[12px] lg:text-[11px] font-URWClassico">{idx}</span>
+        <span class="w-[37px] lg:w-[46px] border-t border-black"></span>
+        <span class="text-[13px] lg:text-[15px] font-URWClassico">{label}</span>
+      </div>
+
+      <div
+        class={`pt-[35px] lg:pt-[45px] px-[15px] lg:px-0 ${reverse ? "lg:ps-[21px] lg:pe-[124px]" : "lg:ps-[20px]"}`}
+      >
+        <h2 class="text-[35px] lg:text-[43px] leading-[1] font-URWClassico">
+          {title}
+        </h2>
+
+        {
+          subtitle && (
+            <p class="text-[15px] lg:text-[20px] leading-[26px] lg:leading-[38px] pt-[20px] lg:pt-[30px]">
+              {subtitle}
+            </p>
+          )
+        }
+        <p
+          class="text-[13px] lg:text-[14px] leading-[28px] lg:leading-[33px] pt-[40px] whitespace-pre-line"
+        >
+          {content}
+        </p>
+      </div>
+    </div>
+
+    <div
+      class={`px-[15px] lg:px-0 pt-[42px] lg:pt-0 group ${
+        reverse ? "lg:ps-[21px] lg:pe-[124px]" : "lg:ps-[20px]"
+      }`}
+    >
+      <ReadMore link={link} />
+    </div>
+  </div>
+
+  <div
+    class={`feature-image ${reverse ? "order-1 lg:order-1 ps-[39px] lg:ps-0" : "order-1 lg:order-2 pe-[39px] lg:pe-0"}`}
+    class:list={{
+      "justify-items-end": reverse,
+    }}
+  >
+    <div class="relative lg:w-full h-[385px] lg:h-[675px]">
+      {
+        images.length > 1 ? (
+          <HeroSwiper
+            className="w-full h-full object-cover object-center"
+            images={images}
+            showPagination={true}
+          />
+        ) : (
+          images[0] && (
+            <img
+              src={images[0].src}
+              alt={images[0].alt}
+              class="w-full h-full object-cover object-center"
+            />
+          )
+        )
+      }
+      <div
+        class={`absolute top-[74px] rotate-90 lg:origin-top-left ${reverse ? "left-[-105px] lg:left-[65px]" : "right-[-99px] lg:right-[-150px]"}`}
+      >
+        <div class="flex items-center gap-[14px]">
+          <span
+            class={`text-[15px] leading-[50px] font-URWClassico ${changeColor ? "text-black lg:text-white" : "text-black"}`}
+          >
+            {idx} – {title}
+          </span>
+          <span
+            class={`w-[89px] lg:w-[145px] border-t ${changeColor ? "border-black lg:border-white" : "border-black "}`}
+          ></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

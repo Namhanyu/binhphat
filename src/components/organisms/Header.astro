@@ -1,0 +1,14 @@
+---
+import SlidingMenu from "../molecules/SlidingMenu.astro";
+import Menu from "../molecules/Menu.astro";
+
+const { isRestaurant = false } = Astro.props;
+---
+
+<header
+  class="fixed right-[39px] md:right-16 z-50 flex items-center justify-end pt-[31px] md:pt-12 h-fit"
+>
+  <Menu />
+
+  <SlidingMenu isRestaurant={isRestaurant} />
+</header>

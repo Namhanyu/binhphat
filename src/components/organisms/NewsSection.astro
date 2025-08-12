@@ -1,0 +1,55 @@
+---
+interface NewsItem {
+  date: string;
+  title: string;
+  href: string;
+}
+
+interface Props {
+  title: string;
+  subtitle: string;
+  newsItems: NewsItem[];
+  readMoreHref: string;
+  menuColor?: string;
+}
+
+const { title, subtitle, newsItems, readMoreHref, menuColor = "white" } = Astro.props;
+
+import ReadMore from "../atoms/ReadMoreButton.astro";
+---
+
+<section
+  class="news-section lg:pt-[131px] lg:pr-[128px] lg:pb-[108px] pb-[120px] pt-[70px] pr-[39px] text-black"
+  data-menu-color={menuColor}
+>
+  <div
+    class="bg-white lg:px-[128px] lg:pt-[96.62px] lg:pb-[123px] px-[39px] pt-[50px] pb-[100px]"
+  >
+    <div
+      class="text-black font-URWClassico lg:text-[43px] text-[35px] tracking-[2.2px] leading-none"
+    >
+      {title}
+    </div>
+    <div class="text-black mt-[39.68px] lg:text-[20px] text-[15px]">
+      <div class="font-medium leading-none">{subtitle}</div>
+      <ul class="space-y-4 mt-[38.6px]">
+        {
+          newsItems.map((item) => (
+            <li class="news-item">
+              <div class="flex flex-col items-start text-[14px] leading-[30px]">
+                <span>{item.date}</span>
+                <a href={item.href} class="group inline-block">
+                  <span class="group-hover:underline">{item.title}</span>
+                </a>
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div class="pt-[79px] lg:pt-[101.5px]">
+      <ReadMore link={readMoreHref} />
+    </div>
+  </div>
+</section>

@@ -1,0 +1,128 @@
+---
+const {
+  title = "Hamanako - Les Quatre Saisons - Auberge",
+  isRestaurant = false,
+} = Astro.props;
+import "../styles/global.css";
+import "../styles/common.css";
+
+import Header from "../components/organisms/Header.astro";
+import Footer from "../components/organisms/Footer.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- HTML Meta Tags -->
+    <title>{title}</title>
+    <meta
+      name="description"
+      content="Hamanako - Les Quatre Saisons - Auberge"
+    />
+
+    <!-- Google / Search Engine Tags -->
+    <meta itemprop="name" content="Hamanako - Les Quatre Saisons - Auberge" />
+    <meta
+      itemprop="description"
+      content="Hamanako - Les Quatre Saisons - Auberge"
+    />
+    <meta
+      itemprop="image"
+      content="https://hamanako-dev.vercel.app/images/homepage/hero_1.webp"
+    />
+
+    <!-- Facebook Meta Tags -->
+    <meta property="og:url" content="https://hamanako-dev.vercel.app/" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Hamanako - Les Quatre Saisons - Auberge"
+    />
+    <meta
+      property="og:description"
+      content="Hamanako - Les Quatre Saisons - Auberge"
+    />
+    <meta
+      property="og:image"
+      content="https://hamanako-dev.vercel.app/images/homepage/hero_1.webp"
+    />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Hamanako - Les Quatre Saisons - Auberge"
+    />
+    <meta
+      name="twitter:description"
+      content="Hamanako - Les Quatre Saisons - Auberge"
+    />
+    <meta
+      name="twitter:image"
+      content="https://hamanako-dev.vercel.app/images/homepage/hero_1.webp"
+    />
+  </head>
+  <body class="overflow-x-hidden">
+    <Header isRestaurant={isRestaurant} />
+    <slot />
+    <Footer isRestaurant={isRestaurant} />
+  </body>
+</html>
+
+<style>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: #f4f1ef;
+    letter-spacing: 0.02em;
+  }
+</style>
+
+<script type="module" is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuLabel = document.querySelector("#fixed-menu .menu-label");
+    const menuLine1 = document.querySelector("#fixed-menu .menu-first-line");
+    const menuLine2 = document.querySelector("#fixed-menu .menu-second-line");
+    const sections = document.querySelectorAll("[data-menu-color]");
+    const header = document.querySelector("#fixed-menu");
+
+    const headerHeight = header ? header.offsetHeight : 0;
+
+    function applyColor(color) {
+      const isBlack = color === "black";
+      menuLabel.classList.toggle("text-black", isBlack);
+      menuLabel.classList.toggle("text-white", !isBlack);
+      if (menuLine1 && menuLine2) {
+        menuLine1.classList.toggle("bg-black", isBlack);
+        menuLine1.classList.toggle("bg-white", !isBlack);
+        menuLine2.classList.toggle("bg-black", isBlack);
+        menuLine2.classList.toggle("bg-white", !isBlack);
+      }
+    }
+
+    if (sections.length) applyColor(sections[0].dataset.menuColor);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            applyColor(entry.target.dataset.menuColor);
+          }
+        });
+      },
+      {
+        rootMargin: `-${headerHeight}px 0px -100% 0px`,
+        threshold: 0,
+      }
+    );
+
+    sections.forEach((sec) => observer.observe(sec));
+  });
+</script>

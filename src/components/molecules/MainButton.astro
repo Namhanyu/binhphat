@@ -1,0 +1,50 @@
+---
+import { Icon } from "astro-icon/components";
+const {
+  title = "",
+  subTitle = "",
+  description = "",
+  link = "",
+  class: className,
+  buttonClass,
+  variant = "default",
+  showLine = true,
+  descriptionClass = "text-xs",
+} = Astro.props;
+
+import TextWithLine from "../atoms/TextWithLine.astro";
+---
+
+<a href={link} class={`group w-full transition-all duration-300 ${className}`}>
+  <div class="space-y-1">
+    {
+      subTitle && (
+        <TextWithLine text={subTitle} variant={variant} showLine={showLine} />
+      )
+    }
+
+    <div class="space-y-1" class:list={buttonClass}>
+      {
+        description && (
+          <p
+            class="font-light tracking-[0] md:tracking-[0.02em] leading-relaxed whitespace-nowrap text-left"
+            class:list={descriptionClass}
+          >
+            {description}
+          </p>
+        )
+      }
+
+      <div class="flex items-center justify-between gap-1">
+        <p class="text-base font-URWClassico font-light tracking-wider">
+          {title}
+        </p>
+
+        <Icon
+          name="right-arrow"
+          class="w-6 h-2 transition-transform duration-300 group-hover:translate-x-2"
+        />
+      </div>
+    </div>
+  </div>
+</a>

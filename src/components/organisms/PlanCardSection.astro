@@ -1,0 +1,205 @@
+---
+interface Props {
+  title: string;
+  subtitle: string;
+  price?:
+    | string
+    | {
+        note?: string;
+        details?: Array<{
+          label: string;
+          value: string;
+        }>;
+      };
+  menu?: Array<{
+    name: string;
+    description: string;
+  }>;
+  content: string;
+  imageSrc: string | string[];
+  featureLink?: {};
+  sectionClass?: string;
+  customSubtitleClass?: boolean;
+  reverse?: boolean;
+  id?: string;
+}
+
+const {
+  title,
+  subtitle,
+  price,
+  menu,
+  content,
+  imageSrc,
+  featureLink,
+  sectionClass,
+  customSubtitleClass = false,
+  reverse = false,
+  id,
+} = Astro.props as Props;
+
+let images: Array<{
+  src: string;
+  alt?: string;
+}> = [];
+
+if (Array.isArray(imageSrc)) {
+  images = imageSrc.map((src) => ({ src, alt: title }));
+} else if (typeof imageSrc === "string" && imageSrc) {
+  images = [{ src: imageSrc, alt: title }];
+}
+
+import HeroSwiper from "../molecules/HeroSwiper.astro";
+import MainButton from "../molecules/MainButton.astro";
+---
+
+<section
+  id={id}
+  class={`plan-card-section flex flex-col lg:flex-row justify-between text-black bg-[#F4F1EF] ${sectionClass}`}
+>
+  <div
+    class={`w-full lg:w-[50%] flex flex-col justify-between gap-[80px] lg:gap-0 pe-[39px] pt-[50px] lg:pt-[0] ${reverse ? "order-2 lg:order-2 lg:pe-[128px] ps-[40px] lg:ps-0" : "order-2 lg:order-1 ps-[40px] lg:ps-[128px] lg:pe-0"}`}
+  >
+    <div class="flex flex-col">
+      <div class="plan-title flex justify-between pb-[28px]">
+        <div>
+          <h2
+            class="text-[30px] lg:text-[27px] leading-[42px] lg:leading-[33px] font-URWClassico"
+          >
+            {title}
+          </h2>
+          <p
+            class={`text-[14px] leading-[32px] lg:leading-[33px] ${customSubtitleClass ? "lg:text-[14px]" : "lg:text-[12px]"}`}
+          >
+            {subtitle}
+          </p>
+        </div>
+        {
+          price &&
+            (typeof price === "string" ? (
+              <p class="hidden lg:block text-[20px] leading-[22px] font-URWClassico">
+                {price}
+              </p>
+            ) : (
+              <div class="hidden lg:flex flex-col gap-[17px] items-end">
+                {Array.isArray(price.details) && price.details.length > 0 && (
+                  <div class="flex flex-col gap-[9px]">
+                    {price.details.map((detail) => (
+                      <div class="flex justify-between items-baseline gap-[23px]">
+                        <span class="text-[14px] leading-[22px]">
+                          {detail.label}
+                        </span>
+                        <span class="text-[20px] leading-[22px] font-URWClassico">
+                          {detail.value}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {price.note && (
+                  <p class="text-[14px] leading-[22px]">{price.note}</p>
+                )}
+              </div>
+            ))
+        }
+      </div>
+
+      <div
+        class={`flex justify-between ${typeof price === "string" ? "items-center" : "items-baseline"}`}
+      >
+        <hr class="w-[45px] border-[#0B2A33]" />
+        {
+          price &&
+            (typeof price === "string" ? (
+              <p class="lg:hidden text-[18px] leading-[22px] font-URWClassico">
+                {price}
+              </p>
+            ) : (
+              <div class="lg:hidden flex flex-col gap-[5px] items-end">
+                {Array.isArray(price.details) && price.details.length > 0 && (
+                  <div class="flex flex-col">
+                    {price.details.map((detail) => (
+                      <div class="flex items-baseline gap-[15px]">
+                        <span class="text-[12px] leading-[22px]">
+                          {detail.label}
+                        </span>
+                        <span class="text-[18px] leading-[22px] font-URWClassico">
+                          {detail.value}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {price.note && (
+                  <p class="text-[12px] leading-[22px]">{price.note}</p>
+                )}
+              </div>
+            ))
+        }
+      </div>
+
+      {
+        menu && (
+          <div class="plan-content pt-[38px] lg:pt-[50px] flex flex-col gap-[40px]">
+            {menu.map((item) => (
+              <div>
+                <h3 class="text-[18px] leading-[30px] font-URWClassico">
+                  {item.name}
+                </h3>
+                <hr class="lg:w-[442px] border-[#0B2A33] my-[10px]" />
+                <p
+                  class="text-[13px] lg:text-[14px] leading-[30px]"
+                  set:html={item.description}
+                />
+              </div>
+            ))}
+          </div>
+        )
+      }
+
+      <div
+        class={`plan-content text-[13px] lg:text-[14px] leading-[28px] lg:leading-[30px] whitespace-pre-line ${menu ? "pt-[40px] lg:pt-[50px]" : "pt-[50px]"}`}
+        set:html={content}
+      />
+    </div>
+
+    {
+      featureLink && (
+        <div
+          class={`feature-link ${reverse ? "text-start lg:text-end" : "text-start"}`}
+        >
+          <div class="inline-block min-w-[239px] lg:w-[310px]">
+            <MainButton
+              {...featureLink}
+              variant="black text-[10px] lg:text-[12px] leading-[15px] lg:leading-[17px]"
+              buttonClass="ps-[13px] pe-[15px] py-[7px] lg:py-[9px] border border-black flex flex-col gap-[7px]"
+              descriptionClass="text-[10px] lg:text-[11px] leading-[14px] lg:leading-[16px]"
+            />
+          </div>
+        </div>
+      )
+    }
+  </div>
+
+  <div
+    class={`plan-image w-full lg:w-[50%] h-[385px] lg:h-[709px] ${reverse ? "order-1 lg:order-1 ps-[39px] lg:ps-0 lg:pe-[122px]" : "order-1 lg:order-2 pe-[39px] lg:pe-0 lg:ps-[122px]"}`}
+  >
+    {
+      images.length > 1 ? (
+        <HeroSwiper
+          className="w-full h-full object-cover object-center"
+          images={images}
+          showPagination={true}
+        />
+      ) : (
+        images[0] && (
+          <img
+            src={images[0].src}
+            alt={images[0].alt}
+            class="w-full h-full object-cover object-center"
+          />
+        )
+      )
+    }
+  </div>
+</section>

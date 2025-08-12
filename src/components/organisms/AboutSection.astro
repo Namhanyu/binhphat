@@ -1,0 +1,78 @@
+---
+interface AboutSectionProps {
+  index?: string;
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  backgroundImage?: string;
+  backgroundClass?: string;
+  minHeight?: string;
+  content?: string[];
+  menuColor?: string;
+}
+
+const {
+  title,
+  subtitle,
+  description,
+  backgroundImage,
+  content,
+  index,
+  backgroundClass,
+  minHeight = "800px",
+  menuColor = "white",
+} = Astro.props as AboutSectionProps;
+---
+
+<section
+  class={`about-section relative w-full h-max min-h-[${minHeight}] z-[2] max-md:min-h-[466px] bg-cover bg-center bg-no-repeat ${backgroundClass}`}
+  style={backgroundImage
+    ? `background-image: url('${backgroundImage}'); background-attachment: fixed;`
+    : undefined}
+  data-menu-color={menuColor}
+>
+  <div
+    class={`absolute inset-0 w-full h-full bg-cover bg-no-repeat bg-left pointer-events-none z-[3] ${backgroundClass}`}
+    style="background-image: url('/images/black_shadow.svg');"
+  >
+  </div>
+
+  <div
+    class={`relative z-[4] w-full h-full min-h-[${minHeight}] flex flex-col justify-center
+      px-[8rem] py-[6rem]
+      max-md:px-[3rem] max-md:py-[6rem] max-md:min-h-[466px]
+      max-xs:px-[2.5rem] max-xs:py-[4.4rem]`}
+  >
+    {
+      description && (
+        <h3 class="page-hero-description font-URWClassico">{description}</h3>
+      )
+    }
+
+    {title && <h1 class="page-hero-head-en font-URWClassico">{title}</h1>}
+
+    {subtitle && <h2 class="page-hero-head-ja" set:html={subtitle} />}
+
+    {
+      content &&
+        content.map((paragraph) => (
+          <p class="page-hero-content" set:html={paragraph} />
+        ))
+    }
+
+    <slot name="other-content" />
+
+    {
+      index && (
+        <div class="absolute top-[150px] rotate-90 right-[-60px] md:right-[-20px]">
+          <div class="flex items-center gap-[14px]">
+            <span class="text-[15px] leading-[50px] font-URWClassico text-white">
+              {index}
+            </span>
+            <span class="w-[89px] lg:w-[145px] border-t border-white" />
+          </div>
+        </div>
+      )
+    }
+  </div>
+</section>

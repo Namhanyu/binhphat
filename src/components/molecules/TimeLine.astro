@@ -1,0 +1,38 @@
+---
+interface Props {
+  openTime?: string;
+  closeTime?: string;
+  note?: string;
+  content?: string;
+  className?: string;
+  theme?: string;
+}
+const {
+  className = "",
+  theme = "light",
+  openTime = "open 17：30",
+  closeTime = "close 22：00",
+  note = "（l.o 20：00）",
+  content = "キャッチコピーテキストが入りますキャッチコピーテキストが入りますキャッチコピーテキストが入りますキャッチコピーテキストが入りますキャッチコピーテキストが入りますキャッチコピーテキストが入りますキャッチコピーテキストが入りますキャッチコピーテキストが入りますキャッチコピーテキストが入りますキャッチコピーテキストが入りますキャッチコピーテキストが入ります",
+} = Astro.props as Props;
+
+const textColor = theme === "dark" ? "text-white/80" : "text-black/80";
+const dividerColor = theme === "dark" ? "bg-white" : "bg-black";
+const backgroundColor = theme === "dark" ? "bg-white/[17%]" : "bg-white/[53%]";
+---
+
+<div
+  class={`timeline-content ${backgroundColor} px-[128px] pt-[71px] pb-[131px] max-md:px-[39px] max-md:pt-[30px] max-md:pb-[100px] ${className}`}
+>
+  <div class="flex gap-[15px] items-center mb-6 flex-wrap">
+    <div class="flex items-center gap-2">
+      <div class={`text-[20px] ${textColor}`}>{openTime}</div>
+      <div class={`w-[45.5px] h-px ${dividerColor} mt-[5px]`}></div>
+    </div>
+    <div class="flex items-center gap-2">
+      <div class={`text-[20px] ${textColor}`}>{closeTime}</div>
+      <div class={`text-xs ${textColor}`}>{note}</div>
+    </div>
+  </div>
+  <div class={`leading-[27px] text-[13px] ${textColor}`} set:html={content} />
+</div>

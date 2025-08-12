@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --pale-ash: 24 18.52% 94.71%;
+    --black: 193.5 64.52% 12.16%;
+    --white: 0 0% 100%;
+    --gray: 193.55 14.42% 42.16%;
+    --smoke-white: 20 12.5% 90.59%;
+    --background: 0 0% 100%;
+    --foreground: 192.73 26.83% 24.12%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 41.71deg 83.33% 50.59%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 41.71deg 83.33% 50.59%;
+    --radius: 1rem;
+  }
+
+  .dark {
+    --pale-ash: 24 18.52% 94.71%;
+    --black: 193.5 64.52% 12.16%;
+    --white: 0 0% 100%;
+    --gray: 193.55 14.42% 42.16%;
+    --smoke-white: 20 12.5% 90.59%;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 217 91% 60%;
+  }
+}
+
+@font-face {
+  font-family: "Classico URW";
+  src: url("/fonts/Classico_URW.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Classico URW";
+  src: url("/fonts/Classico_URW_Regular_Italic.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Medium */
+@font-face {
+  font-family: "Classico URW";
+  src: url("/fonts/Classico_URW_Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Classico URW";
+  src: url("/fonts/Classico_URW_Medium_Italic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Bold */
+@font-face {
+  font-family: "Classico URW";
+  src: url("/fonts/Classico_URW_Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Classico URW";
+  src: url("/fonts/Classico_URW_Bold_Italic.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Black */
+@font-face {
+  font-family: "Classico URW";
+  src: url("/fonts/Classico_URW_Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Zen Old Mincho";
+  src: url("/fonts/ZenOldMincho-Black.ttf") format("truetype");
+  font-weight: 900; /* Black */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Zen Old Mincho";
+  src: url("/fonts/ZenOldMincho-Bold.ttf") format("truetype");
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Zen Old Mincho";
+  src: url("/fonts/ZenOldMincho-SemiBold.ttf") format("truetype");
+  font-weight: 600; /* SemiBold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Zen Old Mincho";
+  src: url("/fonts/ZenOldMincho-Medium.ttf") format("truetype");
+  font-weight: 500; /* Medium */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Zen Old Mincho";
+  src: url("/fonts/ZenOldMincho-Regular.ttf") format("truetype");
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "sans-serif";
+  src: local("sans-serif");
+  ascent-override: 105%;
+  descent-override: 35%;
+  line-gap-override: 10%;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  * {
+    @apply border-[hsl(var(--border))];
+  }
+  body {
+    @apply bg-[hsl(var(--default))] font-ZenOldMincho text-default;
+  }
+}

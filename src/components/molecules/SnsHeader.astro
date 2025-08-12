@@ -1,0 +1,52 @@
+---
+import { Icon } from "astro-icon/components";
+
+const { class: className, variant = "white" } = Astro.props;
+const currentPath = Astro.url.pathname;
+
+const blackVariantUrls = [
+  "/food",
+  "/restaurant",
+  "/restaurant/lunch",
+  "/restaurant/others",
+];
+
+const normalizedPath =
+  currentPath.endsWith("/") && currentPath.length > 1
+    ? currentPath.slice(0, -1)
+    : currentPath;
+
+let color = "";
+if (variant === "white") {
+  color = "text-white";
+
+  if (blackVariantUrls.includes(normalizedPath)) {
+    color = "text-black";
+  }
+} else {
+  color = "text-black";
+}
+---
+
+<div class={`flex flex-col gap-2 md:gap-3 ${className}`}>
+  <a
+    href="https://www.facebook.com/quatremariage"
+    target="_blank"
+    aria-label="facebook"
+  >
+    <Icon
+      name="mdi:facebook"
+      class={color + " w-[25px] h-[25px] md:w-6 md:h-6"}
+    />
+  </a>
+  <a
+    href="https://www.instagram.com/quatresaisons.restaurant/?hl=ja"
+    target="_blank"
+    aria-label="instagram"
+  >
+    <Icon
+      name="mdi:instagram"
+      class={color + " w-[25px] h-[25px] md:w-6 md:h-6"}
+    />
+  </a>
+</div>

@@ -1,0 +1,26 @@
+---
+interface Props {
+  link: string;
+  isWhite?: boolean;
+  text?: string;
+}
+
+const { link, isWhite = false, text = "read more" } = Astro.props as Props;
+
+import RightArrow from "../atoms/Icons/RightArrow.astro";
+---
+
+<a
+  href={link}
+  class={`group flex items-center justify-between w-[240px] lg:w-[310px] leading-[24px] font-URWClassico pb-[17px] border-b ${isWhite ? "text-white border-white" : "text-black border-black"}`}
+  aria-label={`Read more about ${link}`}
+  title={`Read more about ${link}`}
+>
+  <span class="text-[16px] lg:text-[18px]">
+    {text}
+    <span class="visually-hidden">{link}</span>
+  </span>
+  <RightArrow
+    class="w-[15px] h-2 transition-transform duration-300 group-hover:translate-x-2"
+  />
+</a>

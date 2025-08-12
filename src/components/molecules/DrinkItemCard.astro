@@ -1,0 +1,26 @@
+---
+import DrinkItemDisplay from "./DrinkItemDisplay.astro";
+import DrinkItemPrice from "./DrinkItemPrice.astro";
+import type { DrinkItem } from "../../types/drink";
+
+interface Props {
+  item: DrinkItem;
+  drinkListType?: "default" | "flex" | "cols-3";
+}
+
+const { item, drinkListType } = Astro.props as Props;
+---
+
+<div class={`drink-item bg-white ${drinkListType === "flex" || item.note ? "w-full" : ""}`}>
+  <div class="flex justify-between items-start">
+    <DrinkItemDisplay 
+      name={item.name} 
+      nameJa={item.nameJa} 
+      className="flex-1" 
+    />
+    <DrinkItemPrice 
+      price={item.price} 
+      className="ml-[15px] flex-shrink-0" 
+    />
+  </div>
+</div>

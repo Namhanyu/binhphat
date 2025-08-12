@@ -1,0 +1,141 @@
+---
+interface PriceItem {
+  label: string;
+  value: string;
+}
+
+interface Props {
+  category: string;
+  categoryEn?: string;
+  priceList: PriceItem[];
+  location?: string;
+  producer?: string;
+  type?: string;
+  description: string;
+  note?: string;
+  imageSrc: string;
+  imageAlt?: string;
+  sectionClass?: string;
+}
+
+const {
+  category,
+  categoryEn,
+  priceList,
+  location,
+  producer,
+  type,
+  description,
+  note,
+  imageSrc,
+  imageAlt = "",
+  sectionClass = "",
+} = Astro.props as Props;
+---
+
+<section
+  class={`tea-pairing-section text-black ps-[39px] lg:ps-[129px] ${sectionClass}`}
+>
+  <div class="flex justify-between items-center gap-[122px]">
+    <div class="flex flex-col justify-center w-full lg:w-[60%] h-full">
+      <div class="flex items-center gap-[8px] justify-between">
+        <div class="mb-[25px] lg:mb-[35px] lg:flex lg:items-center">
+          <div
+            class="tea-title grid grid-cols-1 gap-[8px] mb-[15px] lg:mb-[20px] w-[100px]"
+          >
+            <span class="text-[13px] lg:text-[15px]">
+              {category}
+            </span>
+            {
+              categoryEn && (
+                <span class="text-[12px] lg:text-[20px] leading-[18px] lg:leading-[22px] font-URWClassico">
+                  {categoryEn}
+                </span>
+              )
+            }
+          </div>
+
+          <div
+            class="tea-detail space-y-[8px] lg:space-y-[10px] ps-[20px] border border-l-black border-t-0 border-b-0 border-r-0"
+          >
+            {
+              priceList.map((item) => (
+                <div class="flex justify-between items-center pb-[4px]">
+                  <span class="text-[13px] lg:text-[15px] me-[44px] lg:me-[56px]">
+                    {item.label}
+                  </span>
+                  <span class="text-[14px] leading-[22px] lg:text-[20px] lg:leading-[24px]">
+                    {item.value}
+                  </span>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="w-[40%] block lg:hidden">
+          <img
+            src={imageSrc}
+            alt={imageAlt}
+            class="w-full h-full min-h-[128px] object-cover object-center"
+          />
+        </div>
+      </div>
+
+      <div class="tea-content ps-0 pe-[39px] lg:ps-[117px] lg:pe-[0]">
+        <div
+          class="mb-[25px] lg:mb-[35px] text-[13px] leading-[28px] lg:text-[14px] lg:leading-[33px] space-y-[4px]"
+        >
+          {
+            location && (
+              <div>
+                <span>産地：</span>
+                {location}
+              </div>
+            )
+          }
+          {
+            producer && (
+              <div>
+                <span>生産者：</span>
+                {producer}
+              </div>
+            )
+          }
+          {
+            type && (
+              <div>
+                <span>タイプ：</span>
+                {type}
+              </div>
+            )
+          }
+        </div>
+
+        <p
+          class="text-[13px] leading-[28px] lg:text-[14px] lg:leading-[33px] whitespace-pre-line"
+        >
+          {description}
+        </p>
+
+        {
+          note && (
+            <br/>
+            <br/>
+            <div class="text-[13px] leading-[28px] lg:text-[14px] lg:leading-[33px] ">
+              {note}
+            </div>
+          )
+        }
+      </div>
+    </div>
+
+    <div class="w-[40%] h-full hidden lg:block relative min-h-[523px]">
+      <img
+        src={imageSrc}
+        alt={imageAlt}
+        class="tea-image absolute inset-0 w-full ms-auto h-full object-cover"
+      />
+    </div>
+  </div>
+</section>

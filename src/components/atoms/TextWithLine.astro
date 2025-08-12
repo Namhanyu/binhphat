@@ -1,0 +1,13 @@
+---
+const { text = "", variant = "default", showLine = true } = Astro.props;
+---
+
+<div class="flex items-center justify-start gap-4">
+  <p
+    class="text-[10px] heading-[15px] font-light tracking-wide whitespace-nowrap"
+    class:list={`text-${variant}`}
+  >
+    {text}
+  </p>
+  {showLine && <div class="w-full flex-1 h-px" class:list={`bg-${variant}`} />}
+</div>

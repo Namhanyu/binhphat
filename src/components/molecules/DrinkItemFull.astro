@@ -1,0 +1,38 @@
+---
+import DrinkItemDisplay from "./DrinkItemDisplay.astro";
+import DrinkItemNote from "./DrinkItemNote.astro";
+import DrinkItemPrice from "./DrinkItemPrice.astro";
+import type { DrinkItem } from "../../types/drink";
+
+interface Props {
+  item: DrinkItem;
+}
+
+const { item } = Astro.props as Props;
+---
+
+<>
+  <div class={`grid grid-cols-1 lg:flex items-center w-full mt-[30px] lg:mt-[68.5px] gap-[20px] lg:gap-[50px] ${item.note ? "" : "justify-between"}`}>
+    <DrinkItemDisplay name={item.name} nameJa={item.nameJa} />
+    
+    <div class="flex flex-1 items-center justify-between">
+      {item.note ? (
+        <>
+          <DrinkItemNote note={item.note} />
+          {!Array.isArray(item.note) && (
+            <DrinkItemPrice price={item.price} />
+          )}
+        </>
+      ) : (
+        <DrinkItemPrice price={item.price} />
+      )}
+    </div>
+  </div>
+
+  {item.showDivider && (
+    <div
+      class="border-t border-black my-[37px] lg:my-[50px] w-full"
+      style="border-top-width:0.6px"
+    />
+  )}
+</>
