@@ -11,10 +11,6 @@ module.exports = {
       },
     },
     extend: {
-      fontFamily: {
-        URWClassico: ["Classico URW", "sans-serif"],
-        ZenOldMincho: ["Zen Old Mincho", "sans-serif"],
-      },
       colors: {
         default: "hsl(var(--pale-ash))",
         black: "hsl(var(--black))",

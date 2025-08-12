@@ -6,6 +6,7 @@ import ThreePanelSection from "../components/organisms/ThreePanelSection.astro";
 import NewsSection from "../components/organisms/NewsSection.astro";
 import AboutSection from "../components/organisms/AboutSection.astro";
 import IntroductionSection from "../components/organisms/IntroductionSection.astro";
+import MetricsSection from "../components/organisms/MetricsSection.astro";
 
 const signatureFoodSection = {
   content: [
@@ -16,17 +17,6 @@ const signatureFoodSection = {
   title: "",
   reverse: true,
   changeColor: false,
-};
-
-const aboutSection = {
-  description: "about",
-  title: "les quatre saisons",
-  subtitle: "すべてが湖とともに在る<br />見晴らしのオーベルジュ",
-  content: [
-    `日常を離れ、一皿の感動に出会うために訪れる場所、「オーベルジュ」。\nただ泊まるための宿ではなく、食そのものを目的にした特別な体験—。\n旬の恵み、土地の香り、料理人の想いが一体となった食事を、\n静かに、贅沢に、味わい尽くすための場所。\n訪れるすべての人に、美食と癒しが響きあう非日常をお届けします。`,
-    `1982年に静岡県磐田市でレストランとして誕生し、1991年にオーベルジュと\nして現在の場所に移転した当館は、日本での先駆け的存在にして、浜名湖リ\nゾート唯一のオーベルジュ。浜名湖は自然豊かで温暖な気候、海水と淡水が\n混じり合うミネラル豊富な水質により800種類以上もの魚介類が生息し、\nこの豊富な恵みを巧みに紡ぎ、オーベルジュを極めるための理想の舞台。`,
-  ],
-  backgroundImage: "/images/homepage/about-first.webp",
 };
 
 const sections = [
@@ -69,22 +59,17 @@ const heroImages = [
   {
     src: "/images/homepage/hero_1.webp",
     alt: "Hero Image 1",
-    objectPosition: "md:object-center object-center",
+    objectPosition: "object-center",
   },
   {
     src: "/images/homepage/hero_2.webp",
     alt: "Hero Image 2",
-    objectPosition: "md:object-center object-[65%_0px]",
+    objectPosition: "object-center",
   },
-  // {
-  //   src: "/images/homepage/hero_3.webp",
-  //   alt: "Hero Image 3",
-  //   objectPosition: "md:object-center object-[-290px]",
-  // },
   {
     src: "/images/story/panorama_synthesis.webp",
     alt: "Hero Image 4",
-    objectPosition: "md:object-center object-[5%]",
+    objectPosition: "object-center",
   },
 ];
 
@@ -138,20 +123,13 @@ const colorRanges = [
 ];
 ---
 
-<Layout
-  title="Hamanako - Les Quatre Saisons - Auberge"
-  colorRanges={colorRanges}
->
-  <div class="overflow-hidden">
+<Layout title="Bình Phát - Trang chủ" colorRanges={colorRanges}>
+  <div class="snap-mandatory snap-y [&>_*]:snap-start overflow-scroll h-screen">
     <HeroSection images={heroImages} />
 
-    <AboutSection
-      description={aboutSection.description}
-      title={aboutSection.title}
-      subtitle={aboutSection.subtitle}
-      content={aboutSection.content}
-      backgroundImage={aboutSection.backgroundImage}
-    />
+    <AboutSection />
+
+    <MetricsSection />
 
     <IntroductionSection
       title={signatureFoodSection.title}

@@ -1,0 +1,24 @@
+---
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section class="bg-blue-800 h-screen flex items-center text-white">
+  <div class="flex-1">
+    <div class="max-w-[500px] mx-auto">
+      <h2 class="whitespace-pre-line text-[45px] font-black uppercase mb-4">
+        {t("about.title")}
+      </h2>
+      <p class="whitespace-pre-line text-justify mb-7">
+        {t("about.content")}
+      </p>
+      <button class="h-10 px-4 border-2 border-white uppercase font-semibold">
+        {t("about.button")}
+      </button>
+    </div>
+  </div>
+
+  <div class="flex flex-[2] h-full bg-white/25"></div>
+</section>

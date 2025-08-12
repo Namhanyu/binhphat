@@ -1,78 +1,54 @@
 ---
-interface AboutSectionProps {
-  index?: string;
-  title?: string;
-  subtitle?: string;
-  description?: string;
-  backgroundImage?: string;
-  backgroundClass?: string;
-  minHeight?: string;
-  content?: string[];
-  menuColor?: string;
-}
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
-const {
-  title,
-  subtitle,
-  description,
-  backgroundImage,
-  content,
-  index,
-  backgroundClass,
-  minHeight = "800px",
-  menuColor = "white",
-} = Astro.props as AboutSectionProps;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<section
-  class={`about-section relative w-full h-max min-h-[${minHeight}] z-[2] max-md:min-h-[466px] bg-cover bg-center bg-no-repeat ${backgroundClass}`}
-  style={backgroundImage
-    ? `background-image: url('${backgroundImage}'); background-attachment: fixed;`
-    : undefined}
-  data-menu-color={menuColor}
->
-  <div
-    class={`absolute inset-0 w-full h-full bg-cover bg-no-repeat bg-left pointer-events-none z-[3] ${backgroundClass}`}
-    style="background-image: url('/images/black_shadow.svg');"
-  >
+<section class="bg-blue-900 h-screen flex items-center text-white">
+  <div class="flex-1">
+    <div class="container max-w-[650px] ml-auto">
+      <div class="max-w-[500px] mx-auto">
+        <h2 class="whitespace-pre-line text-[45px] font-black uppercase mb-4">
+          {t("about.title")}
+        </h2>
+        <p class="whitespace-pre-line text-justify mb-7">
+          {t("about.content")}
+        </p>
+        <button class="h-10 px-4 border-2 border-white uppercase font-semibold">
+          {t("about.button")}
+        </button>
+      </div>
+    </div>
   </div>
 
-  <div
-    class={`relative z-[4] w-full h-full min-h-[${minHeight}] flex flex-col justify-center
-      px-[8rem] py-[6rem]
-      max-md:px-[3rem] max-md:py-[6rem] max-md:min-h-[466px]
-      max-xs:px-[2.5rem] max-xs:py-[4.4rem]`}
-  >
-    {
-      description && (
-        <h3 class="page-hero-description font-URWClassico">{description}</h3>
-      )
-    }
+  <div class="flex flex-1 h-full">
+    <div
+      class="flex-1 bg-white/25 h-full flex flex-col justify-end pl-[50px] pb-[86px]"
+    >
+      <a class="text-[24px] uppercase whitespace-pre-line mb-2 font-semibold">
+        {t("about.history")}
+      </a>
+      <svg width="68" height="18" viewBox="0 0 68 18">
+        <path
+          d="M0 9H65.5M65.5 9L56.5 1.5M65.5 9L56.5 16.5"
+          stroke="white"
+          stroke-width="2"></path>
+      </svg>
+    </div>
 
-    {title && <h1 class="page-hero-head-en font-URWClassico">{title}</h1>}
-
-    {subtitle && <h2 class="page-hero-head-ja" set:html={subtitle} />}
-
-    {
-      content &&
-        content.map((paragraph) => (
-          <p class="page-hero-content" set:html={paragraph} />
-        ))
-    }
-
-    <slot name="other-content" />
-
-    {
-      index && (
-        <div class="absolute top-[150px] rotate-90 right-[-60px] md:right-[-20px]">
-          <div class="flex items-center gap-[14px]">
-            <span class="text-[15px] leading-[50px] font-URWClassico text-white">
-              {index}
-            </span>
-            <span class="w-[89px] lg:w-[145px] border-t border-white" />
-          </div>
-        </div>
-      )
-    }
+    <div
+      class="flex-1 bg-white/20 h-full flex flex-col justify-end pl-[50px] pb-[86px]"
+    >
+      <a class="text-[24px] uppercase whitespace-pre-line mb-2 font-semibold">
+        {t("about.profile")}
+      </a>
+      <svg width="68" height="18" viewBox="0 0 68 18">
+        <path
+          d="M0 9H65.5M65.5 9L56.5 1.5M65.5 9L56.5 16.5"
+          stroke="white"
+          stroke-width="2"></path>
+      </svg>
+    </div>
   </div>
 </section>

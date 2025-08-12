@@ -16,7 +16,6 @@ const normalizedPath =
     ? currentPath.slice(0, -1)
     : currentPath;
 
-
 let color = "";
 if (variant === "white") {
   color = "text-white";
@@ -31,8 +30,8 @@ if (variant === "white") {
 
 <a
   href="/"
-  class="absolute top-[30px] left-[39px] md:top-[48px] md:left-16 z-20"
+  class="fixed top-[30px] left-1/2 -translate-x-1/2 md:top-[48px] z-20"
   aria-label="logo"
 >
-  <HeaderLogo class={`${color} w-[120px] h-[11px] md:w-[130px] md:h-31`} />
+  <HeaderLogo class={`${color} w-auto h-[60px]`} />
 </a>

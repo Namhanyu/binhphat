@@ -14,7 +14,6 @@
 }
 
 .page-hero-head-ja {
-  font-family: ZenOldMincho;
   font-size: 25px;
   line-height: 36px;
   color: #f4f1ef;
@@ -39,7 +38,6 @@
 }
 
 .page-hero-content {
-  font-family: ZenOldMincho;
   font-size: 14px;
   line-height: 33px;
   color: #f4f1ef;
@@ -117,4 +115,8 @@
   clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap; /* added line */
+}
+
+::-webkit-scrollbar {
+  display: none;
 }

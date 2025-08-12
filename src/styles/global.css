@@ -59,99 +59,6 @@
   }
 }
 
-@font-face {
-  font-family: "Classico URW";
-  src: url("/fonts/Classico_URW.otf") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Classico URW";
-  src: url("/fonts/Classico_URW_Regular_Italic.otf") format("opentype");
-  font-weight: 400;
-  font-style: italic;
-}
-
-/* Medium */
-@font-face {
-  font-family: "Classico URW";
-  src: url("/fonts/Classico_URW_Medium.otf") format("opentype");
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Classico URW";
-  src: url("/fonts/Classico_URW_Medium_Italic.otf") format("opentype");
-  font-weight: 500;
-  font-style: italic;
-}
-
-/* Bold */
-@font-face {
-  font-family: "Classico URW";
-  src: url("/fonts/Classico_URW_Bold.otf") format("opentype");
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Classico URW";
-  src: url("/fonts/Classico_URW_Bold_Italic.otf") format("opentype");
-  font-weight: 700;
-  font-style: italic;
-}
-
-/* Black */
-@font-face {
-  font-family: "Classico URW";
-  src: url("/fonts/Classico_URW_Black.otf") format("opentype");
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Zen Old Mincho";
-  src: url("/fonts/ZenOldMincho-Black.ttf") format("truetype");
-  font-weight: 900; /* Black */
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Zen Old Mincho";
-  src: url("/fonts/ZenOldMincho-Bold.ttf") format("truetype");
-  font-weight: 700; /* Bold */
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Zen Old Mincho";
-  src: url("/fonts/ZenOldMincho-SemiBold.ttf") format("truetype");
-  font-weight: 600; /* SemiBold */
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Zen Old Mincho";
-  src: url("/fonts/ZenOldMincho-Medium.ttf") format("truetype");
-  font-weight: 500; /* Medium */
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Zen Old Mincho";
-  src: url("/fonts/ZenOldMincho-Regular.ttf") format("truetype");
-  font-weight: 400; /* Regular */
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "sans-serif";
-  src: local("sans-serif");
-  ascent-override: 105%;
-  descent-override: 35%;
-  line-gap-override: 10%;
-}
-
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -160,6 +67,7 @@
     @apply border-[hsl(var(--border))];
   }
   body {
-    @apply bg-[hsl(var(--default))] font-ZenOldMincho text-default;
+    @apply bg-[hsl(var(--default))] text-default leading-[1.4];
+    font-family: Montserrat, sans-serif;
   }
 }
