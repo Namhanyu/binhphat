@@ -69,6 +69,17 @@ module.exports = {
         xl: ["1.25rem", { lineHeight: "1.375rem" }], // 20px
         "2xl": ["1.5rem", { lineHeight: "2rem" }], // 24px
         "5xl": ["3.25rem", { lineHeight: "3.5rem" }], // 52px
+        "6xl": ["4.5rem", { lineHeight: 1 }], // 72px
+      },
+      gap: {
+        17: "4.25rem", // 68px
+        18: "4.5rem", // 72px
+        19: "4.75rem", // 76px
+      },
+      width: {
+        17: "4.25rem", // 68px
+        18: "4.5rem", // 72px
+        19: "4.75rem", // 76px
       },
     },
   },

@@ -1602,6 +1602,11 @@ astro-icon@^1.1.5:
     "@iconify/types" "^2.0.0"
     "@iconify/utils" "^2.1.30"
 
+astro-show-tailwindcss-breakpoint@^1.0.9:
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/astro-show-tailwindcss-breakpoint/-/astro-show-tailwindcss-breakpoint-1.0.9.tgz#c53cd18db5dcfcd7fe32f76d64a26616eae33b9e"
+  integrity sha512-8KCaBSFzHC8JasFzgrMZQpC8d60P84/jMx3TMKmgoYBB7FCsJGcVXX2aS41/XmQtLHcN2lwOrjX5sy5VIou4gQ==
+
 astro@^4.0.6:
   version "4.16.18"
   resolved "https://registry.npmjs.org/astro/-/astro-4.16.18.tgz"
