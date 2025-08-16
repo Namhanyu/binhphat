@@ -6,7 +6,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<section id="contact" class="flex items-center min-h-screen">
+<section id="contact" class="flex items-center md:min-h-screen py-20">
   <div class="container mx-auto">
     <div class="max-w-[600px]">
       <h2
@@ -30,9 +30,12 @@ const t = useTranslations(lang);
           </h3>
           <div class="space-y-1">
             {t("contact.offices.hanoi")}<br />
-            {t("contact.offices.hcm")}<br /><br />
-            {t("contact.phone.email")}
+            {t("contact.offices.hcm")}
           </div>
+        </div>
+
+        <div>
+          {t("contact.phone.email")}
         </div>
 
         <div>
