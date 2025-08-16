@@ -3,6 +3,7 @@ import tailwind from "@astrojs/tailwind";
 import devtoolsJson from "vite-plugin-devtools-json";
 import icon from "astro-icon";
 import showTailwindCSSBreakpoint from "astro-show-tailwindcss-breakpoint";
+import react from "@astrojs/react";
 
 export default defineConfig({
   integrations: [
@@ -15,6 +16,7 @@ export default defineConfig({
       },
     }),
     showTailwindCSSBreakpoint(),
+    react(),
   ],
   vite: {
     plugins: [devtoolsJson()],

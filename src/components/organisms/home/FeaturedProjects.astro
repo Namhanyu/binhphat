@@ -1,0 +1,38 @@
+---
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+import ActionButton from "../../molecules/ActionButton.astro";
+import image02 from "../../../assets/images/02.webp";
+import image36 from "../../../assets/images/36.webp";
+import image37 from "../../../assets/images/37.webp";
+import image38 from "../../../assets/images/38.webp";
+import image39 from "../../../assets/images/39.webp";
+import ProjectList from "./ProjectList";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const projects = [
+  { name: "CÔNG TY\nTHỦY ĐIỆN SƠN LA", image: image02.src },
+  { name: "CÔNG TY\nTHỦY ĐIỆN LAI CHÂU", image: image36.src },
+  { name: "CÔNG TY\nTHỦY ĐIỆN HÒA BÌNH", image: image37.src },
+  { name: "CÔNG TY\nTHỦY ĐIỆN HUỘI QUẢNG – BẢN CHÁT", image: image38.src },
+  { name: "CÔNG TY TNHH\nCÔNG NGHIỆP BROTHER VIỆT NAM", image: image39.src },
+];
+---
+
+<section id="projects" class="min-h-screen pb-24 pt-40 flex bg-primary max-md:min-h-0">
+  <div class="container mx-auto flex flex-col">
+    <div class="mb-auto grid gap-4 justify-items-start">
+      <div
+        class="text-5xl max-md:text-3xl font-extrabold uppercase text-white mb-4 whitespace-pre-line"
+      >
+        {t("projects.title")}
+      </div>
+      <ActionButton class="text-white mb-12">
+        {t("projects.view_more")}
+      </ActionButton>
+    </div>
+
+    <ProjectList client:load projects={projects} />
+  </div>
+</section>

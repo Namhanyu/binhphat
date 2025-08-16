@@ -40,7 +40,9 @@ export const ui = {
     "operations.content": "Thiết kế và Thi công là mô hình tiên tiến đã được nhiều nhà thầu lớn áp dụng, giúp tối ưu hóa quy trình quản lý dự án, giảm thiểu rủi ro và tiết kiệm thời gian, chi phí cho chủ đầu tư. Tuy nhiên, mô hình này không dễ dàng thực hiện bởi nó đòi hỏi sự phối hợp nhịp nhàng giữa thiết kế và thi công, giữa xây dựng và cơ điện. Do đó, việc Chủ đầu tư hiện nay quan tâm là một Tổng thầu có năng lực vượt trội. Bình Phát tự hào là một trong những tổng thầu xây dựng và cơ điện uy tín tại Việt Nam, là đối tác tin cậy của nhiều chủ đầu tư và khách hàng nước ngoài trong việc thực hiện các dự án từ quy mô nhỏ đến các công trình lớn, phức tạp.",
     "operations.view_more": "Xem thêm lĩnh vực hoạt động",
     "operations.construction": "Tổng thầu xây dựng",
-    "operations.electromechanical": "Tổng thầu cơ điện"
+    "operations.electromechanical": "Tổng thầu cơ điện",
+    "projects.title": "Công trình\ntiêu biểu",
+    "projects.view_more": "Xem tất cả công trình"
   },
   en: {},
 } as const;
