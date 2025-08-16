@@ -1,65 +1,17 @@
 ---
-import { Icon } from "astro-icon/components";
-import TextWithLine from "../atoms/TextWithLine.astro";
-import PageLogo from "../atoms/logo/Logo.astro";
-import PalmSpringLogo from "../atoms/logo/PalmSpringLogo.astro";
+import clsx from "clsx";
+import ChevronRight from "../atoms/ChevronRight.astro";
 
-const {
-  component = "",
-  subTitle = "",
-  link = "",
-  class: className,
-  variant = "black",
-  showLine = true,
-  theme = "light", // "light" or "dark"
-  noBorder = false,
-} = Astro.props;
-
-const textColor = theme === "dark" ? "text-white" : "text-black";
-const borderColor = theme === "dark" ? "border-white" : "border-black";
-const logoColor = theme === "dark" ? "text-white" : "text-black";
+const { class: className } = Astro.props;
 ---
 
-<a
-  href={link}
-  class={`group w-full transition-all duration-300 md:max-w-[223px] ${textColor} ${className}`}
+<button
+  class={clsx(
+    "h-10 px-4 border-2 border-current uppercase font-semibold flex gap-6 items-center",
+    className
+  )}
 >
-  <div class="space-y-1">
-    {
-      subTitle && !noBorder && (
-        <TextWithLine
-          text={subTitle}
-          variant={theme === "dark" ? "default" : variant}
-          showLine={showLine}
-        />
-      )
-    }
-
-    <div
-      class={`${textColor} px-4 py-2 md:px-[12px] md:py-[6px] ${noBorder ? "" : `border ${borderColor}`} h-[72px] flex items-center justify-between`}
-    >
-      <div class="flex items-center justify-center flex-1">
-        {
-          component === "HeaderLogo" && (
-            <PageLogo class={`${logoColor} w-[137px] h-[52px] md:w-[130px]`} />
-          )
-        }
-        {
-          component === "PalmSpringLogo" && (
-            <div class="flex flex-col gap-[6px] items-start">
-              <div class={`text-[7px] ${textColor} text-start`}>
-                日本一おいしいグランピング
-              </div>
-              <PalmSpringLogo class={`${logoColor} w-[121px] h-[21px]`} />
-            </div>
-          )
-        }
-      </div>
-
-      <Icon
-        name="right-arrow"
-        class={`w-6 h-2 ${textColor} transition-transform duration-300 group-hover:translate-x-2 flex-shrink-0`}
-      />
-    </div>
-  </div>
-</a>
+  <slot />
+  <div class="w-px bg-current h-full"></div>
+  <ChevronRight />
+</button>

@@ -5,7 +5,7 @@ import bgImage from "../../assets/images/02.webp";
 import image1 from "../../assets/images/24.webp";
 import image2 from "../../assets/images/25.webp";
 import LongArrow from "../atoms/LongArrow.astro";
-import ChevronRight from "../atoms/ChevronRight.astro";
+import ActionButton from "../molecules/ActionButton.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -36,13 +36,7 @@ const t = useTranslations(lang);
         <p class="whitespace-pre-line text-justify mb-7">
           {t("about.content")}
         </p>
-        <button
-          class="h-10 px-4 border-2 border-white uppercase font-semibold flex gap-6 items-center"
-        >
-          {t("about.button")}
-          <div class="w-px bg-white h-full"></div>
-          <ChevronRight />
-        </button>
+        <ActionButton>{t("about.button")}</ActionButton>
       </div>
     </div>
   </div>
