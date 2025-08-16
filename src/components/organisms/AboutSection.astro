@@ -1,13 +1,26 @@
 ---
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import clsx from "clsx";
+import bgImage from "../../assets/images/02.webp";
+import image1 from "../../assets/images/24.webp";
+import image2 from "../../assets/images/25.webp";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<section class="bg-blue-900 h-screen flex items-center text-white">
-  <div class="flex-1">
-    <div class="container max-w-[650px] ml-auto">
+<section
+  class={clsx(
+    "h-screen flex text-white relative",
+    "before:absolute before:top-0 before:left-0 before:right-0 before:h-[30vh] before:pointer-events-none before:bg-gradient-to-b before:from-primary before:to-primary/0",
+    "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[30vh] after:pointer-events-none after:bg-gradient-to-t after:from-primary after:to-primary/0"
+  )}
+>
+  <div
+    class="flex-1 bg-cover bg-left bg-no-repeat flex items-center"
+    style={`background-image: linear-gradient(#0059a7cc, #0059a7cc), url(${bgImage.src});`}
+  >
+    <div class="container max-w-[650px] ml-auto z-10">
       <div class="max-w-[500px] mx-auto">
         <h2 class="whitespace-pre-line text-[45px] font-black uppercase mb-4">
           {t("about.title")}
@@ -15,40 +28,61 @@ const t = useTranslations(lang);
         <p class="whitespace-pre-line text-justify mb-7">
           {t("about.content")}
         </p>
-        <button class="h-10 px-4 border-2 border-white uppercase font-semibold">
+        <button
+          class="h-10 px-4 border-2 border-white uppercase font-semibold flex gap-6 items-center"
+        >
           {t("about.button")}
+          <div class="w-px bg-white h-full"></div>
+          <svg width="12" height="21" viewBox="0 0 16 28" fill="none">
+            <path d="M1.5 1.5L14 14L1.5 26.5" stroke="white" stroke-width="2"
+            ></path>
+          </svg>
         </button>
       </div>
     </div>
   </div>
 
-  <div class="flex flex-1 h-full">
+  <div class="flex flex-1 h-full cursor-pointer">
     <div
-      class="flex-1 bg-white/25 h-full flex flex-col justify-end pl-[50px] pb-[86px]"
+      class="flex-1 h-full flex flex-col justify-end pl-[50px] pb-[86px] bg-center bg-cover overflow-hidden relative group"
     >
-      <a class="text-[24px] uppercase whitespace-pre-line mb-2 font-semibold">
-        {t("about.history")}
-      </a>
-      <svg width="68" height="18" viewBox="0 0 68 18">
-        <path
-          d="M0 9H65.5M65.5 9L56.5 1.5M65.5 9L56.5 16.5"
-          stroke="white"
-          stroke-width="2"></path>
-      </svg>
+      <div
+        class="absolute inset-0 bg-center bg-cover transition-transform duration-500 group-hover:scale-110"
+        style={`background-image: url(${image1.src});`}
+      >
+      </div>
+      <div class="z-10 relative">
+        <a class="text-[24px] uppercase whitespace-pre-line mb-2 font-semibold">
+          {t("about.history")}
+        </a>
+        <svg width="68" height="18" viewBox="0 0 68 18">
+          <path
+            d="M0 9H65.5M65.5 9L56.5 1.5M65.5 9L56.5 16.5"
+            stroke="white"
+            stroke-width="2"></path>
+        </svg>
+      </div>
     </div>
 
     <div
-      class="flex-1 bg-white/20 h-full flex flex-col justify-end pl-[50px] pb-[86px]"
+      class="flex-1 h-full flex flex-col justify-end pl-[50px] pb-[86px] bg-center bg-cover overflow-hidden relative group"
     >
-      <a class="text-[24px] uppercase whitespace-pre-line mb-2 font-semibold">
-        {t("about.profile")}
-      </a>
-      <svg width="68" height="18" viewBox="0 0 68 18">
-        <path
-          d="M0 9H65.5M65.5 9L56.5 1.5M65.5 9L56.5 16.5"
-          stroke="white"
-          stroke-width="2"></path>
-      </svg>
+      <div
+        class="absolute inset-0 bg-center bg-cover transition-transform duration-500 group-hover:scale-110"
+        style={`background-image: url(${image2.src});`}
+      >
+      </div>
+      <div class="z-10 relative">
+        <a class="text-[24px] uppercase whitespace-pre-line mb-2 font-semibold">
+          {t("about.profile")}
+        </a>
+        <svg width="68" height="18" viewBox="0 0 68 18">
+          <path
+            d="M0 9H65.5M65.5 9L56.5 1.5M65.5 9L56.5 16.5"
+            stroke="white"
+            stroke-width="2"></path>
+        </svg>
+      </div>
     </div>
   </div>
 </section>
