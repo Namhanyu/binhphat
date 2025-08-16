@@ -1,123 +1,119 @@
 ---
-interface Props {
-  menuColor?: string;
-}
-
-const { menuColor = "white" } = Astro.props as Props;
-
-import ChevronDown from "../atoms/Icons/ChevronDown.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import ActionButton from "../molecules/ActionButton.astro";
+import image36 from "../../assets/images/36.webp";
+import image37 from "../../assets/images/37.webp";
+import image38 from "../../assets/images/38.webp";
+import image39 from "../../assets/images/39.webp";
+import clsx from "clsx";
 
 const newsItems = [
   {
-    year: "2024",
-    date: "11.01",
-    title: "公式ホームページをリニューアルいたしました",
+    label: "Tin nổi bật",
+    title: "Khởi công nhà máy nhiệt điện An Dương",
     description:
-      "記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    location: "Hưng yên",
+    date: "23/04/2025",
+    image: image36,
   },
   {
-    year: "2024",
-    date: "11.01",
-    title: "公式ホームページをリニューアルいたしました",
-    imageSrc: "images/homepage/about-first.webp",
+    label: "Tin nội bộ",
+    title: "Khởi công nhà máy nhiệt điện An Dương",
     description:
-      "記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    location: "Hưng yên",
+    date: "23/04/2025",
+    image: image37,
   },
   {
-    year: "2024",
-    date: "11.01",
-    title: "公式ホームページをリニューアルいたしました",
+    label: "Tin hot",
+    title: "Khởi công nhà máy nhiệt điện An Dương",
     description:
-      "記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    location: "Hưng yên",
+    date: "23/04/2025",
+    image: image38,
   },
   {
-    year: "2024",
-    date: "11.01",
-    title: "公式ホームページをリニューアルいたしました",
+    label: "Tin hot",
+    title: "Khởi công nhà máy nhiệt điện An Dương",
     description:
-      "記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。",
-  },
-  {
-    year: "2024",
-    date: "11.01",
-    title: "公式ホームページをリニューアルいたしました",
-    description:
-      "記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。",
-  },
-  {
-    year: "2024",
-    date: "11.01",
-    title: "公式ホームページをリニューアルいたしました",
-    description:
-      "記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります記事内容が入ります。",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    location: "Hưng yên",
+    date: "23/04/2025",
+    image: image39,
   },
 ];
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
-<section
-  class="px-[39px] lg:px-[128px] pt-[50px] lg:pt-[99px] pb-[120px] lg:pb-[240px] text-black"
-  data-menu-color={menuColor}
->
-  {
-    newsItems.map((item, index) => (
-      <div class="bg-white mb-[30px] lg:mb-[16px] pb-[60px] lg:pb-[20px]">
-        <button
-          class="faq-toggle w-full flex lg:items-center justify-between pe-[20px] lg:pe-[50px] transition hover:bg-gray-50"
-          data-index={index}
-        >
-          <div class="flex flex-col lg:flex-row items-start lg:items-center lg:gap-[47px]">
-            <div class="flex flex-row lg:flex-col gap-[11px] lg:gap-[6px] py-[15px] lg:py-[25px] px-[14px] lg:px-[23px] bg-[#f4f1ef]">
-              <span class="text-[18px] lg:text-[14px] leading-[18px] lg:leading-[15px]">
-                {item.year}
-              </span>
-              <span class="text-[23px] lg:text-[20px] leading-[18px] lg:leading-[15px]">
-                {item.date}
-              </span>
-            </div>
-            <span class="text-start text-[15px] lg:text-[18px] leading-[25px] lg:leading-[33px] ps-[29px] lg:ps-0 pt-[17px] lg:pt-0">
-              {item.title}
-            </span>
-          </div>
-          <ChevronDown class="mt-[22px] lg:mt-[15px] lg:mt-0 min-w-[12px] transition-transform duration-300 ease-in-out" />
-        </button>
+<section id="news" class="min-h-screen flex items-center py-20">
+  <div class="container mx-auto space-y-5">
+    <div class="flex items-center justify-between gap-4">
+      <h2
+        class="whitespace-pre-line text-4xl font-bold uppercase mb-4 max-md:text-3xl text-primary"
+      >
+        {t("news.title")}
+      </h2>
+      <ActionButton class="bg-primary text-white max-sm:hidden">
+        {t("news.view_more")}
+      </ActionButton>
+    </div>
 
-        <div
-          class={`faq-content max-h-0 overflow-hidden transition-all duration-500 pe-[29px] lg:pe-[135px] ps-[29px] lg:ps-[135px] ${item.imageSrc && "grid grid-cols-1 lg:grid-cols-2 gap-[40px] lg:gap-[75px]"}`}
-        >
-          <p
-            class={`text-[13px] lg:text-[14px] leading-[33px] lg:pt-[25px] pb-0 lg:pb-[15px] ${item.imageSrc ? "order-2 lg:order-1" : "pt-[40px] "}`}
+    <div
+      class="grid md:grid-cols-2 xl:grid-cols-4 grid-rows-[repeat(4,_280px)] md:grid-rows-[280px_280px]"
+    >
+      {
+        newsItems.map((item, index) => (
+          <div
+            class={clsx(
+              "group relative overflow-hidden",
+              "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-40 after:pointer-events-none after:bg-gradient-to-t after:from-primary after:to-primary/0",
+              {
+                "xl:col-span-2 xl:row-span-2": index === 0,
+                "xl:col-span-2": index === 1,
+              }
+            )}
           >
-            {item.description}
-          </p>
-          {item.imageSrc && (
-            <img
-              src={item.imageSrc}
-              alt="News Image"
-              class={`w-full h-full object-cover object-center ${item.imageSrc && "order-1 lg:order-2 pb-0 lg:pb-[24px] pt-[30px] lg:pt-[25px]"}`}
+            <div
+              class="bg-cover absolute inset-0 bg-center group-hover:scale-110 transition-transform duration-500"
+              style={`background-image: url(${item.image.src});`}
             />
-          )}
-        </div>
-      </div>
-    ))
-  }
-</section>
-
-<script type="module" is:inline>
-  document.querySelectorAll(".faq-toggle").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const content = btn.nextElementSibling;
-      const icon = btn.querySelector("svg");
-
-      const isOpen =
-        content.style.maxHeight && content.style.maxHeight !== "0px";
-
-      if (isOpen) {
-        content.style.maxHeight = null;
-        icon.classList.remove("rotate-180");
-      } else {
-        content.style.maxHeight = content.scrollHeight + "px";
-        icon.classList.add("rotate-180");
+            <div
+              class={clsx(
+                "grid gap-2 relative p-6 pr-10 justify-items-start items-end h-full content-end z-10 text-white",
+                { "xl:max-w-[80%]": index === 0, "xl:max-w-[60%]": index === 1 }
+              )}
+            >
+              <div class="bg-white text-primary uppercase text-xs px-2 leading-4 font-semibold">
+                {item.label}
+              </div>
+              <div
+                class={clsx("font-bold uppercase line-clamp-2", {
+                  "xl:text-xl": index === 0,
+                })}
+              >
+                {item.title}
+              </div>
+              {index === 0 && (
+                <div class="max-xl:hidden text-xs line-clamp-3">
+                  {item.description}
+                </div>
+              )}
+              <div class="text-sm">
+                {item.location} - {item.date}
+              </div>
+            </div>
+          </div>
+        ))
       }
-    });
-  });
-</script>
+    </div>
+
+    <ActionButton class="bg-primary text-white sm:hidden mx-auto">
+      {t("news.view_more")}
+    </ActionButton>
+  </div>
+</section>

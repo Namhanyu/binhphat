@@ -3,24 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import HeroSection from "../components/organisms/HeroSection.astro";
 import AboutSection from "../components/organisms/AboutSection.astro";
 import MetricsSection from "../components/organisms/MetricsSection.astro";
-
-const heroImages = [
-  {
-    src: "/images/homepage/hero_1.webp",
-    alt: "Hero Image 1",
-    objectPosition: "object-center",
-  },
-  {
-    src: "/images/homepage/hero_2.webp",
-    alt: "Hero Image 2",
-    objectPosition: "object-center",
-  },
-  {
-    src: "/images/story/panorama_synthesis.webp",
-    alt: "Hero Image 4",
-    objectPosition: "object-center",
-  },
-];
+import NewListSection from "../components/organisms/NewListSection.astro";
 
 const colorRanges = [
   { start: 2222, end: 3070 },
@@ -30,9 +13,11 @@ const colorRanges = [
 ---
 
 <Layout title="Bình Phát - Trang chủ" colorRanges={colorRanges}>
-  <HeroSection images={heroImages} />
+  <HeroSection />
 
   <AboutSection />
+
+  <NewListSection />
 
   <MetricsSection />
 </Layout>

@@ -33,6 +33,8 @@ export const ui = {
     "contact.form.address": "Địa chỉ",
     "contact.form.message": "Nội dung...",
     "contact.form.submit": "Gửi ngay",
+    "news.title": "Tin tức",
+    "news.view_more": "Xem thêm tin tức"
   },
   en: {},
 } as const;
