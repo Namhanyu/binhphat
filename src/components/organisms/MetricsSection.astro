@@ -1,24 +1,81 @@
 ---
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import bgImage from "../../assets/images/04.webp";
+import clsx from "clsx";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<section class="bg-blue-800 h-screen flex items-center text-white">
-  <div class="flex-1">
-    <div class="max-w-[500px] mx-auto">
-      <h2 class="whitespace-pre-line text-[45px] font-black uppercase mb-4">
-        {t("about.title")}
-      </h2>
-      <p class="whitespace-pre-line text-justify mb-7">
-        {t("about.content")}
-      </p>
-      <button class="h-10 px-4 border-2 border-white uppercase font-semibold">
-        {t("about.button")}
-      </button>
+<section
+  class={clsx(
+    "bg-primary h-screen flex items-center text-white bg-cover bg-right-bottom bg-no-repeat",
+    "max-xl:bg-left-bottom max-md:h-auto"
+  )}
+  style={`background-image: url(${bgImage.src});`}
+>
+  <div class="container py-[140px]">
+    <div class="max-w-[512px]">
+      <div class="flex gap-1 mb-6 max-md:mb-4">
+        <svg
+          width="40"
+          height="70"
+          viewBox="0 0 40 70"
+          class="fill-white opacity-25 max-md:w-auto max-md:h-10"
+        >
+          <path
+            d="M28.7287 0.341414C24.9799 -1.38982 1.67048 22.8566 0.296808 47.3571C-0.43028 60.3319 7.94239 69.5501 20.6821 69.3934C32.3793 69.2493 40.4107 56.4312 39.4026 46.8082C38.2492 35.8005 24.91 26.4844 23.3469 17.6238C21.4907 7.10401 28.7287 0.341414 28.7287 0.341414Z"
+            fill="white"></path>
+        </svg>
+        <svg
+          width="40"
+          height="70"
+          viewBox="0 0 40 70"
+          class="fill-white opacity-25 max-md:w-auto max-md:h-10"
+        >
+          <path
+            d="M28.7287 0.341414C24.9799 -1.38982 1.67048 22.8566 0.296808 47.3571C-0.43028 60.3319 7.94239 69.5501 20.6821 69.3934C32.3793 69.2493 40.4107 56.4312 39.4026 46.8082C38.2492 35.8005 24.91 26.4844 23.3469 17.6238C21.4907 7.10401 28.7287 0.341414 28.7287 0.341414Z"
+            fill="white"></path>
+        </svg>
+      </div>
+      <div class="text-4xl mb-24 font-semibold uppercase max-md:text-3xl max-md:mb-16">
+        {t("metrics.title")}
+      </div>
+      <div class="grid grid-cols-[auto_1fr] gap-14 max-md:gap-10">
+        <div class="grid gap-4 max-md:gap-2">
+          <div class="font-bold text-[72px] leading-[52px] max-md:text-4xl">
+            +100
+          </div>
+          <div class="uppercase pl-[46px] max-md:pl-6">
+            {t("metrics.employees")}
+          </div>
+        </div>
+        <div class="grid gap-4 max-md:gap-2">
+          <div class="font-bold text-[72px] leading-[52px] max-md:text-4xl">
+            +10
+          </div>
+          <div class="uppercase pl-[46px] max-md:pl-6">
+            {t("metrics.years")}
+          </div>
+        </div>
+        <div class="grid gap-4 max-md:gap-2 content-start">
+          <div class="font-bold text-[72px] leading-[52px] max-md:text-4xl">
+            +100
+          </div>
+          <div class="uppercase pl-[46px] max-md:pl-6">
+            {t("metrics.projects")}
+          </div>
+        </div>
+        <div class="grid gap-4 max-md:gap-2">
+          <div class="font-bold text-[72px] leading-[52px] max-md:text-4xl">
+            +80
+          </div>
+          <div class="uppercase pl-[46px] max-md:pl-6">
+            {t("metrics.billion")}<br />
+            <span class="text-sm">{t("metrics.note")}</span>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-  <div class="flex flex-[2] h-full bg-white/25"></div>
 </section>

@@ -1,59 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import HeroSection from "../components/organisms/HeroSection.astro";
-import FeatureSection from "../components/organisms/FeatureSection.astro";
-import ThreePanelSection from "../components/organisms/ThreePanelSection.astro";
-import NewsSection from "../components/organisms/NewsSection.astro";
 import AboutSection from "../components/organisms/AboutSection.astro";
-import IntroductionSection from "../components/organisms/IntroductionSection.astro";
 import MetricsSection from "../components/organisms/MetricsSection.astro";
-
-const signatureFoodSection = {
-  content: [
-    `当館では、全4室がレイクビューをお楽しみいただけます。浜名湖の自然と夕日に沈むロンチックな雰囲気まで、贅沢に浜名湖の風を感じながら非日常空間をご堪能ください。お料理は浜名湖や近海で水揚げされる魚介、地元のお野菜にとことんこだわった特製フランス料理をご用意。そんなこだわりのお食事を浜名湖の大パノラマを眺めながらダイニングレストランにてお召し上がりいただけます。\n\n`,
-    "代表的な一品の「トマトのムース」は季節でもっとも甘味・酸味のバランスが良いトマトのみを厳選して創るトマトのムース。創業当時から受け継がれる伝統のレシピは口いっぱいにトマトの甘味と旨味が優しく広がります。",
-  ],
-  imageSrc: "/images/homepage/signature-food.webp",
-  title: "",
-  reverse: true,
-  changeColor: false,
-};
-
-const sections = [
-  {
-    index: 1,
-    label: "about",
-    title: "story",
-    subtitle: "タイプの違う2つのコンセプトホテルで過ごす浜名湖ものがたり",
-    content: `本格的なフレンチを楽しめるオーベルジュ「浜名湖オーベルジュ キャトルセゾン」と隣接するグランピング施設「hamanako palm springs」は一見、異なるホテルながら「浜名湖の美しい景観と豊富な食材をより多くの方に自由にお楽しみいただきたく」という共通のキーワードを大事にしながら、それぞれのホテルで異なるストーリーを実現しています。旅行シーンに併せて大切な人と大切な時間をお過ごしいただけます。`,
-    imageSrc: "/images/homepage/story.webp",
-    link: "/story",
-    reverse: false,
-    changeColor: false,
-  },
-  {
-    index: 2,
-    label: "about",
-    title: "food",
-    subtitle: "お食事について",
-    content: `「遠州の恵みを味わう四季折々の優しいフレンチ」をテーマに浜名湖で採れる豊富な食材をはじめ地元の食材を自由な発想で唯一無二の一皿へと昇華。浜名湖八景の一つに指定される絶景を窓外に眺め豊かに広がる料理をお楽しみください。`,
-    imageSrc: "/images/homepage/food.webp",
-    link: "/food",
-    reverse: true,
-    changeColor: false,
-  },
-  {
-    index: 3,
-    label: "about",
-    title: "room",
-    subtitle: "お部屋について",
-    content: `オーベルジュとはフランス語で宿泊の出来る郊外型のフレンチレストランのこと。「浜名湖オーベルジュ キャトルセゾン」では、モダンに改装されたスイートルームをはじめ、全室浜名湖に面したお部屋をご用意しておりますので特別な晩餐の余韻をお楽しみいただけます。\n贅沢に浜名湖の風を感じながら、非日常空間を心ゆくまでご堪能ください。`,
-    imageSrc: "/images/homepage/room.webp",
-    link: "/room",
-    reverse: false,
-    changeColor: true,
-  },
-];
 
 const heroImages = [
   {
@@ -73,49 +22,6 @@ const heroImages = [
   },
 ];
 
-const panels = [
-  {
-    title: "facility",
-    subtitle: "施設について",
-    backgroundImage: "/images/618A0313.webp",
-    decorativeText: "BAR",
-    href: "/facility",
-  },
-  {
-    title: "Q&A",
-    subtitle: "よくある質問",
-    backgroundImage: "/images/4C7A9811.webp",
-    href: "/faq",
-  },
-  {
-    title: "access",
-    subtitle: "交通アクセス",
-    backgroundImage: "/images/0J5A0222.webp",
-    href: "/access",
-  },
-];
-
-const newsItems = [
-  {
-    date: "2024.11.1",
-    title:
-      "公式ホームページをリニューアルいたしました公式ホームページをリニューアルいたしました",
-    href: "/news",
-  },
-  {
-    date: "2024.11.1",
-    title:
-      "公式ホームページをリニューアルいたしました公式ホームページをリニューアルいたしました",
-    href: "/news",
-  },
-  {
-    date: "2024.11.1",
-    title:
-      "公式ホームページをリニューアルいたしました公式ホームページをリニューアルいたしました",
-    href: "/news",
-  },
-];
-
 const colorRanges = [
   { start: 2222, end: 3070 },
   { start: 4008, end: 5464 },
@@ -124,80 +30,14 @@ const colorRanges = [
 ---
 
 <Layout title="Bình Phát - Trang chủ" colorRanges={colorRanges}>
-  <div class="md:snap-mandatory md:snap-y [&>_*]:snap-start overflow-scroll h-screen">
+  <div
+    class="md:snap-mandatory md:snap-y [&>_*]:snap-start overflow-scroll h-screen"
+  >
     <HeroSection images={heroImages} />
 
     <AboutSection />
 
     <MetricsSection />
-
-    <IntroductionSection
-      title={signatureFoodSection.title}
-      content={signatureFoodSection.content}
-      imageSrc={signatureFoodSection.imageSrc}
-      reverse={signatureFoodSection.reverse}
-      sectionClass="lg:pt-[38px] pb-[100px] lg:pb-[107px]"
-      contentClass="pt-0"
-      menuColor="black"
-    />
-
-    <section class="about-third" data-menu-color="white">
-      <img
-        src="/images/homepage/about-third.webp"
-        alt=""
-        class="block w-screen max-h-[895px] object-cover"
-      />
-    </section>
-
-    <FeatureSection
-      index={sections[0].index}
-      label={sections[0].label}
-      title={sections[0].title}
-      subtitle={sections[0].subtitle}
-      content={sections[0].content}
-      imageSrc={sections[0].imageSrc}
-      link={sections[0].link}
-      reverse={sections[0].reverse}
-      changeColor={sections[0].changeColor}
-      sectionClass="pt-[50px] lg:pt-[110px] pb-[100px] lg:pb-[50px]"
-      menuColor="black"
-    />
-
-    <FeatureSection
-      index={sections[1].index}
-      label={sections[1].label}
-      title={sections[1].title}
-      subtitle={sections[1].subtitle}
-      content={sections[1].content}
-      imageSrc={sections[1].imageSrc}
-      link={sections[1].link}
-      reverse={sections[1].reverse}
-      changeColor={sections[1].changeColor}
-      sectionClass="pb-[100px] lg:pb-[50px]"
-      menuColor="black"
-    />
-
-    <FeatureSection
-      index={sections[2].index}
-      label={sections[2].label}
-      title={sections[2].title}
-      subtitle={sections[2].subtitle}
-      content={sections[2].content}
-      imageSrc={sections[2].imageSrc}
-      link={sections[2].link}
-      reverse={sections[2].reverse}
-      changeColor={sections[2].changeColor}
-    />
-
-    <ThreePanelSection panels={panels} />
-
-    <NewsSection
-      title="news"
-      subtitle="お知らせ"
-      newsItems={newsItems}
-      readMoreHref="/news"
-      menuColor="black"
-    />
   </div>
 </Layout>
 
