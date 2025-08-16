@@ -1,0 +1,12 @@
+---
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const viUrl = "/" + Astro.url.href;
+---
+
+<div class="flex items-center gap-2 text-sm z-50 font-semibold" id="lang">
+  <a href="/">VI</a>
+  <span>/</span>
+  <a href="/en">EN</a>
+</div>

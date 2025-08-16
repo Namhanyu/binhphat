@@ -1,0 +1,47 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import HeroSection from "../../components/organisms/HeroSection.astro";
+import AboutSection from "../../components/organisms/AboutSection.astro";
+import MetricsSection from "../../components/organisms/MetricsSection.astro";
+import NewListSection from "../../components/organisms/NewListSection.astro";
+import OperationFields from "../../components/organisms/home/OperationFields.astro";
+import FeaturedProjects from "../../components/organisms/home/FeaturedProjects.astro";
+
+const colorRanges = [
+  { start: 2222, end: 3070 },
+  { start: 4008, end: 5464 },
+  { start: 7143, end: 10000 },
+];
+---
+
+<Layout title="Bình Phát - Trang chủ" colorRanges={colorRanges}>
+  <HeroSection />
+
+  <AboutSection />
+
+  <NewListSection />
+
+  <OperationFields />
+
+  <MetricsSection />
+
+  <FeaturedProjects />
+</Layout>
+
+<script>
+  import { initScrollAnimations } from "../../scripts/gsap-scroll.js";
+
+  const runInit = () => {
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(initScrollAnimations, { timeout: 500 });
+    } else {
+      setTimeout(initScrollAnimations, 200);
+    }
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", runInit);
+  } else {
+    runInit();
+  }
+</script>

@@ -14,15 +14,15 @@ const t = useTranslations(lang);
 <section
   class={clsx(
     "h-screen flex text-white relative",
-    "before:absolute before:top-0 before:left-0 before:right-0 before:h-[30vh] before:pointer-events-none before:bg-gradient-to-b before:from-primary before:to-primary/0",
     "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[30vh] after:pointer-events-none after:bg-gradient-to-t after:from-primary after:to-primary/0",
     "max-md:flex-col max-md:min-h-screen max-md:h-auto"
   )}
+  data-menu-color="white"
 >
   <div
     class={clsx(
       "flex-1 bg-cover bg-left bg-no-repeat flex items-center",
-      "max-md:py-20"
+      "pb-10 pt-20"
     )}
     style={`background-image: linear-gradient(#0059a7cc, #0059a7cc), url(${bgImage.src});`}
   >

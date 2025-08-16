@@ -1,37 +1,11 @@
 ---
 import HeaderLogo from "../atoms/logo/HeaderLogo.astro";
-
-const { variant = "white" } = Astro.props;
-const currentPath = Astro.url.pathname;
-
-const blackVariantUrls = [
-  "/food",
-  "/restaurant",
-  "/restaurant/lunch",
-  "/restaurant/others",
-];
-
-const normalizedPath =
-  currentPath.endsWith("/") && currentPath.length > 1
-    ? currentPath.slice(0, -1)
-    : currentPath;
-
-let color = "";
-if (variant === "white") {
-  color = "text-white";
-
-  if (blackVariantUrls.includes(normalizedPath)) {
-    color = "text-black";
-  }
-} else {
-  color = "text-black";
-}
 ---
 
 <a
   href="/"
-  class="fixed top-8 left-1/2 -translate-x-1/2 md:top-[48px] z-20"
+  class="absolute left-1/2 -translate-x-1/2 z-20"
   aria-label="logo"
 >
-  <HeaderLogo class={`${color} w-auto h-10`} />
+  <HeaderLogo id="logo" class="w-auto h-10 max-md:h-6" />
 </a>

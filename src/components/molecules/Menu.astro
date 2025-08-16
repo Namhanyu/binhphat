@@ -1,44 +1,9 @@
----
-const currentPath = Astro.url.pathname;
-
-const blackVariantUrls = ["/food", "/restaurant", "/restaurant/dinner"];
-
-const normalizedPath =
-  currentPath.endsWith("/") && currentPath.length > 1
-    ? currentPath.slice(0, -1)
-    : currentPath;
-
-let menuColor = "text-white";
-let lineColor = "bg-white";
-
-if (blackVariantUrls.includes(normalizedPath)) {
-  menuColor = "text-black";
-  lineColor = "bg-black";
-}
----
-
-<div class="flex items-start gap-8 w-[64px]">
-  <button
-    class="flex flex-col items-end gap-1 font-URWClassico"
-    onclick="document.getElementById('menu').classList.remove('-translate-y-full')"
-    id="fixed-menu"
-  >
-    <div class="flex items-center justify-center">
-      <div class="group rounded-lg cursor-pointer transition-all duration-300">
-        <div class="flex flex-col items-end space-y-[11px] mb-[5px] md:mb-1">
-          <div
-            class={lineColor +
-              " h-[1.5px] w-[71px] md:w-[64px] group-hover:w-16 transition-all duration-300 ease-in-out menu-first-line"}
-          >
-          </div>
-
-          <div
-            class={lineColor +
-              " h-[1.5px] w-[50px] md:w-[45px] group-hover:w-16 transition-all duration-300 ease-in-out menu-second-line"}
-          >
-          </div>
-        </div>
-      </div>
-    </div>
-  </button>
-</div>
+<button
+  class="flex flex-col items-center gap-1 w-6 h-auto z-50"
+  onclick="document.getElementById('menu').classList.remove('-translate-y-full')"
+  id="menu-button"
+>
+  <div class="h-[3px] w-full bg-current"></div>
+  <div class="h-[3px] w-full bg-current"></div>
+  <div class="h-[3px] w-full bg-current"></div>
+</button>

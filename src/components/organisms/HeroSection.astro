@@ -1,5 +1,4 @@
 ---
-import PageLogo from "../molecules/PageLogo.astro";
 import image01 from "../../assets/images/01.webp";
 import image02 from "../../assets/images/02.webp";
 import clsx from "clsx";
@@ -7,7 +6,7 @@ import clsx from "clsx";
 const images = [image01, image02];
 ---
 
-<section id="hero">
+<section id="hero" data-menu-color="white">
   <div
     class={clsx(
       "h-screen relative",
@@ -80,5 +79,3 @@ const images = [image01, image02];
     }
   </script>
 </section>
-
-<PageLogo />

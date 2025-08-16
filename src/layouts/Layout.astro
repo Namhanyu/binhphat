@@ -11,10 +11,13 @@ import "@fontsource/montserrat/900.css";
 
 import Header from "../components/organisms/Header.astro";
 import ContactSection from "../components/organisms/ContactSection.astro";
+import { getLangFromUrl } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -55,7 +58,7 @@ import ContactSection from "../components/organisms/ContactSection.astro";
   <body class="overflow-x-hidden max-md:text-[14px]">
     <Header isRestaurant={isRestaurant} />
     <div
-      class="md:snap-mandatory md:snap-y [&>_*]:snap-start overflow-y-scroll h-screen"
+      class="lg:snap-mandatory lg:snap-y [&>_*]:snap-start overflow-y-scroll h-screen"
     >
       <slot />
       <ContactSection />
@@ -64,43 +67,43 @@ import ContactSection from "../components/organisms/ContactSection.astro";
 </html>
 
 <script type="module" is:inline>
-  // document.addEventListener("DOMContentLoaded", () => {
-  //   const menuLabel = document.querySelector("#fixed-menu .menu-label");
-  //   const menuLine1 = document.querySelector("#fixed-menu .menu-first-line");
-  //   const menuLine2 = document.querySelector("#fixed-menu .menu-second-line");
-  //   const sections = document.querySelectorAll("[data-menu-color]");
-  //   const header = document.querySelector("#fixed-menu");
+  document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("[data-menu-color]");
+    const header = document.querySelector("#header");
+    const logo = document.querySelector("#logo");
+    const menuButton = document.querySelector("#menu-button");
 
-  //   const headerHeight = header ? header.offsetHeight : 0;
+    const headerHeight = header ? header.offsetHeight : 0;
 
-  //   function applyColor(color) {
-  //     const isBlack = color === "black";
-  //     menuLabel.classList.toggle("text-black", isBlack);
-  //     menuLabel.classList.toggle("text-white", !isBlack);
-  //     if (menuLine1 && menuLine2) {
-  //       menuLine1.classList.toggle("bg-black", isBlack);
-  //       menuLine1.classList.toggle("bg-white", !isBlack);
-  //       menuLine2.classList.toggle("bg-black", isBlack);
-  //       menuLine2.classList.toggle("bg-white", !isBlack);
-  //     }
-  //   }
+    function applyColor(color) {
+      const isWhite = color === "white";
+      if (isWhite) {
+        header.classList.add("text-white");
+        header.classList.remove("text-primary");
+        header.classList.add("before:bg-gradient-to-b");
+      } else {
+        header.classList.remove("text-white");
+        header.classList.add("text-primary");
+        header.classList.remove("before:bg-gradient-to-b");
+      }
+    }
 
-  //   if (sections.length) applyColor(sections[0].dataset.menuColor);
+    if (sections.length) applyColor(sections[0].dataset.menuColor);
 
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       entries.forEach((entry) => {
-  //         if (entry.isIntersecting) {
-  //           applyColor(entry.target.dataset.menuColor);
-  //         }
-  //       });
-  //     },
-  //     {
-  //       rootMargin: `-${headerHeight}px 0px -100% 0px`,
-  //       threshold: 0,
-  //     }
-  //   );
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            applyColor(entry.target.dataset.menuColor);
+          }
+        });
+      },
+      {
+        rootMargin: `-${headerHeight}px 0px -100% 0px`,
+        threshold: 0,
+      }
+    );
 
-  //   sections.forEach((sec) => observer.observe(sec));
-  // });
+    sections.forEach((sec) => observer.observe(sec));
+  });
 </script>
