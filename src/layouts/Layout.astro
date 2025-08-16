@@ -58,7 +58,8 @@ const lang = getLangFromUrl(Astro.url);
   <body class="overflow-x-hidden max-md:text-[14px]">
     <Header isRestaurant={isRestaurant} />
     <div
-      class="lg:snap-mandatory lg:snap-y [&>_*]:snap-start overflow-y-scroll h-screen"
+      id="snap-container"
+      class="lg:snap-mandatory lg:snap-y [&>_*]:snap-start overflow-y-scroll h-screen overflow-x-hidden"
     >
       <slot />
       <ContactSection />

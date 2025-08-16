@@ -1,211 +1,303 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+const scroller = document.querySelector("#snap-container");
+
+// Make ScrollTrigger use the snapping container as its scroller
+ScrollTrigger.defaults({ scroller, ease: "power2.out" });
+
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
 export function initScrollAnimations() {
-  // Animate IntroductionSection
-  gsap.fromTo(
-    ".introduction-section",
-    {
-      y: 80,
-      opacity: 0,
+  // ABOUT
+  const aboutTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#about",
+      start: "top 70%",
+      end: "bottom 30%",
+      toggleActions: "play reset play reset",
     },
-    {
-      y: 0,
-      opacity: 1,
-      duration: 1.2,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: ".introduction-section",
-        start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play none none reverse",
-      },
-    }
-  );
-
-  // Animate about-third image
-  gsap.fromTo(
-    ".about-third",
-    {
-      opacity: 0,
-    },
-    {
-      opacity: 1,
-      duration: 1.5,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: ".about-third",
-        start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play none none reverse",
-      },
-    }
-  );
-
-  // Animate FeatureSections
-  gsap.utils.toArray(".feature-section").forEach((section, index) => {
-    // Animate the entire section
-    gsap.fromTo(
-      section,
-      {
-        y: 100,
-        opacity: 0,
-      },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1.2,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: section,
-          start: "top 85%",
-          end: "bottom 15%",
-          toggleActions: "play none none reverse",
-        },
-      }
-    );
-
-    // Animate content and image separately for more dynamic effect
-    const content = section.querySelector(".feature-content");
-    const image = section.querySelector(".feature-image");
-
-    if (content) {
-      gsap.fromTo(
-        content,
-        {
-          x: index % 2 === 0 ? -60 : 60,
-          opacity: 0,
-        },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 1.0,
-          ease: "power2.out",
-          delay: 0.2,
-          scrollTrigger: {
-            trigger: section,
-            start: "top 85%",
-            end: "bottom 15%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-    }
-
-    if (image) {
-      gsap.fromTo(
-        image,
-        {
-          x: index % 2 === 0 ? 60 : -60,
-          opacity: 0,
-        },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 1.0,
-          ease: "power2.out",
-          delay: 0.4,
-          scrollTrigger: {
-            trigger: section,
-            start: "top 85%",
-            end: "bottom 15%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      );
-    }
   });
 
-  // Animate ThreePanelSection
-  gsap.fromTo(
-    ".three-panel-section",
-    {
-      y: 80,
-      opacity: 0,
-    },
-    {
-      y: 0,
-      opacity: 1,
-      duration: 1.2,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: ".three-panel-section",
-        start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play none none reverse",
+  aboutTimeline
+    .from(
+      "#about h2",
+      {
+        y: 50,
+        opacity: 0,
+        duration: 1,
       },
-    }
-  );
+      0.3
+    )
+    .from(
+      "#about p",
+      {
+        y: 30,
+        opacity: 0,
+        duration: 1,
+      },
+      0.5
+    )
+    .from(
+      "#about button",
+      {
+        y: 20,
+        opacity: 0,
+        duration: 0.8,
+      },
+      0.7
+    );
 
-  // Animate individual panels
-  gsap.utils.toArray(".panel-item").forEach((panel, index) => {
-    gsap.fromTo(
+  gsap.utils.toArray("#about .group").forEach((panel, index) => {
+    aboutTimeline.from(
       panel,
       {
-        y: 60,
+        x: 100,
         opacity: 0,
+        duration: 1.2,
       },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        ease: "power2.out",
-        delay: index * 0.2,
-        scrollTrigger: {
-          trigger: ".three-panel-section",
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse",
-        },
-      }
+      0.4 + index * 0.2
     );
   });
 
-  // Animate NewsSection
-  gsap.fromTo(
-    ".news-section",
-    {
-      y: 80,
-      opacity: 0,
+  // NEWS
+  const newsTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#news",
+      start: "top 70%",
+      end: "bottom 30%",
+      toggleActions: "play reset play reset",
     },
-    {
-      y: 0,
-      opacity: 1,
-      duration: 1.2,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: ".news-section",
-        start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play none none reverse",
+  });
+
+  newsTimeline
+    .from(
+      "#news h2",
+      {
+        y: -50,
+        opacity: 0,
+        duration: 1,
       },
-    }
+      0.3
+    )
+    .from(
+      "#news button",
+      {
+        y: -20,
+        opacity: 0,
+        duration: 0.8,
+      },
+      0.4
+    );
+
+  gsap.utils.toArray("#news .group").forEach((panel, index) => {
+    newsTimeline.from(
+      panel,
+      {
+        x: 100,
+        opacity: 0,
+        duration: 1.2,
+      },
+      0.5 + index * 0.2
+    );
+  });
+
+  // OPERATIONS
+  const operationsTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#operations",
+      start: "top 70%",
+      end: "bottom 30%",
+      toggleActions: "play reset play reset",
+    },
+  });
+
+  operationsTimeline
+    .from(
+      "#operations .text-5xl",
+      {
+        y: 50,
+        opacity: 0,
+        duration: 1,
+      },
+      1
+    )
+    .from(
+      "#operations .text-3xl",
+      {
+        y: 30,
+        opacity: 0,
+        duration: 1,
+      },
+      1.3
+    )
+    .from(
+      "#operations .text-justify",
+      {
+        y: 30,
+        opacity: 0,
+        duration: 1,
+      },
+      1.6
+    )
+    .from(
+      "#operations button",
+      {
+        y: 20,
+        opacity: 0,
+        duration: 1,
+      },
+      1.9
+    );
+
+  gsap.utils.toArray("#operations .group").forEach((panel, index) => {
+    operationsTimeline.from(
+      panel,
+      {
+        x: 100,
+        opacity: 0,
+        duration: 1.2,
+      },
+      0.3 + index * 0.5
+    );
+  });
+
+  // METRICS
+
+  const metricsTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#metrics",
+      start: "top 70%",
+      end: "bottom 30%",
+      toggleActions: "play reset play reset",
+    },
+  });
+
+  metricsTimeline
+    .from(
+      "#metrics svg",
+      {
+        y: -30,
+        opacity: 0,
+        duration: 1,
+      },
+      0.3
+    )
+    .from(
+      "#metrics h3",
+      {
+        y: -30,
+        opacity: 0,
+        duration: 1,
+      },
+      0.7
+    );
+
+  gsap.utils.toArray("#metrics .group").forEach((panel, index) => {
+    metricsTimeline.from(
+      panel,
+      {
+        y: 50,
+        opacity: 0,
+        duration: 0.7,
+      },
+      1 + index * 0.2
+    );
+  });
+
+  // PROJECTS
+
+  const projectsTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#projects",
+      start: "top 70%",
+      end: "bottom 30%",
+      toggleActions: "play reset play reset",
+    },
+  });
+
+  projectsTimeline
+    .from(
+      "#projects h2",
+      {
+        y: -50,
+        opacity: 0,
+        duration: 1,
+      },
+      0.3
+    )
+    .from(
+      "#projects button",
+      {
+        y: -20,
+        opacity: 0,
+        duration: 0.8,
+      },
+      0.5
+    )
+    .from(
+      "#projects .text-3xl",
+      {
+        y: -20,
+        opacity: 0,
+        duration: 0.8,
+      },
+      0.7
+    )
+    .from(
+      "#projects .bg-white",
+      {
+        opacity: 0,
+        duration: 0.8,
+      },
+      0.9
+    );
+
+  gsap.utils.toArray("#projects .group").forEach((panel, index) => {
+    projectsTimeline.from(
+      panel,
+      {
+        x: -50,
+        opacity: 0,
+        duration: 0.8,
+      },
+      0.9 + index * 0.2
+    );
+  });
+
+  // CONTACT
+
+  const contactTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#contact",
+      start: "top 70%",
+      end: "bottom 30%",
+      toggleActions: "play reset play reset",
+    },
+  });
+
+  contactTimeline.from(
+    "#contact h2",
+    {
+      y: -50,
+      opacity: 0,
+      duration: 1,
+    },
+    0.3
   );
 
-  // Animate news items
-  gsap.utils.toArray(".news-item").forEach((item, index) => {
-    gsap.fromTo(
-      item,
+  gsap.utils.toArray("#contact .text-left > *").forEach((panel, index) => {
+    contactTimeline.from(
+      panel,
       {
-        x: -40,
+        y: -50,
         opacity: 0,
+        duration: 1,
       },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 0.8,
-        ease: "power2.out",
-        delay: index * 0.1,
-        scrollTrigger: {
-          trigger: ".news-section",
-          start: "top 80%",
-          end: "bottom 20%",
-          toggleActions: "play none none reverse",
-        },
-      }
+      0.3 + index * 0.2
     );
   });
+
+  window.addEventListener("load", () => ScrollTrigger.refresh());
 }

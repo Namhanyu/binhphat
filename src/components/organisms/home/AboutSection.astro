@@ -1,20 +1,21 @@
 ---
-import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
 import clsx from "clsx";
-import bgImage from "../../assets/images/02.webp";
-import image1 from "../../assets/images/24.webp";
-import image2 from "../../assets/images/25.webp";
-import LongArrow from "../atoms/LongArrow.astro";
-import ActionButton from "../molecules/ActionButton.astro";
+import bgImage from "../../../assets/images/02.webp";
+import image1 from "../../../assets/images/24.webp";
+import image2 from "../../../assets/images/25.webp";
+import LongArrow from "../../atoms/LongArrow.astro";
+import ActionButton from "../../molecules/ActionButton.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
 <section
+  id="about"
   class={clsx(
-    "h-screen flex text-white relative",
-    "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[30vh] after:pointer-events-none after:bg-gradient-to-t after:from-primary after:to-primary/0",
+    "h-screen flex text-white relative bg-primary overflow-hidden",
+    "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[30%] after:pointer-events-none after:bg-gradient-to-t after:from-primary after:to-primary/0",
     "max-md:flex-col max-md:min-h-screen max-md:h-auto"
   )}
   data-menu-color="white"
