@@ -9,7 +9,7 @@ import "@fontsource/montserrat/700.css";
 import "@fontsource/montserrat/900.css";
 
 import Header from "../components/organisms/Header.astro";
-import Footer from "../components/organisms/Footer.astro";
+import ContactSection from "../components/organisms/ContactSection.astro";
 ---
 
 <!doctype html>
@@ -53,7 +53,12 @@ import Footer from "../components/organisms/Footer.astro";
   </head>
   <body class="overflow-x-hidden max-md:text-[14px]">
     <Header isRestaurant={isRestaurant} />
-    <slot />
+    <div
+      class="md:snap-mandatory md:snap-y [&>_*]:snap-start overflow-y-scroll h-screen"
+    >
+      <slot />
+      <ContactSection />
+    </div>
   </body>
 </html>
 

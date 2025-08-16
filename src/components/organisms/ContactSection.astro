@@ -1,0 +1,96 @@
+---
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import ActionButton from "../molecules/ActionButton.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section id="contact" class="flex items-center min-h-screen">
+  <div class="container mx-auto">
+    <div class="max-w-[600px]">
+      <h2
+        class="text-5xl max-md:text-3xl uppercase font-bold text-primary mb-8"
+      >
+        {t("contact.title")}
+      </h2>
+
+      <!-- Company Information -->
+      <div class="text-left space-y-3 mb-12">
+        <div>
+          <h3 class="uppercase font-bold text-primary">
+            {t("contact.headquarters")}
+          </h3>
+          <div>{t("contact.headquarters.address")}</div>
+        </div>
+
+        <div>
+          <h3 class="uppercase font-bold text-primary">
+            {t("contact.offices")}
+          </h3>
+          <div class="space-y-1">
+            {t("contact.offices.hanoi")}<br />
+            {t("contact.offices.hcm")}<br /><br />
+            {t("contact.phone.email")}
+          </div>
+        </div>
+
+        <div>
+          <h3 class="uppercase font-bold text-primary mb-2">
+            {t("contact.form.title")}
+          </h3>
+
+          <form class="grid gap-1">
+            <!-- Name Input -->
+            <div>
+              <input
+                type="text"
+                placeholder={t("contact.form.name")}
+                class="input"
+              />
+            </div>
+
+            <!-- Phone Input -->
+            <div>
+              <input
+                type="tel"
+                placeholder={t("contact.form.phone")}
+                class="input"
+              />
+            </div>
+
+            <!-- Email Input -->
+            <div>
+              <input
+                type="email"
+                placeholder={t("contact.form.email")}
+                class="input"
+              />
+            </div>
+
+            <!-- Address Input -->
+            <div>
+              <input
+                type="text"
+                placeholder={t("contact.form.address")}
+                class="input"
+              />
+            </div>
+
+            <!-- Message Textarea -->
+            <div>
+              <textarea
+                placeholder={t("contact.form.message")}
+                rows="5"
+                class="input resize-none !h-auto"></textarea>
+            </div>
+
+            <ActionButton class="w-full bg-primary text-white !border-primary">
+              {t("contact.form.submit")}
+            </ActionButton>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

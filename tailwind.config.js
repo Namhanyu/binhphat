@@ -68,6 +68,7 @@ module.exports = {
         lg: ["1.125rem", { lineHeight: "1.25rem" }], // 18px
         xl: ["1.25rem", { lineHeight: "1.375rem" }], // 20px
         "2xl": ["1.5rem", { lineHeight: "2rem" }], // 24px
+        "5xl": ["3.25rem", { lineHeight: "3.5rem" }], // 52px
       },
     },
   },
