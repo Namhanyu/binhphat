@@ -30,7 +30,9 @@ const colorRanges = [
 ---
 
 <Layout title="Bình Phát - Trang chủ" colorRanges={colorRanges}>
-  <div>
+  <div
+    class="md:snap-mandatory md:snap-y [&>_*]:snap-start overflow-scroll h-screen"
+  >
     <HeroSection images={heroImages} />
 
     <AboutSection />
