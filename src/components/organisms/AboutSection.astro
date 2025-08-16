@@ -13,16 +13,22 @@ const t = useTranslations(lang);
   class={clsx(
     "h-screen flex text-white relative",
     "before:absolute before:top-0 before:left-0 before:right-0 before:h-[30vh] before:pointer-events-none before:bg-gradient-to-b before:from-primary before:to-primary/0",
-    "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[30vh] after:pointer-events-none after:bg-gradient-to-t after:from-primary after:to-primary/0"
+    "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[30vh] after:pointer-events-none after:bg-gradient-to-t after:from-primary after:to-primary/0",
+    "max-md:flex-col max-md:min-h-screen max-md:h-auto"
   )}
 >
   <div
-    class="flex-1 bg-cover bg-left bg-no-repeat flex items-center"
+    class={clsx(
+      "flex-1 bg-cover bg-left bg-no-repeat flex items-center",
+      "max-md:py-20"
+    )}
     style={`background-image: linear-gradient(#0059a7cc, #0059a7cc), url(${bgImage.src});`}
   >
     <div class="container max-w-[650px] ml-auto z-10">
       <div class="max-w-[500px] mx-auto">
-        <h2 class="whitespace-pre-line text-[45px] font-black uppercase mb-4">
+        <h2
+          class="whitespace-pre-line text-[45px] font-black uppercase mb-4 max-md:text-[32px]"
+        >
           {t("about.title")}
         </h2>
         <p class="whitespace-pre-line text-justify mb-7">
@@ -42,9 +48,12 @@ const t = useTranslations(lang);
     </div>
   </div>
 
-  <div class="flex flex-1 h-full cursor-pointer">
+  <div class="flex flex-1 h-full cursor-pointer max-md:h-[80vh] max-md:min-h-[400px]">
     <div
-      class="flex-1 h-full flex flex-col justify-end pl-[50px] pb-[86px] bg-center bg-cover overflow-hidden relative group"
+      class={clsx(
+        "flex-1 flex flex-col justify-end pl-[50px] pb-[86px] bg-center bg-cover overflow-hidden relative group",
+        "max-lg:pl-6 max-md:pb-6"
+      )}
     >
       <div
         class="absolute inset-0 bg-center bg-cover transition-transform duration-500 group-hover:scale-110"
@@ -52,7 +61,7 @@ const t = useTranslations(lang);
       >
       </div>
       <div class="z-10 relative">
-        <a class="text-[24px] uppercase whitespace-pre-line mb-2 font-semibold">
+        <a class="text-[24px] uppercase whitespace-pre-line mb-2 font-semibold max-lg:text-[20px]">
           {t("about.history")}
         </a>
         <svg width="68" height="18" viewBox="0 0 68 18">
@@ -65,7 +74,10 @@ const t = useTranslations(lang);
     </div>
 
     <div
-      class="flex-1 h-full flex flex-col justify-end pl-[50px] pb-[86px] bg-center bg-cover overflow-hidden relative group"
+      class={clsx(
+        "flex-1 flex flex-col justify-end pl-[50px] pb-[86px] bg-center bg-cover overflow-hidden relative group",
+        "max-lg:pl-6 max-md:pb-6"
+      )}
     >
       <div
         class="absolute inset-0 bg-center bg-cover transition-transform duration-500 group-hover:scale-110"
@@ -73,7 +85,7 @@ const t = useTranslations(lang);
       >
       </div>
       <div class="z-10 relative">
-        <a class="text-[24px] uppercase whitespace-pre-line mb-2 font-semibold">
+        <a class="text-[24px] uppercase whitespace-pre-line mb-2 font-semibold max-lg:text-[20px]">
           {t("about.profile")}
         </a>
         <svg width="68" height="18" viewBox="0 0 68 18">
