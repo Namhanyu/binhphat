@@ -68,9 +68,19 @@ export const ui = {
     "history.content-4":
       "Phát triển mở rộng thị trường miền Nam bằng việc thành lập văn phòng chi nhánh tại TP. Hồ Chí Minh.",
     "vision.title": "Tầm nhìn",
-    "vision.content": "Bình Phát Construction hướng đến dẫn đầu trong ngành xây dựng và cơ điện, đổi mới và áp dụng công nghệ tiên tiến để kiến tạo công trình bền vững, phát triển cộng đồng.",
+    "vision.content":
+      "Bình Phát Construction hướng đến dẫn đầu trong ngành xây dựng và cơ điện, đổi mới và áp dụng công nghệ tiên tiến để kiến tạo công trình bền vững, phát triển cộng đồng.",
     "mission.title": "Sứ mệnh",
-    "mission.content": "Chúng tôi cam kết cung cấp các giải pháp xây dựng và cơ điện toàn diện, chất lượng cao với sự sáng tạo và đổi mới không ngừng, đáp ứng tối đa nhu cầu và sự kỳ vọng của khách hàng.",
+    "mission.content":
+      "Chúng tôi cam kết cung cấp các giải pháp xây dựng và cơ điện toàn diện, chất lượng cao với sự sáng tạo và đổi mới không ngừng, đáp ứng tối đa nhu cầu và sự kỳ vọng của khách hàng.",
+    "core_values.title": "Giá trị cốt lõi",
+    "core_values.subtitle": "tại Bình Phát",
+    "core_values.description": "Những giá trị cốt lõi này không chỉ là định hướng trong công việc hàng ngày của công ty mà còn là nền tảng giúp Bình Phát tạo dựng thương hiệu và uy tín lâu dài trong ngành",
+    "core_values.1": "Chất lượng",
+    "core_values.2": "Uy tín",
+    "core_values.3": "Sáng tạo",
+    "core_values.4": "An toàn",
+    "core_values.5": "Đoàn kết",
   },
   en: {
     "about.title": "About\nBinh Phat",

@@ -1,0 +1,123 @@
+---
+import bgImage from "../../../assets/images/11.webp";
+import image1 from "../../../assets/images/34.webp";
+import circle from "../../../assets/images/35.webp";
+import icon1 from "../../../assets/images/29.webp";
+import icon2 from "../../../assets/images/30.webp";
+import icon3 from "../../../assets/images/31.webp";
+import icon4 from "../../../assets/images/32.webp";
+import icon5 from "../../../assets/images/33.webp";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section
+  id="hero"
+  data-number="5"
+  data-menu-color="white"
+  class="min-h-screen max-lg:min-h-0 max-lg:pt-40 max-md:pb-20 bg-cover bg-center flex items-end"
+  style={`background-image: url(${bgImage.src});`}
+>
+  <div class="container">
+    <div class="text-center space-y-2 text-white mb-10">
+      <h2 class="text-5xl font-black uppercase max-md:text-3xl">
+        {t("core_values.title")}
+      </h2>
+      <div class="text-3xl max-md:text-xl uppercase">
+        {t("core_values.subtitle")}
+      </div>
+    </div>
+
+    <div class="w-full">
+      <div class="relative md:pt-[53.66%] text-[1300px] max-xl:text-[100vw]">
+        <div
+          class="absolute inset-0 bg-cover max-md:hidden"
+          style={`background-image: url(${image1.src});`}
+        >
+        </div>
+
+        <div class="grid gap-6 text-white justify-items-center justify-center grid-cols-2">
+          <div
+            class="md:absolute left-1/2 max-lg:bottom-[0.085em] bottom-[0.12em] md:-translate-x-1/2 md:w-1/2 text-white text-center col-span-2"
+          >
+            <div class="text-base max-lg:text-sm">
+              {t("core_values.description")}
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col items-center gap-3 md:absolute md:w-[0.0923076923em] bottom-[0.0876923077em] left-[0.1em] col-span-2"
+          >
+            <div
+              class="bg-cover flex items-center justify-center md:h-[0.0923076923em] md:w-full size-32"
+              style={`background-image: url(${circle.src});`}
+            >
+              <img src={icon1.src} alt="" class="h-1/2 object-contain" />
+            </div>
+            <div class="text-base md:text-lg lg:text-xl xl:text-2xl font-bold uppercase whitespace-nowrap">
+              {t("core_values.1")}
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col items-center gap-3 md:absolute md:w-[0.0923076923em] top-[0.15em] left-[0.225em]"
+          >
+            <div
+              class="bg-cover flex items-center justify-center md:h-[0.0923076923em] md:w-full size-32"
+              style={`background-image: url(${circle.src});`}
+            >
+              <img src={icon2.src} alt="" class="h-1/2 object-contain" />
+            </div>
+            <div class="text-base md:text-lg lg:text-xl xl:text-2xl font-bold uppercase whitespace-nowrap">
+              {t("core_values.2")}
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col items-center gap-3 md:absolute md:w-[0.0923076923em] top-[0.075em] left-1/2 md:-translate-x-1/2"
+          >
+            <div
+              class="bg-cover flex items-center justify-center md:h-[0.0923076923em] md:w-full size-32"
+              style={`background-image: url(${circle.src});`}
+            >
+              <img src={icon3.src} alt="" class="h-1/2 object-contain" />
+            </div>
+            <div class="text-base md:text-lg lg:text-xl xl:text-2xl font-bold uppercase whitespace-nowrap">
+              {t("core_values.3")}
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col items-center gap-3 md:absolute md:w-[0.0923076923em] top-[0.15em] right-[0.225em]"
+          >
+            <div
+              class="bg-cover flex items-center justify-center md:h-[0.0923076923em] md:w-full size-32"
+              style={`background-image: url(${circle.src});`}
+            >
+              <img src={icon4.src} alt="" class="h-1/2 object-contain" />
+            </div>
+            <div class="text-base md:text-lg lg:text-xl xl:text-2xl font-bold uppercase whitespace-nowrap">
+              {t("core_values.4")}
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col items-center gap-3 md:absolute md:w-[0.0923076923em] bottom-[0.0876923077em] right-[0.1em]"
+          >
+            <div
+              class="bg-cover flex items-center justify-center md:h-[0.0923076923em] md:w-full size-32"
+              style={`background-image: url(${circle.src});`}
+            >
+              <img src={icon5.src} alt="" class="h-1/2 object-contain" />
+            </div>
+            <div class="text-base md:text-lg lg:text-xl xl:text-2xl font-bold uppercase whitespace-nowrap">
+              {t("core_values.5")}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
