@@ -67,6 +67,10 @@ export const ui = {
       "Đổi tên thành Công ty TNHH Xây dựng và Cơ điện Bình Phát mở rộng phát triển thêm lĩnh vực cơ điện.",
     "history.content-4":
       "Phát triển mở rộng thị trường miền Nam bằng việc thành lập văn phòng chi nhánh tại TP. Hồ Chí Minh.",
+    "vision.title": "Tầm nhìn",
+    "vision.content": "Bình Phát Construction hướng đến dẫn đầu trong ngành xây dựng và cơ điện, đổi mới và áp dụng công nghệ tiên tiến để kiến tạo công trình bền vững, phát triển cộng đồng.",
+    "mission.title": "Sứ mệnh",
+    "mission.content": "Chúng tôi cam kết cung cấp các giải pháp xây dựng và cơ điện toàn diện, chất lượng cao với sự sáng tạo và đổi mới không ngừng, đáp ứng tối đa nhu cầu và sự kỳ vọng của khách hàng.",
   },
   en: {
     "about.title": "About\nBinh Phat",
