@@ -1,6 +1,6 @@
 ---
 import clsx from "clsx";
-import Menu from "../molecules/Menu.astro";
+import MenuButton from "../molecules/MenuButton";
 import PageLogo from "../molecules/PageLogo.astro";
 import SlidingMenu from "../molecules/SlidingMenu.astro";
 import LangSelector from "../molecules/LangSelector.astro";
@@ -18,7 +18,7 @@ import LangSelector from "../molecules/LangSelector.astro";
 
   <PageLogo />
 
-  <Menu />
+  <MenuButton client:load />
 
   <SlidingMenu />
 </header>

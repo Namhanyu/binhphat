@@ -2,11 +2,16 @@
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
-const viUrl = "/" + Astro.url.href;
+// Get the current path without the language prefix
+const pathname = Astro.url.pathname;
+const pathWithoutLang =
+  lang === "en" ? pathname.replace(/^\/en/, "") : pathname;
+const viUrl = pathWithoutLang || "/";
+const enUrl = "/en" + pathWithoutLang;
 ---
 
 <div class="flex items-center gap-2 text-sm z-50 font-semibold" id="lang">
-  <a href="/">VI</a>
+  <a href={viUrl}>VI</a>
   <span>/</span>
-  <a href="/en">EN</a>
+  <a href={enUrl}>EN</a>
 </div>
