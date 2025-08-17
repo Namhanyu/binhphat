@@ -49,6 +49,12 @@ export const ui = {
     "projects.title": "Công trình\ntiêu biểu",
     "projects.view_more": "Xem tất cả công trình",
     "introduction.title": "Giới thiệu",
+    "messages.subtitle": "Thông điệp",
+    "messages.title": "Lãnh đạo",
+    "messages.headline": "Trong suốt hành trình phát triển, Bình Phát luôn chú trọng đến chất lượng công trình, sự đổi mới trong công nghệ và sự hài lòng của khách hàng.",
+    "messages.content": "Bình Phát tự hào về những dự án mà công ty đã hoàn thành, đặc biệt trong lĩnh vực xây dựng và cơ điện tại các khu công nghiệp và các công trình thủy điện trọng điểm như Sơn La, Hòa Bình, Huội Quảng - Bản Chát.\n\nVới phương châm \"Chất lượng xứng đáng với niềm tin\" là kim chỉ nam trong mọi hoạt động, Bình Phát cam kết mang đến những giá trị bền vững cho cộng đồng và đối tác. Chúng tôi hiểu rằng, chất lượng không chỉ là yếu tố quyết định thành công trong hiện tại mà còn là nền tảng vững chắc cho sự phát triển lâu dài. Kiên định với những giá trị cốt lõi, Bình Phát hướng đến tương lai mở rộng quy mô hoạt động, vươn xa hơn nữa trong ngành xây dựng và cơ điện.",
+    "messages.ceo.name": "Nguyễn Văn Điệp",
+    "messages.ceo.title": "Giám đốc"
   },
   en: {
     "about.title": "About\nBinh Phat",

@@ -1,0 +1,54 @@
+---
+import bgImage from "../../../assets/images/09.webp";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section
+  id="messages"
+  data-number="2"
+  data-menu-color="primary"
+  class="h-screen max-md:h-auto relative"
+>
+  <div
+    class="md:absolute min-h-[400px] inset-0 bg-cover bg-center max-md:bg-right-bottom flex items-center"
+    style={`background-image: url(${bgImage.src});`}
+  >
+  </div>
+  <div class="container max-w-[1500px] relative h-full">
+    <div
+      class="bg-white/80 md:w-2/3 lg:w-1/2 h-full flex flex-col justify-center xl:px-16 px-8 gap-10 max-md:py-10"
+    >
+      <div class="grid gap-2">
+        <h3 class="text-3xl font-medium uppercase max-md:text-xl text-primary">
+          {t("messages.subtitle")}
+        </h3>
+        <h2 class="text-5xl font-black uppercase max-md:text-3xl text-primary">
+          {t("messages.title")}
+        </h2>
+      </div>
+
+      <div class="flex items-center">
+        <div class="shrink-0 size-2 bg-primary rounded-full"></div>
+        <div class="flex-1 h-px bg-primary"></div>
+      </div>
+
+      <p class="whitespace-pre-line text-justify">
+        <strong class="font-semibold">{t("messages.headline")}</strong>
+        <br /><br />
+        {t("messages.content")}
+      </p>
+
+      <div class="text-primary uppercase">
+        <div class="text-2xl font-bold max-md:text-lg">
+          {t("messages.ceo.name")}
+        </div>
+        <div>
+          {t("messages.ceo.title")}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
