@@ -1,0 +1,26 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/organisms/introduction/Hero.astro";
+---
+
+<Layout title="Bình Phát - Giới thiệu">
+  <Hero />
+</Layout>
+
+<script>
+  import { initScrollAnimations } from "../scripts/gsap-scroll.js";
+
+  const runInit = () => {
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(initScrollAnimations, { timeout: 500 });
+    } else {
+      setTimeout(initScrollAnimations, 200);
+    }
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", runInit);
+  } else {
+    runInit();
+  }
+</script>

@@ -1,0 +1,23 @@
+---
+import bgImage from "../../../assets/images/08.webp";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section
+  id="hero"
+  data-number="1"
+  data-menu-color="white"
+  class="h-screen max-md:max-h-[400px] bg-cover bg-center flex items-center"
+  style={`background-image: url(${bgImage.src});`}
+>
+  <div class="container">
+    <h2
+      class="whitespace-pre-line text-4xl font-bold uppercase mb-4 max-md:text-3xl text-white"
+    >
+      {t("introduction.title")}
+    </h2>
+  </div>
+</section>

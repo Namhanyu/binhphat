@@ -21,11 +21,15 @@ export const ui = {
     "metrics.note": "(Doanh thu 2024)",
     "contact.title": "Thông tin liên hệ",
     "contact.headquarters": "Trụ sở",
-    "contact.headquarters.address": "Thôn Yên Trường 1, Xã. Phú Nghĩa, TP. Hà Nội",
+    "contact.headquarters.address":
+      "Thôn Yên Trường 1, Xã. Phú Nghĩa, TP. Hà Nội",
     "contact.offices": "Văn phòng đại diện",
-    "contact.offices.hanoi": "HN: TT7A-9 KĐT mới Đại Kim, P. Định Công, TP. Hà Nội",
-    "contact.offices.hcm": "HCM: Số 381/14 đường Hòa Hảo, Phường Điện Hồng, TP.Hồ Chí Minh",
-    "contact.phone.email": "Điện thoại: 0565 595959 - Email: company@binhphat.com.vn",
+    "contact.offices.hanoi":
+      "HN: TT7A-9 KĐT mới Đại Kim, P. Định Công, TP. Hà Nội",
+    "contact.offices.hcm":
+      "HCM: Số 381/14 đường Hòa Hảo, Phường Điện Hồng, TP.Hồ Chí Minh",
+    "contact.phone.email":
+      "Điện thoại: 0565 595959 - Email: company@binhphat.com.vn",
     "contact.form.title": "Liên hệ với chúng tôi",
     "contact.form.name": "Họ và tên khách hàng",
     "contact.form.phone": "Số điện thoại",
@@ -37,12 +41,14 @@ export const ui = {
     "news.view_more": "Xem thêm tin tức",
     "operations.title": "Lĩnh vực hoạt động",
     "operations.subtitle": "Tổng thầu xây dựng và cơ điện",
-    "operations.content": "Thiết kế và Thi công là mô hình tiên tiến đã được nhiều nhà thầu lớn áp dụng, giúp tối ưu hóa quy trình quản lý dự án, giảm thiểu rủi ro và tiết kiệm thời gian, chi phí cho chủ đầu tư. Tuy nhiên, mô hình này không dễ dàng thực hiện bởi nó đòi hỏi sự phối hợp nhịp nhàng giữa thiết kế và thi công, giữa xây dựng và cơ điện. Do đó, việc Chủ đầu tư hiện nay quan tâm là một Tổng thầu có năng lực vượt trội. Bình Phát tự hào là một trong những tổng thầu xây dựng và cơ điện uy tín tại Việt Nam, là đối tác tin cậy của nhiều chủ đầu tư và khách hàng nước ngoài trong việc thực hiện các dự án từ quy mô nhỏ đến các công trình lớn, phức tạp.",
+    "operations.content":
+      "Thiết kế và Thi công là mô hình tiên tiến đã được nhiều nhà thầu lớn áp dụng, giúp tối ưu hóa quy trình quản lý dự án, giảm thiểu rủi ro và tiết kiệm thời gian, chi phí cho chủ đầu tư. Tuy nhiên, mô hình này không dễ dàng thực hiện bởi nó đòi hỏi sự phối hợp nhịp nhàng giữa thiết kế và thi công, giữa xây dựng và cơ điện. Do đó, việc Chủ đầu tư hiện nay quan tâm là một Tổng thầu có năng lực vượt trội. Bình Phát tự hào là một trong những tổng thầu xây dựng và cơ điện uy tín tại Việt Nam, là đối tác tin cậy của nhiều chủ đầu tư và khách hàng nước ngoài trong việc thực hiện các dự án từ quy mô nhỏ đến các công trình lớn, phức tạp.",
     "operations.view_more": "Xem thêm lĩnh vực hoạt động",
     "operations.construction": "Tổng thầu xây dựng",
     "operations.electromechanical": "Tổng thầu cơ điện",
     "projects.title": "Công trình\ntiêu biểu",
-    "projects.view_more": "Xem tất cả công trình"
+    "projects.view_more": "Xem tất cả công trình",
+    "introduction.title": "Giới thiệu",
   },
   en: {
     "about.title": "About\nBinh Phat",
@@ -59,11 +65,15 @@ export const ui = {
     "metrics.note": "(Revenue 2024)",
     "contact.title": "Contact information",
     "contact.headquarters": "Headquarters",
-    "contact.headquarters.address": "Thôn Yên Trường 1, Xã. Phú Nghĩa, TP. Hà Nội",
+    "contact.headquarters.address":
+      "Thôn Yên Trường 1, Xã. Phú Nghĩa, TP. Hà Nội",
     "contact.offices": "Representative offices",
-    "contact.offices.hanoi": "HN: TT7A-9 KĐT mới Đại Kim, P. Định Công, TP. Hà Nội",
-    "contact.offices.hcm": "HCM: Số 381/14 đường Hòa Hảo, Phường Điện Hồng, TP.Hồ Chí Minh",
-    "contact.phone.email": "Phone: 0565 595959 - Email: company@binhphat.com.vn",
+    "contact.offices.hanoi":
+      "HN: TT7A-9 KĐT mới Đại Kim, P. Định Công, TP. Hà Nội",
+    "contact.offices.hcm":
+      "HCM: Số 381/14 đường Hòa Hảo, Phường Điện Hồng, TP.Hồ Chí Minh",
+    "contact.phone.email":
+      "Phone: 0565 595959 - Email: company@binhphat.com.vn",
     "contact.form.title": "Contact us",
     "contact.form.name": "Customer name",
     "contact.form.phone": "Phone number",
@@ -75,11 +85,13 @@ export const ui = {
     "news.view_more": "View more news",
     "operations.title": "Operations",
     "operations.subtitle": "General contractor for construction and M&E",
-    "operations.content": "Design and construction is an advanced model that has been applied by many large contractors, helping to optimize project management processes, minimize risks and save time and costs for investors. However, this model is not easy to implement as it requires smooth coordination between design and construction, between construction and M&E. Therefore, what investors are currently concerned about is a general contractor with outstanding capabilities. Binh Phat is proud to be one of the reputable general contractors in construction and M&E in Vietnam, a trusted partner of many investors and foreign customers in implementing projects from small scale to large and complex works.",
+    "operations.content":
+      "Design and construction is an advanced model that has been applied by many large contractors, helping to optimize project management processes, minimize risks and save time and costs for investors. However, this model is not easy to implement as it requires smooth coordination between design and construction, between construction and M&E. Therefore, what investors are currently concerned about is a general contractor with outstanding capabilities. Binh Phat is proud to be one of the reputable general contractors in construction and M&E in Vietnam, a trusted partner of many investors and foreign customers in implementing projects from small scale to large and complex works.",
     "operations.view_more": "View more operations",
     "operations.construction": "General contractor for construction",
     "operations.electromechanical": "General contractor for electromechanical",
     "projects.title": "Featured projects",
-    "projects.view_more": "View all projects"
+    "projects.view_more": "View all projects",
+    "introduction.title": "Introduction",
   },
 } as const;
