@@ -71,10 +71,8 @@ const lang = getLangFromUrl(Astro.url);
   document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("[data-menu-color]");
     const header = document.querySelector("#header");
-    const logo = document.querySelector("#logo");
-    const menuButton = document.querySelector("#menu-button");
-
     const headerHeight = header ? header.offsetHeight : 0;
+    const pageCount = document.querySelectorAll("[data-number]").length;
 
     function applyColor(color) {
       const isWhite = color === "white";
@@ -89,13 +87,57 @@ const lang = getLangFromUrl(Astro.url);
       }
     }
 
+    function setPage(number) {
+      const pagination = document.querySelector("#pagination");
+      if (!pagination) return;
+
+      pagination.querySelectorAll("div").forEach((el) => {
+        el.classList = "transition-all";
+      });
+
+      const currentPage =
+        number === "end"
+          ? pagination.querySelector("div:last-child")
+          : pagination.querySelector(`div:nth-child(${number})`);
+
+      console.log(currentPage);
+      if (currentPage) {
+        currentPage.classList.add(
+          "text-primary",
+          "text-2xl",
+          "font-bold",
+          "text-shadow"
+        );
+      }
+    }
+
+    function createPaging() {
+      const pagination = document.querySelector("#pagination");
+      if (!pagination) return;
+
+      pagination.innerHTML = "";
+
+      for (let i = 1; i <= pageCount; i++) {
+        const page = document.createElement("div");
+        page.textContent = i.toString().padStart(2, "0");
+        page.classList.add("transition-all");
+        pagination.appendChild(page);
+      }
+    }
+
     if (sections.length) applyColor(sections[0].dataset.menuColor);
+
+    if (pageCount > 1) {
+      setPage(1);
+      createPaging();
+    }
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             applyColor(entry.target.dataset.menuColor);
+            setPage(entry.target.dataset.number);
           }
         });
       },
