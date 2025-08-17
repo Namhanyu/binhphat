@@ -51,10 +51,22 @@ export const ui = {
     "introduction.title": "Giới thiệu",
     "messages.subtitle": "Thông điệp",
     "messages.title": "Lãnh đạo",
-    "messages.headline": "Trong suốt hành trình phát triển, Bình Phát luôn chú trọng đến chất lượng công trình, sự đổi mới trong công nghệ và sự hài lòng của khách hàng.",
-    "messages.content": "Bình Phát tự hào về những dự án mà công ty đã hoàn thành, đặc biệt trong lĩnh vực xây dựng và cơ điện tại các khu công nghiệp và các công trình thủy điện trọng điểm như Sơn La, Hòa Bình, Huội Quảng - Bản Chát.\n\nVới phương châm \"Chất lượng xứng đáng với niềm tin\" là kim chỉ nam trong mọi hoạt động, Bình Phát cam kết mang đến những giá trị bền vững cho cộng đồng và đối tác. Chúng tôi hiểu rằng, chất lượng không chỉ là yếu tố quyết định thành công trong hiện tại mà còn là nền tảng vững chắc cho sự phát triển lâu dài. Kiên định với những giá trị cốt lõi, Bình Phát hướng đến tương lai mở rộng quy mô hoạt động, vươn xa hơn nữa trong ngành xây dựng và cơ điện.",
+    "messages.headline":
+      "Trong suốt hành trình phát triển, Bình Phát luôn chú trọng đến chất lượng công trình, sự đổi mới trong công nghệ và sự hài lòng của khách hàng.",
+    "messages.content":
+      'Bình Phát tự hào về những dự án mà công ty đã hoàn thành, đặc biệt trong lĩnh vực xây dựng và cơ điện tại các khu công nghiệp và các công trình thủy điện trọng điểm như Sơn La, Hòa Bình, Huội Quảng - Bản Chát.\n\nVới phương châm "Chất lượng xứng đáng với niềm tin" là kim chỉ nam trong mọi hoạt động, Bình Phát cam kết mang đến những giá trị bền vững cho cộng đồng và đối tác. Chúng tôi hiểu rằng, chất lượng không chỉ là yếu tố quyết định thành công trong hiện tại mà còn là nền tảng vững chắc cho sự phát triển lâu dài. Kiên định với những giá trị cốt lõi, Bình Phát hướng đến tương lai mở rộng quy mô hoạt động, vươn xa hơn nữa trong ngành xây dựng và cơ điện.',
     "messages.ceo.name": "Nguyễn Văn Điệp",
-    "messages.ceo.title": "Giám đốc"
+    "messages.ceo.title": "Giám đốc",
+    "history.title": "Lịch sử",
+    "history.subtitle": "Hình thành và phát triển",
+    "history.content-1":
+      "Công ty TNHH Xây dựng và Cơ điện Bình Phát được thành lập vào ngày 19/08/2013, được biết đến là một trong những tổng thầu uy tín trong lĩnh vực xây dựng và cơ điện công nghiệp.",
+    "history.content-2":
+      "Tự hào trở thành đối tác của các công ty thủy điện hàng đầu như Huội Quảng – Bản Chát, Sơn La, Lai Châu, Hòa Bình,…",
+    "history.content-3":
+      "Đổi tên thành Công ty TNHH Xây dựng và Cơ điện Bình Phát mở rộng phát triển thêm lĩnh vực cơ điện.",
+    "history.content-4":
+      "Phát triển mở rộng thị trường miền Nam bằng việc thành lập văn phòng chi nhánh tại TP. Hồ Chí Minh.",
   },
   en: {
     "about.title": "About\nBinh Phat",

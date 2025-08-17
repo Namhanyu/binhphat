@@ -72,6 +72,7 @@ module.exports = {
         "6xl": ["4.5rem", { lineHeight: 1 }], // 72px
       },
       gap: {
+        13: "3.25rem", // 52px
         17: "4.25rem", // 68px
         18: "4.5rem", // 72px
         19: "4.75rem", // 76px
@@ -80,6 +81,9 @@ module.exports = {
         17: "4.25rem", // 68px
         18: "4.5rem", // 72px
         19: "4.75rem", // 76px
+      },
+      padding: {
+        13: "3.25rem", // 52px
       },
     },
   },

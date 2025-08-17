@@ -1,0 +1,118 @@
+---
+import clsx from "clsx";
+import bgImage from "../../../assets/images/12.webp";
+import image36 from "../../../assets/images/36.webp";
+import image37 from "../../../assets/images/37.webp";
+import image38 from "../../../assets/images/38.webp";
+import image39 from "../../../assets/images/39.webp";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const history = [
+  { year: 2013, content: t("history.content-1"), image: image36.src },
+  { year: 2015, content: t("history.content-2"), image: image37.src },
+  { year: 2018, content: t("history.content-3"), image: image38.src },
+  { year: 2020, content: t("history.content-4"), image: image39.src },
+];
+---
+
+<section
+  id="hero"
+  data-number="3"
+  data-menu-color="primary"
+  class="min-h-screen max-md:max-h-[400px] bg-contain bg-no-repeat bg-right-top flex items-center"
+  style={`background-image: url(${bgImage.src});`}
+>
+  <div class="container !max-w-[1500px]">
+    <div class="grid gap-10">
+      <div class="grid gap-2">
+        <h2 class="text-5xl font-black uppercase max-md:text-3xl text-primary">
+          {t("history.title")}
+        </h2>
+        <h3 class="text-3xl font-medium uppercase max-md:text-xl text-primary">
+          {t("history.subtitle")}
+        </h3>
+      </div>
+
+      <div class="flex items-center xl:gap-20 gap-6 relative">
+        <div
+          class="grid gap-8 w-36 max-lg:w-28 shrink-0 z-20 max-md:absolute top-4 left-4"
+        >
+          {
+            history.map((item) => (
+              <div
+                class={clsx(
+                  "text-5xl max-lg:text-3xl font-bold text-[#cbcbcb] transition-all cursor-pointer",
+                  {
+                    "text-[140px] max-lg:!text-6xl leading-none !text-primary":
+                      item.year === 2013,
+                  }
+                )}
+                data-content={item.content}
+                data-image={item.image}
+              >
+                {item.year}
+              </div>
+            ))
+          }
+        </div>
+
+        <div class="flex items-end flex-1 max-lg:grid">
+          <div
+            data-name="image"
+            class="w-3/5 h-[385px] bg-cover bg-center shrink-0 mb-12 z-10 grow-1 max-lg:w-full max-lg:mb-0"
+            style={`background-image: url(${history[0].image});`}
+          >
+          </div>
+          <div
+            class={clsx(
+              "flex-1 bg-primary text-white text-justify h-[310px] flex flex-col relative max-lg:h-auto",
+              "before:h-full before:w-1/2 before:absolute before:right-full before:bg-primary before:top-0 max-lg:before:hidden",
+              "after:h-full after:w-1/2 after:absolute after:left-full after:bg-primary after:top-0 max-lg:after:hidden",
+              "xl:px-13 py-16 px-6 max-lg:py-8"
+            )}
+          >
+            <div data-name="content" class="max-lg:mb-6">
+              {history[0].content}
+            </div>
+            <div
+              class="w-full h-4 bg-gradient-to-r from-primary to-[#217EC1] mt-auto"
+            >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="module" is:inline>
+  const contentElements = document.querySelectorAll("[data-content]");
+
+  contentElements.forEach((contentEl) => {
+    contentEl.addEventListener("click", () => {
+      const content = contentEl.dataset.content;
+      const imageUrl = contentEl.dataset.image;
+      contentElements.forEach((el) => {
+        el.classList.remove(
+          "text-[140px]",
+          "leading-none",
+          "max-lg:!text-6xl",
+          "!text-primary"
+        );
+      });
+      contentEl.classList.add(
+        "text-[140px]",
+        "leading-none",
+        "max-lg:!text-6xl",
+        "!text-primary"
+      );
+
+      document.querySelector("[data-name='image']").style.backgroundImage =
+        `url(${imageUrl})`;
+      document.querySelector("[data-name='content']").innerHTML = content;
+    });
+  });
+</script>
