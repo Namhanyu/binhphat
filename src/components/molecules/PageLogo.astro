@@ -1,11 +1,11 @@
 ---
+import { getLangFromUrl } from "../../i18n/utils";
 import HeaderLogo from "../atoms/logo/HeaderLogo.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const url = lang === "vi" ? "/" : `/${lang}`;
 ---
 
-<a
-  href="/"
-  class="absolute left-1/2 -translate-x-1/2 z-20"
-  aria-label="logo"
->
+<a href={url} class="absolute left-1/2 -translate-x-1/2 z-20" aria-label="logo">
   <HeaderLogo id="logo" class="w-auto h-10 max-md:h-6" />
 </a>

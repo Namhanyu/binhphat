@@ -1,5 +1,5 @@
 ---
-const { title = "Bình Phát", isRestaurant = false } = Astro.props;
+const { title = "Bình Phát" } = Astro.props;
 import "../styles/global.css";
 import "../styles/common.css";
 import "@fontsource/montserrat";
@@ -56,7 +56,7 @@ const lang = getLangFromUrl(Astro.url);
     />
   </head>
   <body class="overflow-x-hidden max-md:text-[14px]">
-    <Header isRestaurant={isRestaurant} />
+    <Header />
     <div
       id="snap-container"
       class="lg:snap-mandatory lg:snap-y [&>_*]:snap-start overflow-y-scroll h-screen overflow-x-hidden"
@@ -100,7 +100,6 @@ const lang = getLangFromUrl(Astro.url);
           ? pagination.querySelector("div:last-child")
           : pagination.querySelector(`div:nth-child(${number})`);
 
-      console.log(currentPage);
       if (currentPage) {
         currentPage.classList.add(
           "text-primary",
@@ -117,6 +116,8 @@ const lang = getLangFromUrl(Astro.url);
 
       pagination.innerHTML = "";
 
+      if (pageCount <= 1) return;
+
       for (let i = 1; i <= pageCount; i++) {
         const page = document.createElement("div");
         page.textContent = i.toString().padStart(2, "0");
@@ -127,10 +128,8 @@ const lang = getLangFromUrl(Astro.url);
 
     if (sections.length) applyColor(sections[0].dataset.menuColor);
 
-    if (pageCount > 1) {
-      setPage(1);
-      createPaging();
-    }
+    setPage(1);
+    createPaging();
 
     const observer = new IntersectionObserver(
       (entries) => {
