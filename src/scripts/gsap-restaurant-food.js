@@ -135,27 +135,6 @@ export function initRestaurantFoodAnimations() {
     }
   });
 
-  // Read More Button Animation
-  const readMoreButtons = document.querySelectorAll(".read-more");
-  readMoreButtons.forEach((button, index) => {
-    gsap.set(button, {
-      opacity: 0,
-      y: 20,
-    });
-
-    gsap.to(button, {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: button,
-        start: "top 80%",
-        toggleActions: "play none none reverse",
-      },
-    });
-  });
-
   // Drink Menu Tabs Animation
   const drinkMenuSection = document.querySelector(".drink-menu-tabs");
   if (drinkMenuSection) {
