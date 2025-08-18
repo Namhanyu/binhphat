@@ -59,6 +59,7 @@ module.exports = {
         xl: "1280px",
         "2xl": "1440px",
         "3xl": "1600px",
+        "4xl": "1920px",
       },
       fontSize: {
         xxs: ["0.625rem", { lineHeight: "0.75rem" }], // 10px

@@ -14,9 +14,9 @@ const t = useTranslations(lang);
   style={`background-image: url(${bgImage.src});`}
 >
   <div class="container mx-auto">
-    <div class="max-w-[600px]">
+    <div class="max-w-[600px] 3xl:max-w-[37.5vw]">
       <h2
-        class="text-5xl max-md:text-3xl uppercase font-bold text-primary mb-8"
+        class="text-5xl max-md:text-3xl uppercase font-bold text-primary mb-8 3xl:mb-[2vw]"
         data-animate
         data-y="50"
       >
@@ -24,7 +24,7 @@ const t = useTranslations(lang);
       </h2>
 
       <!-- Company Information -->
-      <div class="text-left space-y-3">
+      <div class="text-left space-y-3 3xl:space-y-[0.75vw]">
         <div data-animate data-x="-50">
           <h3 class="uppercase font-bold text-primary">
             {t("contact.headquarters")}
@@ -36,7 +36,7 @@ const t = useTranslations(lang);
           <h3 class="uppercase font-bold text-primary">
             {t("contact.offices")}
           </h3>
-          <div class="space-y-1">
+          <div class="space-y-1 3xl:space-y-[0.25vw]">
             {t("contact.offices.hanoi")}<br />
             {t("contact.offices.hcm")}
           </div>
@@ -47,11 +47,11 @@ const t = useTranslations(lang);
         </div>
 
         <div data-animate data-x="-50">
-          <h3 class="uppercase font-bold text-primary mb-2">
+          <h3 class="uppercase font-bold text-primary mb-2 3xl:mb-[0.5vw]">
             {t("contact.form.title")}
           </h3>
 
-          <form class="grid gap-1">
+          <form class="grid gap-1 3xl:gap-[0.25vw]">
             <!-- Name Input -->
             <div>
               <input

@@ -15,9 +15,9 @@ const t = useTranslations(lang);
   class="min-h-screen bg-cover bg-center flex items-center text-white"
   style={`background-image: url(${bgImage.src});`}
 >
-  <div class="container !max-w-[1500px]">
-    <div class="xl:w-1/2 lg:w-2/3 grid gap-12">
-      <div class="grid gap-4">
+  <div class="container !max-w-[1500px] 3xl:!max-w-[80vw]">
+    <div class="xl:w-1/2 lg:w-2/3 grid gap-12 3xl:gap-[3vw]">
+      <div class="grid gap-4 3xl:gap-[1vw]">
         <h2
           class="text-5xl font-bold uppercase max-md:text-3xl whitespace-pre-line"
           data-animate
@@ -30,22 +30,34 @@ const t = useTranslations(lang);
         </div>
       </div>
 
-      <div class="grid grid-cols-3 gap-3">
-        <div class="grid gap-3 content-start" data-animate data-y="20">
+      <div class="grid grid-cols-3 gap-3 3xl:gap-[0.75vw]">
+        <div
+          class="grid gap-3 3xl:gap-[0.75vw] content-start"
+          data-animate
+          data-y="20"
+        >
           <img src={image01.src} alt={t("certification.1")} />
           <div class="uppercase whitespace-pre-line">
             {t("certification.1")}
           </div>
         </div>
 
-        <div class="grid gap-3 content-start" data-animate data-y="20">
+        <div
+          class="grid gap-3 3xl:gap-[0.75vw] content-start"
+          data-animate
+          data-y="20"
+        >
           <img src={image02.src} alt={t("certification.2")} />
           <div class="uppercase whitespace-pre-line">
             {t("certification.2")}
           </div>
         </div>
 
-        <div class="grid gap-3 content-start" data-animate data-y="20">
+        <div
+          class="grid gap-3 3xl:gap-[0.75vw] content-start"
+          data-animate
+          data-y="20"
+        >
           <img src={image03.src} alt={t("certification.3")} />
           <div class="uppercase whitespace-pre-line">
             {t("certification.3")}

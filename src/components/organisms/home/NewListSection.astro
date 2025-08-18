@@ -53,14 +53,14 @@ const t = useTranslations(lang);
 
 <section
   id="news"
-  class="min-h-screen flex items-center pt-20 pb-10 bg-cover bg-center"
+  class="min-h-screen flex items-center pt-20 pb-10 3xl:pt-[5vw] 3xl:pb-[2.5vw] bg-cover bg-center"
   data-menu-color="primary"
   style={`background-image: url(${bgImage.src});`}
 >
-  <div class="container mx-auto space-y-5">
-    <div class="flex items-center justify-between gap-4">
+  <div class="container mx-auto space-y-5 3xl:space-y-[1.25vw]">
+    <div class="flex items-center justify-between gap-4 3xl:gap-[1vw]">
       <h2
-        class="whitespace-pre-line text-4xl font-bold uppercase mb-4 max-md:text-3xl text-primary"
+        class="whitespace-pre-line text-4xl font-bold uppercase mb-4 3xl:mb-[1vw] max-md:text-3xl text-primary"
       >
         {t("news.title")}
       </h2>
@@ -70,7 +70,7 @@ const t = useTranslations(lang);
     </div>
 
     <div
-      class="grid md:grid-cols-2 xl:grid-cols-4 grid-rows-[repeat(4,_280px)] md:grid-rows-[280px_280px]"
+      class="grid md:grid-cols-2 xl:grid-cols-4 grid-rows-[repeat(2,_280px)] 3xl:grid-rows-[repeat(2,_17.5vw)] md:grid-rows-[280px_280px]"
     >
       {
         newsItems.map((item, index) => (
@@ -78,6 +78,7 @@ const t = useTranslations(lang);
             class={clsx(
               "group relative overflow-hidden",
               "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-40 after:pointer-events-none after:bg-gradient-to-t after:from-primary after:to-primary/0",
+              "3xl:after:h-[10vw]",
               {
                 "xl:col-span-2 xl:row-span-2": index === 0,
                 "xl:col-span-2": index === 1,
@@ -91,15 +92,16 @@ const t = useTranslations(lang);
             <div
               class={clsx(
                 "grid gap-2 relative p-6 pr-10 justify-items-start items-end h-full content-end z-10 text-white",
+                "3xl:gap-[0.5vw] 3xl:p-[1.5vw] 3xl:pr-[2.5vw]",
                 { "xl:max-w-[80%]": index === 0, "xl:max-w-[60%]": index === 1 }
               )}
             >
-              <div class="bg-white text-primary uppercase text-xs px-2 leading-4 font-semibold">
+              <div class="bg-white text-primary uppercase text-xs px-2 leading-4 3xl:px-[0.5vw] 3xl:leading-snug font-semibold">
                 {item.label}
               </div>
               <div
                 class={clsx("font-bold uppercase line-clamp-2", {
-                  "xl:text-xl": index === 0,
+                  "xl:text-xl 3xl:text-[1.25vw] 3xl:leading-snug": index === 0,
                 })}
               >
                 {item.title}

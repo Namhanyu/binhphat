@@ -22,18 +22,19 @@ const t = useTranslations(lang);
   <div
     class={clsx(
       "flex-1 bg-cover bg-left bg-no-repeat flex items-center",
-      "pb-10 pt-20"
+      "pb-10 pt-20",
+      "3xl:pb-[2.5vw] 3xl:pt-[5vw]"
     )}
     style={`background-image: linear-gradient(#0059a7cc, #0059a7cc), url(${bgImage.src});`}
   >
-    <div class="container max-w-[650px] ml-auto z-10">
-      <div class="max-w-[500px] mx-auto">
+    <div class="container max-w-[650px] 3xl:max-w-[40vw] ml-auto z-10">
+      <div class="max-w-[500px] 3xl:max-w-[31.25vw] mx-auto">
         <h2
-          class="whitespace-pre-line text-4xl font-black uppercase mb-4 max-md:text-3xl"
+          class="whitespace-pre-line text-4xl font-black uppercase mb-4 3xl:mb-[1vw] max-md:text-3xl"
         >
           {t("about.title")}
         </h2>
-        <p class="whitespace-pre-line text-justify mb-7">
+        <p class="whitespace-pre-line text-justify mb-7 3xl:mb-[1.75vw]">
           {t("about.content")}
         </p>
         <ActionButton>{t("about.button")}</ActionButton>
@@ -48,6 +49,7 @@ const t = useTranslations(lang);
       class={clsx(
         "flex-1 flex flex-col justify-end pl-[50px] pb-[86px] bg-center bg-cover overflow-hidden relative group",
         "max-lg:pl-6 max-md:pb-6",
+        "3xl:pl-[3.125vw] 3xl:pb-[5.375vw]",
         "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[30%] after:pointer-events-none after:bg-gradient-to-t after:from-primary after:to-primary/0"
       )}
     >
@@ -58,11 +60,11 @@ const t = useTranslations(lang);
       </div>
       <div class="z-10 relative">
         <a
-          class="text-[24px] uppercase whitespace-pre-line mb-2 font-semibold max-lg:text-[20px]"
+          class="text-[24px] 3xl:text-[1.5vw] uppercase whitespace-pre-line mb-2 font-semibold max-lg:text-[20px]"
         >
           {t("about.history")}
         </a>
-        <LongArrow />
+        <LongArrow class="3xl:w-auto 3xl:h-[1.125vw]" />
       </div>
     </div>
 
@@ -70,6 +72,7 @@ const t = useTranslations(lang);
       class={clsx(
         "flex-1 flex flex-col justify-end pl-[50px] pb-[86px] bg-center bg-cover overflow-hidden relative group",
         "max-lg:pl-6 max-md:pb-6",
+        "3xl:pl-[3.125vw] 3xl:pb-[5.375vw]",
         "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[30%] after:pointer-events-none after:bg-gradient-to-t after:from-primary after:to-primary/0"
       )}
     >
@@ -80,11 +83,11 @@ const t = useTranslations(lang);
       </div>
       <div class="z-10 relative">
         <a
-          class="text-[24px] uppercase whitespace-pre-line mb-2 font-semibold max-lg:text-[20px]"
+          class="text-[24px] 3xl:text-[1.5vw] uppercase whitespace-pre-line mb-2 font-semibold max-lg:text-[20px]"
         >
           {t("about.profile")}
         </a>
-        <LongArrow />
+        <LongArrow class="3xl:w-auto 3xl:h-[1.125vw]" />
       </div>
     </div>
   </div>

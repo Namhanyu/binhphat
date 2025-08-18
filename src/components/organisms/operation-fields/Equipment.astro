@@ -11,7 +11,7 @@ const t = useTranslations(lang);
 <section
   id="equipment"
   data-menu-color="primary"
-  class="min-h-screen bg-[size:auto_144px,_cover] bg-[position:bottom,_top] bg-no-repeat flex items-center justify-center py-20"
+  class="min-h-screen bg-[size:auto_144px,_cover] 3xl:bg-[size:auto_7vw,_cover] bg-[position:bottom,_top] bg-no-repeat flex items-center justify-center py-20"
   style={`background-image: linear-gradient(#045ca4, #045ca4), url(${bgImage.src});`}
 >
   <div class="container">
@@ -19,12 +19,14 @@ const t = useTranslations(lang);
       <div class="flex-1 self-end">
         <img
           src={fgImage.src}
-          class="w-full lg:-mb-20"
+          class="w-full lg:-mb-20 3xl:-mb-[5vw]"
           data-animate
           data-y="100"
         />
       </div>
-      <div class="shrink-0 grid gap-10 max-w-[560px] ml-auto">
+      <div
+        class="shrink-0 grid gap-10 3xl:gap-[2.5vw] max-w-[560px] 3xl:max-w-[35vw] ml-auto"
+      >
         <h2
           class="text-5xl font-bold uppercase max-md:text-3xl whitespace-pre-line text-primary text-right"
           data-animate
@@ -39,7 +41,7 @@ const t = useTranslations(lang);
         >
           {t("equipment.content")}
         </p>
-        <div class="grid gap-2">
+        <div class="grid gap-2 3xl:gap-[0.5vw]">
           <div
             class="text-primary uppercase pb-2 border-b border-primary font-bold"
             data-animate
@@ -47,8 +49,8 @@ const t = useTranslations(lang);
           >
             {t("equipment.list")}
           </div>
-          <div class="flex items-start gap-4 justify-between">
-            <ul class="flex-1 pl-4" data-animate data-x="-50">
+          <div class="flex items-start gap-4 3xl:gap-[1vw] justify-between">
+            <ul class="flex-1 pl-4 3xl:pl-[1vw]" data-animate data-x="-50">
               {
                 Array.from({ length: 12 }, (_, i) => (
                   <li class="list-disc">
@@ -57,7 +59,7 @@ const t = useTranslations(lang);
                 ))
               }
             </ul>
-            <ul class="flex-1 pl-4" data-animate data-x="50">
+            <ul class="flex-1 pl-4 3xl:pl-[1vw]" data-animate data-x="50">
               {
                 Array.from({ length: 12 }, (_, i) => (
                   <li class="list-disc">

@@ -16,11 +16,11 @@ const t = useTranslations(lang);
     style={`background-image: url(${bgImage.src});`}
   >
   </div>
-  <div class="container !max-w-[1500px] relative h-full">
+  <div class="container !max-w-[1500px] 3xl:!max-w-[80vw] relative h-full">
     <div
-      class="bg-white/80 md:w-2/3 lg:w-1/2 h-full flex flex-col justify-center xl:px-16 px-8 gap-10 max-md:py-10"
+      class="bg-white/80 md:w-2/3 lg:w-1/2 h-full flex flex-col justify-center 3xl:px-[4vw] 3xl:gap-[2.5vw] xl:px-16 px-8 gap-10 max-md:py-10"
     >
-      <div class="grid gap-2">
+      <div class="grid gap-2 3xl:gap-[0.5vw]">
         <h3
           class="text-3xl font-medium uppercase max-md:text-xl text-primary"
           data-animate
@@ -38,9 +38,13 @@ const t = useTranslations(lang);
       </div>
 
       <div class="flex items-center">
-        <div class="shrink-0 size-2 bg-primary rounded-full" data-animate></div>
         <div
-          class="flex-1 h-px bg-primary origin-left"
+          class="shrink-0 size-2 3xl:size-[0.5vw] bg-primary rounded-full"
+          data-animate
+        >
+        </div>
+        <div
+          class="flex-1 h-px 3xl:h-[0.0625vw] bg-primary origin-left"
           data-animate
           data-scale-x="0"
         >

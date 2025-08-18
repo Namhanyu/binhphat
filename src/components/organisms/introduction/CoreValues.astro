@@ -20,7 +20,9 @@ const t = useTranslations(lang);
   style={`background-image: url(${bgImage.src});`}
 >
   <div class="container">
-    <div class="text-center space-y-2 text-white mb-10">
+    <div
+      class="text-center space-y-2 text-white max-md:mb-10 -mb-10 3xl:space-y-[0.5vw] 3xl:-mb-[2.5vw] z-20 relative"
+    >
       <h2
         class="text-5xl font-black uppercase max-md:text-3xl"
         data-animate
@@ -34,7 +36,9 @@ const t = useTranslations(lang);
     </div>
 
     <div class="w-full">
-      <div class="relative md:pt-[53.66%] text-[1300px] max-xl:text-[100vw]">
+      <div
+        class="relative md:pt-[53.66%] text-[1300px] 3xl:text-[80vw] max-xl:text-[100vw]"
+      >
         <div
           class="absolute inset-0 bg-cover max-md:hidden"
           style={`background-image: url(${image1.src});`}
@@ -42,7 +46,7 @@ const t = useTranslations(lang);
         </div>
 
         <div
-          class="grid gap-6 text-white justify-items-center justify-center grid-cols-2"
+          class="grid gap-6 3xl:gap-[1.5vw] text-white justify-items-center justify-center grid-cols-2"
         >
           <div
             class="md:absolute left-1/2 max-lg:bottom-[0.085em] bottom-[0.12em] md:-translate-x-1/2 md:w-1/2 text-white text-center col-span-2"
@@ -53,7 +57,7 @@ const t = useTranslations(lang);
           </div>
 
           <div
-            class="flex flex-col items-center gap-3 md:absolute md:w-[0.0923076923em] bottom-[0.0876923077em] left-[0.1em] col-span-2"
+            class="flex flex-col items-center gap-3 3xl:gap-[0.75vw] md:absolute md:w-[0.0923076923em] bottom-[0.0876923077em] left-[0.1em] col-span-2"
             data-animate
             data-x="-30"
           >
@@ -71,7 +75,7 @@ const t = useTranslations(lang);
           </div>
 
           <div
-            class="flex flex-col items-center gap-3 md:absolute md:w-[0.0923076923em] top-[0.15em] left-[0.225em]"
+            class="flex flex-col items-center gap-3 3xl:gap-[0.75vw] md:absolute md:w-[0.0923076923em] top-[0.15em] left-[0.225em]"
             data-animate
             data-x="-30"
             data-y="-30"
@@ -90,7 +94,7 @@ const t = useTranslations(lang);
           </div>
 
           <div
-            class="flex flex-col items-center gap-3 md:absolute md:w-[0.0923076923em] top-[0.075em] left-1/2 md:-translate-x-1/2"
+            class="flex flex-col items-center gap-3 3xl:gap-[0.75vw] md:absolute md:w-[0.0923076923em] top-[0.075em] left-1/2 md:-translate-x-1/2"
             data-animate
             data-y="-30"
           >
@@ -108,7 +112,7 @@ const t = useTranslations(lang);
           </div>
 
           <div
-            class="flex flex-col items-center gap-3 md:absolute md:w-[0.0923076923em] top-[0.15em] right-[0.225em]"
+            class="flex flex-col items-center gap-3 3xl:gap-[0.75vw] md:absolute md:w-[0.0923076923em] top-[0.15em] right-[0.225em]"
             data-animate
             data-x="30"
             data-y="-30"
@@ -127,7 +131,7 @@ const t = useTranslations(lang);
           </div>
 
           <div
-            class="flex flex-col items-center gap-3 md:absolute md:w-[0.0923076923em] bottom-[0.0876923077em] right-[0.1em]"
+            class="flex flex-col items-center gap-3 3xl:gap-[0.75vw] md:absolute md:w-[0.0923076923em] bottom-[0.0876923077em] right-[0.1em]"
             data-animate
             data-x="30"
           >

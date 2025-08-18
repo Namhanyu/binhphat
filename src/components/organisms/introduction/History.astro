@@ -24,9 +24,9 @@ const history = [
   class="min-h-screen max-md:max-h-[400px] bg-contain bg-no-repeat bg-right-top flex items-center"
   style={`background-image: url(${bgImage.src});`}
 >
-  <div class="container !max-w-[1500px]">
-    <div class="grid gap-10">
-      <div class="grid gap-2">
+  <div class="container !max-w-[1500px] 3xl:!max-w-[80vw]">
+    <div class="grid gap-10 3xl:gap-[2.5vw]">
+      <div class="grid gap-2 3xl:gap-[0.5vw]">
         <h2
           class="text-5xl font-black uppercase max-md:text-3xl text-primary"
           data-animate
@@ -43,9 +43,12 @@ const history = [
         </h3>
       </div>
 
-      <div class="flex items-center xl:gap-20 gap-6 relative">
+      <div class="flex items-center xl:gap-20 3xl:gap-[5vw] gap-6 relative">
         <div
-          class="grid gap-8 w-36 max-lg:w-28 shrink-0 z-20 max-md:absolute top-4 left-4"
+          class={clsx(
+            "grid gap-8 w-36 max-lg:w-28 shrink-0 z-20 max-md:absolute top-4 left-4",
+            "3xl:gap-[1vw] 3xl:w-[9vw]"
+          )}
           data-animate
           data-x="-50"
         >
@@ -53,9 +56,9 @@ const history = [
             history.map((item) => (
               <div
                 class={clsx(
-                  "text-5xl max-lg:text-3xl font-bold text-[#cbcbcb] transition-all cursor-pointer",
+                  "text-5xl 3xl:leading-none max-lg:text-3xl font-bold text-[#cbcbcb] transition-all cursor-pointer",
                   {
-                    "text-[140px] max-lg:!text-6xl leading-none !text-primary":
+                    "text-[140px] 3xl:!text-[8.75vw] max-lg:!text-6xl !leading-none !text-primary":
                       item.year === 2013,
                   }
                 )}
@@ -71,7 +74,10 @@ const history = [
         <div class="flex items-end flex-1 max-lg:grid">
           <div
             data-name="image"
-            class="w-3/5 h-[385px] bg-cover bg-center shrink-0 mb-12 z-10 grow-1 max-lg:w-full max-lg:mb-0"
+            class={clsx(
+              "w-3/5 h-[385px] bg-cover bg-center shrink-0 mb-12 z-10 grow-1 max-lg:w-full max-lg:mb-0",
+              "3xl:h-[24.0625vw] 3xl:mb-[3vw]"
+            )}
             style={`background-image: url(${history[0].image});`}
             data-animate
             data-x="-50"
@@ -82,7 +88,8 @@ const history = [
               "flex-1 bg-primary text-white text-justify h-[310px] flex flex-col relative max-lg:h-auto",
               "before:h-full before:w-1/2 before:absolute before:right-full before:bg-primary before:top-0 max-lg:before:hidden",
               "after:h-full after:w-1/2 after:absolute after:left-full after:bg-primary after:top-0 max-lg:after:hidden",
-              "xl:px-13 py-16 px-6 max-lg:py-8"
+              "xl:px-13 py-16 px-6 max-lg:py-8",
+              "3xl:h-[19.375vw] 3xl:px-[3.25vw] 3xl:py-[4vw]"
             )}
             data-animate
             data-x="50"
@@ -91,7 +98,7 @@ const history = [
               {history[0].content}
             </div>
             <div
-              class="w-full h-4 bg-gradient-to-r from-primary to-[#217EC1] mt-auto"
+              class="w-full h-4 3xl:h-[1vw] bg-gradient-to-r from-primary to-[#217EC1] mt-auto"
             >
             </div>
           </div>
@@ -111,14 +118,16 @@ const history = [
       contentElements.forEach((el) => {
         el.classList.remove(
           "text-[140px]",
-          "leading-none",
+          "3xl:!text-[8.75vw]",
+          "!leading-none",
           "max-lg:!text-6xl",
           "!text-primary"
         );
       });
       contentEl.classList.add(
         "text-[140px]",
-        "leading-none",
+        "3xl:!text-[8.75vw]",
+        "!leading-none",
         "max-lg:!text-6xl",
         "!text-primary"
       );

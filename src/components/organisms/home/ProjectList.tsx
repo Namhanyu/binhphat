@@ -9,12 +9,12 @@ export default function ProjectList({
   const activeProject = projects[activeIndex];
 
   return (
-    <div className="grid gap-3">
+    <div className="grid gap-3 3xl:gap-[0.75vw]">
       <div className="text-3xl max-md:text-xl font-semibold text-white uppercase whitespace-pre-line">
         {activeProject.name}
       </div>
 
-      <div className="grid grid-cols-[repeat(5,_minmax(240px,_1fr))] grid-rows-[164px] border-white border-4 gap-1 bg-white overflow-x-scroll snap-x snap-mandatory">
+      <div className="grid grid-cols-[repeat(5,_minmax(240px,_1fr))] grid-rows-[164px] 3xl:grid-rows-[10.25vw] border-white border-4 3xl:border-[0.25vw] gap-1 3xl:gap-[0.25vw] bg-white overflow-x-scroll snap-x snap-mandatory">
         {projects.map((project, index) => (
           <div
             key={index}

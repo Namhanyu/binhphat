@@ -20,7 +20,9 @@ const t = useTranslations(lang);
   style={`background-image: url(${bgImage.src});`}
 >
   <div class="container">
-    <div class="grid gap-10 text-white max-w-[520px] mb-4 max-md:mb-10">
+    <div
+      class="grid gap-10 text-white max-w-[520px] 3xl:gap-[2.5vw] 3xl:max-w-[30.25vw] mb-4 3xl:mb-[1vw] max-md:mb-10"
+    >
       <h2
         class="text-5xl font-bold uppercase max-md:text-3xl whitespace-pre-line"
         data-animate
@@ -28,7 +30,7 @@ const t = useTranslations(lang);
       >
         {t("safety.title")}
       </h2>
-      <div class="grid gap-3">
+      <div class="grid gap-3 3xl:gap-[0.75vw]">
         <p class="text-justify" data-animate data-x="-50">
           <b>{t("safety.training")}:</b>
           {t("safety.training.content")}
@@ -294,7 +296,7 @@ const t = useTranslations(lang);
         </text>
       </svg>
       <div
-        class="text-2xl lg:text-3xl md:absolute uppercase font-bold mb-8 lg:mb-16"
+        class="text-2xl lg:text-3xl md:absolute uppercase font-bold mb-8 lg:mb-16 3xl:mb-[4vw]"
         data-animate
         data-y="20"
         data-duration="0.5"
@@ -303,50 +305,74 @@ const t = useTranslations(lang);
       </div>
     </div>
 
-    <div class="grid gap-4 md:hidden">
-      <div class="flex gap-4 items-center" data-animate data-x="-30">
+    <div class="grid gap-4 3xl:gap-[1vw] md:hidden">
+      <div
+        class="flex gap-4 3xl:gap-[1vw items-center"
+        data-animate
+        data-x="-30"
+      >
         <div
-          class="size-16 p-4 bg-[#44AADF] rounded-full flex items-center justify-center"
+          class="size-16 p-4 3xl:p-[1vw] bg-[#44AADF] rounded-full flex items-center justify-center"
         >
           <img src={icon01.src} alt={t("safety.item_1")} />
         </div>
         <div class="text-base">{t("safety.item_1")}</div>
       </div>
-      <div class="flex gap-4 items-center" data-animate data-x="-30">
+      <div
+        class="flex gap-4 3xl:gap-[1vw items-center"
+        data-animate
+        data-x="-30"
+      >
         <div
-          class="size-16 p-4 bg-[#44AADF] rounded-full flex items-center justify-center"
+          class="size-16 p-4 3xl:p-[1vw] bg-[#44AADF] rounded-full flex items-center justify-center"
         >
           <img src={icon02.src} alt={t("safety.item_2")} />
         </div>
         <div class="text-base">{t("safety.item_2")}</div>
       </div>
-      <div class="flex gap-4 items-center" data-animate data-x="-30">
+      <div
+        class="flex gap-4 3xl:gap-[1vw items-center"
+        data-animate
+        data-x="-30"
+      >
         <div
-          class="size-16 p-4 bg-[#44AADF] rounded-full flex items-center justify-center"
+          class="size-16 p-4 3xl:p-[1vw] bg-[#44AADF] rounded-full flex items-center justify-center"
         >
           <img src={icon03.src} alt={t("safety.item_3")} />
         </div>
         <div class="text-base">{t("safety.item_3")}</div>
       </div>
-      <div class="flex gap-4 items-center" data-animate data-x="-30">
+      <div
+        class="flex gap-4 3xl:gap-[1vw items-center"
+        data-animate
+        data-x="-30"
+      >
         <div
-          class="size-16 p-4 bg-[#44AADF] rounded-full flex items-center justify-center"
+          class="size-16 p-4 3xl:p-[1vw] bg-[#44AADF] rounded-full flex items-center justify-center"
         >
           <img src={icon04.src} alt={t("safety.item_4")} />
         </div>
         <div class="text-base">{t("safety.item_4")}</div>
       </div>
-      <div class="flex gap-4 items-center" data-animate data-x="-30">
+      <div
+        class="flex gap-4 3xl:gap-[1vw items-center"
+        data-animate
+        data-x="-30"
+      >
         <div
-          class="size-16 p-4 bg-[#44AADF] rounded-full flex items-center justify-center"
+          class="size-16 p-4 3xl:p-[1vw] bg-[#44AADF] rounded-full flex items-center justify-center"
         >
           <img src={icon05.src} alt={t("safety.item_5")} />
         </div>
         <div class="text-base">{t("safety.item_5")}</div>
       </div>
-      <div class="flex gap-4 items-center" data-animate data-x="-30">
+      <div
+        class="flex gap-4 3xl:gap-[1vw items-center"
+        data-animate
+        data-x="-30"
+      >
         <div
-          class="size-16 p-4 bg-[#44AADF] rounded-full flex items-center justify-center"
+          class="size-16 p-4 3xl:p-[1vw] bg-[#44AADF] rounded-full flex items-center justify-center"
         >
           <img src={icon06.src} alt={t("safety.item_6")} />
         </div>

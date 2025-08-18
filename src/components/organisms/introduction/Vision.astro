@@ -15,12 +15,12 @@ const t = useTranslations(lang);
   class="min-h-screen max-md:min-h-0 max-md:py-40 bg-[size:contain,_cover] bg-no-repeat bg-[position:bottom,_center] flex items-center"
   style={`background-image: url(${bgImage2.src}), url(${bgImage.src});`}
 >
-  <div class="container !max-w-[1500px] mb-20">
+  <div class="container !max-w-[1500px] 3xl:!max-w-[80vw] mb-20 3xl:mb-[5vw]">
     <div
-      class="flex items-start lg:items-center lg:gap-32 gap-16 max-md:gap-8 max-md:grid"
+      class="flex items-start lg:items-center lg:gap-32 3xl:gap-[8vw] gap-16 max-md:gap-8 max-md:grid"
     >
       <div
-        class="flex-1 flex max-md:flex-row max-lg:flex-col items-start gap-8 justify-between lg:max-h-60"
+        class="flex-1 flex max-md:flex-row max-lg:flex-col items-start gap-8 3xl:gap-[2vw] justify-between lg:max-h-60 3xl:max-h-[15vw]"
       >
         <img
           src={image1.src}
@@ -29,7 +29,9 @@ const t = useTranslations(lang);
           data-animate
           data-x="-50"
         />
-        <div class="text-right space-y-10 text-white max-w-96">
+        <div
+          class="text-right space-y-10 3xl:space-y-[2.5vw] text-white max-w-96 3xl:max-w-[24vw]"
+        >
           <h2
             class="text-4xl font-bold uppercase max-md:text-3xl"
             data-animate
@@ -47,9 +49,11 @@ const t = useTranslations(lang);
         </div>
       </div>
       <div
-        class="flex-1 flex max-md:flex-row max-lg:flex-col-reverse items-start gap-8 justify-between lg:max-h-60"
+        class="flex-1 flex max-md:flex-row max-lg:flex-col-reverse items-start gap-8 3xl:gap-[2vw] justify-between lg:max-h-60 3xl:max-h-[15vw]"
       >
-        <div class="space-y-10 text-white max-w-96">
+        <div
+          class="space-y-10 3xl:space-y-[2.5vw] text-white max-w-96 3xl:max-w-[24vw]"
+        >
           <h2
             class="text-4xl font-bold uppercase max-md:text-3xl"
             data-animate

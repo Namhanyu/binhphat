@@ -13,23 +13,25 @@ const t = useTranslations(lang);
 
 <section
   id="operations"
-  class="min-h-screen pt-20 pb-10 flex items-center bg-cover bg-bottom"
+  class="min-h-screen pt-20 pb-10 3xl:pt-[5vw] 3xl:pb-[2.5vw] flex items-center bg-cover bg-bottom"
   data-menu-color="primary"
   style={`background-image: url(${bgImage.src});`}
 >
-  <div class="container mx-auto flex gap-12 xl:gap-19 max-md:flex-col">
-    <div class="flex-1 lg:max-w-[410px]">
+  <div
+    class="container mx-auto flex gap-12 xl:gap-19 3xl:gap-[4.75vw] max-md:flex-col"
+  >
+    <div class="flex-1 lg:max-w-[410px] 3xl:max-w-[25.625vw]">
       <div
-        class="text-5xl max-md:text-3xl font-extrabold uppercase text-primary mb-4"
+        class="text-5xl max-md:text-3xl font-extrabold uppercase text-primary mb-4 3xl:mb-[1vw]"
       >
         {t("operations.title")}
       </div>
       <div
-        class="text-3xl max-md:text-2xl font-bold text-primary mb-3 uppercase"
+        class="text-3xl max-md:text-2xl font-bold text-primary mb-3 3xl:mb-[0.75vw] uppercase"
       >
         {t("operations.subtitle")}
       </div>
-      <div class="text-justify mb-7">
+      <div class="text-justify mb-7 3xl:mb-[1.75vw]">
         {t("operations.content")}
       </div>
       <ActionButton
@@ -38,10 +40,11 @@ const t = useTranslations(lang);
         {t("operations.view_more")}
       </ActionButton>
     </div>
-    <div class="flex-1 flex gap-4 max-lg:flex-col">
+    <div class="flex-1 flex gap-4 3xl:gap-[1vw] max-lg:flex-col">
       <div
         class={clsx(
-          "group px-10 py-8 flex items-end relative overflow-hidden flex-1",
+          "group px-10 py-8 flex items-end relative overflow-hidden flex-1 shrink-0",
+          "3xl:px-[2.5vw] 3xl:py-[2vw]",
           "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-1/3 after:pointer-events-none after:bg-gradient-to-t after:from-black after:to-black/0",
           "max-md:min-h-[280px]"
         )}
@@ -51,17 +54,20 @@ const t = useTranslations(lang);
           style={`background-image: url(${image01.src});`}
         >
         </div>
-        <div class="flex items-end gap-3 relative z-10">
+        <div class="flex items-end gap-3 3xl:gap-[0.75vw] relative z-10">
           <div class="text-2xl xl:text-3xl font-semibold text-white uppercase">
             {t("operations.construction")}
           </div>
-          <LongArrow class="shrink-0 mb-2" />
+          <LongArrow
+            class="shrink-0 mb-2 3xl:mb-[0.5vw] 3xl:w-auto 3xl:h-[1.125vw]"
+          />
         </div>
       </div>
 
       <div
         class={clsx(
-          "group px-10 py-8 flex items-end relative overflow-hidden flex-1",
+          "group px-10 py-8 flex items-end relative overflow-hidden flex-1 shrink-0",
+          "3xl:px-[2.5vw] 3xl:py-[2vw]",
           "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-1/3 after:pointer-events-none after:bg-gradient-to-t after:from-black after:to-black/0",
           "max-md:min-h-[280px]"
         )}
@@ -71,11 +77,13 @@ const t = useTranslations(lang);
           style={`background-image: url(${image02.src});`}
         >
         </div>
-        <div class="flex items-end gap-3 relative z-10">
+        <div class="flex items-end gap-3 3xl:gap-[0.75vw] relative z-10">
           <div class="text-2xl xl:text-3xl font-semibold text-white uppercase">
             {t("operations.electromechanical")}
           </div>
-          <LongArrow class="shrink-0 mb-2" />
+          <LongArrow
+            class="shrink-0 mb-2 3xl:mb-[0.5vw] 3xl:w-auto 3xl:h-[1.125vw]"
+          />
         </div>
       </div>
     </div>
