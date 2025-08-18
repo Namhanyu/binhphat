@@ -1,0 +1,73 @@
+---
+import bgImage from "../../../assets/images/construction_bg.webp";
+
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section
+  id="construction"
+  data-menu-color="white"
+  class="min-h-screen bg-cover bg-center flex items-center text-white justify-center py-20"
+  style={`background-image: linear-gradient(to right, #045ca4, #045ca400), url(${bgImage.src});`}
+>
+  <div class="container">
+    <div class="grid gap-10 text-white max-w-[520px]">
+      <h2
+        class="text-5xl font-bold uppercase max-md:text-3xl whitespace-pre-line"
+        data-animate
+        data-y="-50"
+      >
+        {t("construction.title")}
+      </h2>
+      <p
+        class="text-lg max-md:text-base text-justify"
+        data-animate
+        data-x="-50"
+      >
+        {t("construction.content")}
+      </p>
+      <div
+        class="grid border-t border-white"
+        data-animate
+        data-y="30"
+        data-duration="0.7"
+      >
+        <div
+          class="uppercase py-3 font-bold border-b border-white"
+          data-animate
+          data-y="30"
+          data-duration="0.7"
+        >
+          {t("construction.action_1")}
+        </div>
+        <div
+          class="uppercase py-3 font-bold border-b border-white"
+          data-animate
+          data-y="30"
+          data-duration="0.7"
+        >
+          {t("construction.action_2")}
+        </div>
+        <div
+          class="uppercase py-3 font-bold border-b border-white"
+          data-animate
+          data-y="30"
+          data-duration="0.7"
+        >
+          {t("construction.action_3")}
+        </div>
+        <div
+          class="uppercase py-3 font-bold border-b border-white"
+          data-animate
+          data-y="30"
+          data-duration="0.7"
+        >
+          {t("construction.action_4")}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -278,6 +278,9 @@ export function initScrollAnimations() {
   initSectionAnimations("#partners");
   initSectionAnimations("#contact");
 
+  // OPERATION FIELDS
+  initSectionAnimations("#construction");
+
   window.addEventListener("load", () => ScrollTrigger.refresh());
 }
 

@@ -92,6 +92,13 @@ export const ui = {
     "partners.title": "Khách hàng & đối tác",
     "partners.content":
       "Xuyên suốt hành trình phát triển, Bình Phát Construction đã đồng hành cùng các Chủ đầu tư lớn trong và ngoài nước, tham gia xây dựng, cải tạo và sửa chữa hàng trăm dự án trên khắp Việt Nam. Ngoài ra, bằng uy tín và chất lượng, Bình Phát Construction đã chinh phục nhiều khách hàng khó tính, có tiêu chuẩn khắt khe, đặc thù như Mỹ, Nhật Bản, Hàn Quốc, ….",
+    "construction.title": "Tổng thầu\nxây dựng",
+    "construction.content":
+      "Xuyên suốt hành trình phát triển, Bình Phát đã đồng hành cùng các Chủ đầu tư lớn trong và ngoài nước, tham gia xây dựng, cải tạo và sửa chữa hàng trăm dự án trên khắp Việt Nam. Ngoài ra, bằng uy tín và chất lượng, Bình Phát đã chinh phục nhiều khách hàng khó tính, có tiêu chuẩn khắt khe, đặc thù như Mỹ, Nhật Bản, Hàn Quốc,…",
+    "construction.action_1": "XÂY DỰNG, CẢI TẠO SỬA CHỮA NHÀ XƯỞNG",
+    "construction.action_2": "XÂY DỰNG NHÀ XƯỞNG KẾT CẤU BÊ TÔNG CỐT THÉP",
+    "construction.action_3": "XÂY DỰNG NHÀ XƯỞNG KẾT CẤU THÉP TIỀN CHẾ",
+    "construction.action_4": "XÂY DỰNG HẠ TẦNG KỸ THUẬT KHU CÔNG NGHIỆP",
   },
   en: {
     "home.title": "Home",
