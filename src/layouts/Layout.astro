@@ -63,7 +63,7 @@ const lang = getLangFromUrl(Astro.url);
     const sections = document.querySelectorAll("[data-menu-color]");
     const header = document.querySelector("#header");
     const headerHeight = header ? header.offsetHeight : 0;
-    const pageCount = document.querySelectorAll("[data-number]").length;
+    const pageCount = sections.length;
 
     function applyColor(color) {
       const isWhite = color === "white";
@@ -102,6 +102,10 @@ const lang = getLangFromUrl(Astro.url);
     }
 
     function createPaging() {
+      sections.forEach(
+        (section, index) => (section.dataset.number = index + 1)
+      );
+
       const pagination = document.querySelector("#pagination");
       if (!pagination) return;
 
@@ -119,8 +123,8 @@ const lang = getLangFromUrl(Astro.url);
 
     if (sections.length) applyColor(sections[0].dataset.menuColor);
 
-    setPage(1);
     createPaging();
+    setPage(1);
 
     const observer = new IntersectionObserver(
       (entries) => {
