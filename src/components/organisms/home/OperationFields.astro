@@ -1,8 +1,9 @@
 ---
 import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
 import ActionButton from "../../molecules/ActionButton.astro";
-import image01 from "../../../assets/images/01.webp";
-import image02 from "../../../assets/images/02.webp";
+import bgImage from "../../../assets/images/operations_bg.webp";
+import image01 from "../../../assets/images/operations_1.webp";
+import image02 from "../../../assets/images/operations_2.webp";
 import LongArrow from "../../atoms/LongArrow.astro";
 import clsx from "clsx";
 
@@ -12,9 +13,10 @@ const t = useTranslations(lang);
 
 <section
   id="operations"
-  class="min-h-screen pt-20 pb-10 flex items-center"
+  class="min-h-screen pt-20 pb-10 flex items-center bg-cover bg-bottom"
   data-menu-color="primary"
   data-number="4"
+  style={`background-image: url(${bgImage.src});`}
 >
   <div class="container mx-auto flex gap-12 xl:gap-19 max-md:flex-col">
     <div class="flex-1 lg:max-w-[410px]">

@@ -1,6 +1,7 @@
 ---
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 import ActionButton from "../molecules/ActionButton.astro";
+import bgImage from "../../assets/images/contact.webp";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -8,9 +9,10 @@ const t = useTranslations(lang);
 
 <section
   id="contact"
-  class="flex items-center md:min-h-screen max-md:py-20 md:pt-10"
+  class="flex items-center md:min-h-screen max-md:py-20 md:pt-10 bg-cover bg-bottom"
   data-menu-color="primary"
   data-number="end"
+  style={`background-image: url(${bgImage.src});`}
 >
   <div class="container mx-auto">
     <div class="max-w-[600px]">

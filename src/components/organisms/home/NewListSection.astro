@@ -1,6 +1,7 @@
 ---
 import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
 import ActionButton from "../../molecules/ActionButton.astro";
+import bgImage from "../../../assets/images/news.webp";
 import image36 from "../../../assets/images/36.webp";
 import image37 from "../../../assets/images/37.webp";
 import image38 from "../../../assets/images/38.webp";
@@ -52,9 +53,10 @@ const t = useTranslations(lang);
 
 <section
   id="news"
-  class="min-h-screen flex items-center pt-20 pb-10"
+  class="min-h-screen flex items-center pt-20 pb-10 bg-cover bg-center"
   data-menu-color="primary"
   data-number="3"
+  style={`background-image: url(${bgImage.src});`}
 >
   <div class="container mx-auto space-y-5">
     <div class="flex items-center justify-between gap-4">

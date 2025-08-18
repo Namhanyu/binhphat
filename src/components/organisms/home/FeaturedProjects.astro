@@ -1,11 +1,12 @@
 ---
 import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
 import ActionButton from "../../molecules/ActionButton.astro";
-import image02 from "../../../assets/images/02.webp";
-import image36 from "../../../assets/images/36.webp";
-import image37 from "../../../assets/images/37.webp";
-import image38 from "../../../assets/images/38.webp";
-import image39 from "../../../assets/images/39.webp";
+import bgImage from "../../../assets/images/projects-37.webp";
+import image02 from "../../../assets/images/projects-38.webp";
+import image36 from "../../../assets/images/projects-39.webp";
+import image37 from "../../../assets/images/projects-40.webp";
+import image38 from "../../../assets/images/projects-41.webp";
+import image39 from "../../../assets/images/projects-42.webp";
 import ProjectList from "./ProjectList";
 
 const lang = getLangFromUrl(Astro.url);
@@ -22,9 +23,10 @@ const projects = [
 
 <section
   id="projects"
-  class="min-h-screen pb-24 pt-40 flex bg-primary max-md:min-h-0 overflow-x-hidden"
+  class="min-h-screen pb-24 pt-40 flex max-md:min-h-0 overflow-x-hidden bg-cover bg-center"
   data-menu-color="white"
   data-number="6"
+  style={`background-image: linear-gradient(to right, #045ca4, #045ca400 50%), url(${bgImage.src});`}
 >
   <div class="container mx-auto flex flex-col overflow-x-hidden">
     <div class="mb-auto grid gap-4 justify-items-start">
