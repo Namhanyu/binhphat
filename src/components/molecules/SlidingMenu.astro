@@ -3,7 +3,6 @@ import clsx from "clsx";
 
 const menu = [
   { link: "/gioi-thieu", label: "Giới thiệu" },
-  { link: "/phat-trien-ben-vung", label: "Phát triển bền vững" },
   { link: "/tin-tuc", label: "Tin tức" },
   { link: "/linh-vuc-hoat-dong", label: "Lĩnh vực hoạt động" },
   { link: "/du-an", label: "Dự án" },
@@ -16,7 +15,7 @@ const menu = [
   id="menu"
   class={clsx(
     "fixed right-0 top-0 bottom-0 max-w-[400px] w-full z-40 transition-transform duration-500 ease-in-out translate-x-full bg-primary shadow-2xl h-[100vh] overflow-y-scroll md:overflow-y-hidden",
-    "py-20 pl-6 xl:pr-24 pr-10 max-md:pr-6 grid gap-16 content-center justify-items-end uppercase text-white"
+    "py-20 pl-6 xl:pr-24 pr-10 max-md:pr-6 grid gap-16 max-md:gap-10 content-center justify-items-end uppercase text-white"
   )}
 >
   {
