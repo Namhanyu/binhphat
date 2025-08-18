@@ -1,0 +1,55 @@
+---
+import bgImage from "../../../assets/images/16.webp";
+import image01 from "../../../assets/images/41.webp";
+import image02 from "../../../assets/images/42.webp";
+import image03 from "../../../assets/images/43.webp";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section
+  id="certification"
+  data-menu-color="white"
+  class="min-h-screen bg-cover bg-center flex items-center text-white"
+  style={`background-image: url(${bgImage.src});`}
+>
+  <div class="container !max-w-[1500px]">
+    <div class="xl:w-1/2 lg:w-2/3 grid gap-12">
+      <div class="grid gap-4">
+        <h2
+          class="text-5xl font-bold uppercase max-md:text-3xl whitespace-pre-line"
+        >
+          {t("certification.title")}
+        </h2>
+        <div class="text-justify">
+          {t("certification.content")}
+        </div>
+      </div>
+
+      <div class="grid grid-cols-3 gap-3">
+        <div class="grid gap-3 content-start">
+          <img src={image01.src} alt={t("certification.1")} />
+          <div class="uppercase whitespace-pre-line">
+            {t("certification.1")}
+          </div>
+        </div>
+
+        <div class="grid gap-3 content-start">
+          <img src={image02.src} alt={t("certification.2")} />
+          <div class="uppercase whitespace-pre-line">
+            {t("certification.2")}
+          </div>
+        </div>
+
+        <div class="grid gap-3 content-start">
+          <img src={image03.src} alt={t("certification.3")} />
+          <div class="uppercase whitespace-pre-line">
+            {t("certification.3")}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

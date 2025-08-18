@@ -75,12 +75,18 @@ export const ui = {
       "Chúng tôi cam kết cung cấp các giải pháp xây dựng và cơ điện toàn diện, chất lượng cao với sự sáng tạo và đổi mới không ngừng, đáp ứng tối đa nhu cầu và sự kỳ vọng của khách hàng.",
     "core_values.title": "Giá trị cốt lõi",
     "core_values.subtitle": "tại Bình Phát",
-    "core_values.description": "Những giá trị cốt lõi này không chỉ là định hướng trong công việc hàng ngày của công ty mà còn là nền tảng giúp Bình Phát tạo dựng thương hiệu và uy tín lâu dài trong ngành",
+    "core_values.description":
+      "Những giá trị cốt lõi này không chỉ là định hướng trong công việc hàng ngày của công ty mà còn là nền tảng giúp Bình Phát tạo dựng thương hiệu và uy tín lâu dài trong ngành",
     "core_values.1": "Chất lượng",
     "core_values.2": "Uy tín",
     "core_values.3": "Sáng tạo",
     "core_values.4": "An toàn",
     "core_values.5": "Đoàn kết",
+    "certification.title": "Pháp lý &\nChứng nhận",
+    "certification.content": "Bình Phát Construction tuân thủ các yêu cầu về pháp lý và chứng nhận liên quan để đảm bảo hoạt động hợp pháp và đạt chuẩn, khẳng định uy tín và năng lực trong việc cung cấp các giải pháp xây dựng và cơ điện đạt chất lượng cao.",
+    "certification.1": "GIẤY CHỨNG NHẬN ĐĂNG KÝ DOANH NGHIỆP",
+    "certification.2": "CHỨNG CHỈ NĂNG LỰC HOẠT ĐỘNG XÂY DỰNG",
+    "certification.3": "XÁC NHẬN ĐỦ ĐIỀU KIỆN KINH DOANH DỊCH VỤ PCCC",
   },
   en: {
     "about.title": "About\nBinh Phat",
@@ -125,5 +131,43 @@ export const ui = {
     "projects.title": "Featured projects",
     "projects.view_more": "View all projects",
     "introduction.title": "Introduction",
+    "messages.subtitle": "Messages",
+    "messages.title": "from Leaders",
+    "messages.headline":
+      "Trong suốt hành trình phát triển, Bình Phát luôn chú trọng đến chất lượng công trình, sự đổi mới trong công nghệ và sự hài lòng của khách hàng.",
+    "messages.content":
+      'Bình Phát tự hào về những dự án mà công ty đã hoàn thành, đặc biệt trong lĩnh vực xây dựng và cơ điện tại các khu công nghiệp và các công trình thủy điện trọng điểm như Sơn La, Hòa Bình, Huội Quảng - Bản Chát.\n\nVới phương châm "Chất lượng xứng đáng với niềm tin" là kim chỉ nam trong mọi hoạt động, Bình Phát cam kết mang đến những giá trị bền vững cho cộng đồng và đối tác. Chúng tôi hiểu rằng, chất lượng không chỉ là yếu tố quyết định thành công trong hiện tại mà còn là nền tảng vững chắc cho sự phát triển lâu dài. Kiên định với những giá trị cốt lõi, Bình Phát hướng đến tương lai mở rộng quy mô hoạt động, vươn xa hơn nữa trong ngành xây dựng và cơ điện.',
+    "messages.ceo.name": "Nguyễn Văn Điệp",
+    "messages.ceo.title": "Giám đốc",
+    "history.title": "Lịch sử",
+    "history.subtitle": "Hình thành và phát triển",
+    "history.content-1":
+      "Công ty TNHH Xây dựng và Cơ điện Bình Phát được thành lập vào ngày 19/08/2013, được biết đến là một trong những tổng thầu uy tín trong lĩnh vực xây dựng và cơ điện công nghiệp.",
+    "history.content-2":
+      "Tự hào trở thành đối tác của các công ty thủy điện hàng đầu như Huội Quảng – Bản Chát, Sơn La, Lai Châu, Hòa Bình,…",
+    "history.content-3":
+      "Đổi tên thành Công ty TNHH Xây dựng và Cơ điện Bình Phát mở rộng phát triển thêm lĩnh vực cơ điện.",
+    "history.content-4":
+      "Phát triển mở rộng thị trường miền Nam bằng việc thành lập văn phòng chi nhánh tại TP. Hồ Chí Minh.",
+    "vision.title": "Tầm nhìn",
+    "vision.content":
+      "Bình Phát Construction hướng đến dẫn đầu trong ngành xây dựng và cơ điện, đổi mới và áp dụng công nghệ tiên tiến để kiến tạo công trình bền vững, phát triển cộng đồng.",
+    "mission.title": "Sứ mệnh",
+    "mission.content":
+      "Chúng tôi cam kết cung cấp các giải pháp xây dựng và cơ điện toàn diện, chất lượng cao với sự sáng tạo và đổi mới không ngừng, đáp ứng tối đa nhu cầu và sự kỳ vọng của khách hàng.",
+    "core_values.title": "Giá trị cốt lõi",
+    "core_values.subtitle": "tại Bình Phát",
+    "core_values.description":
+      "Những giá trị cốt lõi này không chỉ là định hướng trong công việc hàng ngày của công ty mà còn là nền tảng giúp Bình Phát tạo dựng thương hiệu và uy tín lâu dài trong ngành",
+    "core_values.1": "Chất lượng",
+    "core_values.2": "Uy tín",
+    "core_values.3": "Sáng tạo",
+    "core_values.4": "An toàn",
+    "core_values.5": "Đoàn kết",
+    "certification.title": "Juridical & Certification",
+    "certification.content": "Binh Phat Construction complies with relevant juridical and certification requirements to ensure legal, standard operations, affirming its reputation and capability in providing high-quality construction and M&E solutions.",
+    "certification.1": "Business Registration Certificate",
+    "certification.2": "Construction Activities Competency Certificate",
+    "certification.3": "Confirmation Of Eligibility For Fire Prevention - Protection Service Business",
   },
 } as const;
