@@ -1,0 +1,20 @@
+---
+import bgImage from "../../../assets/images/48.webp";
+
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+---
+
+<section
+  id="equipment"
+  data-menu-color="primary"
+  class="min-h-screen bg-cover bg-center flex items-center text-white justify-center py-20"
+  style={`background-image: url(${bgImage.src});`}
+>
+  <div class="container">
+    
+  </div>
+</section>

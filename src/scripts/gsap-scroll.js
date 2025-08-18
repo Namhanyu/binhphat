@@ -280,6 +280,7 @@ export function initScrollAnimations() {
 
   // OPERATION FIELDS
   initSectionAnimations("#construction");
+  initSectionAnimations("#electromechanical");
 
   window.addEventListener("load", () => ScrollTrigger.refresh());
 }

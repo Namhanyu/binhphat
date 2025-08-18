@@ -99,6 +99,16 @@ export const ui = {
     "construction.action_2": "XÂY DỰNG NHÀ XƯỞNG KẾT CẤU BÊ TÔNG CỐT THÉP",
     "construction.action_3": "XÂY DỰNG NHÀ XƯỞNG KẾT CẤU THÉP TIỀN CHẾ",
     "construction.action_4": "XÂY DỰNG HẠ TẦNG KỸ THUẬT KHU CÔNG NGHIỆP",
+    "electromecha.title": "Tổng thầu\ncơ điện",
+    "electromecha.content":
+      "Xuyên suốt hành trình phát triển, Bình Phát đã đồng hành cùng các Chủ đầu tư lớn trong và ngoài nước, tham gia xây dựng, cải tạo và sửa chữa hàng trăm dự án trên khắp Việt Nam. Ngoài ra, bằng uy tín và chất lượng, Bình Phát đã chinh phục nhiều khách hàng khó tính, có tiêu chuẩn khắt khe, đặc thù như Mỹ, Nhật Bản, Hàn Quốc,…",
+    "electromecha.action_1": "HỆ THỐNG ĐIỆN CÔNG NGHIỆP / ĐIỆN NHẸ",
+    "electromecha.action_2": "HỆ THỐNG CẤP THOÁT NƯỚC / XỬ LÝ NƯỚC THẢI",
+    "electromecha.action_3": "HỆ THỐNG ĐIỀU HÒA KHÔNG KHÍ, THÔNG GIÓ",
+    "electromecha.action_4": "HỆ THỐNG PHÒNG CHÁY CHỮA CHÁY",
+    "electromecha.action_5": "HỆ THỐNG KHÍ NÉN",
+    "electromecha.action_6": "HỆ THỐNG CHỐNG SÉT & TIẾP ĐỊA",
+    "electromecha.action_7": "HỆ THỐNG CƠ KHÍ & CÁC CÔNG TRÌNH PHỤ TRỢ",
   },
   en: {
     "home.title": "Home",
