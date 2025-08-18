@@ -14,17 +14,21 @@ const t = useTranslations(lang);
 ---
 
 <section
-  id="hero"
+  id="core_values"
   data-menu-color="white"
   class="min-h-screen max-lg:min-h-0 max-lg:pt-40 max-md:pb-20 bg-cover bg-center flex items-end"
   style={`background-image: url(${bgImage.src});`}
 >
   <div class="container">
     <div class="text-center space-y-2 text-white mb-10">
-      <h2 class="text-5xl font-black uppercase max-md:text-3xl">
+      <h2
+        class="text-5xl font-black uppercase max-md:text-3xl"
+        data-animate
+        data-y="50"
+      >
         {t("core_values.title")}
       </h2>
-      <div class="text-3xl max-md:text-xl uppercase">
+      <div class="text-3xl max-md:text-xl uppercase" data-animate data-x="-50">
         {t("core_values.subtitle")}
       </div>
     </div>
@@ -37,17 +41,21 @@ const t = useTranslations(lang);
         >
         </div>
 
-        <div class="grid gap-6 text-white justify-items-center justify-center grid-cols-2">
+        <div
+          class="grid gap-6 text-white justify-items-center justify-center grid-cols-2"
+        >
           <div
             class="md:absolute left-1/2 max-lg:bottom-[0.085em] bottom-[0.12em] md:-translate-x-1/2 md:w-1/2 text-white text-center col-span-2"
           >
-            <div class="text-base max-lg:text-sm">
+            <div class="text-base max-lg:text-sm" data-animate data-y="50">
               {t("core_values.description")}
             </div>
           </div>
 
           <div
             class="flex flex-col items-center gap-3 md:absolute md:w-[0.0923076923em] bottom-[0.0876923077em] left-[0.1em] col-span-2"
+            data-animate
+            data-x="-30"
           >
             <div
               class="bg-cover flex items-center justify-center md:h-[0.0923076923em] md:w-full size-32"
@@ -55,13 +63,18 @@ const t = useTranslations(lang);
             >
               <img src={icon1.src} alt="" class="h-1/2 object-contain" />
             </div>
-            <div class="text-base md:text-lg lg:text-xl xl:text-2xl font-bold uppercase whitespace-nowrap">
+            <div
+              class="text-base md:text-lg lg:text-xl xl:text-2xl font-bold uppercase whitespace-nowrap"
+            >
               {t("core_values.1")}
             </div>
           </div>
 
           <div
             class="flex flex-col items-center gap-3 md:absolute md:w-[0.0923076923em] top-[0.15em] left-[0.225em]"
+            data-animate
+            data-x="-30"
+            data-y="-30"
           >
             <div
               class="bg-cover flex items-center justify-center md:h-[0.0923076923em] md:w-full size-32"
@@ -69,13 +82,17 @@ const t = useTranslations(lang);
             >
               <img src={icon2.src} alt="" class="h-1/2 object-contain" />
             </div>
-            <div class="text-base md:text-lg lg:text-xl xl:text-2xl font-bold uppercase whitespace-nowrap">
+            <div
+              class="text-base md:text-lg lg:text-xl xl:text-2xl font-bold uppercase whitespace-nowrap"
+            >
               {t("core_values.2")}
             </div>
           </div>
 
           <div
             class="flex flex-col items-center gap-3 md:absolute md:w-[0.0923076923em] top-[0.075em] left-1/2 md:-translate-x-1/2"
+            data-animate
+            data-y="-30"
           >
             <div
               class="bg-cover flex items-center justify-center md:h-[0.0923076923em] md:w-full size-32"
@@ -83,13 +100,18 @@ const t = useTranslations(lang);
             >
               <img src={icon3.src} alt="" class="h-1/2 object-contain" />
             </div>
-            <div class="text-base md:text-lg lg:text-xl xl:text-2xl font-bold uppercase whitespace-nowrap">
+            <div
+              class="text-base md:text-lg lg:text-xl xl:text-2xl font-bold uppercase whitespace-nowrap"
+            >
               {t("core_values.3")}
             </div>
           </div>
 
           <div
             class="flex flex-col items-center gap-3 md:absolute md:w-[0.0923076923em] top-[0.15em] right-[0.225em]"
+            data-animate
+            data-x="30"
+            data-y="-30"
           >
             <div
               class="bg-cover flex items-center justify-center md:h-[0.0923076923em] md:w-full size-32"
@@ -97,13 +119,17 @@ const t = useTranslations(lang);
             >
               <img src={icon4.src} alt="" class="h-1/2 object-contain" />
             </div>
-            <div class="text-base md:text-lg lg:text-xl xl:text-2xl font-bold uppercase whitespace-nowrap">
+            <div
+              class="text-base md:text-lg lg:text-xl xl:text-2xl font-bold uppercase whitespace-nowrap"
+            >
               {t("core_values.4")}
             </div>
           </div>
 
           <div
             class="flex flex-col items-center gap-3 md:absolute md:w-[0.0923076923em] bottom-[0.0876923077em] right-[0.1em]"
+            data-animate
+            data-x="30"
           >
             <div
               class="bg-cover flex items-center justify-center md:h-[0.0923076923em] md:w-full size-32"
@@ -111,7 +137,9 @@ const t = useTranslations(lang);
             >
               <img src={icon5.src} alt="" class="h-1/2 object-contain" />
             </div>
-            <div class="text-base md:text-lg lg:text-xl xl:text-2xl font-bold uppercase whitespace-nowrap">
+            <div
+              class="text-base md:text-lg lg:text-xl xl:text-2xl font-bold uppercase whitespace-nowrap"
+            >
               {t("core_values.5")}
             </div>
           </div>

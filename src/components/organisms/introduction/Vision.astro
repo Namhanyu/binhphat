@@ -10,7 +10,7 @@ const t = useTranslations(lang);
 ---
 
 <section
-  id="hero"
+  id="vision"
   data-menu-color="white"
   class="min-h-screen max-md:min-h-0 max-md:py-40 bg-[size:contain,_cover] bg-no-repeat bg-[position:bottom,_center] flex items-center"
   style={`background-image: url(${bgImage2.src}), url(${bgImage.src});`}
@@ -22,12 +22,26 @@ const t = useTranslations(lang);
       <div
         class="flex-1 flex max-md:flex-row max-lg:flex-col items-start gap-8 justify-between lg:max-h-60"
       >
-        <img src={image1.src} alt="" class="max-lg:h-64 h-[50vh] self-center" />
+        <img
+          src={image1.src}
+          alt=""
+          class="max-lg:h-64 h-[50vh] self-center"
+          data-animate
+          data-x="-50"
+        />
         <div class="text-right space-y-10 text-white max-w-96">
-          <h2 class="text-4xl font-bold uppercase max-md:text-3xl">
+          <h2
+            class="text-4xl font-bold uppercase max-md:text-3xl"
+            data-animate
+            data-x="-50"
+          >
             {t("vision.title")}
           </h2>
-          <p class="text-lg max-md:text-base text-justify">
+          <p
+            class="text-lg max-md:text-base text-justify"
+            data-animate
+            data-x="-50"
+          >
             {t("vision.content")}
           </p>
         </div>
@@ -36,14 +50,28 @@ const t = useTranslations(lang);
         class="flex-1 flex max-md:flex-row max-lg:flex-col-reverse items-start gap-8 justify-between lg:max-h-60"
       >
         <div class="space-y-10 text-white max-w-96">
-          <h2 class="text-4xl font-bold uppercase max-md:text-3xl">
+          <h2
+            class="text-4xl font-bold uppercase max-md:text-3xl"
+            data-animate
+            data-x="50"
+          >
             {t("mission.title")}
           </h2>
-          <p class="text-lg max-md:text-base text-justify">
+          <p
+            class="text-lg max-md:text-base text-justify"
+            data-animate
+            data-x="50"
+          >
             {t("mission.content")}
           </p>
         </div>
-        <img src={image2.src} alt="" class="max-lg:h-64 h-[50vh] self-center" />
+        <img
+          src={image2.src}
+          alt=""
+          class="max-lg:h-64 h-[50vh] self-center"
+          data-animate
+          data-x="50"
+        />
       </div>
     </div>
   </div>

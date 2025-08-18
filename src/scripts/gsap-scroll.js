@@ -266,38 +266,63 @@ export function initScrollAnimations() {
     );
   });
 
-  // CONTACT
 
-  const contactTimeline = gsap.timeline({
+  // INTRODUCTION PAGE
+
+  initSectionAnimations("#hero");
+  initSectionAnimations("#messages");
+  initSectionAnimations("#vision");
+  initSectionAnimations("#core_values");
+  initSectionAnimations("#history");
+  initSectionAnimations("#certification");
+  initSectionAnimations("#partners");
+  initSectionAnimations("#contact");
+
+  window.addEventListener("load", () => ScrollTrigger.refresh());
+}
+
+function initSectionAnimations(parent) {
+  const timeline = gsap.timeline({
     scrollTrigger: {
-      trigger: "#contact",
+      trigger: parent,
       start: "top 70%",
       end: "bottom 30%",
       toggleActions: "play reset play reset",
     },
   });
 
-  contactTimeline.from(
-    "#contact h2",
-    {
-      y: -50,
+  gsap.utils.toArray(`${parent} [data-animate]`).forEach((panel, index) => {
+    const transform = {
       opacity: 0,
-      duration: 1,
-    },
-    0.3
-  );
+    };
 
-  gsap.utils.toArray("#contact .text-left > *").forEach((panel, index) => {
-    contactTimeline.from(
+    if (panel.dataset.x) {
+      transform.x = Number(panel.dataset.x);
+    }
+
+    if (panel.dataset.y) {
+      transform.y = Number(panel.dataset.y);
+    }
+
+    if (panel.dataset.scaleX) {
+      transform.scaleX = Number(panel.dataset.scaleX);
+    }
+
+    if (panel.dataset.scaleY) {
+      transform.scaleY = Number(panel.dataset.scaleY);
+    }
+
+    if (panel.dataset.duration) {
+      transform.duration = Number(panel.dataset.duration);
+    }
+
+    timeline.from(
       panel,
       {
-        y: -50,
-        opacity: 0,
         duration: 1,
+        ...transform,
       },
-      0.3 + index * 0.2
+      0.3 + index * (Number(panel.dataset.delay) || 0.3)
     );
   });
-
-  window.addEventListener("load", () => ScrollTrigger.refresh());
 }

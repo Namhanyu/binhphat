@@ -20,30 +20,32 @@ const t = useTranslations(lang);
       <div class="grid gap-4">
         <h2
           class="text-5xl font-bold uppercase max-md:text-3xl whitespace-pre-line"
+          data-animate
+          data-y="50"
         >
           {t("certification.title")}
         </h2>
-        <div class="text-justify">
+        <div class="text-justify" data-animate data-x="-50">
           {t("certification.content")}
         </div>
       </div>
 
       <div class="grid grid-cols-3 gap-3">
-        <div class="grid gap-3 content-start">
+        <div class="grid gap-3 content-start" data-animate data-y="20">
           <img src={image01.src} alt={t("certification.1")} />
           <div class="uppercase whitespace-pre-line">
             {t("certification.1")}
           </div>
         </div>
 
-        <div class="grid gap-3 content-start">
+        <div class="grid gap-3 content-start" data-animate data-y="20">
           <img src={image02.src} alt={t("certification.2")} />
           <div class="uppercase whitespace-pre-line">
             {t("certification.2")}
           </div>
         </div>
 
-        <div class="grid gap-3 content-start">
+        <div class="grid gap-3 content-start" data-animate data-y="20">
           <img src={image03.src} alt={t("certification.3")} />
           <div class="uppercase whitespace-pre-line">
             {t("certification.3")}

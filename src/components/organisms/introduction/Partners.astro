@@ -44,18 +44,28 @@ const images = [
     <div class="grid gap-4">
       <h2
         class="text-5xl font-bold uppercase max-md:text-3xl whitespace-pre-line text-center max-sm:px-8"
+        data-animate
+        data-y="50"
       >
         {t("partners.title")}
       </h2>
-      <div class="text-center lg:px-16">
+      <div class="text-center lg:px-16" data-animate data-x="-50">
         {t("partners.content")}
       </div>
     </div>
 
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2.5">
+    <div
+      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2.5"
+    >
       {
         images.map((image, index) => (
-          <div class="bg-white flex justify-center p-6 h-24">
+          <div
+            class="bg-white flex justify-center p-6 h-24"
+            data-animate
+            data-y="20"
+            data-duration="0.3"
+            data-delay="0.15"
+          >
             <img
               src={image.src}
               alt={`Partner logo ${index + 1}`}

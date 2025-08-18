@@ -7,6 +7,7 @@ export const defaultLang = "vi";
 
 export const ui = {
   vi: {
+    "home.title": "Trang chủ",
     "about.title": "Giới thiệu\nvề Bình Phát",
     "about.content":
       "Công ty TNHH Xây dựng và Cơ điện Bình Phát xin gửi lời chúc sức khỏe và lời chào trân trọng nhất đến toàn thể Quý khách hàng!\n\nCông ty TNHH Xây dựng và Cơ điện Bình Phát được thành lập vào năm 2013, trên cơ sở các thành viên dày dặn kinh nghiệm và tâm huyết với nghề. Những năm gần đây, Bình Phát Construction không ngừng lớn mạnh, trưởng thành nhanh chóng và tự hào là đơn vị uy tín trong lĩnh vực xây dựng và cơ điện tại Việt Nam.",
@@ -93,6 +94,7 @@ export const ui = {
       "Xuyên suốt hành trình phát triển, Bình Phát Construction đã đồng hành cùng các Chủ đầu tư lớn trong và ngoài nước, tham gia xây dựng, cải tạo và sửa chữa hàng trăm dự án trên khắp Việt Nam. Ngoài ra, bằng uy tín và chất lượng, Bình Phát Construction đã chinh phục nhiều khách hàng khó tính, có tiêu chuẩn khắt khe, đặc thù như Mỹ, Nhật Bản, Hàn Quốc, ….",
   },
   en: {
+    "home.title": "Home",
     "about.title": "About\nBinh Phat",
     "about.content":
       "Binh Phat Construction and M&E Co., Ltd. would like to send best wishes and most respectful greetings to all customers!\n\nBinh Phat Construction and M&E Co., Ltd. was established in 2013, on the basis of experienced and enthusiastic members in the profession. In recent years, Binh Phat Construction has constantly grown, matured rapidly and is proud to be a prestigious unit in the field of construction and M&E in Vietnam.",

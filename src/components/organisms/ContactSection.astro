@@ -17,20 +17,22 @@ const t = useTranslations(lang);
     <div class="max-w-[600px]">
       <h2
         class="text-5xl max-md:text-3xl uppercase font-bold text-primary mb-8"
+        data-animate
+        data-y="50"
       >
         {t("contact.title")}
       </h2>
 
       <!-- Company Information -->
       <div class="text-left space-y-3">
-        <div>
+        <div data-animate data-x="-50">
           <h3 class="uppercase font-bold text-primary">
             {t("contact.headquarters")}
           </h3>
           <div>{t("contact.headquarters.address")}</div>
         </div>
 
-        <div>
+        <div data-animate data-x="-50">
           <h3 class="uppercase font-bold text-primary">
             {t("contact.offices")}
           </h3>
@@ -40,11 +42,11 @@ const t = useTranslations(lang);
           </div>
         </div>
 
-        <div>
+        <div data-animate data-x="-50">
           {t("contact.phone.email")}
         </div>
 
-        <div>
+        <div data-animate data-x="-50">
           <h3 class="uppercase font-bold text-primary mb-2">
             {t("contact.form.title")}
           </h3>
