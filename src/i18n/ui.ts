@@ -83,10 +83,14 @@ export const ui = {
     "core_values.4": "An toàn",
     "core_values.5": "Đoàn kết",
     "certification.title": "Pháp lý &\nChứng nhận",
-    "certification.content": "Bình Phát Construction tuân thủ các yêu cầu về pháp lý và chứng nhận liên quan để đảm bảo hoạt động hợp pháp và đạt chuẩn, khẳng định uy tín và năng lực trong việc cung cấp các giải pháp xây dựng và cơ điện đạt chất lượng cao.",
+    "certification.content":
+      "Bình Phát Construction tuân thủ các yêu cầu về pháp lý và chứng nhận liên quan để đảm bảo hoạt động hợp pháp và đạt chuẩn, khẳng định uy tín và năng lực trong việc cung cấp các giải pháp xây dựng và cơ điện đạt chất lượng cao.",
     "certification.1": "GIẤY CHỨNG NHẬN ĐĂNG KÝ DOANH NGHIỆP",
     "certification.2": "CHỨNG CHỈ NĂNG LỰC HOẠT ĐỘNG XÂY DỰNG",
     "certification.3": "XÁC NHẬN ĐỦ ĐIỀU KIỆN KINH DOANH DỊCH VỤ PCCC",
+    "partners.title": "Khách hàng & đối tác",
+    "partners.content":
+      "Xuyên suốt hành trình phát triển, Bình Phát Construction đã đồng hành cùng các Chủ đầu tư lớn trong và ngoài nước, tham gia xây dựng, cải tạo và sửa chữa hàng trăm dự án trên khắp Việt Nam. Ngoài ra, bằng uy tín và chất lượng, Bình Phát Construction đã chinh phục nhiều khách hàng khó tính, có tiêu chuẩn khắt khe, đặc thù như Mỹ, Nhật Bản, Hàn Quốc, ….",
   },
   en: {
     "about.title": "About\nBinh Phat",
@@ -165,9 +169,14 @@ export const ui = {
     "core_values.4": "An toàn",
     "core_values.5": "Đoàn kết",
     "certification.title": "Juridical & Certification",
-    "certification.content": "Binh Phat Construction complies with relevant juridical and certification requirements to ensure legal, standard operations, affirming its reputation and capability in providing high-quality construction and M&E solutions.",
+    "certification.content":
+      "Binh Phat Construction complies with relevant juridical and certification requirements to ensure legal, standard operations, affirming its reputation and capability in providing high-quality construction and M&E solutions.",
     "certification.1": "Business Registration Certificate",
     "certification.2": "Construction Activities Competency Certificate",
-    "certification.3": "Confirmation Of Eligibility For Fire Prevention - Protection Service Business",
+    "certification.3":
+      "Confirmation Of Eligibility For Fire Prevention - Protection Service Business",
+    "partners.title": "Customers & Partners",
+    "partners.content":
+      "Throughout the development journey, Binh Phat Construction has accompanied large domestic and foreign investors, participating in the construction, renovation and repair of hundreds of projects across Vietnam. In addition, with prestige and quality.\nBinh Phat Construction has conquered many fastidious customers, with strict and specific standards such as USA, Japan, Korea, ....",
   },
 } as const;

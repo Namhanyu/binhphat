@@ -1,0 +1,69 @@
+---
+import bgImage from "../../../assets/images/48.webp";
+import logo01 from "../../../assets/images/partners/brother.webp";
+import logo02 from "../../../assets/images/partners/panasonic.webp";
+import logo03 from "../../../assets/images/partners/terumo.webp";
+import logo04 from "../../../assets/images/partners/braun.webp";
+import logo05 from "../../../assets/images/partners/suntory.webp";
+import logo06 from "../../../assets/images/partners/cp.webp";
+import logo07 from "../../../assets/images/partners/hoya.webp";
+import logo08 from "../../../assets/images/partners/topy.webp";
+import logo09 from "../../../assets/images/partners/idp.webp";
+import logo10 from "../../../assets/images/partners/nestle.webp";
+import logo11 from "../../../assets/images/partners/evn.webp";
+import logo12 from "../../../assets/images/partners/yusen.webp";
+
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const images = [
+  logo01,
+  logo02,
+  logo03,
+  logo04,
+  logo05,
+  logo06,
+  logo07,
+  logo08,
+  logo09,
+  logo10,
+  logo11,
+  logo12,
+];
+---
+
+<section
+  id="partners"
+  data-menu-color="white"
+  class="min-h-screen bg-cover bg-center flex items-center text-white justify-center py-20"
+  style={`background-image: url(${bgImage.src});`}
+>
+  <div class="container space-y-16">
+    <div class="grid gap-4">
+      <h2
+        class="text-5xl font-bold uppercase max-md:text-3xl whitespace-pre-line text-center max-sm:px-8"
+      >
+        {t("partners.title")}
+      </h2>
+      <div class="text-center lg:px-16">
+        {t("partners.content")}
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2.5">
+      {
+        images.map((image, index) => (
+          <div class="bg-white flex justify-center p-6 h-24">
+            <img
+              src={image.src}
+              alt={`Partner logo ${index + 1}`}
+              class="max-w-full max-h-full object-scale-down"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
