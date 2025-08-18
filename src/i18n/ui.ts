@@ -39,6 +39,7 @@ export const ui = {
     "contact.form.message": "Nội dung...",
     "contact.form.submit": "Gửi ngay",
     "news.title": "Tin tức",
+    "news.detail": "Chi tiết tin tức",
     "news.view_more": "Xem thêm tin tức",
     "operations.title": "Lĩnh vực hoạt động",
     "operations.subtitle": "Tổng thầu xây dựng và cơ điện",
@@ -139,11 +140,14 @@ export const ui = {
     "equipment.item_24": "Xelu",
     "safety.title": "An toàn\nlao động",
     "safety.training": "Huấn luyện",
-    "safety.training.content": "Ban HSSE tổ chức huấn luyện trước mỗi dự án để nâng cao nhận thức và đánh giá rủi ro, đưa ra biện pháp phòng ngừa.",
+    "safety.training.content":
+      "Ban HSSE tổ chức huấn luyện trước mỗi dự án để nâng cao nhận thức và đánh giá rủi ro, đưa ra biện pháp phòng ngừa.",
     "safety.execute": "Thực hành",
-    "safety.execute.content": "Công trường áp dụng nghiêm túc mô hình an toàn với giám sát trực tiếp từ HSSE và giám sát thi công.",
+    "safety.execute.content":
+      "Công trường áp dụng nghiêm túc mô hình an toàn với giám sát trực tiếp từ HSSE và giám sát thi công.",
     "safety.manage": "Quản lý",
-    "safety.manage.content": "Bình Phát tuân thủ luật pháp Việt Nam, yêu cầu của khách hàng, và đảm bảo nguồn nhân lực, máy móc tuân thủ hệ thống quản lý HSSE.",
+    "safety.manage.content":
+      "Bình Phát tuân thủ luật pháp Việt Nam, yêu cầu của khách hàng, và đảm bảo nguồn nhân lực, máy móc tuân thủ hệ thống quản lý HSSE.",
     "safety.execution_works": "Công tác thi công",
     "safety.item_1": "Biện pháp thi công",
     "safety.item_2": "Biện pháp an toàn",
