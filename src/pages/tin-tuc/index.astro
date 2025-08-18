@@ -1,12 +1,12 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import NewLayout from "../../layouts/NewLayout.astro";
 import Hero from "../../components/organisms/news/Hero.astro";
 ---
 
-<Layout title="Bình Phát - Tin tức">
+<NewLayout title="Bình Phát - Tin tức">
   <Hero />
 
-  <div class="container">
+  <div class="container mb-10">
     {
       [1, 2, 3, 4, 5].map((item) => (
         <div class="mt-10">
@@ -58,7 +58,7 @@ import Hero from "../../components/organisms/news/Hero.astro";
       ))
     }
   </div>
-</Layout>
+</NewLayout>
 
 <style>
   .container-fluid {
