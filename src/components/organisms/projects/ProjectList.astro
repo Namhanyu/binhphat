@@ -71,6 +71,7 @@ import image69 from "../../../assets/images/projects/69.webp";
 import image70 from "../../../assets/images/projects/70.webp";
 import image71 from "../../../assets/images/projects/71.webp";
 import image72 from "../../../assets/images/projects/72.webp";
+import { getLangFromUrl } from "../../../i18n/utils";
 import ProjectCard from "./ProjectCard.astro";
 
 export const vi = [
@@ -202,6 +203,135 @@ export const vi = [
   },
 ];
 
+export const en = [
+  {
+    name: "SON LA\nHYDROELECTRIC COMPANY",
+    address:
+      "No. 56, Lo Van Gia Street, Group 3, Chieng Le Ward, Son La City, Son La Prv",
+    images: [image01, image02, image03],
+  },
+  {
+    name: "LAI CHAU\nHYDROELECTRIC COMPANY",
+    address: "Nam Nhun Town, Nam Nhun Dist, Lai Chau Prv",
+    images: [image04, image05, image06],
+  },
+  {
+    name: "HOA BINH\nHYDROELECTRIC COMPANY",
+    address: "Tan Thinh Ward, Hoa Binh City, Hoa Binh Prv",
+    images: [image07, image08, image09],
+  },
+  {
+    name: "HUOI QUANG – BAN CHAT\nHYDROELECTRIC COMPANY",
+    address: "Na Khiet Village, Than Uyen, Lai Chau",
+    images: [image10, image11, image12],
+  },
+  {
+    name: "BROTHER VIETNAM\nINDUSTRIAL CO., LTD",
+    address: "Phuc Dien Industrial Park, Cam Giang, Hai Duong",
+    images: [image13, image14, image15],
+  },
+  {
+    name: "PANASONIC APPLIANCES\nVIETNAM CO., LTD",
+    address: "Thang Long II Industrial Park, Yen My, Hung Yen",
+    images: [image16, image17, image18],
+  },
+  {
+    name: "LOF INTERNATIONAL DAIRY PRODUCTS\nJOINT STOCK COMPANY",
+    address: "Duc Thinh Village, Tan Linh Commune, Ba Vi District, Hanoi City",
+    images: [image19, image20, image21],
+  },
+  {
+    name: "TERUMO VIETNAM\nCO., LTD",
+    address: "Quang Minh Industrial Park,\nChi Dong Town, Me Linh, Hanoi",
+    images: [image22, image23, image24],
+  },
+  {
+    name: "YUSEN LOGISTICS\nVIETNAM CO., LTD",
+    address: "Dinh Vu Industrial Park, Hai An Dist, Hai Phong City",
+    images: [image25, image26, image27],
+  },
+  {
+    name: "NISSEI ELECTRIC\nHANOI CO., LTD",
+    address: "Thang Long Industrial Park, Dong Anh Dist, Hanoi",
+    images: [image28, image29, image30],
+  },
+  {
+    name: "B.BRAUN VIETNAM\nCO., LTD",
+    address:
+      "Thanh Oai Industrial Cluster, Bich Hoa Commune, Thanh Oai Dist, Hanoi",
+    images: [image31, image32, image33],
+  },
+  {
+    name: "SUNTORY PEPSICO\nVIETNAM BEVERAGE LTD",
+    address: "VSIP Bac Ninh Industrial Park, Tu Son City, Bac Ninh City",
+    images: [image34, image35, image36],
+  },
+  {
+    name: "HOYA GLASS DISK\nVIETNAM CO., LTD",
+    address: "Thang Long Industrial Park, Vong La Commune, Dong Anh Dist, Hanoi",
+    images: [image37, image38, image39],
+  },
+  {
+    name: "NESTLÉ VIETNAM\nCO., LTD",
+    address:
+      "Bong Sen Factory - Lot P1A, Thang Long II Industrial Park,\nDi Su Ward, My Hao Town, Hung Yen Province.",
+    images: [image40, image41, image42],
+  },
+  {
+    name: "SUMIDENSO VIETNAM\nCO., LTD",
+    address: "Dai An Industrial Park, Tu Minh Ward, Hai Duong City, Hai Duong Prv.",
+    images: [image43, image44, image45],
+  },
+  {
+    name: "C.P VIETNAM LIVESTOCK\nJOINT STOCK COMPANY BRANCH –\nHANOI MEAT PROCESSING FACTORY",
+    address: "Phu Nghia Industrial Park, Phu Nghia Commune, Chuong My Dist, Hanoi",
+    images: [image46, image47, image48],
+  },
+  {
+    name: "KURODA KAGAKU VIETNAM\nCOMPANY LIMITED",
+    address: "Phuc Dien Industrial Park, Cam Phuc Commune,\nCam Giang District, Hai Duong Province",
+    images: [image49, image50, image51],
+  },
+  {
+    name: "TOTO VIETNAM\nCO., LIMITED",
+    address: "Thang Long Industrial Park, Dong Anh District, Hanoi City",
+    images: [image52, image53, image54],
+  },
+  {
+    name: "DIANA UNICHARM\nJOINT STOCK COMPANY",
+    address:
+      "Vinh Tuy Industrial Park, Linh Nam Street, Vinh Hung Ward,\nHoang Mai District, Hanoi City",
+    images: [image55, image56, image57],
+  },
+  {
+    name: "KYB MANUFACTURING\nVIETNAM CO., LTD",
+    address: "Thang Long Industrial Park, Dong Anh District, Hanoi City",
+    images: [image58, image59, image60],
+  },
+  {
+    name: "MATSUO INDUSTRIES\nVIETNAM INC",
+    address: "Thang Long Industrial Park, Dong Anh District, Hanoi City",
+    images: [image61, image62, image63],
+  },
+  {
+    name: "VIET NAM NUTIFOOD NUTRITION FOOD\nJOINT STOCK COMPANY",
+    address:
+      "Pho Noi A Industrial Park, Lac Hong Commune,\nVan Lam District, Hung Yen Province, Vietnam",
+    images: [image64, image65, image66],
+  },
+  {
+    name: "FUJI BAKELITE\nVIET NAM CO., LTD",
+    address: "Thang Long II Industrial Park, Lieu Xa Commune,\nYen My District, Hung Yen Province",
+    images: [image67, image68, image69],
+  },
+  {
+    name: "KIDO FROZEN FOODS\nJOINT STOCK COMPANY",
+    address:
+      "Tay Bac Cu Chi Industrial Park, Cay Sop Hamlet,\nTan An Hoi Commune, Cu Chi District, Ho Chi Minh City",
+    images: [image70, image71, image72],
+  },
+];
+
 const sizeMap = [
   "lg",
   "",
@@ -228,13 +358,19 @@ const sizeMap = [
   "",
   "",
 ];
+
+const lang = getLangFromUrl(Astro.url);
+
+const projects = lang === "en" ? en : vi;
 ---
 
 <section id="project-list" class="py-24">
   <div class="container">
-    <div class="grid sm:grid-cols-2 md:grid-cols-6 auto-rows-[280px] md:auto-rows-[100px] lg:auto-rows-[140px] gap-4">
+    <div
+      class="grid sm:grid-cols-2 md:grid-cols-6 auto-rows-[280px] md:auto-rows-[100px] lg:auto-rows-[140px] gap-4"
+    >
       {
-        vi.map((project, index) => (
+        projects.map((project, index) => (
           <ProjectCard {...project} index={index} size={sizeMap[index]} />
         ))
       }
