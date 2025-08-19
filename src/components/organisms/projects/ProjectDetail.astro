@@ -1,0 +1,62 @@
+---
+import bgImage01 from "../../../assets/images/news.webp";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+import clsx from "clsx";
+const { name, address, images } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section
+  id="project-detail"
+  class={clsx("flex items-center bg-cover bg-center", "text-primary")}
+  style={`background-image: url(${bgImage01.src});`}
+  data-menu-color="primary"
+>
+  <div
+    class={clsx(
+      "container h-screen grid pt-32 pb-20 3xl:pt-[8vw] 3xl:pb-[5vw] gap-6 3xl:gap-[2.5vw] content-start",
+      "md:grid-rows-[auto,_1fr]",
+      "max-md:h-auto max-md:py-16"
+    )}
+  >
+    <div class="grid gap-3 3xl:gap-[0.75vw]">
+      <h2
+        class="text-4xl font-black uppercase max-md:text-2xl whitespace-pre-line"
+        data-animate
+        data-y="-50"
+      >
+        {name}
+      </h2>
+      <div class="whitespace-pre-line" data-animate data-x="-50">
+        {t("projects.address")}: {address}
+      </div>
+    </div>
+    <div class="h-full grid md:grid-cols-3 max-md:gap-2 gap-4">
+      <div
+        class="h-full bg-cover bg-center md:col-span-2 max-md:h-[50vw]"
+        style={`background-image: url(${images[0].src});`}
+        data-animate
+        data-x="-50"
+      >
+      </div>
+      <div class="grid gap-4 max-md:gap-2 max-md:grid-cols-2">
+        <div
+          style={`background-image: url(${images[1].src});`}
+          class="h-full bg-cover bg-center max-md:h-[25vw]"
+          data-animate
+          data-y="-50"
+        >
+        </div>
+        <div
+          style={`background-image: url(${images[2].src});`}
+          class="h-full bg-cover bg-center max-md:h-[25vw]"
+          data-animate
+          data-y="50"
+        >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

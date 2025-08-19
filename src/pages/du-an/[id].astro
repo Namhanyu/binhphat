@@ -1,0 +1,37 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ProjectDetail from "../../components/organisms/projects/ProjectDetail.astro";
+import { vi } from "../../components/organisms/projects/ProjectList.astro";
+
+const { id } = Astro.params;
+
+export function getStaticPaths() {
+  return vi.map((_, index) => ({
+    params: { id: String(index + 1) },
+  }));
+}
+
+const project = vi[Number(id) - 1];
+---
+
+<Layout title=`Bình Phát - ${project.name}`>
+  <ProjectDetail {...project} />
+</Layout>
+
+<script>
+  import { initScrollAnimations } from "../../scripts/gsap-scroll.js";
+
+  const runInit = () => {
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(initScrollAnimations, { timeout: 500 });
+    } else {
+      setTimeout(initScrollAnimations, 200);
+    }
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", runInit);
+  } else {
+    runInit();
+  }
+</script>

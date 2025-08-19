@@ -284,6 +284,9 @@ export function initScrollAnimations() {
   initSectionAnimations("#safety");
   initSectionAnimations("#equipment");
 
+  // PROJECTS
+  initSectionAnimations("#project-detail");
+
   window.addEventListener("load", () => ScrollTrigger.refresh());
 }
 
