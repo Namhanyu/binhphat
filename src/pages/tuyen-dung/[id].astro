@@ -1,5 +1,5 @@
 ---
-import NewLayout from "../../layouts/NewLayout.astro";
+import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/organisms/recruitment/HeroDetail.astro";
 
 export function getStaticPaths() {
@@ -9,7 +9,7 @@ export function getStaticPaths() {
 const { id } = Astro.params;
 ---
 
-<NewLayout title="Bình Phát - Chi tiết tuyển dụng">
+<Layout title="Bình Phát - Chi tiết tuyển dụng" snap={false}>
   <Hero />
 
   <div class="container">
@@ -225,7 +225,7 @@ const { id } = Astro.params;
       </div>
     </div>
   </div>
-</NewLayout>
+</Layout>
 <style>
   /* Header */
   .header {

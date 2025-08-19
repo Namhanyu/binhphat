@@ -1,5 +1,5 @@
 ---
-import NewLayout from "../../layouts/NewLayout.astro";
+import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/organisms/news/HeroDetail.astro";
 
 import image01 from "../../assets/images/01.webp";
@@ -20,7 +20,7 @@ export function getStaticPaths() {
 const { id } = Astro.params;
 ---
 
-<NewLayout title="Bình Phát - Tin tức">
+<Layout title="Bình Phát - Tin tức" snap={false}>
   <Hero />
 
   <div class="container">
@@ -145,7 +145,7 @@ const { id } = Astro.params;
       </aside>
     </div>
   </div>
-</NewLayout>
+</Layout>
 
 <style>
   .header {

@@ -1,9 +1,9 @@
 ---
-import NewLayout from "../../layouts/NewLayout.astro";
+import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/organisms/news/Hero.astro";
 ---
 
-<NewLayout title="Bình Phát - Tin tức">
+<Layout title="Bình Phát - Tin tức" snap={false}>
   <Hero />
 
   <div class="container mb-10">
@@ -58,7 +58,7 @@ import Hero from "../../components/organisms/news/Hero.astro";
       ))
     }
   </div>
-</NewLayout>
+</Layout>
 
 <style>
   .container-fluid {

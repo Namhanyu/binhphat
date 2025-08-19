@@ -1,10 +1,10 @@
 ---
-import NewLayout from "../../layouts/NewLayout.astro";
+import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/organisms/recruitment/Hero.astro";
 import JobCard from "../../components/organisms/recruitment/JobCard.astro";
 ---
 
-<NewLayout title="Bình Phát - Tuyển dụng">
+<Layout title="Bình Phát - Tuyển dụng" snap={false}>
   <Hero />
 
   <div class="space-y-4 container">
@@ -53,7 +53,7 @@ import JobCard from "../../components/organisms/recruitment/JobCard.astro";
       </button>
     </div>
   </div>
-</NewLayout>
+</Layout>
 
 <style>
   /* Header */
