@@ -157,6 +157,7 @@ export const ui = {
     "safety.item_4": "Huấn luyện",
     "safety.item_5": "Kiểm soát",
     "safety.item_6": "Đánh giá hiệu chỉnh",
+    "projects.address": "Địa chỉ",
   },
   en: {
     "home.title": "Home",

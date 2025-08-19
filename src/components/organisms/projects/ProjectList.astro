@@ -1,0 +1,27 @@
+---
+import image01 from "../../../assets/images/projects/01.webp";
+import image02 from "../../../assets/images/projects/02.webp";
+import image03 from "../../../assets/images/projects/03.webp";
+import ProjectCard from "./ProjectCard.astro";
+
+const vi = [
+  {
+    name: "CÔNG TY\nTHỦY ĐIỆN SƠN LA",
+    address:
+      "Số 56, Đường Lò Văn Giá, Tổ 3,\nPhường Chiềng Lề, Thành phố Sơn La, Tỉnh Sơn La",
+    images: [image01, image02, image03],
+  },
+  {
+    name: "CÔNG TY\nTHỦY ĐIỆN LAI CHÂU",
+    address: "Thị trấn Nậm Nhùn,\nHuyện Nậm Nhùn, Tỉnh Lai Châu",
+    images: [image01, image02, image03],
+  },
+  {
+    name: "CÔNG TY\nTHỦY ĐIỆN HÒA BÌNH",
+    address: "Phường Tân Thịnh, TP.Hòa Bình, Tỉnh Hòa Bình",
+    images: [image01, image02, image03],
+  },
+];
+---
+
+{vi.map((project, index) => <ProjectCard {...project} index={index + 1} />)}
