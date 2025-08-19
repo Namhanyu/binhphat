@@ -34,9 +34,11 @@ const projects = [
       >
         {t("projects.title")}
       </h2>
-      <ActionButton class="text-white mb-12 3xl:mb-[3vw]">
-        {t("projects.view_more")}
-      </ActionButton>
+      <a href="/du-an">
+        <ActionButton class="text-white mb-12 3xl:mb-[3vw]">
+          {t("projects.view_more")}
+        </ActionButton>
+      </a>
     </div>
 
     <ProjectList client:load projects={projects} />

@@ -48,13 +48,8 @@ const lang = getLangFromUrl(Astro.url);
   </head>
   <body class="overflow-x-hidden max-md:text-[14px]">
     <Header />
-    <div
-      id="snap-container"
-      class="lg:snap-y [&>_*]:snap-start overflow-y-scroll h-screen overflow-x-hidden"
-    >
-      <slot />
-      <ContactSection />
-    </div>
+    <slot />
+    <ContactSection />
   </body>
 </html>
 

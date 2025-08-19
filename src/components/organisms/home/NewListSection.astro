@@ -64,9 +64,11 @@ const t = useTranslations(lang);
       >
         {t("news.title")}
       </h2>
-      <ActionButton class="bg-primary text-white max-sm:hidden">
-        {t("news.view_more")}
-      </ActionButton>
+      <a href="/tin-tuc" class="max-sm:hidden">
+        <ActionButton class="bg-primary text-white">
+          {t("news.view_more")}
+        </ActionButton>
+      </a>
     </div>
 
     <div
@@ -120,8 +122,10 @@ const t = useTranslations(lang);
       }
     </div>
 
-    <ActionButton class="bg-primary text-white sm:hidden mx-auto">
-      {t("news.view_more")}
-    </ActionButton>
+    <a href="/tin-tuc" class="sm:hidden">
+      <ActionButton class="bg-primary text-white mx-auto">
+        {t("news.view_more")}
+      </ActionButton>
+    </a>
   </div>
 </section>

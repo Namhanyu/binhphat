@@ -34,20 +34,23 @@ const t = useTranslations(lang);
       <div class="text-justify mb-7 3xl:mb-[1.75vw]">
         {t("operations.content")}
       </div>
-      <ActionButton
-        class="bg-primary border-primary text-white w-full max-md:w-auto"
-      >
-        {t("operations.view_more")}
-      </ActionButton>
+      <a href="/linh-vuc-hoat-dong">
+        <ActionButton
+          class="bg-primary border-primary text-white w-full max-md:w-auto"
+        >
+          {t("operations.view_more")}
+        </ActionButton>
+      </a>
     </div>
     <div class="flex-1 flex gap-4 3xl:gap-[1vw] max-lg:flex-col">
-      <div
+      <a
         class={clsx(
           "group px-10 py-8 flex items-end relative overflow-hidden flex-1 shrink-0",
           "3xl:px-[2.5vw] 3xl:py-[2vw]",
           "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-1/3 after:pointer-events-none after:bg-gradient-to-t after:from-black after:to-black/0",
           "max-md:min-h-[280px]"
         )}
+        href="/linh-vuc-hoat-dong#construction"
       >
         <div
           class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-500"
@@ -62,15 +65,16 @@ const t = useTranslations(lang);
             class="shrink-0 mb-2 3xl:mb-[0.5vw] 3xl:w-auto 3xl:h-[1.125vw]"
           />
         </div>
-      </div>
+      </a>
 
-      <div
+      <a
         class={clsx(
           "group px-10 py-8 flex items-end relative overflow-hidden flex-1 shrink-0",
           "3xl:px-[2.5vw] 3xl:py-[2vw]",
           "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-1/3 after:pointer-events-none after:bg-gradient-to-t after:from-black after:to-black/0",
           "max-md:min-h-[280px]"
         )}
+        href="/linh-vuc-hoat-dong#electromechanical"
       >
         <div
           class="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-500"
@@ -85,7 +89,7 @@ const t = useTranslations(lang);
             class="shrink-0 mb-2 3xl:mb-[0.5vw] 3xl:w-auto 3xl:h-[1.125vw]"
           />
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </section>

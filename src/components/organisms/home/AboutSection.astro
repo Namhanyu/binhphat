@@ -37,7 +37,9 @@ const t = useTranslations(lang);
         <p class="whitespace-pre-line text-justify mb-7 3xl:mb-[1.75vw]">
           {t("about.content")}
         </p>
-        <ActionButton>{t("about.button")}</ActionButton>
+        <a href="/gioi-thieu">
+          <ActionButton>{t("about.button")}</ActionButton>
+        </a>
       </div>
     </div>
   </div>
@@ -52,6 +54,7 @@ const t = useTranslations(lang);
         "3xl:pl-[3.125vw] 3xl:pb-[5.375vw]",
         "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[30%] after:pointer-events-none after:bg-gradient-to-t after:from-primary after:to-primary/0"
       )}
+      onclick="window.location.href='/gioi-thieu#history'"
     >
       <div
         class="absolute inset-0 bg-center bg-cover transition-transform duration-500 group-hover:scale-110"
@@ -61,6 +64,7 @@ const t = useTranslations(lang);
       <div class="z-10 relative">
         <a
           class="text-[24px] 3xl:text-[1.5vw] uppercase whitespace-pre-line mb-2 font-semibold max-lg:text-[20px]"
+          href="/gioi-thieu#history"
         >
           {t("about.history")}
         </a>
