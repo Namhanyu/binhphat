@@ -71,6 +71,7 @@ import image69 from "../../../assets/images/projects/69.webp";
 import image70 from "../../../assets/images/projects/70.webp";
 import image71 from "../../../assets/images/projects/71.webp";
 import image72 from "../../../assets/images/projects/72.webp";
+import ProjectCard from "./ProjectCard.astro";
 
 export const vi = [
   {
@@ -200,14 +201,41 @@ export const vi = [
     images: [image70, image71, image72],
   },
 ];
+
+const sizeMap = [
+  "lg",
+  "",
+  "",
+  "md",
+  "md",
+  "",
+  "",
+  "",
+  "",
+  "lg",
+  "",
+  "md",
+  "md",
+  "",
+  "",
+  "",
+  "lg",
+  "",
+  "",
+  "md",
+  "md",
+  "",
+  "",
+  "",
+];
 ---
 
-<section id="projects" class="py-24">
+<section id="project-list" class="py-24">
   <div class="container">
-    <div class="grid grid-cols-3">
+    <div class="grid sm:grid-cols-2 md:grid-cols-6 auto-rows-[280px] md:auto-rows-[100px] lg:auto-rows-[140px] gap-4">
       {
         vi.map((project, index) => (
-          <a href={`/du-an/${index + 1}`}>{project.name}</a>
+          <ProjectCard {...project} index={index} size={sizeMap[index]} />
         ))
       }
     </div>

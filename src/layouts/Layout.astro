@@ -52,7 +52,7 @@ const lang = getLangFromUrl(Astro.url);
     <div
       id="snap-container"
       class={clsx({
-        "lg:snap-mandatory lg:snap-y [&>_*]:snap-start overflow-y-scroll h-screen overflow-x-hidden":
+        "enable-snap lg:snap-mandatory lg:snap-y [&>_*]:snap-start overflow-y-scroll h-screen overflow-x-hidden":
           snap,
       })}
     >
@@ -128,7 +128,7 @@ const lang = getLangFromUrl(Astro.url);
     if (sections.length) applyColor(sections[0].dataset.menuColor);
 
     // createPaging();
-    setPage(1);
+    // setPage(1);
 
     const observer = new IntersectionObserver(
       (entries) => {

@@ -10,6 +10,10 @@ ScrollTrigger.defaults({ scroller, ease: "power2.out" });
 gsap.registerPlugin(ScrollTrigger);
 
 export function initScrollAnimations() {
+  if (!document.querySelector(".enable-snap")) {
+    return;
+  }
+
   // ABOUT
   const aboutTimeline = gsap.timeline({
     scrollTrigger: {
@@ -265,7 +269,6 @@ export function initScrollAnimations() {
       0.9 + index * 0.2
     );
   });
-
 
   // INTRODUCTION PAGE
 
