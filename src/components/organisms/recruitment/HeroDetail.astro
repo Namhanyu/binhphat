@@ -1,0 +1,31 @@
+---
+import bgImage from "../../../assets/images/operations_hero.webp";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const { id } = Astro.params;
+---
+
+<section
+  id="hero"
+  data-menu-color="white"
+  class="h-screen max-md:max-h-[400px] bg-cover bg-center flex items-center max-md:items-end py-10"
+  style={`background-image: url(${bgImage.src});`}
+>
+  <div class="container">
+    <h2
+      class="whitespace-pre-line text-5xl font-bold uppercase mb-4 max-md:text-3xl text-white leading-none"
+      data-animate
+      data-y="50"
+    >
+      {t("recruitment.detail")}
+    </h2>
+    <div class="uppercase text-white" data-animate data-x="-50">
+      <a href="/tuyen-dung">{t("recruitment.title")}</a>
+      <span>-</span>
+      <strong>{id}</strong>
+    </div>
+  </div>
+</section>

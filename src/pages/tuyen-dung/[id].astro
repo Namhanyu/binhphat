@@ -1,0 +1,402 @@
+---
+import NewLayout from "../../layouts/NewLayout.astro";
+import Hero from "../../components/organisms/news/HeroDetail.astro";
+
+import image01 from "../../assets/images/01.webp";
+import image02 from "../../assets/images/01-02.webp";
+import image03 from "../../assets/images/01-03.webp";
+import image04 from "../../assets/images/01-04.webp";
+import news1 from "../../assets/images/news/news1.webp";
+import news2 from "../../assets/images/news/news2.webp";
+import news5 from "../../assets/images/news/news5.webp";
+import news6 from "../../assets/images/news/news6.webp";
+
+export function getStaticPaths() {
+  return [
+    { params: { id: "binh-phat-khai-giang-khoa-hoc-vu-tri-tu-nhan-tao" } },
+  ];
+}
+
+const { id } = Astro.params;
+---
+
+<NewLayout title="Bình Phát - Tin tức">
+  <Hero />
+
+  <div class="container">
+    <div class="main-content">
+      <!-- Article -->
+      <article class="article">
+        <header class="article-header">
+          <span class="category">Công Nghệ</span>
+          <h1 class="article-title">
+            BÌNH PHÁT KHAI GIẢNG KHÓA HỌC VỀ TRÍ TUỆ NHÂN TẠO, TĂNG TỐC CHUYỂN
+            ĐỔI SỐ
+          </h1>
+        </header>
+
+        <img src={news1.src} alt="Công nghệ AI" class="featured-image" />
+        <p class="image-caption">
+          Lễ khai giảng khóa học “Ứng dụng của Trí tuệ nhân tạo (AI) trong doanh
+          nghiệp”
+        </p>
+
+        <div class="article-content mt-6">
+          <p>
+            Ngày 12/06/2025, tại trụ sở Công ty TNHH Xây dựng và Cơ điện Bình
+            Phát, Lễ khai giảng khóa học đặc biệt mang tên “Ứng dụng của Trí tuệ
+            nhân tạo (AI) trong doanh nghiệp” đã chính thức diễn ra. Khóa học
+            được giảng dạy trực tiếp bởi các chuyên gia từ Khoa Khoa học Dữ liệu
+            và Trí tuệ Nhân tạo – Trường Công nghệ – Đại học Kinh tế Quốc dân.
+          </p>
+
+          <p>
+            Đây là một hoạt động trọng tâm trong chiến lược chuyển đổi số của
+            Bình Phát, với mục tiêu ứng dụng hiệu quả các công cụ AI vào thực
+            tiễn sản xuất, quản lý và vận hành. Gần 50 cán bộ, kỹ sư, và nhân
+            viên từ các phòng ban đã tham gia khóa học theo cả hai hình thức
+            trực tiếp và trực tuyến, thể hiện tinh thần học hỏi nghiêm túc và
+            sẵn sàng tiếp cận công nghệ mới.
+          </p>
+
+          <img src={news2.src} alt="Công nghệ AI" class="featured-image" />
+
+          <p>
+            Nội dung khóa học tập trung vào các chủ đề thiết thực, bao gồm:
+            <ul>
+              <li>Ứng dụng AI trong lĩnh vực xây dựng và cơ điện.</li>
+              <li>
+                Sử dụng ChatGPT và các trợ lý AI trong công việc hàng ngày.
+              </li>
+              <li>Tự động hóa các quy trình nội bộ bằng AI.</li>
+              <li>Phân tích dữ liệu phục vụ quản lý và ra quyết định.</li>
+            </ul>
+          </p>
+
+          <p>
+            Ngoài việc cung cấp kiến thức nền tảng, khóa học còn chú trọng vào
+            thực hành, giúp học viên làm quen và áp dụng trực tiếp các công cụ
+            AI vào công việc.
+          </p>
+
+          <img src={news5.src} alt="Công nghệ AI" class="featured-image" />
+
+          <p>
+            Sự hợp tác giữa Bình Phát và Khoa Khoa học Dữ liệu và Trí tuệ Nhân
+            tạo, Trường Công nghệ, Đại học Kinh tế Quốc dân là minh chứng rõ nét
+            cho định hướng phát triển bền vững, thông minh và đổi mới sáng tạo
+            trong thời đại công nghiệp 4.0. Khóa học này không chỉ trang bị kỹ
+            năng công nghệ mà còn thay đổi tư duy làm việc, mở ra một hành trình
+            phát triển mới đầy tiềm năng cho Bình Phát.
+          </p>
+
+          <img src={news6.src} alt="Công nghệ AI" class="featured-image" />
+        </div>
+      </article>
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="sidebar-section">
+          <h2 class="sidebar-title">Bài Viết Liên Quan</h2>
+          <div class="related-article">
+            <img src={image04.src} alt="Blockchain" class="related-image" />
+            <div class="related-content">
+              <h3>Blockchain: Công Nghệ Của Tương Lai</h3>
+              <p>2 giờ trước • Công nghệ</p>
+            </div>
+          </div>
+          <div class="related-article">
+            <img src={image01.src} alt="Bảo mật" class="related-image" />
+            <div class="related-content">
+              <h3>Bảo Mật Mạng Trong Kỷ Nguyên Số</h3>
+              <p>4 giờ trước • Bảo mật</p>
+            </div>
+          </div>
+          <div class="related-article">
+            <img src={image02.src} alt="5G" class="related-image" />
+            <div class="related-content">
+              <h3>Mạng 5G Và Những Thay Đổi Lớn</h3>
+              <p>1 ngày trước • Viễn thông</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <h2 class="sidebar-title">Tin Nổi Bật</h2>
+          <div class="related-article">
+            <img src={image03.src} alt="Startup" class="related-image" />
+            <div class="related-content">
+              <h3>Startup Việt Nam Gọi Vốn Thành Công 50 Triệu USD</h3>
+              <p>3 giờ trước • Kinh doanh</p>
+            </div>
+          </div>
+          <div class="related-article">
+            <img
+              src={image04.src}
+              alt="Năng lượng xanh"
+              class="related-image"
+            />
+            <div class="related-content">
+              <h3>Năng Lượng Tái Tạo: Xu Hướng Toàn Cầu</h3>
+              <p>5 giờ trước • Môi trường</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</NewLayout>
+
+<style>
+  .header {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #059669;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: #4b5563;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover {
+    color: #059669;
+  }
+
+  /* Main Content */
+  .main-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    margin: 2rem 0;
+  }
+
+  .article {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .article-header {
+    margin-bottom: 2rem;
+  }
+
+  .category {
+    display: inline-block;
+    background: #d1fae5;
+    color: #059669;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  .article-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #111827;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .article-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #6b7280;
+    font-size: 0.875rem;
+  }
+
+  .author-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .featured-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 2rem 0;
+  }
+
+  .image-caption {
+    text-align: center;
+    color: #6b7280;
+    font-size: 0.875rem;
+    font-style: italic;
+    margin-top: 0.5rem;
+  }
+
+  .article-content {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #374151;
+  }
+
+  .article-content p {
+    margin-bottom: 1.5rem;
+  }
+
+  .article-content h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #111827;
+    margin: 2rem 0 1rem 0;
+  }
+
+  .article-content blockquote {
+    border-left: 4px solid #059669;
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: #4b5563;
+    background: #f0fdf4;
+    padding: 1rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .sidebar-section {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .sidebar-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #111827;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #059669;
+  }
+
+  .related-article {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .related-article:last-child {
+    border-bottom: none;
+  }
+
+  .related-image {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+
+  .related-content h3 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 0.25rem;
+    line-height: 1.3;
+  }
+
+  .related-content p {
+    font-size: 0.75rem;
+    color: #6b7280;
+  }
+
+  /* Action Buttons */
+  .article-actions {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+    padding: 1rem 0;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .action-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    color: #4b5563;
+    font-size: 0.875rem;
+  }
+
+  .action-btn:hover {
+    background: #f9fafb;
+    border-color: #059669;
+    color: #059669;
+  }
+
+  .action-btn.liked {
+    background: #fef2f2;
+    border-color: #ef4444;
+    color: #ef4444;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .main-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .nav-links {
+      display: none;
+    }
+
+    .article-title {
+      font-size: 2rem;
+    }
+
+    .article-meta {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .article-actions {
+      flex-wrap: wrap;
+    }
+  }
+</style>

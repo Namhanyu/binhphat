@@ -1,0 +1,338 @@
+---
+import NewLayout from "../../layouts/NewLayout.astro";
+import Hero from "../../components/organisms/recruitment/Hero.astro";
+import JobCard from "../../components/organisms/recruitment/JobCard.astro";
+---
+
+<NewLayout title="Bình Phát - Tuyển dụng">
+  <Hero />
+
+  <div class="space-y-4 container">
+    <div class="flex items-center justify-between">
+      <h2 class="text-xl font-semibold text-foreground mt-10">
+        Tìm thấy 6 việc làm
+      </h2>
+    </div>
+
+    <div class="space-y-4">
+      {[1, 2, 3, 4, 5, 6].map((job, index) => <JobCard />)}
+    </div>
+
+    {/* Pagination */}
+    <div class="flex justify-center items-center space-x-2 mt-8">
+      <button
+        class="px-3 py-2 text-sm border border-border rounded-md hover:bg-muted text-muted-foreground"
+      >
+        Trước
+      </button>
+      <button
+        class="px-3 py-2 text-sm bg-[#1d4ed8] text-primary-foreground rounded-md"
+      >
+        1
+      </button>
+      <button
+        class="px-3 py-2 text-sm border border-border rounded-md hover:bg-muted text-muted-foreground"
+      >
+        2
+      </button>
+      <button
+        class="px-3 py-2 text-sm border border-border rounded-md hover:bg-muted text-muted-foreground"
+      >
+        3
+      </button>
+      <button
+        class="px-3 py-2 text-sm border border-border rounded-md hover:bg-muted text-muted-foreground"
+      >
+        Sau
+      </button>
+    </div>
+  </div>
+</NewLayout>
+
+<style>
+  /* Header */
+  .header {
+    background: white;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    height: 40px;
+  }
+
+  .nav {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav a {
+    text-decoration: none;
+    color: #64748b;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav a:hover {
+    color: #1e40af;
+  }
+
+  /* Hero Section */
+  .hero {
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+  }
+
+  .hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .hero p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+  }
+
+  /* Search Section */
+  .search-section {
+    background: white;
+    padding: 2rem 0;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .search-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .search-form {
+    display: flex;
+    gap: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .search-input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+  }
+
+  .search-input:focus {
+    outline: none;
+    border-color: #1e40af;
+  }
+
+  .search-btn {
+    background: #1e40af;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .search-btn:hover {
+    background: #1d4ed8;
+  }
+
+  /* Main Content */
+  .main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+
+  .jobs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  .jobs-count {
+    color: #64748b;
+    font-size: 1.1rem;
+  }
+
+  .sort-select {
+    padding: 0.5rem 1rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.375rem;
+    background: white;
+  }
+
+  /* Job Cards */
+  .jobs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .job-card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  .job-card:hover {
+    border-color: #1e40af;
+    box-shadow: 0 4px 12px rgba(30, 64, 175, 0.1);
+  }
+
+  .job-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  .job-info {
+    flex: 1;
+  }
+
+  .job-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 0.5rem;
+  }
+
+  .job-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .job-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #64748b;
+    font-size: 0.9rem;
+  }
+
+  .job-meta-icon {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+  }
+
+  .job-logo {
+    width: 48px;
+    height: 48px;
+    border-radius: 0.5rem;
+    object-fit: cover;
+    border: 1px solid #e2e8f0;
+  }
+
+  .job-description {
+    color: #64748b;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  .job-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .job-tag {
+    background: #f1f5f9;
+    color: #475569;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  /* Pagination */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 3rem;
+  }
+
+  .pagination-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid #e2e8f0;
+    background: white;
+    color: #64748b;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .pagination-btn:hover {
+    background: #f8fafc;
+    border-color: #1e40af;
+  }
+
+  .pagination-btn.active {
+    background: #1e40af;
+    color: white;
+    border-color: #1e40af;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+
+    .search-form {
+      flex-direction: column;
+    }
+
+    .jobs-header {
+      flex-direction: column;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .job-card-header {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .job-meta {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+  }
+</style>
