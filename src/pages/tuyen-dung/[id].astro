@@ -1,162 +1,242 @@
 ---
 import NewLayout from "../../layouts/NewLayout.astro";
-import Hero from "../../components/organisms/news/HeroDetail.astro";
-
-import image01 from "../../assets/images/01.webp";
-import image02 from "../../assets/images/01-02.webp";
-import image03 from "../../assets/images/01-03.webp";
-import image04 from "../../assets/images/01-04.webp";
-import news1 from "../../assets/images/news/news1.webp";
-import news2 from "../../assets/images/news/news2.webp";
-import news5 from "../../assets/images/news/news5.webp";
-import news6 from "../../assets/images/news/news6.webp";
+import Hero from "../../components/organisms/recruitment/HeroDetail.astro";
 
 export function getStaticPaths() {
-  return [
-    { params: { id: "binh-phat-khai-giang-khoa-hoc-vu-tri-tu-nhan-tao" } },
-  ];
+  return [{ params: { id: "ky-su-co-dien" } }];
 }
 
 const { id } = Astro.params;
 ---
 
-<NewLayout title="Bình Phát - Tin tức">
+<NewLayout title="Bình Phát - Chi tiết tuyển dụng">
   <Hero />
 
   <div class="container">
     <div class="main-content">
-      <!-- Article -->
-      <article class="article">
-        <header class="article-header">
-          <span class="category">Công Nghệ</span>
-          <h1 class="article-title">
-            BÌNH PHÁT KHAI GIẢNG KHÓA HỌC VỀ TRÍ TUỆ NHÂN TẠO, TĂNG TỐC CHUYỂN
-            ĐỔI SỐ
-          </h1>
-        </header>
+      <div class="job-content">
+        <div class="job-header">
+          <h1 class="job-title">Kỹ sư cơ điện (M&E)</h1>
+          <div class="job-meta">
+            <div class="meta-item">
+              <svg class="meta-icon" viewBox="0 0 24 24">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                ></path>
+              </svg>
+              <span>Hà Nội và theo sự phân công của công ty</span>
+            </div>
+            <div class="meta-item">
+              <svg class="meta-icon" viewBox="0 0 24 24">
+                <path
+                  d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zM4 18v-6h2.5l6 7.5H22v2H4z"
+                ></path>
+              </svg>
+              <span>Cơ điện</span>
+            </div>
+            <div class="meta-item">
+              <svg class="meta-icon" viewBox="0 0 24 24">
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                ></path>
+              </svg>
+              <span>Từ 2 năm kinh nghiệm</span>
+            </div>
+          </div>
+          <a href="mailto:hrbinhphat@gmail.com" class="apply-button"
+            >Ứng tuyển ngay</a
+          >
+        </div>
 
-        <img src={news1.src} alt="Công nghệ AI" class="featured-image" />
-        <p class="image-caption">
-          Lễ khai giảng khóa học “Ứng dụng của Trí tuệ nhân tạo (AI) trong doanh
-          nghiệp”
-        </p>
-
-        <div class="article-content mt-6">
-          <p>
-            Ngày 12/06/2025, tại trụ sở Công ty TNHH Xây dựng và Cơ điện Bình
-            Phát, Lễ khai giảng khóa học đặc biệt mang tên “Ứng dụng của Trí tuệ
-            nhân tạo (AI) trong doanh nghiệp” đã chính thức diễn ra. Khóa học
-            được giảng dạy trực tiếp bởi các chuyên gia từ Khoa Khoa học Dữ liệu
-            và Trí tuệ Nhân tạo – Trường Công nghệ – Đại học Kinh tế Quốc dân.
-          </p>
-
-          <p>
-            Đây là một hoạt động trọng tâm trong chiến lược chuyển đổi số của
-            Bình Phát, với mục tiêu ứng dụng hiệu quả các công cụ AI vào thực
-            tiễn sản xuất, quản lý và vận hành. Gần 50 cán bộ, kỹ sư, và nhân
-            viên từ các phòng ban đã tham gia khóa học theo cả hai hình thức
-            trực tiếp và trực tuyến, thể hiện tinh thần học hỏi nghiêm túc và
-            sẵn sàng tiếp cận công nghệ mới.
-          </p>
-
-          <img src={news2.src} alt="Công nghệ AI" class="featured-image" />
-
-          <p>
-            Nội dung khóa học tập trung vào các chủ đề thiết thực, bao gồm:
+        <div class="section">
+          <h2 class="section-title">
+            <svg class="meta-icon" viewBox="0 0 24 24">
+              <path
+                d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 2 2h8c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H7v-2h6v2zm3-4H7V5h9v2z"
+              ></path>
+            </svg>
+            Mô tả công việc
+          </h2>
+          <div class="section-content">
             <ul>
-              <li>Ứng dụng AI trong lĩnh vực xây dựng và cơ điện.</li>
               <li>
-                Sử dụng ChatGPT và các trợ lý AI trong công việc hàng ngày.
+                Thiết kế/giám sát quản lý thi công các hạng mục liên quan đến hệ
+                thống cơ điện (Điện – điện tử viễn thông, HVAC, Cấp thoát nước,
+                PCCC)
               </li>
-              <li>Tự động hóa các quy trình nội bộ bằng AI.</li>
-              <li>Phân tích dữ liệu phục vụ quản lý và ra quyết định.</li>
+              <li>
+                Triển khai bản vẽ thi công, máy móc dụng cụ thi công trong công
+                trình nhà máy
+              </li>
+              <li>
+                Rà soát cấu hình, đệ trình vật tư, thiết bị, bóc tách vật tư,
+                đặt hàng và theo dõi tiến độ hàng về
+              </li>
+              <li>
+                Lập biện pháp thi công & kiểm tra, giám sát đảm bảo chất lượng
+                thi công lắp đặt
+              </li>
+              <li>
+                Thực hiện nghiệm thu, khối lượng thanh toán công việc phụ trách
+              </li>
+              <li>
+                Thực hiện nghiệm thu chạy thử, vận hành, hoàn công và bàn giao
+                hệ thống
+              </li>
             </ul>
-          </p>
-
-          <p>
-            Ngoài việc cung cấp kiến thức nền tảng, khóa học còn chú trọng vào
-            thực hành, giúp học viên làm quen và áp dụng trực tiếp các công cụ
-            AI vào công việc.
-          </p>
-
-          <img src={news5.src} alt="Công nghệ AI" class="featured-image" />
-
-          <p>
-            Sự hợp tác giữa Bình Phát và Khoa Khoa học Dữ liệu và Trí tuệ Nhân
-            tạo, Trường Công nghệ, Đại học Kinh tế Quốc dân là minh chứng rõ nét
-            cho định hướng phát triển bền vững, thông minh và đổi mới sáng tạo
-            trong thời đại công nghiệp 4.0. Khóa học này không chỉ trang bị kỹ
-            năng công nghệ mà còn thay đổi tư duy làm việc, mở ra một hành trình
-            phát triển mới đầy tiềm năng cho Bình Phát.
-          </p>
-
-          <img src={news6.src} alt="Công nghệ AI" class="featured-image" />
-        </div>
-      </article>
-
-      <!-- Sidebar -->
-      <aside class="sidebar">
-        <div class="sidebar-section">
-          <h2 class="sidebar-title">Bài Viết Liên Quan</h2>
-          <div class="related-article">
-            <img src={image04.src} alt="Blockchain" class="related-image" />
-            <div class="related-content">
-              <h3>Blockchain: Công Nghệ Của Tương Lai</h3>
-              <p>2 giờ trước • Công nghệ</p>
-            </div>
-          </div>
-          <div class="related-article">
-            <img src={image01.src} alt="Bảo mật" class="related-image" />
-            <div class="related-content">
-              <h3>Bảo Mật Mạng Trong Kỷ Nguyên Số</h3>
-              <p>4 giờ trước • Bảo mật</p>
-            </div>
-          </div>
-          <div class="related-article">
-            <img src={image02.src} alt="5G" class="related-image" />
-            <div class="related-content">
-              <h3>Mạng 5G Và Những Thay Đổi Lớn</h3>
-              <p>1 ngày trước • Viễn thông</p>
-            </div>
           </div>
         </div>
 
-        <div class="sidebar-section">
-          <h2 class="sidebar-title">Tin Nổi Bật</h2>
-          <div class="related-article">
-            <img src={image03.src} alt="Startup" class="related-image" />
-            <div class="related-content">
-              <h3>Startup Việt Nam Gọi Vốn Thành Công 50 Triệu USD</h3>
-              <p>3 giờ trước • Kinh doanh</p>
-            </div>
+        <div class="section">
+          <h2 class="section-title">
+            <svg class="meta-icon" viewBox="0 0 24 24">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+              ></path>
+            </svg>
+            Yêu cầu công việc
+          </h2>
+          <div class="section-content">
+            <ul>
+              <li>
+                Tốt nghiệp Đại học chuyên ngành Cơ điện, Nhiệt – Điện lạnh, Kỹ
+                thuật điện – nước…
+              </li>
+              <li>
+                Có kinh nghiệm từ 2 năm trở lên trong lĩnh vực thi công cơ điện
+                công trình công nghiệp
+              </li>
+              <li>Thành thạo đọc bản vẽ kỹ thuật, AutoCAD, MS Office</li>
+              <li>
+                Am hiểu quy chuẩn kỹ thuật, quy trình thi công hệ thống M&E
+              </li>
+              <li>Có khả năng làm việc độc lập, quản lý đội nhóm thi công</li>
+              <li>Sẵn sàng đi công tác tỉnh theo dự án</li>
+            </ul>
           </div>
-          <div class="related-article">
-            <img
-              src={image04.src}
-              alt="Năng lượng xanh"
-              class="related-image"
-            />
-            <div class="related-content">
-              <h3>Năng Lượng Tái Tạo: Xu Hướng Toàn Cầu</h3>
-              <p>5 giờ trước • Môi trường</p>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">
+            <svg class="meta-icon" viewBox="0 0 24 24">
+              <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+              ></path>
+            </svg>
+            Quyền lợi
+          </h2>
+          <div class="section-content">
+            <ul>
+              <li>Thu nhập: thỏa thuận theo năng lực</li>
+              <li>Lương trả 2 lần/tháng, không nợ lương chậm lương</li>
+              <li>Ngày làm 8 tiếng, ngoài giờ tính tăng ca</li>
+              <li>
+                Chế độ phụ cấp: ăn, ở, đi lại, bằng lái ô tô, máy tính, điện
+                thoại, sim trong quá trình làm việc
+              </li>
+              <li>Tham gia đầy đủ chế độ BHXH, BHYT, BHTN</li>
+              <li>
+                Thưởng Lễ, Tết, lương tháng 13, sinh nhật, team building, du
+                lịch nghỉ mát 2 lần/năm
+              </li>
+              <li>
+                Được tham gia các khóa đào tạo, có cơ hội thăng tiến rõ ràng
+              </li>
+              <li>Môi trường làm việc chuyên nghiệp, năng động</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section">
+          <h2 class="section-title">
+            <svg class="meta-icon" viewBox="0 0 24 24">
+              <path
+                d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+              ></path>
+              <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"></path>
+            </svg>
+            Thời gian làm việc
+          </h2>
+          <div class="section-content">
+            <p>
+              <strong>Thời gian làm việc:</strong> 8h - 17h15' từ thứ Hai đến thứ
+              Bảy
+            </p>
+            <p>
+              <strong>Nghỉ:</strong> Chủ nhật hàng tuần và 2 ngày bất kì/tháng
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="sidebar-card">
+          <h3 class="sidebar-title">Thông tin liên hệ</h3>
+          <div class="contact-info">
+            <div class="contact-item">
+              <svg class="contact-icon" viewBox="0 0 24 24">
+                <path
+                  d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                ></path>
+              </svg>
+              <span>hrbinhphat@gmail.com</span>
+            </div>
+            <div class="contact-item">
+              <svg class="contact-icon" viewBox="0 0 24 24">
+                <path
+                  d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
+                ></path>
+              </svg>
+              <span>0987 538 455 (Ms Hạnh)</span>
+            </div>
+            <div class="contact-item">
+              <svg class="contact-icon" viewBox="0 0 24 24">
+                <path
+                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                ></path>
+              </svg>
+              <span>Hà Nội</span>
             </div>
           </div>
         </div>
-      </aside>
+
+        <div class="highlight-box">
+          <h3 class="highlight-title">Ứng tuyển ngay</h3>
+          <p class="highlight-text">
+            Gửi CV của bạn qua email hoặc liên hệ trực tiếp với chúng tôi
+          </p>
+          <a
+            href="mailto:hrbinhphat@gmail.com"
+            class="apply-button"
+            style="margin-top: 1rem;">Gửi CV</a
+          >
+        </div>
+
+        <div class="sidebar-card">
+          <h3 class="sidebar-title">Thông tin công ty</h3>
+          <div class="section-content">
+            <p><strong>BINH PHAT</strong></p>
+            <p>
+              Chuyên về thi công hệ thống cơ điện công nghiệp với đội ngũ kỹ sư
+              chuyên nghiệp và kinh nghiệm.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </NewLayout>
-
 <style>
+  /* Header */
   .header {
     background: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 100;
   }
 
-  .nav {
+  .header-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -164,239 +244,204 @@ const { id } = Astro.params;
   }
 
   .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #059669;
+    height: 40px;
+    width: auto;
   }
 
-  .nav-links {
+  .nav {
     display: flex;
-    list-style: none;
     gap: 2rem;
   }
 
-  .nav-links a {
+  .nav a {
     text-decoration: none;
-    color: #4b5563;
+    color: #374151;
     font-weight: 500;
-    transition: color 0.3s;
+    transition: color 0.2s;
   }
 
-  .nav-links a:hover {
-    color: #059669;
+  .nav a:hover {
+    color: #2563eb;
   }
 
   /* Main Content */
   .main-content {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 3rem;
-    margin: 2rem 0;
+    grid-template-columns: 1fr 300px;
+    gap: 2rem;
+    padding: 2rem 0;
   }
 
-  .article {
+  .job-content {
     background: white;
     border-radius: 12px;
     padding: 2rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   }
 
-  .article-header {
+  .job-header {
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 1.5rem;
     margin-bottom: 2rem;
   }
 
-  .category {
-    display: inline-block;
-    background: #d1fae5;
-    color: #059669;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    font-size: 0.875rem;
-    font-weight: 600;
+  .job-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1f2937;
     margin-bottom: 1rem;
   }
 
-  .article-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #111827;
+  .job-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
     margin-bottom: 1rem;
-    line-height: 1.2;
   }
 
-  .article-meta {
+  .meta-item {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
     color: #6b7280;
-    font-size: 0.875rem;
   }
 
-  .author-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: cover;
+  .meta-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
   }
 
-  .featured-image {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
+  .apply-button {
+    background: #2563eb;
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
     border-radius: 8px;
-    margin: 2rem 0;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    text-decoration: none;
+    display: inline-block;
   }
 
-  .image-caption {
-    text-align: center;
-    color: #6b7280;
-    font-size: 0.875rem;
-    font-style: italic;
-    margin-top: 0.5rem;
+  .apply-button:hover {
+    background: #1d4ed8;
   }
 
-  .article-content {
-    font-size: 1.125rem;
-    line-height: 1.8;
-    color: #374151;
+  .section {
+    margin-bottom: 2rem;
   }
 
-  .article-content p {
-    margin-bottom: 1.5rem;
+  .section-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
   }
 
-  .article-content h2 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #111827;
-    margin: 2rem 0 1rem 0;
-  }
-
-  .article-content blockquote {
-    border-left: 4px solid #059669;
-    padding-left: 1.5rem;
-    margin: 2rem 0;
-    font-style: italic;
+  .section-content {
     color: #4b5563;
-    background: #f0fdf4;
-    padding: 1rem 1.5rem;
-    border-radius: 0 8px 8px 0;
+    line-height: 1.7;
+  }
+
+  .section-content ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .section-content li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .section-content li:before {
+    content: "•";
+    color: #2563eb;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
   }
 
   /* Sidebar */
   .sidebar {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
-  .sidebar-section {
+  .sidebar-card {
     background: white;
     border-radius: 12px;
     padding: 1.5rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   }
 
   .sidebar-title {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #111827;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #059669;
-  }
-
-  .related-article {
-    display: flex;
-    gap: 1rem;
-    padding: 1rem 0;
-    border-bottom: 1px solid #e5e7eb;
-  }
-
-  .related-article:last-child {
-    border-bottom: none;
-  }
-
-  .related-image {
-    width: 80px;
-    height: 60px;
-    object-fit: cover;
-    border-radius: 6px;
-    flex-shrink: 0;
-  }
-
-  .related-content h3 {
-    font-size: 0.875rem;
+    font-size: 1.125rem;
     font-weight: 600;
-    color: #111827;
-    margin-bottom: 0.25rem;
-    line-height: 1.3;
+    color: #1f2937;
+    margin-bottom: 1rem;
   }
 
-  .related-content p {
-    font-size: 0.75rem;
-    color: #6b7280;
-  }
-
-  /* Action Buttons */
-  .article-actions {
+  .contact-info {
     display: flex;
+    flex-direction: column;
     gap: 1rem;
-    margin: 2rem 0;
-    padding: 1rem 0;
-    border-top: 1px solid #e5e7eb;
   }
 
-  .action-btn {
+  .contact-item {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1rem;
-    border: 1px solid #d1d5db;
-    background: white;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s;
-    text-decoration: none;
+    gap: 0.75rem;
     color: #4b5563;
-    font-size: 0.875rem;
   }
 
-  .action-btn:hover {
-    background: #f9fafb;
-    border-color: #059669;
-    color: #059669;
+  .contact-icon {
+    width: 18px;
+    height: 18px;
+    fill: #2563eb;
   }
 
-  .action-btn.liked {
-    background: #fef2f2;
-    border-color: #ef4444;
-    color: #ef4444;
+  .highlight-box {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+  }
+
+  .highlight-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .highlight-text {
+    opacity: 0.9;
   }
 
   /* Responsive */
   @media (max-width: 768px) {
     .main-content {
       grid-template-columns: 1fr;
-      gap: 2rem;
     }
 
-    .nav-links {
+    .job-meta {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .nav {
       display: none;
     }
 
-    .article-title {
-      font-size: 2rem;
-    }
-
-    .article-meta {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.5rem;
-    }
-
-    .article-actions {
-      flex-wrap: wrap;
+    .job-title {
+      font-size: 1.5rem;
     }
   }
 </style>
