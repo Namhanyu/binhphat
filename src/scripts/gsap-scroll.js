@@ -14,6 +14,11 @@ export function initScrollAnimations() {
     return;
   }
 
+  gsap.to("#snap-container", {
+    opacity: 1,
+    duration: 1,
+  });
+
   // ABOUT
   const aboutTimeline = gsap.timeline({
     scrollTrigger: {
