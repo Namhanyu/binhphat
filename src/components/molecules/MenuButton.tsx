@@ -12,21 +12,34 @@ export default function MenuButton() {
         document.getElementById("menu")!.classList.toggle("translate-x-full");
       }}
       id="menu-button"
+      aria-label={isOpen ? "Close menu" : "Open menu"}
+      aria-expanded={isOpen}
+      aria-controls="menu"
+      type="button"
     >
       <div
-        className={clsx("h-[3px] 3xl:h-[0.1875vw] w-full bg-current transition-all", {
-          "rotate-45 -mb-[7px] 3xl:-mb-[0.4375vw] bg-white": isOpen,
-        })}
+        className={clsx(
+          "h-[3px] 3xl:h-[0.1875vw] w-full bg-current transition-all",
+          {
+            "rotate-45 -mb-[7px] 3xl:-mb-[0.4375vw] bg-white": isOpen,
+          }
+        )}
       ></div>
       <div
-        className={clsx("h-[3px] 3xl:h-[0.1875vw] w-full bg-current transition-all", {
-          "scale-0": isOpen,
-        })}
+        className={clsx(
+          "h-[3px] 3xl:h-[0.1875vw] w-full bg-current transition-all",
+          {
+            "scale-0": isOpen,
+          }
+        )}
       ></div>
       <div
-        className={clsx("h-[3px] 3xl:h-[0.1875vw] w-full bg-current transition-all", {
-          "-rotate-45 -mt-[7px] 3xl:-mt-[0.4375vw] bg-white": isOpen,
-        })}
+        className={clsx(
+          "h-[3px] 3xl:h-[0.1875vw] w-full bg-current transition-all",
+          {
+            "-rotate-45 -mt-[7px] 3xl:-mt-[0.4375vw] bg-white": isOpen,
+          }
+        )}
       ></div>
     </button>
   );

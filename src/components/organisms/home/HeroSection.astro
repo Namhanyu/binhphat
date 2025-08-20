@@ -68,6 +68,8 @@ const images = [image01, image02, image03, image04];
           "border",
           "border-white"
         );
+        dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
+        dot.setAttribute("type", "button");
         dot.addEventListener("click", () => slider.moveToIdx(i));
         dotsContainer?.appendChild(dot);
       }
@@ -76,8 +78,18 @@ const images = [image01, image02, image03, image04];
     function updateDots(activeIdx: number) {
       const dots = document.getElementById("dots")?.children || [];
       Array.from(dots).forEach((dot, idx) => {
-        dot.classList.toggle("bg-primary", idx === activeIdx);
-        dot.classList.toggle("bg-white", idx !== activeIdx);
+        const isActive = idx === activeIdx;
+        dot.classList.toggle("bg-primary", isActive);
+        dot.classList.toggle("bg-white", !isActive);
+
+        // Update accessibility attributes
+        if (isActive) {
+          dot.setAttribute("aria-current", "true");
+          dot.setAttribute("aria-label", `Current slide ${idx + 1}`);
+        } else {
+          dot.removeAttribute("aria-current");
+          dot.setAttribute("aria-label", `Go to slide ${idx + 1}`);
+        }
       });
     }
   </script>
