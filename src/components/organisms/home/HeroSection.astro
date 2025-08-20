@@ -57,8 +57,10 @@ const images = [image01, image02, image03, image04];
       const dotsContainer = document.getElementById("dots");
       const slides = slider.track.details.slides.length;
       for (let i = 0; i < slides; i++) {
-        const dot = document.createElement("button");
+        const dot = document.createElement("span");
+        dot.role = "button";
         dot.classList.add(
+          "cursor-pointer",
           "w-3",
           "h-3",
           "3xl:w-[0.75vw]",
@@ -68,8 +70,6 @@ const images = [image01, image02, image03, image04];
           "border",
           "border-white"
         );
-        dot.setAttribute("aria-label", `Go to slide ${i + 1}`);
-        dot.setAttribute("type", "button");
         dot.addEventListener("click", () => slider.moveToIdx(i));
         dotsContainer?.appendChild(dot);
       }
