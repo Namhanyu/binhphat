@@ -11,14 +11,14 @@ const t = useTranslations(lang);
   id="electromechanical"
   data-menu-color="white"
   class="min-h-screen bg-cover bg-center flex items-center text-white justify-center py-20"
-  style={`background-image: linear-gradient(to left, #045ca4 40%, #045ca400), url(${bgImage.src});`}
+  style={`background-image: linear-gradient(to left, #045ca4 50%, #045ca400), url(${bgImage.src});`}
 >
-  <div class="container">
+  <div class="px-[6vw]">
     <div
-      class="grid gap-10 text-white max-w-[520px] 3xl:gap-[2.5vw] 3xl:max-w-[30.25vw] ml-auto text-right"
+      class="grid gap-10 text-white lg:w-1/2 lg:min-w-[800px] 3xl:gap-[2.5vw] ml-auto"
     >
       <h2
-        class="text-5xl font-black uppercase max-md:text-3xl whitespace-pre-line"
+        class="text-5xl font-extrabold uppercase max-md:text-3xl whitespace-pre-line text-right"
         data-animate
         data-y="-50"
       >
@@ -32,66 +32,98 @@ const t = useTranslations(lang);
         {t("electromecha.content")}
       </p>
       <div
-        class="grid border-t border-white"
+        class="grid md:grid-cols-2 gap-x-[2vw]"
         data-animate
         data-y="30"
         data-duration="0.7"
       >
-        <div
-          class="uppercase py-3 3xl:py-[0.75vw] font-bold border-b border-white"
-          data-animate
-          data-y="30"
-          data-duration="0.7"
-        >
-          {t("electromecha.action_1")}
+        <div>
+          <div
+            class="flex items-center uppercase py-3 3xl:py-[0.75vw] font-bold border-y-2 border-[#2A8ACA] min-h-[4.6em]"
+            data-animate
+            data-y="30"
+            data-duration="0.7"
+          >
+            <span
+              class="font-bold text-4xl shrink-0 text-[#2A8ACA] w-[5vw] min-w-[60px]"
+              >01</span
+            >
+            {t("electromecha.action_1")}
+          </div>
+          <div
+            class="flex items-center uppercase py-3 3xl:py-[0.75vw] font-bold border-b-2 border-[#2A8ACA] min-h-[4.6em]"
+            data-animate
+            data-y="30"
+            data-duration="0.7"
+          >
+            <span
+              class="font-bold text-4xl shrink-0 text-[#2A8ACA] w-[5vw] min-w-[60px]"
+              >02</span
+            >
+            {t("electromecha.action_2")}
+          </div>
+          <div
+            class="flex items-center uppercase py-3 3xl:py-[0.75vw] font-bold border-b-2 border-[#2A8ACA] min-h-[4.6em]"
+            data-animate
+            data-y="30"
+            data-duration="0.7"
+          >
+            <span
+              class="font-bold text-4xl shrink-0 text-[#2A8ACA] w-[5vw] min-w-[60px]"
+              >03</span
+            >
+            {t("electromecha.action_3")}
+          </div>
+          <div
+            class="flex items-center uppercase py-3 3xl:py-[0.75vw] font-bold border-b-2 border-[#2A8ACA] min-h-[4.6em]"
+            data-animate
+            data-y="30"
+            data-duration="0.7"
+          >
+            <span
+              class="font-bold text-4xl shrink-0 text-[#2A8ACA] w-[5vw] min-w-[60px]"
+              >04</span
+            >
+            {t("electromecha.action_4")}
+          </div>
         </div>
-        <div
-          class="uppercase py-3 3xl:py-[0.75vw] font-bold border-b border-white"
-          data-animate
-          data-y="30"
-          data-duration="0.7"
-        >
-          {t("electromecha.action_2")}
-        </div>
-        <div
-          class="uppercase py-3 3xl:py-[0.75vw] font-bold border-b border-white"
-          data-animate
-          data-y="30"
-          data-duration="0.7"
-        >
-          {t("electromecha.action_3")}
-        </div>
-        <div
-          class="uppercase py-3 3xl:py-[0.75vw] font-bold border-b border-white"
-          data-animate
-          data-y="30"
-          data-duration="0.7"
-        >
-          {t("electromecha.action_4")}
-        </div>
-        <div
-          class="uppercase py-3 3xl:py-[0.75vw] font-bold border-b border-white"
-          data-animate
-          data-y="30"
-          data-duration="0.7"
-        >
-          {t("electromecha.action_5")}
-        </div>
-        <div
-          class="uppercase py-3 3xl:py-[0.75vw] font-bold border-b border-white"
-          data-animate
-          data-y="30"
-          data-duration="0.7"
-        >
-          {t("electromecha.action_6")}
-        </div>
-        <div
-          class="uppercase py-3 3xl:py-[0.75vw] font-bold border-b border-white"
-          data-animate
-          data-y="30"
-          data-duration="0.7"
-        >
-          {t("electromecha.action_7")}
+        <div>
+          <div
+            class="flex items-center uppercase py-3 3xl:py-[0.75vw] font-bold border-y-2 border-[#2A8ACA] min-h-[4.6em]"
+            data-animate
+            data-y="30"
+            data-duration="0.7"
+          >
+            <span
+              class="font-bold text-4xl shrink-0 text-[#2A8ACA] w-[5vw] min-w-[60px]"
+              >05</span
+            >
+            {t("electromecha.action_5")}
+          </div>
+          <div
+            class="flex items-center uppercase py-3 3xl:py-[0.75vw] font-bold border-b-2 border-[#2A8ACA] min-h-[4.6em]"
+            data-animate
+            data-y="30"
+            data-duration="0.7"
+          >
+            <span
+              class="font-bold text-4xl shrink-0 text-[#2A8ACA] w-[5vw] min-w-[60px]"
+              >06</span
+            >
+            {t("electromecha.action_6")}
+          </div>
+          <div
+            class="flex items-center uppercase py-3 3xl:py-[0.75vw] font-bold border-b-2 border-[#2A8ACA] min-h-[4.6em]"
+            data-animate
+            data-y="30"
+            data-duration="0.7"
+          >
+            <span
+              class="font-bold text-4xl shrink-0 text-[#2A8ACA] w-[5vw] min-w-[60px]"
+              >07</span
+            >
+            {t("electromecha.action_7")}
+          </div>
         </div>
       </div>
     </div>

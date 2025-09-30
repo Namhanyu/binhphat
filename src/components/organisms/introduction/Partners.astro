@@ -54,26 +54,37 @@ const images = [
       </div>
     </div>
 
-    <div
-      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2.5 3xl:gap-[0.625vw]"
-    >
-      {
-        images.map((image, index) => (
-          <div
-            class="bg-white flex justify-center p-6 h-24 3xl:h-[6vw] 3xl:p-[1.5vw]"
-            data-animate
-            data-y="20"
-            data-duration="0.3"
-            data-delay="0.15"
-          >
-            <img
-              src={image.src}
-              alt={`Partner logo ${index + 1}`}
-              class="max-w-full max-h-full object-scale-down"
-            />
-          </div>
-        ))
-      }
+    <div class="flex overflow-hidden">
+      <div
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2.5 3xl:gap-[0.625vw] px-[5px] 3xl:px-[0.3125vw] animate-infinite-scroll-x shrink-0 w-full"
+      >
+        {
+          images.map((image, index) => (
+            <div class="bg-white flex justify-center p-6 h-24 3xl:h-[6vw] 3xl:p-[1.5vw]">
+              <img
+                src={image.src}
+                alt={`Partner logo ${index + 1}`}
+                class="max-w-full max-h-full object-scale-down"
+              />
+            </div>
+          ))
+        }
+      </div>
+      <div
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2.5 3xl:gap-[0.625vw] px-[5px] 3xl:px-[0.3125vw] animate-infinite-scroll-x shrink-0 w-full"
+      >
+        {
+          images.map((image, index) => (
+            <div class="bg-white flex justify-center p-6 h-24 3xl:h-[6vw] 3xl:p-[1.5vw]">
+              <img
+                src={image.src}
+                alt={`Partner logo ${index + 1}`}
+                class="max-w-full max-h-full object-scale-down"
+              />
+            </div>
+          ))
+        }
+      </div>
     </div>
   </div>
 </section>

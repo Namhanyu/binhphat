@@ -1,0 +1,41 @@
+---
+import bgImage from "../../../assets/images/resources-bg.webp";
+import fgImage from "../../../assets/images/resources-fg.webp";
+
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section
+  id="human-resources"
+  data-menu-color="primary"
+  class="max-md:min-h-[600px] md:min-h-screen bg-cover bg-bottom bg-no-repeat flex flex-col items-center justify-center pt-20 relative"
+  style={`background-image: url(${bgImage.src});`}
+>
+  <div class="container flex-1 flex flex-col justify-end">
+    <div class="px-[6vw] flex items-center w-full mb-[4vw]">
+      <div
+        class="grid gap-10 3xl:gap-[2.5vw] mx-auto md:px-[6vw]"
+      >
+        <h2
+          class="text-5xl font-extrabold uppercase max-md:text-3xl whitespace-pre-line text-primary text-center"
+          data-animate
+          data-y="-50"
+        >
+          {t("human_resources.title")}
+        </h2>
+        <p
+          class="text-lg max-md:text-base text-center whitespace-pre-line"
+          data-animate
+          data-x="-50"
+        >
+          {t("human_resources.content")}
+        </p>
+      </div>
+    </div>
+
+    <img src={fgImage.src} class="w-full" data-animate data-y="100" />
+  </div>
+</section>

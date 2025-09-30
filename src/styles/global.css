@@ -75,3 +75,17 @@
     color: black;
   }
 }
+
+@keyframes infinite-scroll-x {
+  0% {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-infinite-scroll-x {
+  animation: infinite-scroll-x 20s linear infinite;
+}

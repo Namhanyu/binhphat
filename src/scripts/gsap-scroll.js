@@ -291,6 +291,7 @@ export function initScrollAnimations() {
   initSectionAnimations("#electromechanical");
   initSectionAnimations("#safety");
   initSectionAnimations("#equipment");
+  initSectionAnimations("#human-resources");
 
   // PROJECTS
   initSectionAnimations("#project-detail");

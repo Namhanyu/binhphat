@@ -24,13 +24,14 @@ export const ui = {
     "contact.headquarters": "Trụ sở",
     "contact.headquarters.address":
       "Thôn Yên Trường 1, Xã. Phú Nghĩa, TP. Hà Nội",
-    "contact.offices": "Văn phòng đại diện",
+    "contact.offices_hn": "Văn phòng đại diện tại Hà Nội",
+    "contact.offices_hcm": "Văn phòng đại diện tại Hồ Chí Minh",
     "contact.offices.hanoi":
       "HN: TT7A-9 KĐT mới Đại Kim, P. Định Công, TP. Hà Nội",
     "contact.offices.hcm":
       "HCM: Số 381/14 đường Hòa Hảo, Phường Điện Hồng, TP.Hồ Chí Minh",
     "contact.phone.email":
-      "Điện thoại: 0565 595959 - Email: company@binhphat.com.vn",
+      "Điện thoại: 0565 595959\nEmail: company@binhphat.com.vn",
     "contact.form.title": "Liên hệ với chúng tôi",
     "contact.form.name": "Họ và tên khách hàng",
     "contact.form.phone": "Số điện thoại",
@@ -58,7 +59,7 @@ export const ui = {
     "messages.headline":
       "Trong suốt hành trình phát triển, Bình Phát luôn chú trọng đến chất lượng công trình, sự đổi mới trong công nghệ và sự hài lòng của khách hàng.",
     "messages.content":
-      'Bình Phát tự hào về những dự án mà công ty đã hoàn thành, đặc biệt trong lĩnh vực xây dựng và cơ điện tại các khu công nghiệp và các công trình thủy điện trọng điểm như Sơn La, Hòa Bình, Huội Quảng - Bản Chát.\n\nVới phương châm "Chất lượng xứng đáng với niềm tin" là kim chỉ nam trong mọi hoạt động, Bình Phát cam kết mang đến những giá trị bền vững cho cộng đồng và đối tác. Chúng tôi hiểu rằng, chất lượng không chỉ là yếu tố quyết định thành công trong hiện tại mà còn là nền tảng vững chắc cho sự phát triển lâu dài. Kiên định với những giá trị cốt lõi, Bình Phát hướng đến tương lai mở rộng quy mô hoạt động, vươn xa hơn nữa trong ngành xây dựng và cơ điện.',
+      'Bình Phát tự hào về những dự án mà công ty đã hoàn thành, đặc biệt trong lĩnh vực xây dựng và cơ điện tại các khu công nghiệp và các công trình thủy điện trọng điểm như Sơn La, Hòa Bình, Huội Quảng - Bản Chất.\n\nVới phương châm "Chất lượng xứng đáng với niềm tin" là kim chỉ nam trong mọi hoạt động, Bình Phát cam kết mang đến những giá trị bền vững cho cộng đồng và đối tác. Chúng tôi hiểu rằng, chất lượng không chỉ là yếu tố quyết định thành công trong hiện tại mà còn là nền tảng vững chắc cho sự phát triển lâu dài. Kiên định với những giá trị cốt lõi, Bình Phát hướng đến tương lai mở rộng quy mô hoạt động, vươn xa hơn nữa trong ngành xây dựng và cơ điện.',
     "messages.ceo.name": "Nguyễn Văn Điệp",
     "messages.ceo.title": "Giám đốc",
     "history.title": "Lịch sử",
@@ -97,14 +98,14 @@ export const ui = {
       "Xuyên suốt hành trình phát triển, Bình Phát Construction đã đồng hành cùng các Chủ đầu tư lớn trong và ngoài nước, tham gia xây dựng, cải tạo và sửa chữa hàng trăm dự án trên khắp Việt Nam. Ngoài ra, bằng uy tín và chất lượng, Bình Phát Construction đã chinh phục nhiều khách hàng khó tính, có tiêu chuẩn khắt khe, đặc thù như Mỹ, Nhật Bản, Hàn Quốc, ….",
     "construction.title": "Tổng thầu\nxây dựng",
     "construction.content":
-      "Xuyên suốt hành trình phát triển, Bình Phát đã đồng hành cùng các Chủ đầu tư lớn trong và ngoài nước, tham gia xây dựng, cải tạo và sửa chữa hàng trăm dự án trên khắp Việt Nam. Ngoài ra, bằng uy tín và chất lượng, Bình Phát đã chinh phục nhiều khách hàng khó tính, có tiêu chuẩn khắt khe, đặc thù như Mỹ, Nhật Bản, Hàn Quốc,…",
+      "Bình Phát cung cấp dịch vụ tổng thầu xây dựng trọn gói, đảm bảo sự phối hợp hiệu quả và chất lượng cao nhất cho mọi dự án. Từ giai đoạn lên kế hoạch đến hoàn thiện, chúng tôi cam kết mang đến giải pháp toàn diện và tối ưu nhất cho khách hàng.",
     "construction.action_1": "XÂY DỰNG, CẢI TẠO SỬA CHỮA NHÀ XƯỞNG",
     "construction.action_2": "XÂY DỰNG NHÀ XƯỞNG KẾT CẤU BÊ TÔNG CỐT THÉP",
     "construction.action_3": "XÂY DỰNG NHÀ XƯỞNG KẾT CẤU THÉP TIỀN CHẾ",
     "construction.action_4": "XÂY DỰNG HẠ TẦNG KỸ THUẬT KHU CÔNG NGHIỆP",
     "electromecha.title": "Tổng thầu\ncơ điện",
     "electromecha.content":
-      "Xuyên suốt hành trình phát triển, Bình Phát đã đồng hành cùng các Chủ đầu tư lớn trong và ngoài nước, tham gia xây dựng, cải tạo và sửa chữa hàng trăm dự án trên khắp Việt Nam. Ngoài ra, bằng uy tín và chất lượng, Bình Phát đã chinh phục nhiều khách hàng khó tính, có tiêu chuẩn khắt khe, đặc thù như Mỹ, Nhật Bản, Hàn Quốc,…",
+      "Với năng lực và kinh nghiệm chuyên sâu, Bình Phát tự tin là tổng thầu cơ điện uy tín, mang đến các giải pháp tối ưu cho mọi dự án. Chúng tôi cam kết chất lượng vượt trội và sự phối hợp đồng bộ trên các hệ thống quan trọng như:",
     "electromecha.action_1": "HỆ THỐNG ĐIỆN CÔNG NGHIỆP / ĐIỆN NHẸ",
     "electromecha.action_2": "HỆ THỐNG CẤP THOÁT NƯỚC / XỬ LÝ NƯỚC THẢI",
     "electromecha.action_3": "HỆ THỐNG ĐIỀU HÒA KHÔNG KHÍ, THÔNG GIÓ",
@@ -157,6 +158,10 @@ export const ui = {
     "safety.item_4": "Huấn luyện",
     "safety.item_5": "Kiểm soát",
     "safety.item_6": "Đánh giá hiệu chỉnh",
+    "human_resources.title": "Nguồn nhân lực",
+    "human_resources.content":
+      "Với đội ngũ gần 100 cán bộ công nhân viên, Bình Phát tự hào sở hữu một nguồn lực vững mạnh và chuyên nghiệp. Trong đó, hơn 50 kỹ sư có chuyên môn cao, được đào tạo bài bản và giàu kinh nghiệm, đóng vai trò nòng cốt trong việc quản lý và triển khai dự án.\n\nCác phòng ban chuyên môn phối hợp chặt chẽ, từ Ban Giám đốc, Phòng Kỹ thuật - Dự án đến Phòng Kinh doanh và Hành chính, tạo nên một hệ thống làm việc đồng bộ, hiệu quả. Sự phối hợp này đảm bảo mọi công trình đều được thực hiện với chất lượng tốt nhất, đúng tiến độ, mang lại sự tin tưởng và hài lòng tuyệt đối cho khách hàng.",
+    "human_resources.view_more": "Xem thêm về nhân sự",
     "projects.address": "Địa chỉ",
   },
   en: {
@@ -177,7 +182,8 @@ export const ui = {
     "contact.headquarters": "Headquarters",
     "contact.headquarters.address":
       "Thôn Yên Trường 1, Xã. Phú Nghĩa, TP. Hà Nội",
-    "contact.offices": "Representative offices",
+    "contact.offices_hn": "Representative offices at Hanoi",
+    "contact.offices_hcm": "Representative offices at Ho Chi Minh City",
     "contact.offices.hanoi":
       "HN: TT7A-9 KĐT mới Đại Kim, P. Định Công, TP. Hà Nội",
     "contact.offices.hcm":
@@ -311,6 +317,10 @@ export const ui = {
     "safety.item_4": "Huấn luyện",
     "safety.item_5": "Kiểm soát",
     "safety.item_6": "Đánh giá hiệu chỉnh",
+    "human_resources.title": "Nguồn nhân lực",
+    "human_resources.content":
+      "Với đội ngũ gần 100 cán bộ công nhân viên, Bình Phát tự hào sở hữu một nguồn lực vững mạnh và chuyên nghiệp. Trong đó, hơn 50 kỹ sư có chuyên môn cao, được đào tạo bài bản và giàu kinh nghiệm, đóng vai trò nòng cốt trong việc quản lý và triển khai dự án.\n\nCác phòng ban chuyên môn phối hợp chặt chẽ, từ Ban Giám đốc, Phòng Kỹ thuật - Dự án đến Phòng Kinh doanh và Hành chính, tạo nên một hệ thống làm việc đồng bộ, hiệu quả. Sự phối hợp này đảm bảo mọi công trình đều được thực hiện với chất lượng tốt nhất, đúng tiến độ, mang lại sự tin tưởng và hài lòng tuyệt đối cho khách hàng.",
+    "human_resources.view_more": "Xem thêm về nhân sự",
     "projects.address": "Address",
   },
 } as const;

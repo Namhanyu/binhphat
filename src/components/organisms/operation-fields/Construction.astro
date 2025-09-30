@@ -11,14 +11,12 @@ const t = useTranslations(lang);
   id="construction"
   data-menu-color="white"
   class="min-h-screen bg-cover bg-center flex items-center text-white justify-center py-20"
-  style={`background-image: linear-gradient(to right, #045ca4 40%, #045ca400), url(${bgImage.src});`}
+  style={`background-image: linear-gradient(to right, #045ca4 50%, #045ca400), url(${bgImage.src});`}
 >
-  <div class="container">
-    <div
-      class="grid gap-10 text-white max-w-[520px] 3xl:gap-[2.5vw] 3xl:max-w-[30.25vw]"
-    >
+  <div class="px-[6vw]">
+    <div class="grid gap-10 text-white lg:w-1/2 lg:min-w-[800px] 3xl:gap-[2.5vw]">
       <h2
-        class="text-5xl font-black uppercase max-md:text-3xl whitespace-pre-line"
+        class="text-5xl font-extrabold uppercase max-md:text-3xl whitespace-pre-line"
         data-animate
         data-y="-50"
       >
@@ -32,42 +30,50 @@ const t = useTranslations(lang);
         {t("construction.content")}
       </p>
       <div
-        class="grid border-t border-white"
+        class="grid md:grid-cols-2 gap-x-[2vw]"
         data-animate
         data-y="30"
         data-duration="0.7"
       >
-        <div
-          class="uppercase py-3 3xl:py-[0.75vw] font-bold border-b border-white"
-          data-animate
-          data-y="30"
-          data-duration="0.7"
-        >
-          {t("construction.action_1")}
+        <div>
+          <div
+            class="flex items-center uppercase py-3 3xl:py-[0.75vw] font-bold border-y-2 border-[#2A8ACA]"
+            data-animate
+            data-y="30"
+            data-duration="0.7"
+          >
+            <span class="font-bold text-4xl shrink-0 text-[#2A8ACA] w-[5vw] min-w-[60px]">01</span>
+            {t("construction.action_1")}
+          </div>
+          <div
+            class="flex items-center uppercase py-3 3xl:py-[0.75vw] font-bold border-b-2 border-[#2A8ACA]"
+            data-animate
+            data-y="30"
+            data-duration="0.7"
+          >
+            <span class="font-bold text-4xl shrink-0 text-[#2A8ACA] w-[5vw] min-w-[60px]">02</span>
+            {t("construction.action_2")}
+          </div>
         </div>
-        <div
-          class="uppercase py-3 3xl:py-[0.75vw] font-bold border-b border-white"
-          data-animate
-          data-y="30"
-          data-duration="0.7"
-        >
-          {t("construction.action_2")}
-        </div>
-        <div
-          class="uppercase py-3 3xl:py-[0.75vw] font-bold border-b border-white"
-          data-animate
-          data-y="30"
-          data-duration="0.7"
-        >
-          {t("construction.action_3")}
-        </div>
-        <div
-          class="uppercase py-3 3xl:py-[0.75vw] font-bold border-b border-white"
-          data-animate
-          data-y="30"
-          data-duration="0.7"
-        >
-          {t("construction.action_4")}
+        <div>
+          <div
+            class="flex items-center uppercase py-3 3xl:py-[0.75vw] font-bold border-y-2 border-[#2A8ACA]"
+            data-animate
+            data-y="30"
+            data-duration="0.7"
+          >
+            <span class="font-bold text-4xl shrink-0 text-[#2A8ACA] w-[5vw] min-w-[60px]">03</span>
+            {t("construction.action_3")}
+          </div>
+          <div
+            class="flex items-center uppercase py-3 3xl:py-[0.75vw] font-bold border-b-2 border-[#2A8ACA]"
+            data-animate
+            data-y="30"
+            data-duration="0.7"
+          >
+            <span class="font-bold text-4xl shrink-0 text-[#2A8ACA] w-[5vw] min-w-[60px]">04</span>
+            {t("construction.action_4")}
+          </div>
         </div>
       </div>
     </div>
