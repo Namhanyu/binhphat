@@ -7,7 +7,7 @@ export default function ContactForm() {
   const pathname = new URL(window.location.href);
   const lang = getLangFromUrl(pathname);
   const t = useTranslations(lang);
-  const [showForm, setShowForm] = useState(true);
+  const [showForm, setShowForm] = useState(false);
 
   return (
     <>
@@ -34,7 +34,7 @@ export default function ContactForm() {
         {showForm && (
           <motion.form
             initial={{ maxHeight: 0 }}
-            animate={{ maxHeight: 400 }}
+            animate={{ maxHeight: 1000 }}
             exit={{ maxHeight: 0 }}
             className="grid gap-1 3xl:gap-[0.25vw] overflow-hidden"
           >
