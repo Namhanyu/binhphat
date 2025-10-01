@@ -2,8 +2,140 @@
 import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/organisms/recruitment/HeroDetail.astro";
 
+const jobs = [
+  {
+    title: "Giám sát Xây dựng",
+    slug: "giam-sat-xay-dung",
+    employmentType: "TOÀN THỜI GIAN",
+    salary: "Ký sự",
+    location: "Hà Nội, Hồ Chí Minh, Đà Nẵng, Long An, ... Lương thỏa thuận",
+    tags: ["Xây dựng"],
+    imageUrl:
+      "https://hris.newtecons.vn/api/api/Base/GetFile?filePath=Attachments/screenshot_1682644823_20230428082043388.png",
+    isNew: true,
+  },
+  {
+    title: "Thư ký Công trình",
+    slug: "thu-ky-cong-trinh",
+    employmentType: "TOÀN THỜI GIAN",
+    salary: "Lương thỏa thuận",
+    location: "Hà Nội",
+    tags: ["Kinh tế", "Kinh tế Xây dựng", "Quản trị", "Hành chính"],
+    imageUrl:
+      "https://hris.newtecons.vn/api/api/Base/GetFile?filePath=Attachments/business-people-working-laptop-development_1262-18907_20231030105131596.jpg",
+    isNew: true,
+  },
+  {
+    title: "Kỹ sư Xây dựng Dân dụng",
+    slug: "ky-su-xay-dung-dan-dung",
+    employmentType: "TOÀN THỜI GIAN",
+    salary: "15-25 triệu VNĐ",
+    location: "Hồ Chí Minh, Bình Dương",
+    tags: ["Xây dựng", "Kỹ thuật"],
+    imageUrl:
+      "https://hris.newtecons.vn/api/api/Base/GetFile?filePath=Attachments/screenshot_1682645209_20230428082803039.png",
+    isNew: false,
+  },
+  {
+    title: "Trưởng phòng Kỹ thuật",
+    slug: "truong-phong-ky-thuat",
+    employmentType: "TOÀN THỜI GIAN",
+    salary: "Lương thỏa thuận",
+    location: "Hà Nội, Hải Phòng",
+    tags: ["Quản lý", "Xây dựng", "Kỹ thuật"],
+    imageUrl:
+      "https://hris.newtecons.vn/api/api/Base/GetFile?filePath=Attachments/imager_104534_20220509071857163.jpg",
+    isNew: true,
+  },
+];
+
+const relatedJobs = [
+  {
+    title: "Thư ký Công trình",
+    location: "Lương thỏa thuận",
+    type: "Nhân viên",
+    experience: "Có ít nhất 01 năm kinh nghiệm",
+  },
+  {
+    title: "Giám sát Cơ điện",
+    location: "Lương thỏa thuận",
+    type: "Kỹ sư",
+    experience: "Không yêu cầu kinh nghiệm",
+  },
+  {
+    title: "Giám sát An toàn (HSSE)",
+    location: "Lương thỏa thuận",
+    type: "Nhân viên",
+    experience: "1 năm kinh nghiệm",
+  },
+  {
+    title: "Giám sát QA/QC",
+    location: "Bắc Ninh, Hồ Chí Minh, Đà Nẵng",
+    type: "Lương thỏa thuận",
+    experience: "Kỹ sư",
+  },
+  {
+    title: "Giám sát Shop Drawing",
+    location: "Lương thỏa thuận",
+    type: "Kỹ sư",
+    experience: "Ưu tiên có kinh nghiệm",
+  },
+  {
+    title: "Giám sát QS",
+    location: "Hà Nội, Bắc Ninh, Hồ Chí Minh, Đà Nẵng, Long An",
+    type: "Lương thỏa thuận",
+    experience: "Kỹ sư",
+  },
+];
+
 export function getStaticPaths() {
-  return [{ params: { id: "ky-su-co-dien" } }];
+  const jobs = [
+    {
+      title: "Giám sát Xây dựng",
+      slug: "giam-sat-xay-dung",
+      employmentType: "TOÀN THỜI GIAN",
+      salary: "Ký sự",
+      location: "Hà Nội, Hồ Chí Minh, Đà Nẵng, Long An, ... Lương thỏa thuận",
+      tags: ["Xây dựng"],
+      imageUrl:
+        "https://hris.newtecons.vn/api/api/Base/GetFile?filePath=Attachments/screenshot_1682644823_20230428082043388.png",
+      isNew: true,
+    },
+    {
+      title: "Thư ký Công trình",
+      slug: "thu-ky-cong-trinh",
+      employmentType: "TOÀN THỜI GIAN",
+      salary: "Lương thỏa thuận",
+      location: "Hà Nội",
+      tags: ["Kinh tế", "Kinh tế Xây dựng", "Quản trị", "Hành chính"],
+      imageUrl:
+        "https://hris.newtecons.vn/api/api/Base/GetFile?filePath=Attachments/business-people-working-laptop-development_1262-18907_20231030105131596.jpg",
+      isNew: true,
+    },
+    {
+      title: "Kỹ sư Xây dựng Dân dụng",
+      slug: "ky-su-xay-dung-dan-dung",
+      employmentType: "TOÀN THỜI GIAN",
+      salary: "15-25 triệu VNĐ",
+      location: "Hồ Chí Minh, Bình Dương",
+      tags: ["Xây dựng", "Kỹ thuật"],
+      imageUrl:
+        "https://hris.newtecons.vn/api/api/Base/GetFile?filePath=Attachments/screenshot_1682645209_20230428082803039.png",
+      isNew: false,
+    },
+    {
+      title: "Trưởng phòng Kỹ thuật",
+      slug: "truong-phong-ky-thuat",
+      employmentType: "TOÀN THỜI GIAN",
+      salary: "Lương thỏa thuận",
+      location: "Hà Nội, Hải Phòng",
+      tags: ["Quản lý", "Xây dựng", "Kỹ thuật"],
+      imageUrl:
+        "https://hris.newtecons.vn/api/api/Base/GetFile?filePath=Attachments/imager_104534_20220509071857163.jpg",
+      isNew: true,
+    },
+  ];
+  return jobs.map((job) => ({ params: { id: job.slug } }));
 }
 
 const { id } = Astro.params;
@@ -12,436 +144,366 @@ const { id } = Astro.params;
 <Layout title="Bình Phát - Chi tiết tuyển dụng" snap={false}>
   <Hero />
 
-  <div class="container">
-    <div class="main-content">
-      <div class="job-content">
-        <div class="job-header">
-          <h1 class="job-title">Kỹ sư cơ điện (M&E)</h1>
-          <div class="job-meta">
-            <div class="meta-item">
-              <svg class="meta-icon" viewBox="0 0 24 24">
-                <path
-                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-                ></path>
-              </svg>
-              <span>Hà Nội và theo sự phân công của công ty</span>
+  <div class="min-h-screen bg-background">
+    <div class="container mx-auto px-4 py-8 lg:py-12">
+      <div class="grid lg:grid-cols-3 gap-8">
+        <!-- Main Content -->
+        <div class="lg:col-span-2 space-y-8">
+          <!-- Header -->
+          <div class="space-y-4">
+            <h1 class="text-4xl lg:text-5xl font-bold text-balance">
+              Giám sát Xây dựng
+            </h1>
+            <div class="flex flex-wrap items-center gap-3">
+              <span
+                class="bg-primary text-primary-foreground px-4 py-1.5 text-sm font-medium rounded-md"
+              >
+                TOÀN THỜI GIAN
+              </span>
+              <div class="flex items-center gap-2 text-muted-foreground">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-4 h-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"
+                  ></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+                <span class="text-sm"
+                  >Hà Nội, Hồ Chí Minh, Đà Nẵng, Long An, ... Lương thỏa thuận</span
+                >
+              </div>
             </div>
-            <div class="meta-item">
-              <svg class="meta-icon" viewBox="0 0 24 24">
-                <path
-                  d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zM4 18v-6h2.5l6 7.5H22v2H4z"
-                ></path>
-              </svg>
-              <span>Cơ điện</span>
-            </div>
-            <div class="meta-item">
-              <svg class="meta-icon" viewBox="0 0 24 24">
-                <path
-                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-                ></path>
-              </svg>
-              <span>Từ 2 năm kinh nghiệm</span>
+            <button
+              class="bg-primary text-primary-foreground px-6 py-3 rounded-md font-medium hover:opacity-90 transition-opacity w-full sm:w-auto"
+            >
+              APPLY TO THIS JOB
+            </button>
+          </div>
+
+          <!-- Summary Card -->
+          <div class="bg-card border border-border rounded-lg p-6">
+            <h2 class="text-xl font-bold mb-6">TÓM LƯỢC</h2>
+            <div class="grid sm:grid-cols-2 gap-6">
+              <div class="flex items-start gap-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 text-primary mt-1"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect width="20" height="14" x="2" y="7" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+                <div>
+                  <p class="text-sm text-muted-foreground">Kỹ sư</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 text-primary mt-1"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <div>
+                  <p class="text-sm font-medium">Cấp bậc</p>
+                  <p class="text-sm text-muted-foreground">
+                    Không yêu cầu kinh nghiệm
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 text-primary mt-1"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+                <div>
+                  <p class="text-sm font-medium">Kinh nghiệm</p>
+                  <p class="text-sm text-muted-foreground">Nam</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 text-primary mt-1"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <div>
+                  <p class="text-sm font-medium">Giới tính</p>
+                  <p class="text-sm text-muted-foreground">Xây dựng</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 text-primary mt-1"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                </svg>
+                <div>
+                  <p class="text-sm font-medium">Ngành</p>
+                  <p class="text-sm text-muted-foreground">Đại học</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 text-primary mt-1"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                </svg>
+                <div>
+                  <p class="text-sm text-muted-foreground">Bằng cấp</p>
+                </div>
+              </div>
             </div>
           </div>
-          <a href="mailto:hrbinhphat@gmail.com" class="apply-button"
-            >Ứng tuyển ngay</a
-          >
-        </div>
 
-        <div class="section">
-          <h2 class="section-title">
-            <svg class="meta-icon" viewBox="0 0 24 24">
-              <path
-                d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 2 2h8c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H7v-2h6v2zm3-4H7V5h9v2z"
-              ></path>
-            </svg>
-            Mô tả công việc
-          </h2>
-          <div class="section-content">
-            <ul>
-              <li>
-                Thiết kế/giám sát quản lý thi công các hạng mục liên quan đến hệ
-                thống cơ điện (Điện – điện tử viễn thông, HVAC, Cấp thoát nước,
-                PCCC)
+          <!-- Job Description -->
+          <div class="bg-card border border-border rounded-lg p-6">
+            <h2 class="text-xl font-bold mb-4">MÔ TẢ CÔNG VIỆC</h2>
+            <ul class="space-y-3 text-foreground/90 leading-relaxed">
+              <li class="flex gap-3">
+                <span class="text-primary mt-1">•</span>
+                <span>Lên kế hoạch, tổ chức và tiến hành thi công dự án.</span>
               </li>
-              <li>
-                Triển khai bản vẽ thi công, máy móc dụng cụ thi công trong công
-                trình nhà máy
+              <li class="flex gap-3">
+                <span class="text-primary mt-1">•</span>
+                <span
+                  >Liên hệ với Chủ đầu tư/Tư vấn và các đơn vị liên quan nhằm
+                  tiến hành hiệu quả công tác thi công/cơ điện của dự án.</span
+                >
               </li>
-              <li>
-                Rà soát cấu hình, đệ trình vật tư, thiết bị, bóc tách vật tư,
-                đặt hàng và theo dõi tiến độ hàng về
+              <li class="flex gap-3">
+                <span class="text-primary mt-1">•</span>
+                <span
+                  >Giám sát và kiểm soát công việc theo hệ thống quản lý chất
+                  lượng và xác định các rủi ro trong thi công.</span
+                >
               </li>
-              <li>
-                Lập biện pháp thi công & kiểm tra, giám sát đảm bảo chất lượng
-                thi công lắp đặt
+              <li class="flex gap-3">
+                <span class="text-primary mt-1">•</span>
+                <span
+                  >Hướng dẫn Cai thầu, Đội thi công, Thầu phụ tiến hành công
+                  việc theo các yêu cầu đúng kỹ thuật và bản vẽ.</span
+                >
               </li>
-              <li>
-                Thực hiện nghiệm thu, khối lượng thanh toán công việc phụ trách
+              <li class="flex gap-3">
+                <span class="text-primary mt-1">•</span>
+                <span
+                  >Phụ trách triển khai thi công, quản lý thi công và giám sát
+                  thi công hạng mục/khu vực được giao theo hướng dẫn của Trưởng
+                  nhóm TCTC.</span
+                >
               </li>
-              <li>
-                Thực hiện nghiệm thu chạy thử, vận hành, hoàn công và bàn giao
-                hệ thống
+              <li class="flex gap-3">
+                <span class="text-primary mt-1">•</span>
+                <span
+                  >Đảm bảo khu vực/hạng mục phụ trách thi công theo đúng bản vẽ
+                  thiết kế, các quy chuẩn, tiêu chuẩn.</span
+                >
+              </li>
+              <li class="flex gap-3">
+                <span class="text-primary mt-1">•</span>
+                <span
+                  >Kiểm soát đảm bảo an toàn và chất lượng an toàn công trình,
+                  tuân thủ các thủ tục ISO của công ty.</span
+                >
+              </li>
+              <li class="flex gap-3">
+                <span class="text-primary mt-1">•</span>
+                <span>Thực hiện các yêu cầu của quản lý.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Requirements -->
+          <div class="bg-card border border-border rounded-lg p-6">
+            <h2 class="text-xl font-bold mb-4">YÊU CẦU CƠ BẢN</h2>
+            <ul class="space-y-3 text-foreground/90 leading-relaxed">
+              <li class="flex gap-3">
+                <span class="text-primary mt-1">•</span>
+                <span
+                  >Tốt nghiệp Đại học chính quy trở lên chuyên ngành Xây dựng
+                  DD&CN, Kỹ thuật Xây dựng, Kinh tế Xây dựng...</span
+                >
+              </li>
+              <li class="flex gap-3">
+                <span class="text-primary mt-1">•</span>
+                <span>Kỹ năng quản lý và tổ chức tốt.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-primary mt-1">•</span>
+                <span
+                  >Sử dụng tốt phần mềm tin học chuyên ngành, tin học văn phòng.</span
+                >
+              </li>
+              <li class="flex gap-3">
+                <span class="text-primary mt-1">•</span>
+                <span
+                  >Không ưu cầu kinh nghiệm, ưu tiên ứng viên làm việc ở khu vực
+                  miền Bắc</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Benefits -->
+          <div class="bg-card border border-border rounded-lg p-6">
+            <h2 class="text-xl font-bold mb-4">THU NHẬP VÀ PHÚC LỢI</h2>
+            <ul class="space-y-3 text-foreground/90 leading-relaxed">
+              <li class="flex gap-3">
+                <span class="text-primary mt-1">•</span>
+                <span>Thu nhập: Thỏa thuận trong quá trình phỏng vấn.</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-primary mt-1">•</span>
+                <span
+                  >Thử việc 100% lương, đóng BHXH full lương khi ký HĐLĐ chính
+                  thức</span
+                >
+              </li>
+              <li class="flex gap-3">
+                <span class="text-primary mt-1">•</span>
+                <span>Có nhà ở BCH, phụ cấp cơm, điện thoại và đi lại</span>
+              </li>
+              <li class="flex gap-3">
+                <span class="text-primary mt-1">•</span>
+                <span
+                  >Môi trường làm việc chuyên nghiệp tại Công ty Xây dựng uy tín
+                  hàng đầu Việt Nam.</span
+                >
+              </li>
+              <li class="flex gap-3">
+                <span class="text-primary mt-1">•</span>
+                <span
+                  >Review lương hàng năm, khám sức khỏe tổng quát định kỳ mỗi
+                  năm</span
+                >
+              </li>
+              <li class="flex gap-3">
+                <span class="text-primary mt-1">•</span>
+                <span
+                  >Các chế độ khác: Đào tạo, teambuilding, bảo hiểm sức khỏe Bảo
+                  Việt.</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Application -->
+          <div class="bg-card border border-border rounded-lg p-6">
+            <h2 class="text-xl font-bold mb-4">HỒ SƠ ỨNG TUYỂN</h2>
+            <ul class="space-y-3 text-foreground/90 leading-relaxed">
+              <li class="flex gap-3">
+                <span class="text-primary mt-1">•</span>
+                <span
+                  >Mẫu Thông tin ứng viên (nhấn vào nút "Apply to this job" để
+                  "Tải mẫu")</span
+                >
+              </li>
+              <li class="flex gap-3">
+                <span class="text-primary mt-1">•</span>
+                <span>Bản photo bằng cấp chứng chỉ.</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div class="section">
-          <h2 class="section-title">
-            <svg class="meta-icon" viewBox="0 0 24 24">
-              <path
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-              ></path>
-            </svg>
-            Yêu cầu công việc
-          </h2>
-          <div class="section-content">
-            <ul>
-              <li>
-                Tốt nghiệp Đại học chuyên ngành Cơ điện, Nhiệt – Điện lạnh, Kỹ
-                thuật điện – nước…
-              </li>
-              <li>
-                Có kinh nghiệm từ 2 năm trở lên trong lĩnh vực thi công cơ điện
-                công trình công nghiệp
-              </li>
-              <li>Thành thạo đọc bản vẽ kỹ thuật, AutoCAD, MS Office</li>
-              <li>
-                Am hiểu quy chuẩn kỹ thuật, quy trình thi công hệ thống M&E
-              </li>
-              <li>Có khả năng làm việc độc lập, quản lý đội nhóm thi công</li>
-              <li>Sẵn sàng đi công tác tỉnh theo dự án</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="section">
-          <h2 class="section-title">
-            <svg class="meta-icon" viewBox="0 0 24 24">
-              <path
-                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-              ></path>
-            </svg>
-            Quyền lợi
-          </h2>
-          <div class="section-content">
-            <ul>
-              <li>Thu nhập: thỏa thuận theo năng lực</li>
-              <li>Lương trả 2 lần/tháng, không nợ lương chậm lương</li>
-              <li>Ngày làm 8 tiếng, ngoài giờ tính tăng ca</li>
-              <li>
-                Chế độ phụ cấp: ăn, ở, đi lại, bằng lái ô tô, máy tính, điện
-                thoại, sim trong quá trình làm việc
-              </li>
-              <li>Tham gia đầy đủ chế độ BHXH, BHYT, BHTN</li>
-              <li>
-                Thưởng Lễ, Tết, lương tháng 13, sinh nhật, team building, du
-                lịch nghỉ mát 2 lần/năm
-              </li>
-              <li>
-                Được tham gia các khóa đào tạo, có cơ hội thăng tiến rõ ràng
-              </li>
-              <li>Môi trường làm việc chuyên nghiệp, năng động</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="section">
-          <h2 class="section-title">
-            <svg class="meta-icon" viewBox="0 0 24 24">
-              <path
-                d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
-              ></path>
-              <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"></path>
-            </svg>
-            Thời gian làm việc
-          </h2>
-          <div class="section-content">
-            <p>
-              <strong>Thời gian làm việc:</strong> 8h - 17h15' từ thứ Hai đến thứ
-              Bảy
-            </p>
-            <p>
-              <strong>Nghỉ:</strong> Chủ nhật hàng tuần và 2 ngày bất kì/tháng
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="sidebar">
-        <div class="sidebar-card">
-          <h3 class="sidebar-title">Thông tin liên hệ</h3>
-          <div class="contact-info">
-            <div class="contact-item">
-              <svg class="contact-icon" viewBox="0 0 24 24">
-                <path
-                  d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
-                ></path>
-              </svg>
-              <span>hrbinhphat@gmail.com</span>
+        <!-- Sidebar -->
+        <div class="space-y-6">
+          <!-- Company Card -->
+          <div class="bg-card border border-border rounded-lg p-6 space-y-4">
+            <div
+              class="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-muted"
+            >
+              <img
+                src="https://xaydungbinhphat.com.vn/contents/banner/20240517163359-son-sua-canteen.jpg"
+                alt="Company Award"
+                class="w-full h-full object-cover"
+              />
             </div>
-            <div class="contact-item">
-              <svg class="contact-icon" viewBox="0 0 24 24">
-                <path
-                  d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"
-                ></path>
-              </svg>
-              <span>0987 538 455 (Ms Hạnh)</span>
-            </div>
-            <div class="contact-item">
-              <svg class="contact-icon" viewBox="0 0 24 24">
-                <path
-                  d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-                ></path>
-              </svg>
-              <span>Hà Nội</span>
+            <div class="space-y-2">
+              <h3 class="font-bold text-lg text-balance">
+                CÔNG TY TNHH XÂY DỰNG VÀ CƠ ĐIỆN BÌNH PHÁT
+              </h3>
+              <p class="text-sm text-muted-foreground leading-relaxed">
+                TRỤ SỞ CHÍNH : TT7A-9 KĐT mới Đại Kim, P. Định Công, TP. Hà Nội
+              </p>
             </div>
           </div>
-        </div>
 
-        <div class="highlight-box">
-          <h3 class="highlight-title">Ứng tuyển ngay</h3>
-          <p class="highlight-text">
-            Gửi CV của bạn qua email hoặc liên hệ trực tiếp với chúng tôi
-          </p>
-          <a
-            href="mailto:hrbinhphat@gmail.com"
-            class="apply-button"
-            style="margin-top: 1rem;">Gửi CV</a
-          >
-        </div>
-
-        <div class="sidebar-card">
-          <h3 class="sidebar-title">Thông tin công ty</h3>
-          <div class="section-content">
-            <p><strong>BINH PHAT</strong></p>
-            <p>
-              Chuyên về thi công hệ thống cơ điện công nghiệp với đội ngũ kỹ sư
-              chuyên nghiệp và kinh nghiệm.
-            </p>
+          <!-- Related Jobs -->
+          <div class="bg-card border border-border rounded-lg p-6">
+            <h3 class="font-bold text-lg mb-4">Các công việc khác</h3>
+            <div class="space-y-4">
+              {
+                relatedJobs.map((job) => (
+                  <div class="pb-4 border-b border-border last:border-0 last:pb-0 space-y-2 cursor-pointer hover:opacity-70 transition-opacity">
+                    <h4 class="font-semibold text-sm">{job.title}</h4>
+                    <p class="text-xs text-muted-foreground">{job.location}</p>
+                    <p class="text-xs text-muted-foreground">{job.type}</p>
+                    <p class="text-xs text-muted-foreground">
+                      {job.experience}
+                    </p>
+                  </div>
+                ))
+              }
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </Layout>
-<style>
-  /* Header */
-  .header {
-    background: white;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
-
-  .header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 0;
-  }
-
-  .logo {
-    height: 40px;
-    width: auto;
-  }
-
-  .nav {
-    display: flex;
-    gap: 2rem;
-  }
-
-  .nav a {
-    text-decoration: none;
-    color: #374151;
-    font-weight: 500;
-    transition: color 0.2s;
-  }
-
-  .nav a:hover {
-    color: #2563eb;
-  }
-
-  /* Main Content */
-  .main-content {
-    display: grid;
-    grid-template-columns: 1fr 300px;
-    gap: 2rem;
-    padding: 2rem 0;
-  }
-
-  .job-content {
-    background: white;
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  }
-
-  .job-header {
-    border-bottom: 1px solid #e5e7eb;
-    padding-bottom: 1.5rem;
-    margin-bottom: 2rem;
-  }
-
-  .job-title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #1f2937;
-    margin-bottom: 1rem;
-  }
-
-  .job-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    margin-bottom: 1rem;
-  }
-
-  .meta-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #6b7280;
-  }
-
-  .meta-icon {
-    width: 20px;
-    height: 20px;
-    fill: currentColor;
-  }
-
-  .apply-button {
-    background: #2563eb;
-    color: white;
-    padding: 0.75rem 2rem;
-    border: none;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s;
-    text-decoration: none;
-    display: inline-block;
-  }
-
-  .apply-button:hover {
-    background: #1d4ed8;
-  }
-
-  .section {
-    margin-bottom: 2rem;
-  }
-
-  .section-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .section-content {
-    color: #4b5563;
-    line-height: 1.7;
-  }
-
-  .section-content ul {
-    list-style: none;
-    padding-left: 0;
-  }
-
-  .section-content li {
-    margin-bottom: 0.5rem;
-    padding-left: 1.5rem;
-    position: relative;
-  }
-
-  .section-content li:before {
-    content: "•";
-    color: #2563eb;
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-  }
-
-  /* Sidebar */
-  .sidebar {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .sidebar-card {
-    background: white;
-    border-radius: 12px;
-    padding: 1.5rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  }
-
-  .sidebar-title {
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 1rem;
-  }
-
-  .contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    color: #4b5563;
-  }
-
-  .contact-icon {
-    width: 18px;
-    height: 18px;
-    fill: #2563eb;
-  }
-
-  .highlight-box {
-    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-    color: white;
-    padding: 1.5rem;
-    border-radius: 12px;
-    text-align: center;
-  }
-
-  .highlight-title {
-    font-size: 1.125rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-  }
-
-  .highlight-text {
-    opacity: 0.9;
-  }
-
-  /* Responsive */
-  @media (max-width: 768px) {
-    .main-content {
-      grid-template-columns: 1fr;
-    }
-
-    .job-meta {
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .nav {
-      display: none;
-    }
-
-    .job-title {
-      font-size: 1.5rem;
-    }
-  }
-</style>
