@@ -15,10 +15,8 @@ const t = useTranslations(lang);
   style={`background-image: url(${bgImage.src});`}
 >
   <div class="container flex-1 flex flex-col justify-end">
-    <div class="px-[6vw] flex items-center w-full mb-[4vw]">
-      <div
-        class="grid gap-10 3xl:gap-[2.5vw] mx-auto md:px-[6vw]"
-      >
+    <div class="px-[6vw] flex items-center w-full mb-[1vw]">
+      <div class="grid gap-10 3xl:gap-[2.5vw] mx-auto md:px-[6vw]">
         <h2
           class="text-5xl font-extrabold uppercase max-md:text-3xl whitespace-pre-line text-primary text-center"
           data-animate
@@ -36,6 +34,11 @@ const t = useTranslations(lang);
       </div>
     </div>
 
-    <img src={fgImage.src} class="w-full" data-animate data-y="100" />
+    <img
+      src={fgImage.src}
+      class="w-full max-h-[50vh] object-contain object-center"
+      data-animate
+      data-y="100"
+    />
   </div>
 </section>
