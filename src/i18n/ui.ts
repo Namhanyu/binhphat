@@ -163,6 +163,8 @@ export const ui = {
       "Với đội ngũ gần 100 cán bộ công nhân viên, Bình Phát tự hào sở hữu một nguồn lực vững mạnh và chuyên nghiệp. Trong đó, hơn 50 kỹ sư có chuyên môn cao, được đào tạo bài bản và giàu kinh nghiệm, đóng vai trò nòng cốt trong việc quản lý và triển khai dự án.\n\nCác phòng ban chuyên môn phối hợp chặt chẽ, từ Ban Giám đốc, Phòng Kỹ thuật - Dự án đến Phòng Kinh doanh và Hành chính, tạo nên một hệ thống làm việc đồng bộ, hiệu quả. Sự phối hợp này đảm bảo mọi công trình đều được thực hiện với chất lượng tốt nhất, đúng tiến độ, mang lại sự tin tưởng và hài lòng tuyệt đối cho khách hàng.",
     "human_resources.view_more": "Xem thêm về nhân sự",
     "projects.address": "Địa chỉ",
+    "projects.tab1": "Tổng thầu xây dựng",
+    "projects.tab2": "Tổng thầu cơ điện",
   },
   en: {
     "home.title": "Home",
@@ -322,5 +324,7 @@ export const ui = {
       "Với đội ngũ gần 100 cán bộ công nhân viên, Bình Phát tự hào sở hữu một nguồn lực vững mạnh và chuyên nghiệp. Trong đó, hơn 50 kỹ sư có chuyên môn cao, được đào tạo bài bản và giàu kinh nghiệm, đóng vai trò nòng cốt trong việc quản lý và triển khai dự án.\n\nCác phòng ban chuyên môn phối hợp chặt chẽ, từ Ban Giám đốc, Phòng Kỹ thuật - Dự án đến Phòng Kinh doanh và Hành chính, tạo nên một hệ thống làm việc đồng bộ, hiệu quả. Sự phối hợp này đảm bảo mọi công trình đều được thực hiện với chất lượng tốt nhất, đúng tiến độ, mang lại sự tin tưởng và hài lòng tuyệt đối cho khách hàng.",
     "human_resources.view_more": "Xem thêm về nhân sự",
     "projects.address": "Address",
+    "projects.tab1": "General contractor for construction",
+    "projects.tab2": "General contractor for electromechanical",
   },
 } as const;

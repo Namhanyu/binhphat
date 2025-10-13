@@ -1,4 +1,5 @@
 ---
+import ProjectGrid from "./ProjectGrid";
 import image01 from "../../../assets/images/projects/01.webp";
 import image02 from "../../../assets/images/projects/02.webp";
 import image03 from "../../../assets/images/projects/03.webp";
@@ -72,7 +73,6 @@ import image70 from "../../../assets/images/projects/70.webp";
 import image71 from "../../../assets/images/projects/71.webp";
 import image72 from "../../../assets/images/projects/72.webp";
 import { getLangFromUrl } from "../../../i18n/utils";
-import ProjectCard from "./ProjectCard.astro";
 
 export const vi = [
   {
@@ -268,7 +268,8 @@ export const en = [
   },
   {
     name: "HOYA GLASS DISK\nVIETNAM CO., LTD",
-    address: "Thang Long Industrial Park, Vong La Commune, Dong Anh Dist, Hanoi",
+    address:
+      "Thang Long Industrial Park, Vong La Commune, Dong Anh Dist, Hanoi",
     images: [image37, image38, image39],
   },
   {
@@ -279,17 +280,20 @@ export const en = [
   },
   {
     name: "SUMIDENSO VIETNAM\nCO., LTD",
-    address: "Dai An Industrial Park, Tu Minh Ward, Hai Duong City, Hai Duong Prv.",
+    address:
+      "Dai An Industrial Park, Tu Minh Ward, Hai Duong City, Hai Duong Prv.",
     images: [image43, image44, image45],
   },
   {
     name: "C.P VIETNAM LIVESTOCK\nJOINT STOCK COMPANY BRANCH –\nHANOI MEAT PROCESSING FACTORY",
-    address: "Phu Nghia Industrial Park, Phu Nghia Commune, Chuong My Dist, Hanoi",
+    address:
+      "Phu Nghia Industrial Park, Phu Nghia Commune, Chuong My Dist, Hanoi",
     images: [image46, image47, image48],
   },
   {
     name: "KURODA KAGAKU VIETNAM\nCOMPANY LIMITED",
-    address: "Phuc Dien Industrial Park, Cam Phuc Commune,\nCam Giang District, Hai Duong Province",
+    address:
+      "Phuc Dien Industrial Park, Cam Phuc Commune,\nCam Giang District, Hai Duong Province",
     images: [image49, image50, image51],
   },
   {
@@ -321,7 +325,8 @@ export const en = [
   },
   {
     name: "FUJI BAKELITE\nVIET NAM CO., LTD",
-    address: "Thang Long II Industrial Park, Lieu Xa Commune,\nYen My District, Hung Yen Province",
+    address:
+      "Thang Long II Industrial Park, Lieu Xa Commune,\nYen My District, Hung Yen Province",
     images: [image67, image68, image69],
   },
   {
@@ -364,16 +369,4 @@ const lang = getLangFromUrl(Astro.url);
 const projects = lang === "en" ? en : vi;
 ---
 
-<section id="project-list" class="py-24">
-  <div class="container">
-    <div
-      class="grid sm:grid-cols-2 md:grid-cols-6 auto-rows-[280px] md:auto-rows-[100px] lg:auto-rows-[140px] gap-4"
-    >
-      {
-        projects.map((project, index) => (
-          <ProjectCard {...project} index={index} size={sizeMap[index]} />
-        ))
-      }
-    </div>
-  </div>
-</section>
+<ProjectGrid client:idle projects={projects} sizeMap={sizeMap} lang={lang} />
