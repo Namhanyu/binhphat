@@ -14,7 +14,7 @@ export default function ProjectGrid({
 }) {
   const t = useTranslations(lang);
 
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(3);
 
   const half = Math.ceil(projects.length / 2) + 1;
 
@@ -34,6 +34,17 @@ export default function ProjectGrid({
     <section id="project-list" className="py-24">
       <div className="container">
         <div className="flex items-center gap-4 md:gap-8 justify-center mb-8 md:mb-20">
+          <div
+            className={clsx(
+              "text-2xl text-center max-md:text-base max-md:font-bold md:uppercase font-extrabold cursor-pointer hover:text-black/50 transition-colors text-black/80 border-b-4 border-transparent pb-4",
+              {
+                "text-primary !border-primary": activeTab === 3,
+              }
+            )}
+            onClick={() => setActiveTab(3)}
+          >
+            {t("projects.all")}
+          </div>
           <div
             className={clsx(
               "text-2xl text-center max-md:text-base max-md:font-bold md:uppercase font-extrabold cursor-pointer hover:text-black/50 transition-colors text-black/80 border-b-4 border-transparent pb-4",

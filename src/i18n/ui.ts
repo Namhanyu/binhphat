@@ -165,6 +165,7 @@ export const ui = {
     "projects.address": "Địa chỉ",
     "projects.tab1": "Tổng thầu xây dựng",
     "projects.tab2": "Tổng thầu cơ điện",
+    "projects.all": "Tất cả dự án",
   },
   en: {
     "home.title": "Home",
@@ -326,5 +327,6 @@ export const ui = {
     "projects.address": "Address",
     "projects.tab1": "General contractor for construction",
     "projects.tab2": "General contractor for electromechanical",
+    "projects.all": "All projects",
   },
 } as const;
