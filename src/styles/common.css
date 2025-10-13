@@ -54,9 +54,33 @@ body,
 }
 
 .text-5xl {
-  @apply 3xl:text-[3.25vw] 3xl:leading-snug;
+  @apply 3xl:text-[3vw] 3xl:leading-snug;
 }
 
 .text-6xl {
-  @apply 3xl:text-[4.5vw] 3xl:leading-snug;
+  @apply 3xl:text-[4vw] 3xl:leading-snug;
+}
+
+.pt-header {
+  @apply pt-20 xl:pt-32 max-md:pt-16 3xl:pt-[5vw];
+}
+
+.pb-header {
+  @apply pb-20 xl:pb-32 max-md:pb-16 3xl:pb-[5vw];
+}
+
+.py-header {
+  @apply py-20 xl:py-32 max-md:py-16 3xl:py-[5vw];
+}
+
+.pt-header\/2 {
+  @apply pt-10 xl:pt-16 max-md:pt-8 3xl:pt-[2.5vw];
+}
+
+.pb-header\/2 {
+  @apply pb-10 xl:pb-16 max-md:pb-8 3xl:pb-[2.5vw];
+}
+
+.py-header\/2 {
+  @apply py-10 xl:py-16 max-md:py-8 3xl:py-[2.5vw];
 }

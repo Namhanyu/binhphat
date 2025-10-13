@@ -13,14 +13,14 @@ const t = useTranslations(lang);
 
 <section
   id="contact"
-  class="flex items-center md:min-h-screen max-md:py-20 md:pt-10 bg-cover bg-bottom"
+  class="flex items-center md:min-h-screen bg-cover bg-bottom pb-4 pt-header"
   data-menu-color="primary"
   style={`background-image: url(${bgImage.src});`}
 >
   <div class="container mx-auto">
     <div class="max-w-[600px] 3xl:max-w-[37.5vw]">
       <h2
-        class="text-5xl max-md:text-3xl uppercase font-extrabold text-primary mb-8 3xl:mb-[2vw]"
+        class="text-5xl max-md:text-3xl uppercase font-extrabold text-primary mb-4 3xl:mb-[1vw]"
         data-animate
         data-y="50"
       >
@@ -66,7 +66,7 @@ const t = useTranslations(lang);
         <div
           data-animate
           data-x="-50"
-          class="whitespace-pre-line flex items-center justify-between !mt-6 3xl:!mt-[1.5vw]"
+          class="whitespace-pre-line flex items-center justify-between"
         >
           <span>
             {t("contact.phone.email")}
