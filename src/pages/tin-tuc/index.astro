@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/organisms/news/Hero.astro";
+import bg15 from "../../assets/images/16.webp";
 ---
 
 <Layout title="Bình Phát - Tin tức" snap={false}>
@@ -11,10 +12,7 @@ import Hero from "../../components/organisms/news/Hero.astro";
       [1, 2, 3, 4, 5].map((item) => (
         <div class="mt-10">
           <figure>
-            <div
-              class="media"
-              style="background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/bg_15.png)"
-            />
+            <div class="media" style={`background-image: url(${bg15.src});`} />
             <>
               <figcaption>
                 <svg

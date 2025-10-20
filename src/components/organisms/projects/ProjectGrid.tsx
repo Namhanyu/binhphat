@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+import { useTranslations } from "../../../i18n/utils";
 import ProjectCard from "./ProjectCard";
 import clsx from "clsx";
 
@@ -71,7 +71,11 @@ export default function ProjectGrid({
 
         <div className="grid sm:grid-cols-2 md:grid-cols-6 auto-rows-[280px] md:auto-rows-[100px] lg:auto-rows-[140px] gap-4">
           {projectsToShow.map((project, index) => (
-            <ProjectCard {...project} index={index} size={sizeToShow[index]} />
+            <ProjectCard
+              {...project}
+              name={project.name || project.investor}
+              size={sizeToShow[index]}
+            />
           ))}
         </div>
       </div>

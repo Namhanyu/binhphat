@@ -10,7 +10,7 @@ export const ui = {
     "home.title": "Trang chủ",
     "about.title": "Giới thiệu\nvề Bình Phát",
     "about.content":
-      "Công ty TNHH Xây dựng và Cơ điện Bình Phát xin gửi lời chúc sức khỏe và lời chào trân trọng nhất đến toàn thể Quý khách hàng!\n\nCông ty TNHH Xây dựng và Cơ điện Bình Phát được thành lập vào năm 2013, trên cơ sở các thành viên dày dặn kinh nghiệm và tâm huyết với nghề. Những năm gần đây, Bình Phát Construction không ngừng lớn mạnh, trưởng thành nhanh chóng và tự hào là đơn vị uy tín trong lĩnh vực xây dựng và cơ điện tại Việt Nam.",
+      "Công ty TNHH Xây dựng và Cơ điện Bình Phát được thành lập vào năm 2013, trên cơ sở các thành viên dày dặn kinh nghiệm và tâm huyết với nghề. Những năm gần đây, Bình Phát Construction không ngừng lớn mạnh, trưởng thành nhanh chóng và tự hào là đơn vị uy tín trong lĩnh vực xây dựng và cơ điện tại Việt Nam.",
     "about.button": "Về chúng tôi",
     "about.history": "Lịch sử\nhình thành",
     "about.profile": "Profile\nBình Phát",
@@ -23,11 +23,11 @@ export const ui = {
     "contact.title": "Thông tin liên hệ",
     "contact.headquarters": "Trụ sở",
     "contact.headquarters.address":
-      "Thôn Yên Trường 1, Xã. Phú Nghĩa, TP. Hà Nội",
+      "Thôn Yên Trường 1, Xã Phú Nghĩa, TP. Hà Nội",
     "contact.offices_hn": "Văn phòng đại diện tại Hà Nội",
     "contact.offices_hcm": "Văn phòng đại diện tại Hồ Chí Minh",
     "contact.offices.hanoi":
-      "HN: TT7A-9 KĐT mới Đại Kim, P. Định Công, TP. Hà Nội",
+      "HN: TT7A-9 KĐT mới Đại Kim, Phường Định Công, TP. Hà Nội",
     "contact.offices.hcm":
       "HCM: Số 381/14 đường Hòa Hảo, Phường Điện Hồng, TP.Hồ Chí Minh",
     "contact.phone.email":
@@ -47,7 +47,7 @@ export const ui = {
     "operations.title": "Lĩnh vực hoạt động",
     "operations.subtitle": "Tổng thầu xây dựng và cơ điện",
     "operations.content":
-      "Thiết kế và Thi công là mô hình tiên tiến đã được nhiều nhà thầu lớn áp dụng, giúp tối ưu hóa quy trình quản lý dự án, giảm thiểu rủi ro và tiết kiệm thời gian, chi phí cho chủ đầu tư. Tuy nhiên, mô hình này không dễ dàng thực hiện bởi nó đòi hỏi sự phối hợp nhịp nhàng giữa thiết kế và thi công, giữa xây dựng và cơ điện. Do đó, việc Chủ đầu tư hiện nay quan tâm là một Tổng thầu có năng lực vượt trội. Bình Phát tự hào là một trong những tổng thầu xây dựng và cơ điện uy tín tại Việt Nam, là đối tác tin cậy của nhiều chủ đầu tư và khách hàng nước ngoài trong việc thực hiện các dự án từ quy mô nhỏ đến các công trình lớn, phức tạp.",
+      "Mô hình Thiết kế – Thi công trọn gói (Design & Build) mang lại lợi thế vượt trội trong việc rút ngắn tiến độ, kiểm soát chi phí và giảm thiểu rủi ro cho dự án. Tuy nhiên, để triển khai hiệu quả đòi hỏi sự phối hợp nhịp nhàng giữa các bộ phận thiết kế, thi công và cơ điện – điều không phải đơn vị nào cũng đảm bảo được.\n\nBình Phát tự hào là tổng thầu Thiết kế – Thi công trọn gói uy tín, với kinh nghiệm vững vàng trong lĩnh vực xây dựng và cơ điện (MEP). Chúng tôi đã và đang là đối tác tin cậy của nhiều chủ đầu tư trong và ngoài nước, đồng hành từ các công trình vừa và nhỏ đến những dự án quy mô, yêu cầu kỹ thuật cao.",
     "operations.view_more": "Xem thêm lĩnh vực hoạt động",
     "operations.construction": "Tổng thầu xây dựng",
     "operations.electromechanical": "Tổng thầu cơ điện",
@@ -160,8 +160,9 @@ export const ui = {
     "safety.item_6": "Đánh giá hiệu chỉnh",
     "human_resources.title": "Nguồn nhân lực",
     "human_resources.content":
-      "Với đội ngũ gần 100 cán bộ công nhân viên, Bình Phát tự hào sở hữu một nguồn lực vững mạnh và chuyên nghiệp. Trong đó, hơn 50 kỹ sư có chuyên môn cao, được đào tạo bài bản và giàu kinh nghiệm, đóng vai trò nòng cốt trong việc quản lý và triển khai dự án.\n\nCác phòng ban chuyên môn phối hợp chặt chẽ, từ Ban Giám đốc, Phòng Kỹ thuật - Dự án đến Phòng Kinh doanh và Hành chính, tạo nên một hệ thống làm việc đồng bộ, hiệu quả. Sự phối hợp này đảm bảo mọi công trình đều được thực hiện với chất lượng tốt nhất, đúng tiến độ, mang lại sự tin tưởng và hài lòng tuyệt đối cho khách hàng.",
+      "Với đội ngũ hơn 120 cán bộ công nhân viên, Bình Phát tự hào sở hữu một nguồn lực vững mạnh và chuyên nghiệp. Trong đó, hơn 50 kỹ sư có chuyên môn cao, được đào tạo bài bản và giàu kinh nghiệm, đóng vai trò nòng cốt trong việc quản lý và triển khai dự án.\n\nCác phòng ban chuyên môn phối hợp chặt chẽ, từ Ban Giám đốc, Phòng Kỹ thuật - Dự án đến Phòng Kinh doanh và Hành chính, tạo nên một hệ thống làm việc đồng bộ, hiệu quả. Sự phối hợp này đảm bảo mọi công trình đều được thực hiện với chất lượng tốt nhất, đúng tiến độ, mang lại sự tin tưởng và hài lòng tuyệt đối cho khách hàng.",
     "human_resources.view_more": "Xem thêm về nhân sự",
+    "projects.investor": "Chủ đầu tư",
     "projects.address": "Địa chỉ",
     "projects.tab1": "Tổng thầu xây dựng",
     "projects.tab2": "Tổng thầu cơ điện",
@@ -322,8 +323,9 @@ export const ui = {
     "safety.item_6": "Đánh giá hiệu chỉnh",
     "human_resources.title": "Nguồn nhân lực",
     "human_resources.content":
-      "Với đội ngũ gần 100 cán bộ công nhân viên, Bình Phát tự hào sở hữu một nguồn lực vững mạnh và chuyên nghiệp. Trong đó, hơn 50 kỹ sư có chuyên môn cao, được đào tạo bài bản và giàu kinh nghiệm, đóng vai trò nòng cốt trong việc quản lý và triển khai dự án.\n\nCác phòng ban chuyên môn phối hợp chặt chẽ, từ Ban Giám đốc, Phòng Kỹ thuật - Dự án đến Phòng Kinh doanh và Hành chính, tạo nên một hệ thống làm việc đồng bộ, hiệu quả. Sự phối hợp này đảm bảo mọi công trình đều được thực hiện với chất lượng tốt nhất, đúng tiến độ, mang lại sự tin tưởng và hài lòng tuyệt đối cho khách hàng.",
+      "Với đội ngũ hơn 120 cán bộ công nhân viên, Bình Phát tự hào sở hữu một nguồn lực vững mạnh và chuyên nghiệp. Trong đó, hơn 50 kỹ sư có chuyên môn cao, được đào tạo bài bản và giàu kinh nghiệm, đóng vai trò nòng cốt trong việc quản lý và triển khai dự án.\n\nCác phòng ban chuyên môn phối hợp chặt chẽ, từ Ban Giám đốc, Phòng Kỹ thuật - Dự án đến Phòng Kinh doanh và Hành chính, tạo nên một hệ thống làm việc đồng bộ, hiệu quả. Sự phối hợp này đảm bảo mọi công trình đều được thực hiện với chất lượng tốt nhất, đúng tiến độ, mang lại sự tin tưởng và hài lòng tuyệt đối cho khách hàng.",
     "human_resources.view_more": "Xem thêm về nhân sự",
+    "projects.investor": "Investor",
     "projects.address": "Address",
     "projects.tab1": "General contractor for construction",
     "projects.tab2": "General contractor for electromechanical",

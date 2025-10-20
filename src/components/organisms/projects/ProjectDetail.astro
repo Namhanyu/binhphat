@@ -2,7 +2,7 @@
 import bgImage01 from "../../../assets/images/news.webp";
 import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
 import clsx from "clsx";
-const { name, address, images } = Astro.props;
+const { name, address, images, investor, packages } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -16,24 +16,27 @@ const t = useTranslations(lang);
 >
   <div
     class={clsx(
-      "container h-screen grid pt-32 pb-20 3xl:pt-[8vw] 3xl:pb-[5vw] gap-6 3xl:gap-[2.5vw] content-start",
+      "container min-h-screen grid pt-32 pb-20 3xl:pt-[8vw] 3xl:pb-[5vw] gap-6 3xl:gap-[2.5vw] content-start",
       "md:grid-rows-[auto,_1fr]",
       "max-md:h-auto max-md:py-16"
     )}
   >
     <div class="grid gap-3 3xl:gap-[0.75vw]">
       <h2
-        class="text-4xl font-black uppercase max-md:text-2xl whitespace-pre-line"
+        class="text-4xl font-black uppercase max-md:text-2xl whitespace-pre-line mb-4"
         data-animate
         data-y="-50"
       >
         {name}
       </h2>
       <div class="whitespace-pre-line" data-animate data-x="-50">
+        {t("projects.investor")}: {investor}
+      </div>
+      <div class="whitespace-pre-line" data-animate data-x="-50">
         {t("projects.address")}: {address}
       </div>
     </div>
-    <div class="h-full grid md:grid-cols-3 max-md:gap-2 gap-4">
+    <div class="h-full grid md:grid-cols-3 max-md:gap-2 gap-4 md:min-h-[50vh]">
       <div
         class="h-full bg-cover bg-center md:col-span-2 max-md:h-[50vw]"
         style={`background-image: url(${images[0].src});`}
@@ -58,5 +61,31 @@ const t = useTranslations(lang);
         </div>
       </div>
     </div>
+    {
+      packages && (
+        <table data-animate data-x="-50" class="text-sm">
+          <thead>
+            <tr>
+              <th class="border py-2 px-4">Gói thầu</th>
+              <th class="border py-2 px-4 whitespace-nowrap">
+                Thời gian
+                <br class="md:hidden" />
+                hoàn thành
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {packages.map((pkg) => (
+              <tr>
+                <td class="border py-2 px-4">
+                  {[pkg.item, pkg.description].filter(Boolean).join(" - ")}
+                </td>
+                <td class="border py-2 px-4">{pkg.time}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )
+    }
   </div>
 </section>

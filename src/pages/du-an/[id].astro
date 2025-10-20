@@ -6,15 +6,19 @@ import { vi } from "../../components/organisms/projects/ProjectList.astro";
 const { id } = Astro.params;
 
 export function getStaticPaths() {
-  return vi.map((_, index) => ({
-    params: { id: String(index + 1) },
+  return vi.map((project) => ({
+    params: { id: project.id.toString() },
   }));
 }
 
-const project = vi[Number(id) - 1];
+const project = vi.find((p) => p.id === Number(id));
+
+if (!project) {
+  throw new Error(`Project with id ${id} not found`);
+}
 ---
 
-<Layout title=`Bình Phát - ${project.name}`>
+<Layout title=`Bình Phát - ${project.name}` snap={false}>
   <ProjectDetail {...project} />
 </Layout>
 

@@ -1,16 +1,16 @@
 import clsx from "clsx";
 
 export default function ProjectCard({
+  id,
   name,
   address,
   images,
-  index,
   size,
 }: {
+  id: number;
   name: string;
   address: string;
   images: { src: string }[];
-  index: number;
   size: "sm" | "md" | "lg";
 }) {
   return (
@@ -25,7 +25,7 @@ export default function ProjectCard({
           "md:col-span-3 md:row-span-3": size === "md",
         }
       )}
-      href={`/du-an/${index + 1}`}
+      href={`/du-an/${id}`}
     >
       <div
         className="bg-cover absolute inset-0 bg-center group-hover:scale-110 transition-transform duration-500"
