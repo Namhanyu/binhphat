@@ -11,6 +11,7 @@ import "@fontsource/montserrat/900.css";
 
 import Header from "../components/organisms/Header.astro";
 import ContactSection from "../components/organisms/ContactSection.astro";
+import SocialMediaFloat from "../components/organisms/SocialMediaFloat.astro";
 import { getLangFromUrl } from "../i18n/utils";
 import clsx from "clsx";
 
@@ -59,6 +60,7 @@ const lang = getLangFromUrl(Astro.url);
       <slot />
       <ContactSection />
     </div>
+    <SocialMediaFloat />
   </body>
 </html>
 

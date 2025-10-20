@@ -1,0 +1,265 @@
+---
+import IconFacebook from "../atoms/IconFacebook.astro";
+import IconZalo from "../atoms/IconZalo.astro";
+import { socialMediaConfig } from "../../data/socialMediaConfig";
+
+// Props để tùy chỉnh liên kết (có thể override config mặc định)
+const { 
+  zaloLink = socialMediaConfig.zalo.link,
+  facebookLink = socialMediaConfig.facebook.link,
+  position = socialMediaConfig.display.position
+} = Astro.props;
+
+// Xác định vị trí dựa trên prop
+const positionClasses = {
+  "bottom-right": "bottom-6 right-6",
+  "bottom-left": "bottom-6 left-6", 
+  "top-right": "top-6 right-6",
+  "top-left": "top-6 left-6"
+};
+
+// Kiểm tra xem có nên hiển thị widget hay không
+const shouldShow = socialMediaConfig.zalo.enabled || socialMediaConfig.facebook.enabled;
+---
+
+{shouldShow && (
+<div class={`fixed ${positionClasses[position]} z-50 flex flex-col gap-3`} id="social-float">
+  <!-- Zalo Button -->
+  {socialMediaConfig.zalo.enabled && (
+    <a
+      href={zaloLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="group flex h-12 w-12 items-center justify-center rounded-full bg-blue-500 shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl social-btn"
+      title="Liên hệ qua Zalo"
+      data-social="zalo"
+    >
+      <IconZalo class="h-6 w-6 text-white transition-transform duration-300 group-hover:scale-110" />
+    </a>
+  )}
+  
+  <!-- Facebook Page Button -->
+  {socialMediaConfig.facebook.enabled && (
+    <a
+      href={facebookLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="group flex h-12 w-12 items-center justify-center rounded-full bg-blue-600 shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl social-btn"
+      title="Fanpage Facebook"
+      data-social="facebook"
+    >
+      <IconFacebook class="h-6 w-6 text-white transition-transform duration-300 group-hover:scale-110" />
+    </a>
+  )}
+</div>
+)}
+
+<style>
+  /* Hiệu ứng pulse để thu hút sự chú ý */
+  .pulse-animation {
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+    }
+  }
+  
+  /* Hiệu ứng bounce khi hover */
+  .social-btn:hover {
+    animation: bounce 0.6s ease-in-out;
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 60%, 100% {
+      transform: translateY(0) scale(1);
+    }
+    40% {
+      transform: translateY(-5px) scale(1.1);
+    }
+    80% {
+      transform: translateY(-2px) scale(1.05);
+    }
+  }
+  
+  /* Hiệu ứng slide-in khi trang load */
+  #social-float {
+    opacity: 0;
+    transform: translateX(100px);
+    animation: slideIn 0.8s ease-out 1s forwards;
+  }
+  
+  @keyframes slideIn {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Responsive design cho tablet */
+  @media (max-width: 1024px) {
+    #social-float {
+      bottom: 1.5rem !important;
+      right: 1.5rem !important;
+    }
+  }
+  
+  /* Responsive design cho mobile */
+  @media (max-width: 768px) {
+    #social-float {
+      bottom: 1rem !important;
+      right: 1rem !important;
+    }
+    
+    .social-btn {
+      width: 2.75rem;
+      height: 2.75rem;
+    }
+    
+    .social-btn svg {
+      width: 1.375rem;
+      height: 1.375rem;
+    }
+  }
+  
+  /* Responsive cho màn hình nhỏ hơn */
+  @media (max-width: 480px) {
+    #social-float {
+      bottom: 0.75rem !important;
+      right: 0.75rem !important;
+    }
+    
+    .social-btn {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+    
+    .social-btn svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+  
+  /* Ẩn hoàn toàn trên màn hình rất nhỏ nếu cần */
+  @media (max-width: 360px) {
+    #social-float {
+      bottom: 0.5rem !important;
+      right: 0.5rem !important;
+    }
+    
+    .social-btn {
+      width: 2.25rem;
+      height: 2.25rem;
+    }
+    
+    .social-btn svg {
+      width: 1.125rem;
+      height: 1.125rem;
+    }
+  }
+  
+  /* Dark mode support */
+  @media (prefers-color-scheme: dark) {
+    .social-btn {
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .social-btn {
+      border: 2px solid white;
+    }
+  }
+  
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    .social-btn {
+      transition: none;
+    }
+    
+    #social-float {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
+    
+    .pulse-animation,
+    .social-btn:hover {
+      animation: none;
+    }
+  }
+  
+  /* Print styles - ẩn khi in */
+  @media print {
+    #social-float {
+      display: none !important;
+    }
+  }
+</style>
+
+<script define:vars={{ config: socialMediaConfig }}>
+  document.addEventListener('DOMContentLoaded', () => {
+    const socialButtons = document.querySelectorAll('.social-btn');
+    const socialFloat = document.getElementById('social-float');
+    
+    if (!socialFloat) return;
+    
+    // Thêm hiệu ứng pulse nếu được bật trong config
+    if (config.display.showPulseEffect) {
+      setTimeout(() => {
+        socialButtons.forEach(button => {
+          button.classList.add('pulse-animation');
+          setTimeout(() => {
+            button.classList.remove('pulse-animation');
+          }, 5000);
+        });
+      }, 1500);
+    }
+    
+    // Tracking clicks
+    socialButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        const target = e.currentTarget;
+        if (target) {
+          const social = target.getAttribute('data-social');
+          console.log(`Clicked on ${social} button`);
+          
+          // Thêm tracking code ở đây nếu cần
+          // gtag('event', 'click', {
+          //   event_category: 'Social Media',
+          //   event_label: social
+          // });
+        }
+      });
+    });
+    
+    // Ẩn/hiện buttons khi scroll nếu được cấu hình
+    if (config.display.hideOnScroll) {
+      let lastScrollTop = 0;
+      
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > lastScrollTop && scrollTop > 100) {
+          // Scrolling down - ẩn
+          socialFloat.style.transform = 'translateX(100px)';
+          socialFloat.style.opacity = '0.3';
+        } else {
+          // Scrolling up - hiện lại
+          socialFloat.style.transform = 'translateX(0)';
+          socialFloat.style.opacity = '1';
+        }
+        
+        lastScrollTop = scrollTop;
+      });
+    }
+  });
+</script>
