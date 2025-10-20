@@ -189,273 +189,139 @@ const { id } = Astro.params;
 
           <!-- Summary Card -->
           <div class="bg-card border border-border rounded-lg p-6">
-            <h2 class="text-xl font-bold mb-6">TÓM LƯỢC</h2>
-            <div class="grid sm:grid-cols-2 gap-6">
-              <div class="flex items-start gap-3">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-5 h-5 text-primary mt-1"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+            <h2 class="text-lg font-bold mb-6">TÓM LƯỢC</h2>
+            <table class="w-full table-auto text-sm text-foreground/90">
+              <tr>
+                <td class="border px-4 py-2">Bộ phận</td>
+                <td class="border px-4 py-2">Xây dựng</td>
+              </tr>
+              <tr>
+                <td class="border px-4 py-2">Chức danh</td>
+                <td class="border px-4 py-2">Kỹ sư xây dựng</td>
+              </tr>
+              <tr>
+                <td class="border px-4 py-2">Cán bộ quản lý trực tiếp</td>
+                <td class="border px-4 py-2">Trưởng phòng/Trưởng bộ phận</td>
+              </tr>
+              <tr>
+                <td class="border px-4 py-2">Địa điểm làm việc</td>
+                <td class="border px-4 py-2"
+                  >VPĐD: TT7A-9 KĐT Mới Đại Kim, Hoàng Mai, Hà Nội</td
                 >
-                  <rect width="20" height="14" x="2" y="7" rx="2" ry="2"></rect>
-                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                </svg>
-                <div>
-                  <p class="text-sm text-muted-foreground">Kỹ sư</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-5 h-5 text-primary mt-1"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <polyline points="12 6 12 12 16 14"></polyline>
-                </svg>
-                <div>
-                  <p class="text-sm font-medium">Cấp bậc</p>
-                  <p class="text-sm text-muted-foreground">
-                    Không yêu cầu kinh nghiệm
-                  </p>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-5 h-5 text-primary mt-1"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="12" cy="7" r="4"></circle>
-                </svg>
-                <div>
-                  <p class="text-sm font-medium">Kinh nghiệm</p>
-                  <p class="text-sm text-muted-foreground">Nam</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-5 h-5 text-primary mt-1"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
-                  <circle cx="9" cy="7" r="4"></circle>
-                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                </svg>
-                <div>
-                  <p class="text-sm font-medium">Giới tính</p>
-                  <p class="text-sm text-muted-foreground">Xây dựng</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-5 h-5 text-primary mt-1"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-                </svg>
-                <div>
-                  <p class="text-sm font-medium">Ngành</p>
-                  <p class="text-sm text-muted-foreground">Đại học</p>
-                </div>
-              </div>
-              <div class="flex items-start gap-3">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="w-5 h-5 text-primary mt-1"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-                </svg>
-                <div>
-                  <p class="text-sm text-muted-foreground">Bằng cấp</p>
-                </div>
-              </div>
-            </div>
+              </tr>
+            </table>
           </div>
 
           <!-- Job Description -->
           <div class="bg-card border border-border rounded-lg p-6">
-            <h2 class="text-xl font-bold mb-4">MÔ TẢ CÔNG VIỆC</h2>
-            <ul class="space-y-3 text-foreground/90 leading-relaxed">
-              <li class="flex gap-3">
-                <span class="text-primary mt-1">•</span>
-                <span>Lên kế hoạch, tổ chức và tiến hành thi công dự án.</span>
+            <h2 class="text-lg font-bold mb-4">MÔ TẢ CÔNG VIỆC</h2>
+            <ul
+              class="text-sm list-disc list-inside text-foreground/90 leading-relaxed"
+            >
+              <li>
+                Tiếp nhận yêu cầu khảo sát từ bộ phận kinh doanh, tiến hành đi
+                khảo sát, trao đổi, tư vấn thiết kế trực tiếp với khách hàng.
               </li>
-              <li class="flex gap-3">
-                <span class="text-primary mt-1">•</span>
-                <span
-                  >Liên hệ với Chủ đầu tư/Tư vấn và các đơn vị liên quan nhằm
-                  tiến hành hiệu quả công tác thi công/cơ điện của dự án.</span
-                >
+              <li>
+                Trực tiếp tính toán, áp dụng kiến thức về xây dựng để thiết kế
+                các hạng mục xây dựng (xây mới, cải tạo nhà xưởng hoặc công
+                trình dân dụng) theo yêu cầu của khách hàng.
               </li>
-              <li class="flex gap-3">
-                <span class="text-primary mt-1">•</span>
-                <span
-                  >Giám sát và kiểm soát công việc theo hệ thống quản lý chất
-                  lượng và xác định các rủi ro trong thi công.</span
-                >
+              <li>
+                Tuân theo các tiêu chuẩn của công ty, đảm bảo đáp ứng tất cả yêu
+                cầu về thiết kế và thủ tục pháp lý.
               </li>
-              <li class="flex gap-3">
-                <span class="text-primary mt-1">•</span>
-                <span
-                  >Hướng dẫn Cai thầu, Đội thi công, Thầu phụ tiến hành công
-                  việc theo các yêu cầu đúng kỹ thuật và bản vẽ.</span
-                >
+              <li>Bóc tách khối lượng, làm dự toán cho đơn hàng.</li>
+              <li>
+                Lập bản vẽ báo giá, làm việc với chủ đầu tư để chốt phương án
+                thiết kế.
               </li>
-              <li class="flex gap-3">
-                <span class="text-primary mt-1">•</span>
-                <span
-                  >Phụ trách triển khai thi công, quản lý thi công và giám sát
-                  thi công hạng mục/khu vực được giao theo hướng dẫn của Trưởng
-                  nhóm TCTC.</span
-                >
-              </li>
-              <li class="flex gap-3">
-                <span class="text-primary mt-1">•</span>
-                <span
-                  >Đảm bảo khu vực/hạng mục phụ trách thi công theo đúng bản vẽ
-                  thiết kế, các quy chuẩn, tiêu chuẩn.</span
-                >
-              </li>
-              <li class="flex gap-3">
-                <span class="text-primary mt-1">•</span>
-                <span
-                  >Kiểm soát đảm bảo an toàn và chất lượng an toàn công trình,
-                  tuân thủ các thủ tục ISO của công ty.</span
-                >
-              </li>
-              <li class="flex gap-3">
-                <span class="text-primary mt-1">•</span>
-                <span>Thực hiện các yêu cầu của quản lý.</span>
-              </li>
+              <li>Các công việc khác theo yêu cầu của quản lý trực tiếp.</li>
             </ul>
           </div>
 
           <!-- Requirements -->
           <div class="bg-card border border-border rounded-lg p-6">
-            <h2 class="text-xl font-bold mb-4">YÊU CẦU CƠ BẢN</h2>
-            <ul class="space-y-3 text-foreground/90 leading-relaxed">
-              <li class="flex gap-3">
-                <span class="text-primary mt-1">•</span>
-                <span
-                  >Tốt nghiệp Đại học chính quy trở lên chuyên ngành Xây dựng
-                  DD&CN, Kỹ thuật Xây dựng, Kinh tế Xây dựng...</span
-                >
+            <h2 class="text-lg font-bold mb-4">YÊU CẦU</h2>
+            <ul
+              class="text-sm list-disc list-inside text-foreground/90 leading-relaxed"
+            >
+              <li>
+                Tốt nghiệp Đại học chính quy chuyên ngành Kỹ thuật xây dựng, Kỹ
+                sư công trình dân dụng – công nghiệp
               </li>
-              <li class="flex gap-3">
-                <span class="text-primary mt-1">•</span>
-                <span>Kỹ năng quản lý và tổ chức tốt.</span>
+              <li>
+                Có từ 2 năm kinh nghiệm ở mảng thiết kế, lập dự toán công trình.
               </li>
-              <li class="flex gap-3">
-                <span class="text-primary mt-1">•</span>
-                <span
-                  >Sử dụng tốt phần mềm tin học chuyên ngành, tin học văn phòng.</span
-                >
+              <li>
+                Sử dụng tốt AutoCAD, MS Project, Excel, ưu tiên có kiến thức về
+                dự toán và hồ sơ hoàn công
               </li>
-              <li class="flex gap-3">
-                <span class="text-primary mt-1">•</span>
-                <span
-                  >Không ưu cầu kinh nghiệm, ưu tiên ứng viên làm việc ở khu vực
-                  miền Bắc</span
-                >
+              <li>Am hiểu tiêu chuẩn kỹ thuật của các loại vật tư, thiết bị</li>
+              <li>
+                Có khả năng làm việc độc lập và phối hợp nhóm, xử lý tình huống
+                tại công trường
+              </li>
+              <li>
+                Chấp nhận đi công trình tỉnh, làm việc linh hoạt theo điều động
+                dự án
               </li>
             </ul>
           </div>
 
           <!-- Benefits -->
           <div class="bg-card border border-border rounded-lg p-6">
-            <h2 class="text-xl font-bold mb-4">THU NHẬP VÀ PHÚC LỢI</h2>
-            <ul class="space-y-3 text-foreground/90 leading-relaxed">
-              <li class="flex gap-3">
-                <span class="text-primary mt-1">•</span>
-                <span>Thu nhập: Thỏa thuận trong quá trình phỏng vấn.</span>
+            <h2 class="text-lg font-bold mb-4">QUYỀN LỢI</h2>
+            <ul
+              class="text-sm list-disc list-inside text-foreground/90 leading-relaxed"
+            >
+              <li>Thu nhập: 15-20 triệu (thỏa thuận theo năng lực)</li>
+              <li>Lương trả 2 lần/tháng, không nợ lương chậm lương</li>
+              <li>Ngày làm 8 tiếng, ngoài giờ tính tăng ca</li>
+              <li>
+                Chế độ phụ cấp: ăn, ở, đi lại, bằng lái ô tô, máy tính, điện
+                thoại, sim trong quá trình làm việc.
               </li>
-              <li class="flex gap-3">
-                <span class="text-primary mt-1">•</span>
-                <span
-                  >Thử việc 100% lương, đóng BHXH full lương khi ký HĐLĐ chính
-                  thức</span
-                >
+              <li>Tham gia đầy đủ chế độ BHXH, BHYT, BHTN.</li>
+              <li>
+                Thưởng Lễ, Tết, lương tháng 13, sinh nhật, team building, du
+                lịch nghỉ mát hàng năm.
               </li>
-              <li class="flex gap-3">
-                <span class="text-primary mt-1">•</span>
-                <span>Có nhà ở BCH, phụ cấp cơm, điện thoại và đi lại</span>
+              <li>
+                Được tham gia các khóa đào tạo, có cơ hội thăng tiến rõ ràng.
               </li>
-              <li class="flex gap-3">
-                <span class="text-primary mt-1">•</span>
-                <span
-                  >Môi trường làm việc chuyên nghiệp tại Công ty Xây dựng uy tín
-                  hàng đầu Việt Nam.</span
-                >
-              </li>
-              <li class="flex gap-3">
-                <span class="text-primary mt-1">•</span>
-                <span
-                  >Review lương hàng năm, khám sức khỏe tổng quát định kỳ mỗi
-                  năm</span
-                >
-              </li>
-              <li class="flex gap-3">
-                <span class="text-primary mt-1">•</span>
-                <span
-                  >Các chế độ khác: Đào tạo, teambuilding, bảo hiểm sức khỏe Bảo
-                  Việt.</span
-                >
-              </li>
+              <li>Môi trường làm việc chuyên nghiệp, năng động.</li>
             </ul>
           </div>
 
           <!-- Application -->
           <div class="bg-card border border-border rounded-lg p-6">
-            <h2 class="text-xl font-bold mb-4">HỒ SƠ ỨNG TUYỂN</h2>
-            <ul class="space-y-3 text-foreground/90 leading-relaxed">
-              <li class="flex gap-3">
-                <span class="text-primary mt-1">•</span>
-                <span
-                  >Mẫu Thông tin ứng viên (nhấn vào nút "Apply to this job" để
-                  "Tải mẫu")</span
+            <h2 class="text-lg font-bold mb-4 uppercase">Thời gian làm việc</h2>
+            <ul
+              class="text-sm list-disc list-inside text-foreground/90 leading-relaxed"
+            >
+              <li>Thời gian làm việc: 8h - 17h15’ từ thứ Hai đến thứ Bảy</li>
+              <li>Nghỉ Chủ nhật hàng tuần và 2 ngày bất kì/tháng.</li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="bg-card border border-border rounded-lg p-6">
+            <h2 class="text-lg font-bold mb-4 uppercase">
+              Cách thức ứng tuyển
+            </h2>
+            <ul
+              class="text-sm list-disc list-inside text-foreground/90 leading-relaxed"
+            >
+              <li>
+                Ứng viên nộp hồ sơ qua email: <a
+                  class="text-primary hover:underline"
+                  href="mailto:hrbinhphat@gmail.com">hrbinhphat@gmail.com</a
                 >
               </li>
-              <li class="flex gap-3">
-                <span class="text-primary mt-1">•</span>
-                <span>Bản photo bằng cấp chứng chỉ.</span>
+              <li>
+                Liên hệ <i>Phòng nhân sự</i>:
+                <b>Ms Hạnh (zalo) - 0987 538 455</b>
               </li>
             </ul>
           </div>
