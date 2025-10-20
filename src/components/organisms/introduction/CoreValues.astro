@@ -16,12 +16,14 @@ const t = useTranslations(lang);
 <section
   id="core_values"
   data-menu-color="white"
-  class="min-h-screen max-lg:min-h-0 max-lg:pt-40 max-md:pb-20 bg-cover bg-center flex items-end overflow-hidden pt-header"
+  class="bg-cover bg-center"
   style={`background-image: url(${bgImage.src});`}
 >
-  <div class="container">
+  <div
+    class="md:h-screen container flex flex-col justify-end pt-header overflow-hidden"
+  >
     <div
-      class="text-center space-y-2 text-white max-md:mb-10 -mb-10 3xl:space-y-[0.5vw] 3xl:-mb-[2.5vw] z-20 relative"
+      class="text-center space-y-2 text-white max-md:mb-10 3xl:space-y-[0.5vw] z-20 relative max-md:mt-24"
     >
       <h2
         class="text-5xl font-extrabold uppercase max-md:text-3xl"
@@ -35,120 +37,124 @@ const t = useTranslations(lang);
       </div>
     </div>
 
-    <div class="w-full">
-      <div
-        class="relative md:pt-[53.66%] text-[1300px] 3xl:text-[80vw] max-xl:text-[100vw] xl:-mb-20 3xl:mb-0"
-      >
-        <div
-          class="absolute inset-0 bg-cover max-md:hidden"
-          style={`background-image: url(${image1.src});`}
-        >
-        </div>
-
-        <div
-          class="grid gap-6 3xl:gap-[1.5vw] text-white justify-items-center justify-center grid-cols-2"
-        >
-          <div
-            class="md:absolute left-1/2 max-lg:bottom-[0.085em] bottom-[0.12em] md:-translate-x-1/2 md:w-1/2 text-white text-center col-span-2"
-          >
-            <div class="text-base max-lg:text-sm" data-animate data-y="50">
-              {t("core_values.description")}
-            </div>
-          </div>
-
-          <div
-            class="flex flex-col items-center gap-3 3xl:gap-[0.75vw] md:absolute md:w-[0.0923076923em] bottom-[0.0876923077em] left-[0.1em] col-span-2"
-            data-animate
-            data-x="-30"
-          >
-            <div
-              class="bg-cover flex items-center justify-center md:h-[0.0923076923em] md:w-full size-32"
-              style={`background-image: url(${circle.src});`}
-            >
-              <img src={icon1.src} alt="" class="h-1/2 object-contain" />
-            </div>
-            <div
-              class="text-base md:text-lg lg:text-xl xl:text-2xl font-bold uppercase whitespace-nowrap"
-            >
-              {t("core_values.1")}
-            </div>
-          </div>
-
-          <div
-            class="flex flex-col items-center gap-3 3xl:gap-[0.75vw] md:absolute md:w-[0.0923076923em] top-[0.15em] left-[0.225em]"
-            data-animate
-            data-x="-30"
-            data-y="-30"
-          >
-            <div
-              class="bg-cover flex items-center justify-center md:h-[0.0923076923em] md:w-full size-32"
-              style={`background-image: url(${circle.src});`}
-            >
-              <img src={icon2.src} alt="" class="h-1/2 object-contain" />
-            </div>
-            <div
-              class="text-base md:text-lg lg:text-xl xl:text-2xl font-bold uppercase whitespace-nowrap"
-            >
-              {t("core_values.2")}
-            </div>
-          </div>
-
-          <div
-            class="flex flex-col items-center gap-3 3xl:gap-[0.75vw] md:absolute md:w-[0.0923076923em] top-[0.075em] left-1/2 md:-translate-x-1/2"
-            data-animate
-            data-y="-30"
-          >
-            <div
-              class="bg-cover flex items-center justify-center md:h-[0.0923076923em] md:w-full size-32"
-              style={`background-image: url(${circle.src});`}
-            >
-              <img src={icon3.src} alt="" class="h-1/2 object-contain" />
-            </div>
-            <div
-              class="text-base md:text-lg lg:text-xl xl:text-2xl font-bold uppercase whitespace-nowrap"
-            >
-              {t("core_values.3")}
-            </div>
-          </div>
-
-          <div
-            class="flex flex-col items-center gap-3 3xl:gap-[0.75vw] md:absolute md:w-[0.0923076923em] top-[0.15em] right-[0.225em]"
-            data-animate
-            data-x="30"
-            data-y="-30"
-          >
-            <div
-              class="bg-cover flex items-center justify-center md:h-[0.0923076923em] md:w-full size-32"
-              style={`background-image: url(${circle.src});`}
-            >
-              <img src={icon4.src} alt="" class="h-1/2 object-contain" />
-            </div>
-            <div
-              class="text-base md:text-lg lg:text-xl xl:text-2xl font-bold uppercase whitespace-nowrap"
-            >
-              {t("core_values.4")}
-            </div>
-          </div>
-
-          <div
-            class="flex flex-col items-center gap-3 3xl:gap-[0.75vw] md:absolute md:w-[0.0923076923em] bottom-[0.0876923077em] right-[0.1em]"
-            data-animate
-            data-x="30"
-          >
-            <div
-              class="bg-cover flex items-center justify-center md:h-[0.0923076923em] md:w-full size-32"
-              style={`background-image: url(${circle.src});`}
-            >
-              <img src={icon5.src} alt="" class="h-1/2 object-contain" />
-            </div>
-            <div
-              class="text-base md:text-lg lg:text-xl xl:text-2xl font-bold uppercase whitespace-nowrap"
-            >
-              {t("core_values.5")}
-            </div>
-          </div>
-        </div>
-      </div>
+    <div data-animate data-y="30" class="text-center md:hidden text-white mb-4">
+      {t("core_values.description")}
     </div>
+
+    <svg
+      viewBox="0 0 1300 698"
+      class="h-auto w-full mx-auto text-white"
+      preserveAspectRatio="xMidYMax meet"
+    >
+      <image href={image1.src} height="698" width="1300" />
+
+      <g data-animate data-x="-30">
+        <image x="130" y="420" href={circle.src} height="120" width="120" />
+        <image x="160" y="450" href={icon1.src} height="60" />
+        <text
+          x="190"
+          y="575"
+          font-size="24px"
+          text-anchor="middle"
+          fill="white"
+          class="font-bold uppercase"
+        >
+          {t("core_values.1")}
+        </text>
+      </g>
+
+      <g data-animate data-x="-30" data-y="-30">
+        <image x="292" y="197" href={circle.src} height="120" width="120" />
+        <image
+          x="292"
+          y="227"
+          href={icon2.src}
+          height="60"
+          width="120"
+          preserveAspectRatio="xMidYMid meet"
+        />
+        <text
+          x="352"
+          y="352"
+          font-size="24px"
+          text-anchor="middle"
+          fill="white"
+          class="font-bold uppercase"
+        >
+          {t("core_values.2")}
+        </text>
+      </g>
+
+      <g data-animate data-y="-30">
+        <image x="590" y="100" href={circle.src} height="120" width="120" />
+        <image
+          x="590"
+          y="130"
+          href={icon3.src}
+          height="60"
+          width="120"
+          preserveAspectRatio="xMidYMid meet"
+        />
+        <text
+          x="650"
+          y="256"
+          font-size="24px"
+          text-anchor="middle"
+          fill="white"
+          class="font-bold uppercase"
+        >
+          {t("core_values.3")}
+        </text>
+      </g>
+
+      <g data-animate data-x="30" data-y="-30">
+        <image x="888" y="197" href={circle.src} height="120" width="120" />
+        <image
+          x="888"
+          y="227"
+          href={icon4.src}
+          height="60"
+          width="120"
+          preserveAspectRatio="xMidYMid meet"
+        />
+        <text
+          x="948"
+          y="352"
+          font-size="24px"
+          text-anchor="middle"
+          fill="white"
+          class="font-bold uppercase"
+        >
+          {t("core_values.4")}
+        </text>
+      </g>
+
+      <g data-animate data-x="30">
+        <image x="1050" y="420" href={circle.src} height="120" width="120" />
+        <image x="1080" y="450" href={icon5.src} height="60" />
+        <text
+          x="1110"
+          y="575"
+          font-size="24px"
+          text-anchor="middle"
+          fill="white"
+          class="font-bold uppercase"
+        >
+          {t("core_values.5")}
+        </text>
+      </g>
+
+      <foreignObject
+        x="350"
+        y="470"
+        width="600"
+        height="200"
+        data-animate
+        data-y="30"
+        class="max-md:hidden"
+      >
+        <div class="text-center">{t("core_values.description")}</div>
+      </foreignObject>
+    </svg>
   </div>
 </section>

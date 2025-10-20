@@ -88,5 +88,13 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    function ({ addVariant }) {
+      addVariant(
+        "safari",
+        "@supports (hanging-punctuation: first) and (font: -apple-system-body) and (-webkit-appearance: none)"
+      );
+    },
+  ],
 };
