@@ -1,138 +1,62 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/organisms/news/Hero.astro";
-import bg15 from "../../assets/images/16.webp";
+import { vi as projects } from "../../components/organisms/projects/ProjectList.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const newsItems = Array.from({ length: 10 }, (_, i) => ({
+  id: i + 1,
+  title: `Khởi công ${projects[i].name}`,
+  date: new Date(
+    Date.now() - Math.floor(Math.random() * (5 * 365 * 24 * 60 * 60 * 1000))
+  ),
+  image: projects[i].images[0].src,
+})).sort((a, b) => (b.date as any) - (a.date as any));
 ---
 
 <Layout title="Bình Phát - Tin tức" snap={false}>
   <Hero />
 
-  <div class="container mb-10">
-    {
-      [1, 2, 3, 4, 5].map((item) => (
-        <div class="mt-10">
-          <figure>
-            <div class="media" style={`background-image: url(${bg15.src});`} />
-            <>
-              <figcaption>
-                <svg
-                  viewBox="0 0 200 200"
-                  version="1.1"
-                  preserveAspectRatio="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <defs>
-                    <mask id="mask" x="0" y="0" width="100%" height="100%">
-                      <>
-                        <rect
-                          id="alpha"
-                          x="0"
-                          y="0"
-                          width="100%"
-                          height="100%"
-                        />
-                        <text class="title" dx="50%" dy="2.5em">
-                          BÌNH
-                        </text>
-                      </>
-                      <text class="title" dx="50%" dy="3.5em">
-                        PHÁT
-                      </text>
-                    </mask>
-                  </defs>
-                  <rect id="base" x="0" y="0" width="100%" height="100%" />
-                </svg>
-                <div class="content">
-                  <p>
-                    BÌNH PHÁT KHAI GIẢNG KHÓA HỌC VỀ TRÍ TUỆ NHÂN TẠO, TĂNG TỐC
-                    CHUYỂN ĐỔI SỐ
-                  </p>
+  <div class="container">
+    <h2
+      class="hidden md:block text-3xl font-extrabold uppercase max-md:text-xl whitespace-pre-line mt-10"
+    >
+      {t("news.title")}
+    </h2>
+    <div class="mb-10 grid md:grid-cols-2 gap-6 max-sm:mt-10">
+      {
+        newsItems.map((item) => (
+          <a
+            class="sm:mt-10 group md:[&:nth-child(even)]:-mt-4"
+            href={`/tin-tuc/binh-phat-khai-giang-khoa-hoc-vu-tri-tu-nhan-tao`}
+          >
+            <div class="overflow-hidden aspect-[570/336] flex">
+              <img
+                src={item.image}
+                alt={item.title}
+                class="w-full object-cover group-hover:scale-110 transition-transform duration-300"
+              />
+            </div>
+            <div class="px-4 sm:px-8 py-4 flex items-center gap-5 bg-sky-100 group-hover:bg-primary transition-colors duration-300 w-full sm:w-4/5 max-sm:max-w-[400px] -mt-8 z-10 relative sm:rounded-tr-[50px]">
+              <div class="text-center text-primary group-hover:text-white transition-colors duration-300 shrink-0">
+                <div class="text-[11px] leading-none">
+                  {`${item.date.toISOString().split("-")[1]}-${item.date.toISOString().split("-")[0]}`}
                 </div>
-              </figcaption>
-              <a href="/tin-tuc/binh-phat-khai-giang-khoa-hoc-vu-tri-tu-nhan-tao" />
-            </>
-          </figure>
-        </div>
-      ))
-    }
+                <div class="text-[35px] leading-none font-bold">
+                  {item.date.toISOString().split("T")[0].split("-")[2]}
+                </div>
+              </div>
+              <div class="w-px h-10 bg-neutral-300" />
+              <div class="text-base font-semibold line-clamp-2 uppercase text-black group-hover:text-white transition-colors duration-300">
+                {item.title}
+              </div>
+            </div>
+          </a>
+        ))
+      }
+    </div>
   </div>
 </Layout>
-
-<style>
-  .container-fluid {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 20px;
-  }
-  .media {
-    background-position: center;
-    background-size: cover;
-    height: 100%;
-    position: absolute;
-    transition: all 0.3s ease;
-    width: 100%;
-  }
-  figure {
-    height: 370px;
-    overflow: hidden;
-    position: relative;
-  }
-  figure a {
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 3;
-  }
-  figure:hover .media {
-    transform: scale(1.25);
-  }
-  figcaption {
-    color: #252830;
-    height: calc(100% - 30px);
-    margin: 15px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 250px;
-  }
-  .content {
-    background-color: white;
-    bottom: 0;
-    position: absolute;
-    width: 100%;
-  }
-
-  .content p {
-    padding: 15px;
-  }
-
-  svg {
-    height: inherit;
-    width: 100%;
-  }
-  svg text {
-    text-anchor: middle;
-  }
-  svg #alpha {
-    fill: white;
-  }
-  svg .title {
-    font-size: 28px;
-    font-family: "Montserrat";
-    letter-spacing: 5px;
-  }
-  svg #base {
-    fill: white;
-    -webkit-mask: url(#mask);
-    mask: url(#mask);
-  }
-
-  @media screen and (min-width: 2400px) {
-    .content p {
-      font-size: 20px;
-    }
-  }
-</style>
