@@ -1,9 +1,4 @@
----
-import Layout from "../../layouts/Layout.astro";
-import Hero from "../../components/organisms/recruitment/Hero.astro";
-import JobCard from "../../components/organisms/recruitment/JobCard.astro";
-
-const jobs = [
+export const relatedJobs = [
   {
     title: "Kỹ sư Cơ điện (Giám sát)",
     slug: "ky-su-co-dien-giam-sat",
@@ -60,20 +55,3 @@ const jobs = [
     isNew: true,
   },
 ];
----
-
-<Layout title="Bình Phát - Tuyển dụng" snap={false}>
-  <Hero />
-
-  <div class="space-y-4 container">
-    <div class="space-y-8 my-10">
-      {
-        jobs.map((job) => (
-          <a href={`/tuyen-dung/${job.slug}`} class="flex flex-col gap-6">
-            <JobCard {...job} />
-          </a>
-        ))
-      }
-    </div>
-  </div>
-</Layout>
