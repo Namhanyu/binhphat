@@ -40,7 +40,7 @@ export const ui = {
     "contact.form.message": "Nội dung...",
     "contact.form.submit": "Gửi ngay",
     "news.title": "Tin tức",
-    "news.detail": "Chi tiết tin tức",
+    "news.detail": "Tin tức",
     "recruitment.title": "Tin tức tuyển dụng",
     "recruitment.detail": "Chi tiết tuyển dụng",
     "news.view_more": "Xem thêm tin tức",
