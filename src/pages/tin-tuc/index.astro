@@ -1,20 +1,18 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/organisms/news/Hero.astro";
-import { vi as projects } from "../../components/organisms/projects/ProjectList.astro";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import newsItemsData from "../../data/newsItems.json";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const newsItems = Array.from({ length: 10 }, (_, i) => ({
-  id: i + 1,
-  title: `Khởi công ${projects[i].name}`,
-  date: new Date(
-    Date.now() - Math.floor(Math.random() * (5 * 365 * 24 * 60 * 60 * 1000))
-  ),
-  image: projects[i].images[0].src,
-})).sort((a, b) => (b.date as any) - (a.date as any));
+// Use real news data, show only first 10 items for the main page
+const newsItems = newsItemsData.map(item => ({
+  ...item,
+  date: new Date(item.date),
+  image: item.heroImage
+}));
 ---
 
 <Layout title="Bình Phát - Tin tức" snap={false}>
@@ -31,7 +29,7 @@ const newsItems = Array.from({ length: 10 }, (_, i) => ({
         newsItems.map((item) => (
           <a
             class="sm:mt-10 group md:[&:nth-child(even)]:-mt-4"
-            href={`/tin-tuc/binh-phat-khai-giang-khoa-hoc-vu-tri-tu-nhan-tao`}
+            href={`/tin-tuc/${item.slug}`}
           >
             <div class="overflow-hidden aspect-[570/336] flex">
               <img
