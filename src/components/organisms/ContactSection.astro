@@ -1,11 +1,13 @@
 ---
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 import bgImage from "../../assets/images/contact.webp";
+import bgImageSp from "../../assets/images/contact-mobile.webp";
 import ContactForm from "./ContactForm";
 import IconLocation from "../atoms/IconLocation.astro";
 import IconZalo from "../atoms/IconZalo.astro";
 import IconFacebook from "../atoms/IconFacebook.astro";
 import IconYoutube from "../atoms/IconYoutube.astro";
+import clsx from "clsx";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -13,9 +15,12 @@ const t = useTranslations(lang);
 
 <section
   id="contact"
-  class="flex items-center md:min-h-screen bg-cover bg-bottom pb-4 pt-header"
+  class={clsx(
+    "flex items-center min-h-screen bg-cover bg-bottom pb-4 pt-header bg-[image:var(--bg-image)]",
+    "max-md:bg-[image:var(--bg-image-sp)] max-md:pb-[110vw] max-md:bg-[size:110vw] max-md:bg-no-repeat max-md:bg-bottom"
+  )}
   data-menu-color="primary"
-  style={`background-image: url(${bgImage.src});`}
+  style={`--bg-image: url(${bgImage.src}); --bg-image-sp: url(${bgImageSp.src});`}
 >
   <div class="container mx-auto">
     <div class="max-w-[600px] 3xl:max-w-[37.5vw]">

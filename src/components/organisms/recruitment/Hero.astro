@@ -1,5 +1,5 @@
 ---
-import bgImage from "../../../assets/images/operations_hero.webp";
+import bgImage from "../../../assets/images/recruit-bg.webp";
 import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
@@ -10,7 +10,7 @@ const t = useTranslations(lang);
   id="hero"
   data-menu-color="white"
   class="h-screen max-md:max-h-[400px] bg-cover bg-center flex items-center max-md:items-end py-10"
-  style={`background-image: url(${bgImage.src});`}
+  style={`background-image: linear-gradient(#0059a766, #0059a766), url(${bgImage.src});`}
 >
   <div class="container">
     <h2

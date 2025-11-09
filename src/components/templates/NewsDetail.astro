@@ -8,14 +8,11 @@ const {
   date = new Date().toISOString().split("T")[0],
 } = Astro.props;
 
-import image01 from "../../assets/images/01.webp";
-import image02 from "../../assets/images/01-02.webp";
-import image03 from "../../assets/images/01-03.webp";
-import image04 from "../../assets/images/01-04.webp";
+import image01 from "../../assets/images/news-bg.webp";
 ---
 
 <Layout title={title} snap={false}>
-  <HeroDetail image={image} title={title} />
+  <HeroDetail image={image01.src} title={title} />
 
   <div class="container">
     <div class="grid gap-16">

@@ -1,11 +1,21 @@
 ---
 import image01 from "../../../assets/images/01.webp";
+import image01_m from "../../../assets/images/home-mobile.webp";
 import image02 from "../../../assets/images/01-02.webp";
 import image03 from "../../../assets/images/01-03.webp";
 import image04 from "../../../assets/images/01-04.webp";
+import image05 from "../../../assets/images/01-05.webp";
+import image06 from "../../../assets/images/01-06.webp";
 import clsx from "clsx";
 
-const images = [image01, image02, image03, image04];
+const images = [
+  { pc: image01, sp: image01_m },
+  { pc: image02, sp: image02 },
+  { pc: image03, sp: image03 },
+  { pc: image04, sp: image04 },
+  { pc: image05, sp: image05 },
+  { pc: image06, sp: image06 },
+];
 ---
 
 <section id="hero" data-menu-color="white">
@@ -19,10 +29,16 @@ const images = [image01, image02, image03, image04];
     <div class="keen-slider max-h-screen h-full" id="hero-slider">
       {
         images.map((image) => (
-          <div
-            class="keen-slider__slide bg-cover bg-center"
-            style={`background-image: url(${image.src});`}
-          />
+          <div class="keen-slider__slide">
+            <picture>
+              <source media="(max-width: 768px)" srcset={image.sp.src} />
+              <img
+                src={image.pc.src}
+                alt="Hero Image"
+                class="size-full object-cover"
+              />
+            </picture>
+          </div>
         ))
       }
     </div>
