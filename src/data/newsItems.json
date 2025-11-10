@@ -1,5 +1,36 @@
 [
   {
+    "id": 16,
+    "title": "Kỷ niệm 12 năm thành lập Bình Phát",
+    "slug": "ky-niem-12-nam-thanh-lap-binh-phat",
+    "date": "2025-04-12",
+    "folderName": "6.Kỷ niệm 12 năm thành lập Bình Phát",
+    "docxFile": null,
+    "hasDocx": false,
+    "images": [
+      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/01.jpg",
+      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/02.jpg",
+      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/03.jpg",
+      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/04.jpg",
+      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/05.jpg",
+      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/06.jpg",
+      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/07.jpg",
+      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/08.jpg",
+      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/09.jpg",
+      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/10.jpg",
+      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/11.jpg",
+      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/12.jpg",
+      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/13.jpg",
+      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/14.jpg",
+      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/15.jpg",
+      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/16.jpg",
+      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/17.jpg",
+      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/18.jpg",
+      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/19.jpg"
+    ],
+    "heroImage": "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/00.webp"
+  },
+  {
     "id": 8,
     "title": "Giao hữu bóng đá giữa Bình Phát và Panasonic",
     "slug": "giao-huu-bong-a-giua-binh-phat-va-panasonic",
@@ -265,37 +296,6 @@
       "/images/news/vui-choi-giai-tri-bar-o-a-nang/06.jpg"
     ],
     "heroImage": "/images/news/vui-choi-giai-tri-bar-o-a-nang/01.jpg"
-  },
-  {
-    "id": 16,
-    "title": "Kỷ niệm 12 năm thành lập Bình Phát",
-    "slug": "ky-niem-12-nam-thanh-lap-binh-phat",
-    "date": "2025-04-12",
-    "folderName": "6.Kỷ niệm 12 năm thành lập Bình Phát",
-    "docxFile": null,
-    "hasDocx": false,
-    "images": [
-      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/01.jpg",
-      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/02.jpg",
-      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/03.jpg",
-      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/04.jpg",
-      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/05.jpg",
-      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/06.jpg",
-      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/07.jpg",
-      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/08.jpg",
-      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/09.jpg",
-      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/10.jpg",
-      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/11.jpg",
-      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/12.jpg",
-      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/13.jpg",
-      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/14.jpg",
-      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/15.jpg",
-      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/16.jpg",
-      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/17.jpg",
-      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/18.jpg",
-      "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/19.jpg"
-    ],
-    "heroImage": "/images/news/ky-niem-12-nam-thanh-lap-binh-phat/01.jpg"
   },
   {
     "id": 3,
