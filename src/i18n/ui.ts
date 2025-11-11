@@ -51,7 +51,7 @@ export const ui = {
     "operations.view_more": "Xem thêm lĩnh vực hoạt động",
     "operations.construction": "Tổng thầu xây dựng",
     "operations.electromechanical": "Tổng thầu cơ điện",
-    "projects.title": "Công trình\ntiêu biểu",
+    "projects.title": "Dự án",
     "projects.view_more": "Xem tất cả công trình",
     "introduction.title": "Giới thiệu",
     "messages.subtitle": "Thông điệp",
