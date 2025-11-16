@@ -2,17 +2,10 @@
 import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/organisms/news/Hero.astro";
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
-import newsItemsData from "../../data/newsItems.json";
+import NewsList from "../../components/templates/NewsList";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-
-// Use real news data, show only first 10 items for the main page
-const newsItems = newsItemsData.map(item => ({
-  ...item,
-  date: new Date(item.date),
-  image: item.heroImage
-}));
 ---
 
 <Layout title="Bình Phát - Tin tức" snap={false}>
@@ -24,37 +17,6 @@ const newsItems = newsItemsData.map(item => ({
     >
       {t("news.title")}
     </h2>
-    <div class="mb-10 grid md:grid-cols-2 gap-6 max-sm:mt-10">
-      {
-        newsItems.map((item) => (
-          <a
-            class="sm:mt-10 group md:[&:nth-child(even)]:-mt-4"
-            href={`/tin-tuc/${item.slug}`}
-          >
-            <div class="overflow-hidden aspect-[570/336] flex">
-              <img
-                src={item.image}
-                alt={item.title}
-                class="w-full object-cover group-hover:scale-110 transition-transform duration-300"
-              />
-            </div>
-            <div class="px-4 sm:px-8 py-4 flex items-center gap-5 bg-sky-100 group-hover:bg-primary transition-colors duration-300 w-full sm:w-4/5 max-sm:max-w-[400px] -mt-8 z-10 relative sm:rounded-tr-[50px]">
-              <div class="text-center text-primary group-hover:text-white transition-colors duration-300 shrink-0">
-                <div class="text-[11px] leading-none">
-                  {`${item.date.toISOString().split("-")[1]}-${item.date.toISOString().split("-")[0]}`}
-                </div>
-                <div class="text-[35px] leading-none font-bold">
-                  {item.date.toISOString().split("T")[0].split("-")[2]}
-                </div>
-              </div>
-              <div class="w-px h-10 bg-neutral-300" />
-              <div class="text-base font-semibold line-clamp-2 uppercase text-black group-hover:text-white transition-colors duration-300">
-                {item.title}
-              </div>
-            </div>
-          </a>
-        ))
-      }
-    </div>
+    <NewsList client:idle />
   </div>
 </Layout>
