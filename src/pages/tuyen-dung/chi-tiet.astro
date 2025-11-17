@@ -1,11 +1,10 @@
 ---
-import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/organisms/recruitment/Hero.astro";
-import JobList from "../../components/templates/JobList";
+import JobDetail from "../../components/templates/JobDetail";
+import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title="Bình Phát - Tuyển dụng" snap={false}>
   <Hero />
-
-  <JobList client:idle />
+  <JobDetail client:idle />
 </Layout>
