@@ -1,0 +1,3 @@
+html {
+  @apply 3xl:text-[1vw];
+}
