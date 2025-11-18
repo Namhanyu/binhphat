@@ -12,9 +12,7 @@ export default function NewsList() {
   const [newsItems, setNewsItems] = useState<any[]>([]);
 
   function fetchNews() {
-    fetch(
-      `${(import.meta as any).env.PUBLIC_API_URL}api/public/news?is_featured=1`
-    )
+    fetch(`${(import.meta as any).env.PUBLIC_API_URL}api/public/news`)
       .then((res) => res.json())
       .then((data) => {
         setNewsItems(data);
