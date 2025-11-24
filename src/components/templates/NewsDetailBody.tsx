@@ -52,6 +52,15 @@ export default function NewsDetail() {
     };
   }, []);
 
+  const formatDate = (dateString: string) => {
+    if (!dateString) return "";
+    const date = new Date(dateString);
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+    const year = date.getFullYear();
+    return `${month}.${day}.${year}`;
+  };
+
   return (
     <div className="container max-w-screen-2xl py-10">
       <div className="grid lg:grid-cols-[1fr_25rem] gap-8">
@@ -59,9 +68,7 @@ export default function NewsDetail() {
           <article className="prose prose-neutral sm:max-w-none prose-headings:font-display prose-a:font-medium prose-a:text-primary prose-a:underline-offset-4 prose-figure:text-center max-w-2xl prose-img:mx-auto p-4 md:p-8 border-2 border-primary">
             <header className="grid gap-4 mb-8 justify-items-start">
               <div className="p-2 bg-primary text-white text-base font-semibold">
-                {`${data.date.split("-")[1]}.${data.date.split("-")[2]}.${
-                  data.date.split("-")[0]
-                }`}
+                {formatDate(data.date)}
               </div>
               <h1 className="text-2xl font-semibold break-words uppercase text-primary mb-0">
                 {data.title}
@@ -100,9 +107,7 @@ export default function NewsDetail() {
                       {article.title}
                     </div>{" "}
                     <div className="px-1 bg-primary text-white text-xxs font-semibold">
-                      {`${article.date.split("-")[1]}.${
-                        article.date.split("-")[2]
-                      }.${article.date.split("-")[0]}`}
+                      {formatDate(article.date)}
                     </div>
                   </div>
                 </a>
