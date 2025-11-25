@@ -5,28 +5,40 @@ export default function LangSwitch({ lang }: { lang: "en" | "vi" }) {
   const enToViMap: Record<string, string> = {
     "/en": "/",
     "/en/about": "/gioi-thieu",
+    "/en/about/": "/gioi-thieu",
     "/en/news": "/tin-tuc",
+    "/en/news/": "/tin-tuc",
     "/en/news/detail/": "/tin-tuc/chi-tiet/",
     "/en/operations": "/linh-vuc-hoat-dong",
+    "/en/operations/": "/linh-vuc-hoat-dong",
     "/en/projects": "/du-an",
+    "/en/projects/": "/du-an",
     "/en/projects/detail/": "/du-an/chi-tiet/",
     "/en/recruitment": "/tuyen-dung",
+    "/en/recruitment/": "/tuyen-dung",
     "/en/recruitment/detail/": "/tuyen-dung/chi-tiet/",
     "/en/contact": "/lien-he",
+    "/en/contact/": "/lien-he",
   };
 
   // Mapping Vietnamese routes to English routes
   const viToEnMap: Record<string, string> = {
     "/": "/en",
     "/gioi-thieu": "/en/about",
+    "/gioi-thieu/": "/en/about",
     "/tin-tuc": "/en/news",
+    "/tin-tuc/": "/en/news",
     "/tin-tuc/chi-tiet/": "/en/news/detail/",
     "/linh-vuc-hoat-dong": "/en/operations",
+    "/linh-vuc-hoat-dong/": "/en/operations",
     "/du-an": "/en/projects",
+    "/du-an/": "/en/projects",
     "/du-an/chi-tiet/": "/en/projects/detail/",
     "/tuyen-dung": "/en/recruitment",
+    "/tuyen-dung/": "/en/recruitment",
     "/tuyen-dung/chi-tiet/": "/en/recruitment/detail/",
     "/lien-he": "/en/contact",
+    "/lien-he/": "/en/contact",
   };
 
   const pathname = window.location.pathname;
