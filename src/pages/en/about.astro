@@ -1,0 +1,38 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/organisms/introduction/Hero.astro";
+import Messages from "../../components/organisms/introduction/Messages.astro";
+import History from "../../components/organisms/introduction/History.astro";
+import Vision from "../../components/organisms/introduction/Vision.astro";
+import CoreValues from "../../components/organisms/introduction/CoreValues.astro";
+import Certification from "../../components/organisms/introduction/Certification.astro";
+import Partners from "../../components/organisms/introduction/Partners.astro";
+---
+
+<Layout title="Binh Phat - About">
+  <Hero />
+  <Messages />
+  <History />
+  <Vision />
+  <CoreValues />
+  <Certification />
+  <Partners />
+</Layout>
+
+<script>
+  import { initScrollAnimations } from "../../scripts/gsap-scroll.js";
+
+  const runInit = () => {
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(initScrollAnimations, { timeout: 500 });
+    } else {
+      setTimeout(initScrollAnimations, 200);
+    }
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", runInit);
+  } else {
+    runInit();
+  }
+</script>

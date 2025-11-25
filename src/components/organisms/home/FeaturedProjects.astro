@@ -12,6 +12,7 @@ import clsx from "clsx";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const projectsUrl = lang === "en" ? "/en/projects" : "/du-an";
 
 const projects = [
   { name: "CÔNG TY\nTHỦY ĐIỆN SƠN LA", image: image01.src },
@@ -38,7 +39,7 @@ const projects = [
       >
         {t("projects.title")}
       </h2>
-      <a href="/du-an">
+      <a href={projectsUrl}>
         <ActionButton class="text-white mb-12 3xl:mb-[3vw]">
           {t("projects.view_more")}
         </ActionButton>

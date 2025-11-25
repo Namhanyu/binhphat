@@ -1,0 +1,11 @@
+---
+import HeroDetail from "../../../components/organisms/news/HeroDetail.astro";
+import Layout from "../../../layouts/Layout.astro";
+import bgImage from "../../../assets/images/news-bg.webp";
+import NewsDetailBody from "../../../components/templates/NewsDetailBody";
+---
+
+<Layout title={"Binh Phat - News"} snap={false}>
+  <HeroDetail image={bgImage.src} title={"News"} />
+  <NewsDetailBody client:idle />
+</Layout>

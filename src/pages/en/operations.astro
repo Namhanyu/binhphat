@@ -1,0 +1,36 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Hero from "../../components/organisms/operation-fields/Hero.astro";
+import Construction from "../../components/organisms/operation-fields/Construction.astro";
+import ElectroMechanical from "../../components/organisms/operation-fields/ElectroMechanical.astro";
+import Safety from "../../components/organisms/operation-fields/Safety.astro";
+import Equipment from "../../components/organisms/operation-fields/Equipment.astro";
+import HumanResources from "../../components/organisms/operation-fields/HumanResources.astro";
+---
+
+<Layout title="Binh Phat - Operations">
+  <Hero />
+  <Construction />
+  <ElectroMechanical />
+  <Safety />
+  <Equipment />
+  <HumanResources />
+</Layout>
+
+<script>
+  import { initScrollAnimations } from "../../scripts/gsap-scroll.js";
+
+  const runInit = () => {
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(initScrollAnimations, { timeout: 500 });
+    } else {
+      setTimeout(initScrollAnimations, 200);
+    }
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", runInit);
+  } else {
+    runInit();
+  }
+</script>

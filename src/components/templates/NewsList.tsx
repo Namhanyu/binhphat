@@ -10,6 +10,12 @@ function formatDate(dateString: string) {
 
 export default function NewsList() {
   const [newsItems, setNewsItems] = useState<any[]>([]);
+  const [newsDetailUrl, setNewsDetailUrl] = useState("/tin-tuc");
+
+  useEffect(() => {
+    const isEnglish = window.location.pathname.startsWith("/en");
+    setNewsDetailUrl(isEnglish ? "/en/news" : "/tin-tuc/");
+  }, []);
 
   function fetchNews() {
     fetch(`${(import.meta as any).env.PUBLIC_API_URL}api/public/news`)
@@ -31,7 +37,7 @@ export default function NewsList() {
       {newsItems.map((item) => (
         <a
           className="sm:mt-10 group md:[&:nth-child(even)]:-mt-4"
-          href={`/tin-tuc/vn/#${item.slug}`}
+          href={`${newsDetailUrl}/#${item.slug}`}
           key={item.slug}
         >
           <div className="overflow-hidden aspect-[570/336] flex bg-neutral-200">

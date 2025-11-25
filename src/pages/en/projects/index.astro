@@ -1,7 +1,7 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import Hero from "../../components/organisms/projects/Hero.astro";
-import ProjectList from "../../components/organisms/projects/ProjectList.astro";
+import Layout from "../../../layouts/Layout.astro";
+import Hero from "../../../components/organisms/projects/Hero.astro";
+import ProjectList from "../../../components/organisms/projects/ProjectList.astro";
 ---
 
 <Layout title="Bình Phát - Projects" snap={false}>
@@ -10,7 +10,7 @@ import ProjectList from "../../components/organisms/projects/ProjectList.astro";
 </Layout>
 
 <script>
-  import { initScrollAnimations } from "../../scripts/gsap-scroll.js";
+  import { initScrollAnimations } from "../../../scripts/gsap-scroll.js";
 
   const runInit = () => {
     if ("requestIdleCallback" in window) {

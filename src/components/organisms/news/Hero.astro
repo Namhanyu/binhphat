@@ -4,6 +4,7 @@ import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const homeUrl = lang === "en" ? "/en" : "/";
 ---
 
 <section
@@ -21,7 +22,7 @@ const t = useTranslations(lang);
       {t("news.title")}
     </h2>
     <div class="uppercase text-white" data-animate data-x="-50">
-      <a href="/">{t("home.title")}</a>
+      <a href={homeUrl}>{t("home.title")}</a>
       <span>-</span>
       <strong>{t("news.title")}</strong>
     </div>

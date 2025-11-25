@@ -2,16 +2,46 @@
 import { getLangFromUrl } from "../../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
-// Get the current path without the language prefix
 const pathname = Astro.url.pathname;
-const pathWithoutLang =
-  lang === "en" ? pathname.replace(/^\/en/, "") : pathname;
-const viUrl = pathWithoutLang || "/";
-const enUrl = "/en" + pathWithoutLang;
+
+// Mapping English routes to Vietnamese routes
+const enToViMap: Record<string, string> = {
+  "/en": "/",
+  "/en/about": "/gioi-thieu",
+  "/en/news": "/tin-tuc",
+  "/en/operations": "/linh-vuc-hoat-dong",
+  "/en/projects": "/du-an",
+  "/en/recruitment": "/tuyen-dung",
+  "/en/contact": "/lien-he",
+};
+
+// Mapping Vietnamese routes to English routes
+const viToEnMap: Record<string, string> = {
+  "/": "/en",
+  "/gioi-thieu": "/en/about",
+  "/tin-tuc": "/en/news",
+  "/linh-vuc-hoat-dong": "/en/operations",
+  "/du-an": "/en/projects",
+  "/tuyen-dung": "/en/recruitment",
+  "/lien-he": "/en/contact",
+};
+
+let viUrl = "/";
+let enUrl = "/en";
+
+if (lang === "en") {
+  // Currently on English page, map to Vietnamese
+  viUrl = enToViMap[pathname] || pathname.replace(/^\/en/, "") || "/";
+  enUrl = pathname;
+} else {
+  // Currently on Vietnamese page, map to English
+  viUrl = pathname;
+  enUrl = viToEnMap[pathname] || "/en" + pathname;
+}
 ---
 
 <div class="flex items-center gap-2 3xl:gap-[0.5vw] text-sm z-50 font-semibold" id="lang">
   <a href={viUrl}>VI</a>
   <span>/</span>
-  <a href="/">EN</a>
+  <a href={enUrl}>EN</a>
 </div>
