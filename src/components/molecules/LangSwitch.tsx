@@ -1,8 +1,4 @@
 export default function LangSwitch({ lang }: { lang: "en" | "vi" }) {
-  if (typeof window === "undefined") {
-    return null; // Ensure this component only renders on the client side
-  }
-
   const viUrl = new URL(window.location.href);
   const enUrl = new URL(window.location.href);
 

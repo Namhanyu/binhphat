@@ -5,4 +5,4 @@ import LangSwitch from "./LangSwitch";
 const lang = getLangFromUrl(Astro.url);
 ---
 
-<LangSwitch lang={lang} client:idle />
+<LangSwitch lang={lang} client:only="react" />
