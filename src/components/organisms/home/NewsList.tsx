@@ -15,11 +15,13 @@ export default function NewListSection() {
 
   useEffect(() => {
     const isEnglish = window.location.pathname.startsWith("/en");
-    setNewsDetailUrl(isEnglish ? "/en/news" : "/tin-tuc");
+    setNewsDetailUrl(isEnglish ? "/en/news/detail" : "/tin-tuc/chi-tiet");
   }, []);
 
   function fetchNews() {
-    fetch(`${(import.meta as any).env.PUBLIC_API_URL}api/public/news?is_featured=1`)
+    fetch(
+      `${(import.meta as any).env.PUBLIC_API_URL}api/public/news?is_featured=1`
+    )
       .then((res) => res.json())
       .then((data) => {
         setNewsItems(data);
@@ -37,7 +39,7 @@ export default function NewListSection() {
     <div className="grid md:grid-cols-2 xl:grid-cols-4 grid-rows-[repeat(2,_280px)] 3xl:grid-rows-[repeat(2,_17.5vw)] md:grid-rows-[280px_280px] max-md:grid-rows-[repeat(4,_280px)] gap-2">
       {newsItems.map((item, index) => (
         <a
-          href={`${newsDetailUrl}/#${item.slug}`}
+          href={`${newsDetailUrl}/#/${item.slug}`}
           className={clsx(
             "group relative overflow-hidden cursor-pointer block",
             "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-40 after:pointer-events-none after:bg-gradient-to-t after:from-primary after:to-primary/0",

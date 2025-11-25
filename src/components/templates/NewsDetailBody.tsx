@@ -2,10 +2,19 @@ import { useEffect, useState } from "react";
 import "./news.module.css";
 
 export default function NewsDetail() {
+  const [newsListUrl, setNewsListUrl] = useState("/tin-tuc");
+  const [newsDetailUrl, setNewsDetailUrl] = useState("/tin-tuc/chi-tiet");
+
+  useEffect(() => {
+    const isEnglish = window.location.pathname.startsWith("/en");
+    setNewsListUrl(isEnglish ? "/en/news" : "/tin-tuc");
+    setNewsDetailUrl(isEnglish ? "/en/news/detail" : "/tin-tuc/chi-tiet");
+  }, []);
+
   const [slug, setSlug] = useState(() => {
     if (typeof window !== "undefined") {
       const url = window.location.href;
-      return url.includes("#") ? url.split("#")[1] : "";
+      return url.includes("#/") ? url.split("#/")[1] : "";
     }
     return "";
   });
@@ -37,7 +46,7 @@ export default function NewsDetail() {
     // Handler for hash changes
     const handleHashChange = () => {
       const url = window.location.href;
-      const newSlug = url.includes("#") ? url.split("#")[1] : "";
+      const newSlug = url.includes("#/") ? url.split("#/")[1] : "";
       setSlug(newSlug);
       getNewsDetail(newSlug);
     };
@@ -85,7 +94,7 @@ export default function NewsDetail() {
         <aside>
           <div className="flex justify-between gap-4 items-center uppercase text-white bg-primary py-2 px-4 mb-4">
             <h2 className="font-semibold text-lg">Tin tức nổi bật</h2>
-            <a className="text-base" href="/tin-tuc">
+            <a className="text-base" href={newsListUrl}>
               Xem thêm &gt;
             </a>
           </div>
@@ -93,7 +102,7 @@ export default function NewsDetail() {
             {data.related.map((article: any) => (
               <li className="group" key={article.slug}>
                 <a
-                  href={`/tin-tuc/vn/#${article.slug}`}
+                  href={`${newsDetailUrl}/#/${article.slug}`}
                   className="flex gap-6 py-4"
                 >
                   <img

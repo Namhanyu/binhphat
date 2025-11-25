@@ -14,7 +14,7 @@ export default function NewsList() {
 
   useEffect(() => {
     const isEnglish = window.location.pathname.startsWith("/en");
-    setNewsDetailUrl(isEnglish ? "/en/news" : "/tin-tuc/");
+    setNewsDetailUrl(isEnglish ? "/en/news/detail" : "/tin-tuc/chi-tiet");
   }, []);
 
   function fetchNews() {
@@ -37,7 +37,7 @@ export default function NewsList() {
       {newsItems.map((item) => (
         <a
           className="sm:mt-10 group md:[&:nth-child(even)]:-mt-4"
-          href={`${newsDetailUrl}/#${item.slug}`}
+          href={`${newsDetailUrl}/#/${item.slug}`}
           key={item.slug}
         >
           <div className="overflow-hidden aspect-[570/336] flex bg-neutral-200">

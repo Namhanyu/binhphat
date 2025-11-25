@@ -13,6 +13,7 @@ const enToViMap: Record<string, string> = {
   "/en/projects": "/du-an",
   "/en/recruitment": "/tuyen-dung",
   "/en/contact": "/lien-he",
+  "/en/news/detail": "/tin-tuc",
 };
 
 // Mapping Vietnamese routes to English routes
@@ -24,6 +25,7 @@ const viToEnMap: Record<string, string> = {
   "/du-an": "/en/projects",
   "/tuyen-dung": "/en/recruitment",
   "/lien-he": "/en/contact",
+  "/tin-tuc/chi-tiet/": "/en/news",
 };
 
 let viUrl = "/";
@@ -40,7 +42,10 @@ if (lang === "en") {
 }
 ---
 
-<div class="flex items-center gap-2 3xl:gap-[0.5vw] text-sm z-50 font-semibold" id="lang">
+<div
+  class="flex items-center gap-2 3xl:gap-[0.5vw] text-sm z-50 font-semibold"
+  id="lang"
+>
   <a href={viUrl}>VI</a>
   <span>/</span>
   <a href={enUrl}>EN</a>
