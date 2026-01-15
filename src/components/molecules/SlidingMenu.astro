@@ -1,7 +1,11 @@
 ---
 import clsx from "clsx";
+import { getLangFromUrl } from "../../i18n/utils";
 
-const menu = [
+const lang = getLangFromUrl(Astro.url);
+const prefix = lang === "en" ? "/en" : "";
+
+const menuVi = [
   { link: "/gioi-thieu", label: "Giới thiệu" },
   { link: "/tin-tuc", label: "Tin tức" },
   { link: "/linh-vuc-hoat-dong", label: "Lĩnh vực hoạt động" },
@@ -9,6 +13,17 @@ const menu = [
   { link: "/tuyen-dung", label: "Tuyển dụng" },
   { link: "/lien-he", label: "Liên hệ" },
 ];
+
+const menuEn = [
+  { link: "/en/about", label: "About" },
+  { link: "/en/news", label: "News" },
+  { link: "/en/operations", label: "Operations" },
+  { link: "/en/projects", label: "Projects" },
+  { link: "/en/recruitment", label: "Recruitment" },
+  { link: "/en/contact", label: "Contact" },
+];
+
+const menu = lang === "en" ? menuEn : menuVi;
 ---
 
 <div

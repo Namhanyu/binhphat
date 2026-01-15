@@ -1,16 +1,10 @@
 import clsx from "clsx";
 
 export default function ProjectCard({
-  id,
-  name,
-  address,
-  images,
+  project,
   size,
 }: {
-  id: number;
-  name: string;
-  address: string;
-  images: { src: string }[];
+  project: any;
   size: "sm" | "md" | "lg";
 }) {
   return (
@@ -25,11 +19,11 @@ export default function ProjectCard({
           "md:col-span-3 md:row-span-3": size === "md",
         }
       )}
-      href={`/du-an/${id}`}
+      href={`/du-an/chi-tiet/#/${project.id}`}
     >
       <div
         className="bg-cover absolute inset-0 bg-center group-hover:scale-110 transition-transform duration-500"
-        style={{ backgroundImage: `url(${images[0].src})` }}
+        style={{ backgroundImage: `url(${project.images[0]})` }}
       ></div>
       <div
         className={clsx(
@@ -44,9 +38,9 @@ export default function ProjectCard({
             "xl:text-xl 3xl:text-[1.25vw] 3xl:leading-snug": size === "md",
           })}
         >
-          {name}
+          {project.name || project.investor}
         </div>
-        <div className="text-sm">{address}</div>
+        <div className="text-sm">{project.location}</div>
       </div>
     </a>
   );

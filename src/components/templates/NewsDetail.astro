@@ -2,38 +2,36 @@
 import Layout from "../../layouts/Layout.astro";
 import HeroDetail from "../organisms/news/HeroDetail.astro";
 
-const {
-  title,
-  image,
-  date = new Date().toISOString().split("T")[0],
-} = Astro.props;
+const { title, date = new Date().toISOString().split("T")[0] } = Astro.props;
 
-import image01 from "../../assets/images/01.webp";
-import image02 from "../../assets/images/01-02.webp";
-import image03 from "../../assets/images/01-03.webp";
-import image04 from "../../assets/images/01-04.webp";
+import bgImage from "../../assets/images/news-bg.webp";
+
+import newsData from "../../data/newsItems.json";
+
+const relatedArticles = newsData
+  .filter((item) => item.title !== title)
+  .slice(0, 5);
 ---
 
 <Layout title={title} snap={false}>
-  <HeroDetail image={image} title={title} />
+  <HeroDetail image={bgImage.src} title={title} />
 
-  <div class="container">
-    <div class="grid gap-16">
+  <div class="container max-w-screen-2xl py-10">
+    <div class="grid lg:grid-cols-[1fr_25rem] gap-8">
       <!-- Article -->
-      <main class="py-24">
+      <main>
         <article
-          class="prose prose-neutral sm:max-w-none prose-headings:font-display prose-a:font-medium prose-a:text-primary prose-a:underline-offset-4 prose-figure:text-center max-w-2xl prose-img:mx-auto"
+          class="prose prose-neutral sm:max-w-none prose-headings:font-display prose-a:font-medium prose-a:text-primary prose-a:underline-offset-4 prose-figure:text-center max-w-2xl prose-img:mx-auto p-4 md:p-8 border-2 border-primary"
         >
-          <header class="flex items-center gap-4 border-b mb-10">
-            <div class="text-center shrink-0 p-5 bg-primary text-white">
-              <div class="text-[11px] leading-none">
-                {`${date.split("-")[1]}-${date.split("-")[0]}`}
-              </div>
-              <div class="text-[35px] leading-none font-bold">
-                {date.split("T")[0].split("-")[2]}
-              </div>
+          <header class="grid gap-4 mb-8 justify-items-start">
+            <div class="p-2 bg-primary text-white text-base font-semibold">
+              {
+                `${date.split("-")[1]}.${date.split("-")[2]}.${date.split("-")[0]}`
+              }
             </div>
-            <h1 class="text-2xl font-semibold break-words uppercase text-black">
+            <h1
+              class="text-2xl font-semibold break-words uppercase text-primary mb-0"
+            >
               {title}
             </h1>
           </header>
@@ -41,57 +39,49 @@ import image04 from "../../assets/images/01-04.webp";
           <slot />
         </article>
       </main>
+
+      <!-- Sidebar -->
+      <aside>
+        <div
+          class="flex justify-between gap-4 items-center uppercase text-white bg-primary py-2 px-4 mb-4"
+        >
+          <h2 class="font-semibold text-lg">Tin tức nổi bật</h2>
+          <a class="text-base" href="/tin-tuc">Xem thêm &gt;</a>
+        </div>
+        <ul class="border-y-2 grid divide-y-2">
+          {
+            relatedArticles.map((article) => (
+              <li class="group">
+                <a href={`/tin-tuc/${article.slug}`} class="flex gap-6 py-4">
+                  <img
+                    src={article.heroImage}
+                    alt={article.title}
+                    class="w-24 h-16 object-cover flex-shrink-0"
+                  />
+
+                  <div class="flex-1 flex flex-col justify-between items-start">
+                    <div class="line-clamp-2 text-lg font-semibold text-black uppercase group-hover:text-primary transition-colors duration-300">
+                      {article.title}
+                    </div>{" "}
+                    <div class="px-1 bg-primary text-white text-xxs font-semibold">
+                      {`${article.date.split("-")[1]}.${article.date.split("-")[2]}.${article.date.split("-")[0]}`}
+                    </div>
+                  </div>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </aside>
     </div>
-
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="sidebar-section">
-        <h2 class="sidebar-title">Bài Viết Liên Quan</h2>
-        <div class="related-article">
-          <img src={image04.src} alt="Blockchain" class="related-image" />
-          <div class="related-content">
-            <h3>Blockchain: Công Nghệ Của Tương Lai</h3>
-            <p>2 giờ trước • Công nghệ</p>
-          </div>
-        </div>
-        <div class="related-article">
-          <img src={image01.src} alt="Bảo mật" class="related-image" />
-          <div class="related-content">
-            <h3>Bảo Mật Mạng Trong Kỷ Nguyên Số</h3>
-            <p>4 giờ trước • Bảo mật</p>
-          </div>
-        </div>
-        <div class="related-article">
-          <img src={image02.src} alt="5G" class="related-image" />
-          <div class="related-content">
-            <h3>Mạng 5G Và Những Thay Đổi Lớn</h3>
-            <p>1 ngày trước • Viễn thông</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="sidebar-section">
-        <h2 class="sidebar-title">Tin Nổi Bật</h2>
-        <div class="related-article">
-          <img src={image03.src} alt="Startup" class="related-image" />
-          <div class="related-content">
-            <h3>Startup Việt Nam Gọi Vốn Thành Công 50 Triệu USD</h3>
-            <p>3 giờ trước • Kinh doanh</p>
-          </div>
-        </div>
-        <div class="related-article">
-          <img src={image04.src} alt="Năng lượng xanh" class="related-image" />
-          <div class="related-content">
-            <h3>Năng Lượng Tái Tạo: Xu Hướng Toàn Cầu</h3>
-            <p>5 giờ trước • Môi trường</p>
-          </div>
-        </div>
-      </div>
-    </aside>
   </div>
 </Layout>
 
 <style>
+  html {
+    @apply 3xl:text-[1vw];
+  }
+
   .header {
     background: white;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);

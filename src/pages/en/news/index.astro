@@ -1,0 +1,22 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Hero from "../../../components/organisms/news/Hero.astro";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
+import NewsList from "../../../components/templates/NewsList";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title="Binh Phat - News" snap={false}>
+  <Hero />
+
+  <div class="container">
+    <h2
+      class="hidden md:block text-3xl font-extrabold uppercase max-md:text-xl whitespace-pre-line mt-10"
+    >
+      {t("news.title")}
+    </h2>
+    <NewsList client:idle />
+  </div>
+</Layout>

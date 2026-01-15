@@ -4,6 +4,7 @@ import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const recruitmentUrl = lang === "en" ? "/en/recruitment" : "/tuyen-dung";
 
 const { id } = Astro.params;
 ---
@@ -23,7 +24,7 @@ const { id } = Astro.params;
       {t("recruitment.detail")}
     </h2>
     <div class="uppercase text-white" data-animate data-x="-50">
-      <a href="/tuyen-dung">{t("recruitment.title")}</a>
+      <a href={recruitmentUrl}>{t("recruitment.title")}</a>
       <span>-</span>
       <strong>{id}</strong>
     </div>

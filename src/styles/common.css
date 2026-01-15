@@ -25,6 +25,10 @@ body,
   @apply 3xl:text-[1vw] 3xl:leading-snug;
 }
 
+.text-xxs {
+  @apply 3xl:text-[0.625vw] 3xl:leading-snug;
+}
+
 .text-xs {
   @apply 3xl:text-[0.75vw] 3xl:leading-snug;
 }
@@ -83,4 +87,22 @@ body,
 
 .py-header\/2 {
   @apply py-10 xl:py-16 max-md:py-8 3xl:py-[2.5vw];
+}
+
+.ytp-cued-thumbnail-overlay {
+  width: 100%;
+}
+
+.ytp-cued-thumbnail-overlay-image {
+  width: 100%;
+}
+
+.html5-video-player {
+  width: 100%;
+}
+
+iframe {
+  width: 100% !important;
+  height: unset !important;
+  aspect-ratio: 16 / 9;
 }

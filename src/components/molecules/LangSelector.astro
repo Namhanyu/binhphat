@@ -1,17 +1,8 @@
 ---
 import { getLangFromUrl } from "../../i18n/utils";
+import LangSwitch from "./LangSwitch";
 
 const lang = getLangFromUrl(Astro.url);
-// Get the current path without the language prefix
-const pathname = Astro.url.pathname;
-const pathWithoutLang =
-  lang === "en" ? pathname.replace(/^\/en/, "") : pathname;
-const viUrl = pathWithoutLang || "/";
-const enUrl = "/en" + pathWithoutLang;
 ---
 
-<div class="flex items-center gap-2 3xl:gap-[0.5vw] text-sm z-50 font-semibold" id="lang">
-  <a href={viUrl}>VI</a>
-  <span>/</span>
-  <a href="/">EN</a>
-</div>
+<LangSwitch lang={lang} client:only="react" />

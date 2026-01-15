@@ -1,0 +1,11 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Hero from "../../../components/organisms/recruitment/Hero.astro";
+import JobList from "../../../components/templates/JobList";
+---
+
+<Layout title="Binh Phat - Recruitment" snap={false}>
+  <Hero />
+
+  <JobList client:idle />
+</Layout>

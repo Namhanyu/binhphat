@@ -2,23 +2,24 @@
 import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
 import ActionButton from "../../molecules/ActionButton.astro";
 import bgImage from "../../../assets/images/projects-37.webp";
-import image02 from "../../../assets/images/projects-38.webp";
-import image36 from "../../../assets/images/projects-39.webp";
-import image37 from "../../../assets/images/projects-40.webp";
-import image38 from "../../../assets/images/projects-41.webp";
-import image39 from "../../../assets/images/projects-42.webp";
+import image01 from "../../../assets/images/projects-38.webp";
+import image02 from "../../../assets/images/projects-39.webp";
+import image03 from "../../../assets/images/projects-40.webp";
+import image04 from "../../../assets/images/projects-1.webp";
+import image05 from "../../../assets/images/projects-2.webp";
 import ProjectList from "./ProjectList";
 import clsx from "clsx";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const projectsUrl = lang === "en" ? "/en/projects" : "/du-an";
 
 const projects = [
-  { name: "CÔNG TY\nTHỦY ĐIỆN SƠN LA", image: image02.src },
-  { name: "CÔNG TY\nTHỦY ĐIỆN LAI CHÂU", image: image36.src },
-  { name: "CÔNG TY\nTHỦY ĐIỆN HÒA BÌNH", image: image37.src },
-  { name: "CÔNG TY\nTHỦY ĐIỆN HUỘI QUẢNG – BẢN CHÁT", image: image38.src },
-  { name: "CÔNG TY TNHH\nCÔNG NGHIỆP BROTHER VIỆT NAM", image: image39.src },
+  { name: "CÔNG TY\nTHỦY ĐIỆN SƠN LA", image: image01.src },
+  { name: "CÔNG TY\nTHỦY ĐIỆN LAI CHÂU", image: image02.src },
+  { name: "CÔNG TY\nTHỦY ĐIỆN HÒA BÌNH", image: image03.src },
+  { name: "CÔNG TY\nTHỦY ĐIỆN HUỘI QUẢNG – BẢN CHÁT", image: image04.src },
+  { name: "CÔNG TY TNHH\nCÔNG NGHIỆP BROTHER VIỆT NAM", image: image05.src },
 ];
 ---
 
@@ -38,7 +39,7 @@ const projects = [
       >
         {t("projects.title")}
       </h2>
-      <a href="/du-an">
+      <a href={projectsUrl}>
         <ActionButton class="text-white mb-12 3xl:mb-[3vw]">
           {t("projects.view_more")}
         </ActionButton>
